@@ -1,0 +1,13 @@
+site_name: My Learning
+# site_url:
+
+nav:
+  - Home: index.md
+  - About: about.md
+  - Learning:
+    - Red Hat: 
+      - RH199: 'redhat/01-RH199/01-RH199.md'
+      - RH294: 'redhat/02-RH294/02-RH294.md'
+    - FinOps:
+      - FinOps practitioner: 'finops/finops_practitioner.md'
+theme: readthedocs
