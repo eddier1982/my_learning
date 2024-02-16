@@ -1,0 +1,7 @@
+---
+# tasks file for myvhost
+
+- name: Ensure httpd is installed
+  ansible.builtin.dnf:
+    name: httpd
+    state: latest

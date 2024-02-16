@@ -53,6 +53,32 @@
     <ul class="current">
                 <li class="toctree-l2 current"><a class="reference internal current" href="./">RH199</a>
     <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#edit-text-files-from-the-shell-prompt">Edit Text Files from the Shell Prompt</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#the-minimum-basic-vim-workflow">The Minimum, Basic Vim Workflow</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#vim-configuration-files">Vim Configuration Files</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#configure-ssh-key-based-authentication">Configure SSH Key-based Authentication</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#se-guardan-por-defecto-en">Se guardan por defecto en:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#generation-share-the-public-key-non-interactive-troubleshooting">Generation, Share the Public Key, Non-interactive, Troubleshooting</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#create-a-diagnostics-report">Create a Diagnostics Report</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#navigate-the-red-hat-customer-portal-menus">Navigate the Red Hat Customer Portal Menus</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#contact-red-hat-customer-support">Contact Red Hat Customer Support</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#review-system-journal-entries">Review System Journal Entries</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../02-RH294/02-RH294/">RH294</a>
@@ -92,6 +118,159 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="rhcsa-rapid-track">RHCSA Rapid Track</h1>
+<h2 id="edit-text-files-from-the-shell-prompt">Edit Text Files from the Shell Prompt</h2>
+<ul>
+<li>Se utiliza el editor <strong><em>vim</em></strong></li>
+<li>Tiene el modo visual (se activa al digitar la letra <strong>v</strong>) y el modo comandos (nativamente al ingresar)</li>
+<li>Presionando la tecla <strong>ESC</strong> unos segundos puede regresar al modo comandos.</li>
+</ul>
+<h3 id="the-minimum-basic-vim-workflow">The Minimum, Basic Vim Workflow</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Letra</th>
+<th style="text-align: left;">Acción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">u</td>
+<td style="text-align: left;">Deshace la última acción</td>
+</tr>
+<tr>
+<td style="text-align: center;">x</td>
+<td style="text-align: left;">Borra solo 1 caracter</td>
+</tr>
+<tr>
+<td style="text-align: center;">:w</td>
+<td style="text-align: left;">Solo guarda los cambios</td>
+</tr>
+<tr>
+<td style="text-align: center;">:wq</td>
+<td style="text-align: left;">Guarda los cambios y sale del editor</td>
+</tr>
+<tr>
+<td style="text-align: center;">:q!</td>
+<td style="text-align: left;">Salir sin guardar</td>
+</tr>
+<tr>
+<td style="text-align: center;">y ó 'ESC y' </br> p ó 'ESC  p'</td>
+<td style="text-align: left;">Selecciona varias filas seleccionadas y las almacena en memoria </br> Pega las filas seleccionadas</td>
+</tr>
+</tbody>
+</table>
+<h3 id="vim-configuration-files">Vim Configuration Files</h3>
+<pre><code>    $ cat /etc/vimrc
+    $ cat ~/.vimrc
+</code></pre>
+<p><a href="https://vimhelp.org/options.txt.html#options.txt">Vim Reference Manual: Vim Options</a> https://vimhelp.org/options.txt.html#options.txt</p>
+<h2 id="configure-ssh-key-based-authentication">Configure SSH Key-based Authentication</h2>
+<p>Configurar llaves de acceso basadas en autenticación sin utilizar password</p>
+<h3 id="se-guardan-por-defecto-en">Se guardan por defecto en:</h3>
+<pre><code>    $ cat ~/.ssh/id_rsa
+    $ cat ~/.ssh/id_rsa.pub
+</code></pre>
+<h3 id="generation-share-the-public-key-non-interactive-troubleshooting">Generation, Share the Public Key, Non-interactive, Troubleshooting</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Comando</th>
+<th style="text-align: left;">Acción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ssh-keygen</td>
+<td style="text-align: left;">Genera la la llave pública y la privada: en el proceso puede asignarle un password llamado <em>passphrase</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">ssh-keygen -f .ssh/<strong>nombre_llave</strong></td>
+<td style="text-align: left;">Argumento <strong>-f</strong> para cambiar el nombre de las llaves</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>ssh-copy-id</strong> -i .ssh/key-with-pass.pub <strong>user@remotehost</strong></td>
+<td style="text-align: left;">Comparte la llave <strong>pública</strong> en host remoto </br> <strong>NOTA</strong>: Si la llave tiene <em>passphrase</em>, se debe escribir la primera ves</td>
+</tr>
+<tr>
+<td style="text-align: left;">eval $(ssh-agent)</td>
+<td style="text-align: left;">Iniciar el programa <em>ssh-agent</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">ssh-add</td>
+<td style="text-align: left;">Cargar manualmente su <em>passphrase</em> de llave privada a ~/.ssh/ id_rsa</td>
+</tr>
+<tr>
+<td style="text-align: left;">ssh -i .ssh/key-with-pass <strong>user@remotehost</strong></td>
+<td style="text-align: left;">Argumento <strong>-i</strong> sirve para conectarse utilizando una llave específica</td>
+</tr>
+<tr>
+<td style="text-align: left;">ssh -v <strong>user@remotehost</strong></td>
+<td style="text-align: left;">Argumento <strong>-v</strong> para realizar Troubleshooting, puede hasta 3 niveles</td>
+</tr>
+</tbody>
+</table>
+<p><strong><em>NOTA: Durante la creación si ya existe unas llaves con nombres por defecto, estos se reemplazan</em></strong></p>
+<p>### SSH Client Configuration</p>
+<pre><code>    $ cat ~/.ssh/config
+</code></pre>
+<h2 id="create-a-diagnostics-report">Create a Diagnostics Report</h2>
+<p>### Resources on the Red Hat Customer Portal</p>
+<p><a href="https://access.redhat.com">The Red Hat Customer Portal https://access.redhat.com</a></p>
+<h3 id="navigate-the-red-hat-customer-portal-menus">Navigate the Red Hat Customer Portal Menus</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Categories</th>
+<th style="text-align: left;">Descriopción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Products &amp; Services</td>
+<td style="text-align: left;">Información de productos y servicios con sus guiías</td>
+</tr>
+<tr>
+<td style="text-align: left;">Tools</td>
+<td style="text-align: left;">Herramientas de ayuda para los productos RH</td>
+</tr>
+<tr>
+<td style="text-align: left;">Security</td>
+<td style="text-align: left;">Acceso al centro de productos de seguridad para productos RH</td>
+</tr>
+<tr>
+<td style="text-align: left;">Comunity</td>
+<td style="text-align: left;">Portal de comunidades, foros</td>
+</tr>
+</tbody>
+</table>
+<h3 id="contact-red-hat-customer-support">Contact Red Hat Customer Support</h3>
+<p>Apertura de casos de soporte para productos con suscripción</p>
+<h4 id="prepare-a-support-case">Prepare a Support Case</h4>
+<ol>
+<li>Definir el problema especificando los síntomas</li>
+<li>Recopilar la información de referencia: version de producto, un SOS Report, etc</li>
+<li>
+<p>Determinar la severidad del caso</p>
+<p>3.1. Urgent (severidad 1)</p>
+<p>3.2. High (severidad 2)</p>
+<p>3.3. Medium (severidad 3)</p>
+<p>3.4. Low (severidad 4)</p>
+</li>
+</ol>
+<h4 id="generate-an-sos-report-with-the-web-console">Generate an sos Report with the Web Console</h4>
+<ul>
+<li>Login con usuario root, consola en el servidor local en el apartado <strong>Diagnostic Reports</strong></li>
+<li></li>
+</ul>
+<h3 id="review-system-journal-entries">Review System Journal Entries</h3>
+<p>journalctl
+journalctl -n 5
+journalctl -f
+journalctl -p err
+journalctl -u sshd.service
+journalctl --since today
+journalctl --since "2024-02-07 14:00" --until "2024-02-07 16:00"
+journalctl --since "1 hour" </p>
               
             </div>
           </div><footer>
