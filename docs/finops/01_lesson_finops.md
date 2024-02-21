@@ -33,6 +33,7 @@
     Think about why your organization is using or moving to the cloud
     
     Consider what you are trying to achieve by using the cloud
+    
 
 
 
@@ -42,3 +43,40 @@
   
 
 
+ - **The Challenge of Cloud**
+   
+   **Traditional Technology Consumption** Traditionally, companies had a platform team who dreamed of getting some hardware to build their application so they went to procurement. Procurement reviewed their complex business case and if sufficient, gave them access to the money.
+
+   In this model...
+
+   * DevOps, or developers, are the requesters
+   * Finance are the gatekeepers, the approvers
+   * Spend is predictable and static, with known costs
+   * There are long procurement cycles
+   * The infrastructure purchased is usually intentionally oversized and not certain to be correct
+   * There is high risk of some level of failure at a high cost
+   
+   ![tradicional technology Consumption](images/03-focp.png)
+
+   To complicate things further, in a DevOps world, there are many teams working at once and technology requests are becoming more complex. Now, introduce the world of cloud and automation where procurement can't keep up or is not needed to make purchases. This leads to companies where engineers with automation go directly to the money. Procurement and finance are losing control of the investment and the ability to track it over time. This means they cannot do their fiduciary duty to the company to control and correctly report on costs!
+
+   Cloud changes the dynamic...
+
+   + Engineers now have the power to spend company money with code
+   + Finance has less visibility into spend until after the fact and cannot do their fiduciary duty to the company
+   + Spend is dynamic and changes daily
+   + There is agile experimentation and some waste
+   + Overall, there is a lack of communication
+   
+   ![tradicional technology Consumption 2](images/04-focp.png)
+
+ - **State of FinOps**
+
+   Below are the biggest unresolved pain points for organizations, gathered from 1,056 responses on the 2022 State of FinOps Survey.
+
+   ![State of FinOps](images/05-focp.png)
+
+   State of FinOps Survey
+
+   **The State of FinOps** data can be found at data.FinOps.org(opens in a new tab). This data will be referenced throughout the course to illustrate points and to provide a way to dig into practitioner content. We see from our 2022 survey that several of the challenges reported as difficult for FinOps practitioners are these we've been discussing: organizational adoption, aligning teams, accounting for cloud costs. We'll talk about the other challenges later in the course.
+   
