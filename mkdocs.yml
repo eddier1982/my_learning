@@ -10,4 +10,9 @@ nav:
       - RH294: 'redhat/02-RH294/02-RH294.md'
     - FinOps:
       - FinOps practitioner: 'finops/finops_practitioner.md'
+      - FinOps Lesson 1: 'finops/01_lesson_finops.md'
+      - FOCP: 'finops/focp_questions.md'
+    - Cisco Networking Academy:
+      - Fundamentos de Python 1: 'cisco/fundamentos_python_1.md'
 theme: readthedocs
+
