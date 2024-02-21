@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>FOCP - My Learning</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "FOCP";
+        var mkdocs_page_input_path = "finops/focp_questions.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> My Learning
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../about/">About</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Learning</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="#">Red Hat</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../redhat/01-RH199/01-RH199/">RH199</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../redhat/02-RH294/02-RH294/">RH294</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">FinOps</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../finops_practitioner/">FinOps practitioner</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../01_lesson_finops/">FinOps Lesson 1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../02_lesson_finops/">FinOps Lesson 2</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">FOCP</a>
+    <ul class="current">
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Cisco Networking Academy</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../cisco/fundamentos_python_1/">Fundamentos de Python 1</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">My Learning</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Learning</li>
+          <li class="breadcrumb-item">FinOps</li>
+      <li class="breadcrumb-item active">FOCP</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="focp">FOCP</h1>
+<ol>
+<li>
+<p>What term is used to describe the ability to identify and allocate costs to the appropriate cost categories in use by a customer?</p>
+<p><strong>Cost Allocation</strong></p>
+<p>In FinOps, the ability to identify and allocate costs to the appropriate cost categories in use by a customer. Ideally direct costs (the cost of resources running in my accounts), amortized costs (the amortization of prepaid costs paid upfront for RIs applied in my accounts), and shared costs (my share of common services accounts run by others on my behalf) can be allocated to individual budgeting categories for a clear view of the entire cost of running my application or workload in the cloud.
+Reference: Please review the terminology page before the exam https://www.finops.org/resources/terminology/ </p>
+</li>
+<li>
+<p>Each major cloud provider labels the platforms 'allocation metadata' a specific way. How does GCP name the allocation metadata?</p>
+<p><strong>"Labels" and "billing acounts"</strong>
+Explicación
+GCP( Google Cloud Platform)- “labels” and “billing accounts”;
+GCP uses “labels” and “billing accounts”;
+AWS “resource tags”, “Linked Accounts” and “Organizations”;
+Azure “Subscriptions”, “Resource Groups” and “resource tags”
+We do need to know some cloud provider specific terms for the exam.
+Refer here before the exam <a href="https://www.finops.org/resources/terminology/">FinOps Terminology</a></p>
+</li>
+<li>
+<p>AWS provides what is called a 'Blended Rate' on its invoices. What is the blended rate showing?</p>
+<p><strong>Shows the effective rate for a group of resources with the same attributes.</strong></p>
+<p>AWS provides Blended Rate information on its invoice showing the effective rate for a group of resources with the same attributes where some of the resources are receiving a discount from reservations and some are not.</p>
+<p>Terminology is a critical knowledge area for the exam.</p>
+</li>
+<li>
+<p>Which of the following is NOT part of the FinOps Maturity Model?</p>
+<p><strong>Sprint</strong></p>
+<p>A “Crawl, Walk, Run” approach to performing FinOps enables organizations to start small, and grow in scale, scope and complexity as business value warrants maturing a functional activity. Taking quick action at a small scale and limited scope allows FinOps teams to assess the outcomes of their actions, and to gain insights into the value of taking further action in a larger, faster, or more granular way.</p>
+<p>Reference: Please review this page before the exam. <a href="https://www.finops.org/framework/maturity-model/">FinOps Maturity Model</a></p>
+</li>
+<li>
+<p>'Establish FinOps Culture' would be under what domain according to the FinOps Foundation?
+    <strong>Organizational Alignment</strong></p>
+<p>Explanation: There are six specific domains in FinOps according to the FinOps Foundation. We will want to be able to understand what topics are covered by each domain.</p>
+<p><img alt="domains" src="../images/focp_5.png" /></p>
+</li>
+<li>
+<p>Multiple Selection:(Select two). Which of the following statements would be true regarding deploying Kubernetes clusters concerning cost complexity?
+    <strong>Generally organizations have multiple teams consuming portions of those underlying container resources</strong></p>
+<p><strong>The average lifespan of a container being one day versus a typically much longer utilization time for a VM</strong></p>
+<p>Explanation: Managing Kubernetes clusters on just about any cloud platform is very challenging due to the complexity of how Kubernetes is deployed, how resources are consumed and the general lack of real time visibility. Secondly, all providers charge for additional resource usage so for the example the amount of bandwidth or storage API access may not be visible even with tagging.</p>
+<p>Please refer to this page before the exam. <a href="https://www.finops.org/projects/calculating-container-costs/">Calculating Container Costs (finops.org)</a></p>
+</li>
+<li>
+<p>Which of the following is the best definition of a Kubernetes Pod?
+    <strong>A pod consists of a group of containers and treats them as a single block of resources that can be scheduled and scaled on the cluster.</strong></p>
+<p>Explanation: The other answers are incorrect and are variations of the correct answer.</p>
+<p>Reference: Please review the terminology here for containers. <a href="https://www.finops.org/projects/calculating-container-costs/">Calculating Container Costs (finops.org)</a></p>
+</li>
+<li>
+<p>_ _ _ _ _ _ or _ _ _ _ _ _ is the foundation of telling apart workloads in the cloud, identifying ownership, and attributing costs to teams.
+    <strong>Tagging or Labeling.</strong></p>
+<p>Explanation: Tagging or labeling is the foundation of telling apart workloads in the cloud, identifying ownership, and attributing costs to teams. 
+Read more about forecasting. <a href="https://www.finops.org/projects/forecasting-cloud-costs/">Accurate Cloud Forecasts (finops.org)</a>.</p>
+</li>
+<li>
+<p>Multiple Selection:(Select three)</p>
+<p>Cloud Forecasting can be a challenge, especially in large disparate organizations. Centralization can be a helpful factor but also there are some focus areas that we can use to 'break the challenge into addressable parts'.</p>
+<p><strong>Tagging and cost allocation can provide insight into resource spending.</strong></p>
+<p><strong>Use forecasting models to help provide predicable models for consistency.</strong></p>
+<p><strong>Use communications to relay that forecasting is being used for decision making</strong></p>
+<p>Explanation: The other answers are incorrect.  For example, we can use both third party and provider tools since some providers may not provide all the reports, features etc. we may want. It is also a Finops best practice to actually centralize our FinOps practice and provide consistency in our reporting/forecasting.</p>
+<p>Reference: <a href="https://www.finops.org/projects/accurate-cloud-forecasts/">https://www.finops.org/projects/accurate-cloud-forecasts/</a></p>
+</li>
+<li>
+<p>True or False:</p>
+<p>Distributed decision making coupled with the move to variable spending in cloud allows technology teams to efficiently partner with finance and business teams to make informed decisions that drive continual optimization.</p>
+<p><strong>True</strong></p>
+<p>Explicación
+Statement is correct. Remember that FinOps is really about collaboration.</p>
+<p>Reference: <a href="https://www.finops.org/introduction/what-is-finops/">FinOps Foundation - What is FinOps?</a></p>
+</li>
+<li>
+<p>When comparing TBM and FinOps, which one would focus on results mainly on speed?</p>
+<p><strong>FinOps</strong></p>
+<p>FinOps is focused on results much more frequently than with TBM. TBM is monthly or quarterly focused whereas FinOps collects and reviews data constantly.</p>
+<p>Technology Business Management (TBM), a best practice discipline for IT business management; and FinOps, the financial operating model for public cloud consumption, share the same goal of defining IT by impact rather than spend.</p>
+<p>TBM was built to serve the needs of on-prem IT with data-driven decision-making to manage, plan, and optimize spend. TBM has incorporated data-driven decision-making for the cloud but doesn’t manage the complexities of allocating cloud costs and the prescriptive methods of controlling those costs. TBM looks at the “what” of all IT spend, including a macro view of cloud spend.</p>
+<p>By bringing together people (and data) from IT finance, operations, and business, TBM creates a community of stakeholders to manage all IT.</p>
+<p>FinOps was born for the cloud. Systems, best practices, and cultures increase an organization’s ability to understand cloud costs and make informed and timely balancing decisions. FinOps focuses on optimizing the cost and utilization of the cloud through technical and organizational means.</p>
+</li>
+<li>
+<p>True or False: In regards to cloud forecasting there is no one forecasting method that fits all situations.</p>
+<p><strong>True</strong></p>
+<p>Every organization and even cloud provider has different requirements that are to be met or are met. Some organizations my need a granular VM pricing whereas other may not.</p>
+<p>Some cloud providers support things diffferently than other and therefor require the organization to consider the best model they need. Unfortunately there is no one forecasting method that fits all situations. Cloud spend is variable which is inherently difficult to predict.</p>
+<p>Specifically engineers can start workloads at any time typically without having to go through a procurement process. Forecasting cloud-provider consumption as product or service consumption requires specific data and tooling to be consistently available.</p>
+<p>Billing and reporting from cloud providers is difficult to understand and explain to traditional finance teams. Workloads need to be clearly defined whether through tagging or account structures so that cost can be attributed back to them and their owners.</p>
+<p>Please review this page before the exam. <a href="https://www.finops.org/projects/forecasting-cloud-costs/">Accurate Cloud Forecasts (finops.org)</a></p>
+</li>
+<li>
+<p>When proposing the adoption of a FinOps function within an organization, there will be a need to brief a variety of personas among the executive team to gain approval, buy-in, and involvement in conducting FinOps and achieving its goals. Every role has a clearly documented Primary Goal. What is the primary goal for a Chief Technology Officer (CTO)?</p>
+<p><strong>Leverage technology to give the business a market and competitive advantage</strong></p>
+<p>Explanation: There are clearly labeled roles for each 'Persona' and we must learn these for the exam.</p>
+<p>Reference:  <a href="https://www.finops.org/framework/personas/">FinOps Personas</a></p>
+</li>
+<li>
+<p>True or False: In FinOps decisions are not driven by the business value of the cloud?</p>
+<p><strong>False</strong></p>
+<p>In FinOps decisions are driven by the business value of the cloud. With FinOps we look at the cloud as a business value creator. One of the main roles of FinOps is to maximize the value of the cloud spending.</p>
+</li>
+<li>
+<p>Which of the following terms are associated with Agile?</p>
+<p><strong>Sprint</strong></p>
+<p><em>Explicación</em>: There are several terms affiliated with Agile development such as Sprint, User Story, Epics, Lean, etc. Rightsizing, Zones and Regions are cloud computing terms.</p>
+<p>Sprint a short interval of work in an Agile project, usually a week or two weeks but sometimes more or less, during which time an agreed-upon amount of work will be delivered.</p>
+<p>Reference:</p>
+<p>Please review the Terminology page before the exam. <a href="https://www.finops.org/resources/terminology/">https://www.finops.org/resources/terminology/</a></p>
+</li>
+<li>
+<p>In Cloud Computing some costs can be considered fixed and some are variable. Which of the following costs would generally a fixed costs, meaning predictable monthly or annual costs?</p>
+<p><strong>Support and Maintenance</strong></p>
+<p>Explanation: Support and Maintenance are almost always a fixed cost meaning that you would pay a certain amount for a specific amount of support/users/response times. Variable costs would be about any resource you would use.</p>
+<p>Reference: Please review this page before the exam. <a href="https://www.finops.org/resources/terminology/">FinOps Terminology</a></p>
+</li>
+<li>
+<p>Which of the following roles/personas would be responsible for 'Rate Negations' with a cloud provider?</p>
+<p><strong>Procurement</strong></p>
+<p>Explanation: Procurement is handled somewhat different in the world of FinOps.</p>
+<p>We know that Procurement is moved from a CAPEX to a OPEX manner in the cloud. Procurement should have the following objectives in a FinOps organization. Negotiate the best win-win cloud contract, Exercise enterprise discount / volume commitment programs and Manage relationship with Cloud platform provider.</p>
+<p>Reference: Please review this page before the exam <a href="https://www.finops.org/framework/personas/#product-owner">https://www.finops.org/framework/personas/#product-owner</a></p>
+</li>
+<li>
+<p>True or False: FinOps is about saving money. </p>
+<p><strong>False</strong></p>
+<p>Explicación
+FinOps is about making money. Cloud spend can drive more revenue, signal customer base growth, enable more product and feature release velocity, or even help shut down a data center.</p>
+<p>Please refer to this page. <a href="https://www.finops.org/introduction/what-is-finops/">FinOps Foundation - What is FinOps?</a></p>
+</li>
+</ol>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../02_lesson_finops/" class="btn btn-neutral float-left" title="FinOps Lesson 2"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../cisco/fundamentos_python_1/" class="btn btn-neutral float-right" title="Fundamentos de Python 1">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../02_lesson_finops/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../cisco/fundamentos_python_1/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
