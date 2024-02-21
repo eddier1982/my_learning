@@ -168,7 +168,175 @@
     FinOps is about making money. Cloud spend can drive more revenue, signal customer base growth, enable more product and feature release velocity, or even help shut down a data center.
 
     Please refer to this page. [FinOps Foundation - What is FinOps?](https://www.finops.org/introduction/what-is-finops/)
+ 
+ 19. Your organization has recently adopted a FinOps based method for dealing with cloud costs and adopting FinOps. Currently, your organization has recently completed 'Step Two' for FinOps culture in your company. What would the next stage for the organization to accomplish?
     
+    **Preparing the organization for FinOps**
+
+    Explanation: The next step after Stage 1 - Planning for FinOps in an Organization (Laying the groundwork) is the Stage 2 - Socializing FinOps for adoption in an organization. Then After Step 2 would be Stage 3 - Preparing the organization for FinOps
+    
+    Reference: Please reference this page before the exam. [Adopting FinOps - Getting Started](https://www.finops.org/projects/adopting-finops/)
+
+ 20. Multiple Selection: (Select three) Which activities would fit under the FinOps principle of ' Decisions are driven by business value of cloud' ?
+    
+    **Trending and variance analysis helps to understand why costs increased**
+
+    **Internal team benchmarking drives best practices and celebrates wins**
+
+    **Industry peer-level benchmarking determines how your company is performing**
+
+    Explicación: Decisions are driven by business value of cloud The other activities are under a different phase of activities.
+
+    Please reference this page, section. [https://www.finops.org/framework/principles/](https://www.finops.org/framework/principles/)
+ 
+ 21. Which service on AWS used to download and store the Cost and Usage report on so you can query it?
+
+    **AWS S3**
+
+    AWS S3 is the service for storing data on AWS. You can publish your AWS billing reports to an Amazon Simple Storage Service (Amazon S3) bucket that you own and choose to use that how you like.
+
+    Reference: [https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.htm](https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.htm)
+
+ 22. True or False: A key role toward building FinOps adoption is the Driver.
+    
+    **True**
+
+    A key role toward building FinOps adoption is the Driver which means that we must get broad executive support and buy-in to dedicate the time and resources needed for the cultural change.
+
+     Reference:
+
+     Please review this page before the exam. [https://www.finops.org/projects/adopting-finops/](https://www.finops.org/projects/adopting-finops/)
+
+ 23. FinOps Principles are north stars that guide the activities of our FinOps practice. These principles are clearly broken down and we must encourage members to practice these. When it comes to these principles which of the following activities would be under the 'Teams need to Collaborate' principle?
+    
+    **Define governance and controls for cloud usage**
+
+    Explanation: Honestly, some of these activities may or not intuitively seem like they are under specific principles. This is perhaps the most confusing part of the content to remember. For Teams need to collaborate these are the activities specified by the FinOps Foundation: Finance moves at the speed and granularity of IT Engineering considers cost as a new efficiency metric Continuously improve your practice to gain efficiency and innovation Define governance and controls for cloud usage.
+    
+    Reference:
+    
+    Please refer to this page before the exam. [FinOps Principles](https://www.finops.org/framework/principles/)
+ 
+ 24. In regards to the FinOps Maturity Model Guidelines which of the following statements would be true regarding the Maturity Level Characteristics for 'Run'.
+
+    **Capability is understood and followed by all teams within the organization**
+
+    Explicación
+
+    The guidelines and characteristics are clearly defined by the FinOps Foundation and these are a must know for the exam.
+    
+    RUN MATURITY CHARACTERISTICS Capability is understood and followed by all teams within the organization Difficult edge cases are being addressed Very high goals/KPIs set on the measurement of success Automation is the preferred approach The maturity model
+    
+    Must read. [FinOps Maturity Model](https://www.finops.org/framework/maturity-model/)
+
+ 25. AWS has a wealth of FinOps capabilities that we could use as an AWS user. Which of the following AWS Services would we use to track costs and usage and send alerts when a threshold is exceeded.
+
+    **AWS Budgets**
+
+    Explanation: AWS Budgets allows users to set up alerts, initiated when actual or forecasted costs and usage exceed predetermined budget thresholds. The goal of AWS Budgets is to reduce unintentional over-spending. AWS Budgets also allows for the configuration of automated responses if costs or usage exceed desired limits.
+    
+    [https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html)
+ 
+ 26. Your FinOps leader and mentor has reached out to you to find out more about Azure Capabilities. What tool in Azure would you use to implement enforcement of Tagging on Azure?
+
+    **Azure Policy**
+   
+    Explanation: You use Azure Policy to enforce tagging rules and conventions. By creating a policy, you avoid the scenario of resources being deployed to your subscription that don't have the expected tags for your organization. Instead of manually applying tags or searching for resources that aren't compliant, you create a policy that automatically applies the needed tags during deployment.
+
+    Tags can also now be applied to existing resources with the new Modify effect and a remediation task. The following section shows example policy definitions for tags.
+
+    References: 
+    [https://www.finops.org/projects/multi-cloud-tools-and-terminology/](https://www.finops.org/projects/multi-cloud-tools-and-terminology/)
+
+    [Policy definitions for tagging resources - Azure Resource Manager | Microsoft Learn](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-policies)
+
+ 27. Which stage in the FinOps Adoption Process would we be 'performing initial resourcing' such as getting budget approval?
+    
+    **Stage 1 - Planning for FinOps in an Organization (Laying the groundwork) **
+    
+    Explanation: When planning for FinOps we must assemble resources, estimate, review, plan and assemble people and all this is done in the first stage.
+
+    Please review this page before the exam. [Adopting FinOps - Getting Started](https://www.finops.org/projects/adopting-finops/)
+
+ 28. Each of the cloud providers have tools that can help FinOps professionals specifically in that cloud platform. You have been working with AWS for over 1 year. You know would like to go back and view the billing reports but also perform a detailed report for BI analysis. What AWS service could you use?
+    
+    **AWS QuickSight** 
+    
+    is a cloud-native, serverless, business intelligence with native ML integrations and usage-based pricing, allowing insights for all users.
+
+    Reference: 
+    
+    [https://www.finops.org/projects/multi-cloud-tools-and-terminology/](https://www.finops.org/projects/multi-cloud-tools-and-terminology/)
+
+    [AWS](https://aws.amazon.com/quicksight/)
+
+ 29. Which of the following statements would be correct about Weighted Average Cost of Capital?
+    
+    **This is the rate the company is expected to pay on average to all its securities holders to finance the operation of the business.**
+
+    Weighted Average Cost of Capital - the rate the company is expected to pay on average to all its securities holders to finance the operation of the business. Importantly this is set by the external market (what the market is willing to pay for various forms of the company’s securities) not by management.
+    
+    Reference: [FinOps Terminology](https://www.finops.org/resources/terminology/)
+
+ 30. Which of the following a native tool in AWS that we would use in our FinOps exercises to understand costing issues, get recommendations, etc.
+   
+    **Cost Explorer**
+
+    Explanation: Cost Explorer is a free tool that AWS offers to all customers that provides visibility across the AWS infrastructure and has features like rightsizing, savings plans recommendations, and cost anomaly alerting. Cost and Usage Reports (CUR) provides no recommendations and it is important to that Trusted Advisor has free and paid support options but does not provide insight into billing.
+    
+    Reference: [https://aws.amazon.com/aws-cost-management/aws-cost-explorer/](https://aws.amazon.com/aws-cost-management/aws-cost-explorer/)
+
+ 31. FinOps Principles are north stars that guide the activities of our FinOps practice. They’re developed by FinOps Foundation members, and honed through experience. When it comes to the FinOps principle of 'A centralized team drives FinOps' which of the following statements would be true?
+   
+    **Centralized discount buying process removes rate negotiations from engineering team consideration.**
+
+    Explicacion: Using a granular approach is recommended and Track team-level targets to drive accountability is not under the A centralized team section, it is under 'Everyone takes ownership for their cloud usage'
+
+    Reference: Please review this page before the exam. [FinOps Principles](https://www.finops.org/framework/principles/)
+
+ 32. 'Manage Commitment Based Discounts' would be under what domain according to the FinOps Foundation?
+    
+    **Cloud Rate Optimization**
+
+    Explanation: There are six specific domains in FinOps according to the FinOps Foundation. We will want to be able to understand what topics are covered by each domain.
+    
+    Reference: [Managing Commitment Based Discounts (finops.org)](https://www.finops.org/framework/capabilities/manage-commitment-based-discounts/)
+
+ 33. Multiple Selection: (Select two) Your business unit has decided to use Azure for its cloud services for production. Other business units have been Azure for both development and production use cases. You have been asked to provide tools in Azure that can provide recommendations for reducing costs and getting insight into better ways of resource management. What tools in Azure could you identify?
+    
+    **Azure Advisor**
+    
+    **Azure has only one tool** 
+    
+    Explanation: Every cloud provider has their own approach for billing and cost management. We need to know the three major providers in preparation for the exam.
+
+    Reference: Please refer to this page for a handy table. [Multi-Cloud Tools and Terminology (finops.org)](https://www.finops.org/projects/multi-cloud-tools-and-terminology/)
+
+ 34. When rightsizing your containers which of following would be focused on responding dynamically to different conditions?
+    
+    **Autoscaling**
+
+    Autoscaling provides the ability to respond dynamically to different conditions, such as increased or decreased demand. This can take some architecting and iterative adjustments to get right for your application, and there is room for waste along the way. However, the more tightly your horizontal pod autoscaling (when we need more / less pods) and cluster autoscaling (when do we need more / less nodes) are configured, the less waste and unnecessary cost to run your application.
+    
+    Please review this page before the exam. (Section Optimize)
+    
+    Reference: [Calculating Container Costs (finops.org)](https://www.finops.org/projects/calculating-container-costs/)
+
+ 35. _ _ _ _ _ _ _ _is the idea is to measure cloud spend against a business metric or metrics such as revenue, subscribers, etc. What is the correct term?
+
+    **Unit Economics**
+
+    Explanation:
+
+    One of the most important concepts in FinOps is Unit Economics.
+    
+    The idea is to measure cloud spend against a business metric (total revenue, shipments made, paid subscribers, customer orders completed, etc.). Choosing the right business metric is a complex process. For now, the main thing to remember is that Unit Economics relies on almost every aspect of FinOps, including tagging, cost allocation, cost optimization, and FinOps operations. This business metric is important, because it allows you to change the conversation from one that is just about dollars spent to one about efficiency and the value of cloud spend.
+    
+    Reference: [https://www.finops.org/project/introduction-cloud-unit-economics/](https://www.finops.org/project/introduction-cloud-unit-economics/)
+
+ 36. 
+    
+
 
 
 
