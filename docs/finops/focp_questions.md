@@ -334,8 +334,166 @@
     
     Reference: [https://www.finops.org/project/introduction-cloud-unit-economics/](https://www.finops.org/project/introduction-cloud-unit-economics/)
 
- 36. 
+ 36. FinOps Principles gives us what are called _ _ _ _ _ _ _ _to help guide our activities in FinOps.
     
+    **North Stars**
+
+    Explanation: [FinOps Principles](https://www.finops.org/framework/principles/) are north stars that guide the activities of our FinOps practice. They’re developed by FinOps Foundation members, and honed through experience. These were initially proposed as part of the writing the Cloud FinOps book in Sept 2019 as a joint AWS announcement at CloudyCon. Now, they cover multiple clouds, and knowing how cloud services change every quarter it seems, they may change slightly over time as new experience is gained by all.
+
+ 37. FinOps Practitioners use _ _ _ _ _ _ _ _ to provide insight into how well an organization is doing with cloud spend.
+    
+    **Cloud Performance Benchmarking**
+
+    Explanation: Benchmarking is important because it provides a reference to measure against. There are both internal and external benchmarks to consider as well.
+    
+    Reference: [Performance Tracking & Benchmarking (finops.org)](https://www.finops.org/framework/domains/performance-tracking-benchmarking/)
+
+ 38. Multiple Selection: What would be some common names that could used for a FinOps team? (Select three)
+    
+    **Cloud Business Office (CBO)**
+    
+    **Cloud Economics Team** 
+    
+    **Cloud Center of Excellence**
+
+    Explanation: A FinOps team may have different names in difference organizations.
+    
+    Here are some examples.
+    
+       - Cloud Business Office (CBO)
+       - Cloud Economics Team
+       - Cloud Center of Excellence
+        
+ 39. What is the name of the file format used in AWS Cost and Usage reports?
+
+    **CSV**
+
+    Explanation: The AWS Cost and Usage Reports (AWS CUR) contains the most comprehensive set of cost and usage data available. AWS updates the report in your bucket once a day in comma-separated value (CSV) format. You can view the reports using spreadsheet software such as Microsoft Excel or Apache OpenOffice Calc, or access them from an application using the Amazon S3 API.
+    
+    Reference: [https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html](https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html)
+
+ 40. Multiple Selection : Select all the correct options. When managing cloud costs specifically around containers there are several things in Google Cloud we can do to manage costs and identify these costs. Which of the following would be ways we could break down costs? 
+   
+    **Billing Hierarchy**
+    
+    **Namespaces**
+    
+    **Labels**.
+
+    Explanation: Google Cloud provides some robust methods to identify costs and also segment. Availability Zones is actually an AWS concept so that's incorrect. One method, recommended by Debo Aderibigbe, a Google Cloud Billing Product Manager, is to break down costs by:
+    
+    *Billing Hierarchy*: Organizations, folders, projects, normalizing them with cross-cloud concepts: Linked Accounts, Tags, Subscriptions, etc. Resources: Compute cores, RAM, GPU, TPU, Load Balancers, Persistent Disk, Custom Machines, Network Egress
+    
+    *Namespaces*: labeling specific, isolated containers
+
+    *Labels*: Teams, cost centers, app names, environment, and more With a deep labeling and tagging of all of these cost drivers, users can improve the accuracy of how they invoice teams, audit costs, allocate costs, optimize overrun costs, model budgeting scenarios, or fit workload costs within quotas or under budget caps. Please review this page before the exam.
+
+ 41. Multiple Selection:(Select four) Which of the following are considered goals of the FinOps journey?
+    
+    **Visibility**
+    
+    **Benchmarking**
+    
+    **Budgeting** 
+    
+    **Forecasting** 
+
+    Visibility, Benchmarking, Budgeting and Forecasting are goals of the FinOps Inform Phase. The Inform Phase of the FinOps journey is about understanding the current state of your system.
+    
+    Due to the on-demand and elastic nature of access to cloud resources, along with variable pricing structures, it is critical to have access to timely and accurate system metrics to make appropriate, informed decisions. In this phase there are five primary goals:
+    
+      - Visibilit
+      - Allocatio
+      - Benchmarkin
+      - Budgetin
+      - Forecasting
+
+    Please review this page before the exam [https://www.finops.org/framework/phases/](https://www.finops.org/framework/phases/)
+
+ 42. An Availability Zone in AWS is defined as?
+    
+    **A sub-unit of a Region, there are typically multiple AZs per Region**
+
+    In AWS a Region is a geographic area that holds multiple Availability Zones. AWS does not deploy a Region w/o at least three AZs available.
+
+    Terminology is a critical knowledge area for the exam. [FinOps Terminology](https://www.finops.org/resources/terminology/)
+
+ 43. Which are the correct FinOps Principles? (Select Six) 
+
+    **Teams need to collaborate**
+
+    **Business value of cloud drives decisions**
+
+    **Everyone takes ownership of cloud usage**
+
+    **FinOps reports should be accessible and timely**
+
+    **A centralized team drives FinOps**
+
+    **Take advantage of the variable cost model of the cloud**
+
+
+    Reference: Before the exam you must review this page! [https://www.finops.org/framework/principles/](https://www.finops.org/framework/principles/)
+
+ 44. What is the name of the resource you would look at to identify the full list of the columns that can appear in AWS Cost and Usage Reports (AWS CUR) and the services that the columns apply to?
+    
+    **Data Dictionary**
+
+    Explanation: You can analyze your usage and cost in detail once you've set up your report. AWS has provided a Data Dictionary that lists the columns you'll see in your report, along with definitions and examples.
+    
+    Reference: [Data dictionary - AWS Cost and Usage Reports (amazon.com)](https://docs.aws.amazon.com/cur/latest/userguide/data-dictionary.html)
+
+ 45. Which of following is a simple formula for cloud spending?
+    
+    **Spend = Usage × Rate**
+
+    The simple formula plays a key part of deciding both how to optimize and who in the organization takes optimization. Usage could be the number of hours of a resource used and the rate is the hourly (or per second) amount paid for the usage of that resource.
+
+ 46. Multiple Selection : (Select two) Your business unit has decided to use GCP for its cloud services for production. Other business units have been GCP for both development and production use cases. You have been asked to provide tools in GCP that can provide recommendations for reducing costs and getting insight into better ways of resource management. What tools in GCP could you identify?
+
+    **Recommender**
+
+    **Commitment Analysis**
+
+    Explicación Every cloud provider has their own approach for billing and cost management. We need to know the three major providers in preparation for the exam. Please refer to this page for a handy table. [Multi-Cloud Tools and Terminology (finops.org)](https://www.finops.org/projects/multi-cloud-tools-and-terminology/)
+
+ 47. According to the FinOps Foundation there are very specific roles/personas. For the role of a product owner what would be the 'Primary Goal' ?
+    
+    **Quickly bring new products and features to market with an accurate price point.**
+
+    Explanation: The product owner is focused on Product Growth and other concerns such as delivering innovative, market leading solutions cost effectively. Products need to get market correctly.
+
+    Reference: Please review this page before the exam [https://www.finops.org/framework/personas/#product-owner](https://www.finops.org/framework/personas/#product-owner)
+
+ 48. When proposing the adoption of a FinOps function within an organization, there will be a need to brief a variety of personas among the executive team to gain approval, buy-in, and involvement in conducting FinOps and achieving its goals. Every role has a clearly documented Primary Goal. What is the primary goal for the **Engineering Lead**?
+    
+    **Deliver faster and high quality services to the organization, whilst maintaining business as usual**
+
+    There are clearly labeled roles for each 'Persona' and we must learn these for the exam.
+    
+    Reference: [FinOps Personas](https://www.finops.org/framework/personas/)
+
+ 49. When proposing the adoption of a FinOps function within an organization, there will be a need to brief a variety of personas among the executive team to gain approval, buy-in, and involvement in conducting FinOps and achieving its goals. Every role has a clearly documented Primary Goal. What is the primary goal for a **Chief Technology Officer (CTO)**
+    
+    **Leverage technology to give the business a market and competitive advantage**
+
+    There are clearly labeled roles for each 'Persona' and we must learn these for the exam.
+    
+    Reference: [FinOps Personas](https://www.finops.org/framework/personas/)
+
+ 50. Multiple Selection : Which of the following is true regarding teams working in FinOps organizations? (Select two) 
+    
+    **All teams have a role to play in FinOps**
+
+    **Teams have different motivators that drive spend and savings.**
+
+
+    Some other basic realities are with FinOps teams are
+    
+      - Teams need to work together with a balance of empathy for one another’s goals.
+      - FinOps practitioners help align teams to organizational goals.
+    
+      Teams inside your organization are able to work together to understand one another’s goals alongside a centralized FinOps team that is helping to build out reporting and practices to assist everyone in achieving them.
 
 
 
