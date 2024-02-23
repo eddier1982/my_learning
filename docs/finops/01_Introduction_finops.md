@@ -40,7 +40,7 @@ Gather information about your organization's cloud use and cloud challenges to u
 
  To advance every individual who manages the value of cloud wherever they are.
 
- ![Mision of the FinOps](images/06-focp.png)
+ ![Mision of the FinOps](images/course/06-focp.png)
 
 ### Get Involved
 
