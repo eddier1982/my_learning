@@ -13,6 +13,8 @@ nav:
       - Cloud Changes IT: 'finops/02_cloud_changes_it.md'
       - What is FinOps: 'finops/03_what_is_FinOps.md'
       - FinOps Framework & Principles: 'finops/04_FinOps_framework_&_principles.md'
+      - Personas & Teams: 'finops/05_personas_&_teams.md'
+      - Domains & Capabilities: 'finops/06_domains_&_capabilities.md'
       - FOCP: 'finops/focp_questions.md'
     - Cisco Networking Academy:
       - Fundamentos de Python 1: 'cisco/fundamentos_python_1.md'
