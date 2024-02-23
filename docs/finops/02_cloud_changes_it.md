@@ -26,7 +26,7 @@
 
  - FinOps enables organizations to get maximum business value......by helping engineering, finance, and business teams...to collaborate on data-driven spending decisions.
 
-    ![discipline](images/01-focp.png)
+    ![discipline](images/course/01-focp.png)
 
 ### Creating a Culture of Accountability
 
@@ -34,7 +34,7 @@
 
 ### Cloud Usage & Goals 
  
- ![Cloud Usage & Goals](images/02-focp.png)
+ ![Cloud Usage & Goals](images/course/02-focp.png)
 
  ***Before moving on***... 
     
@@ -57,7 +57,7 @@
   * The infrastructure purchased is usually intentionally oversized and not certain to be correct
   * There is high risk of some level of failure at a high cost
    
- ![tradicional technology Consumption](images/03-focp.png)
+ ![tradicional technology Consumption](images/course/03-focp.png)
 
  To complicate things further, in a DevOps world, there are many teams working at once and technology requests are becoming more complex. Now, introduce the world of cloud and automation where procurement can't keep up or is not needed to make purchases. This leads to companies where engineers with automation go directly to the money. Procurement and finance are losing control of the investment and the ability to track it over time. This means they cannot do their fiduciary duty to the company to control and correctly report on costs!
 
@@ -69,13 +69,13 @@
    + There is agile experimentation and some waste
    + Overall, there is a lack of communication
    
-   ![tradicional technology Consumption 2](images/04-focp.png)
+   ![tradicional technology Consumption 2](images/course/04-focp.png)
 
 ### State of FinOps
 
  Below are the biggest unresolved pain points for organizations, gathered from 1,056 responses on the 2022 State of FinOps Survey.
 
- ![State of FinOps](images/05-focp.png)
+ ![State of FinOps](images/course/05-focp.png)
 
 #### State of FinOps Survey
 
