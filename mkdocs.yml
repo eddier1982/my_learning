@@ -12,8 +12,12 @@ nav:
       - FinOps Certified Practitioner Introduction : 'finops/01_Introduction_finops.md'
       - Cloud Changes IT: 'finops/02_cloud_changes_it.md'
       - What is FinOps: 'finops/03_what_is_FinOps.md'
+      - FinOps Framework & Principles: 'finops/04_FinOps_framework_&_principles.md'
       - FOCP: 'finops/focp_questions.md'
     - Cisco Networking Academy:
       - Fundamentos de Python 1: 'cisco/fundamentos_python_1.md'
-theme: readthedocs
+theme:
+  name: readthedocs
+  highlightjs: true
+  locale: en
 
