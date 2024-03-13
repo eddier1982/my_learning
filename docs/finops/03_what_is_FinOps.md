@@ -2,7 +2,7 @@
 
  ***At its core, FinOps is a cultural practice. It’s the way for teams to manage their cloud costs, where everyone takes ownership of their cloud usage supported by a central best-practices group. Cross-functional teams in Engineering, Finance, Product, etc. work together to enable faster product delivery, while at the same time gaining more financial control and predictability.***
 
- 80% of organizations will overshoot IaaS budgets due to a lack of cloud cost optimization governance and misguided upfront spend commitments. [DevOps.com](DevOps.com)
+ 80% of organizations will overshoot IaaS budgets due to a lack of cloud cost optimization governance and misguided upfront spend commitments. [DevOps.com](https://devops.com/)
 
  You are not alone.
 
