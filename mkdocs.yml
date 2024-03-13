@@ -17,6 +17,8 @@ nav:
       - Domains & Capabilities: 'finops/06_domains_&_capabilities.md'
       - Motivations & Common Language: 'finops/07_Motivations_&_Common_Language.md'
       - Anatomy of a Cloud Bill: 'finops/08_Anatomy_of_a_Cloud_Bill.md'
+      - FOCUS: 'finops/09_FOCUS.md'
+      - Running the FinOps Team: 'finops/10_Running_the_FinOps_Team.md'
       - FOCP: 'finops/focp_questions.md'
     - Cisco Networking Academy:
       - Fundamentos de Python 1: 'cisco/fundamentos_python_1.md'
