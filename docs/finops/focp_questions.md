@@ -1275,3 +1275,447 @@
     **Scalability and innovation,**
 
     ![qa100](images/focp_100.png)
+
+ 101. In Cloud Computing some costs can be considered fixed and some are variable. Which of the following costs would generally a fixed costs, meaning predictable monthly or annual costs?
+   
+    **Support and Maintenance**
+    
+    Support and Maintenance are almost always a fixed cost meaning that you would pay a certain amount for a specific amount of support/users/response times. Variable costs would be about any resource you would use.
+
+    Please review this page before the exam. [https://www.finops.org/resources/terminology/](https://www.finops.org/resources/terminology/)
+
+ 102. Your currently working with the head of finance to understand how to identify specific cloud usage to specific business units. What would we use to account for costs for each business units and then debit the business unit for the cloud usage?
+    
+    **Chargebacks** and showbacks both represent processes where departments are asked to be accountable for their technology usage and resources by being given visibility of the costs associated with it.
+
+    Chargebacks offer departmental visibility into IT resource usage and also charge departments for their use
+
+    Showbacks offer departmental visibility into IT resource usage without charging departments for their use.
+
+ 103. Which of the following statements would be true regarding a FinOps practice? (Select One)
+    
+    **At its core, FinOps is a cultural practice.**
+
+    FinOps Requires a Cultural Shift At its core, FinOps is a cultural practice. This operating model is the most efficient way for teams to manage their cloud costs. Using FinOps, teams can come together to deliver faster while gaining financial and operational control.
+
+ 104. When proposing the adoption of a FinOps function within an organization, there will be a need to brief a variety of personas among the executive team to gain approval, buy-in, and involvement in conducting FinOps and achieving its goals. Every role has a clearly documented Primary Goal.
+ 
+    What is the primary goal for the procurement business unit?
+
+    **Cloud platform relationship management.**
+
+    Explicación: The primary goal for the procurement business unit when adopting a FinOps function is: Cloud platform relationship management.
+  
+    ![qa 104](images/focp-104.png)
+  
+    Here's why the other options are incorrect:
+  
+    **Assurance that cloud investments are aligned with business objectives**: While this is a broader goal of FinOps, it's not specifically focused on procurement's role. Other stakeholders like finance and business units might be more concerned with this aspect.
+   
+    **Quickly bring new products and features to market with an accurate price point**: This might be a goal for product development or marketing, not directly related to procurement's FinOps involvement.
+   
+    **Drive best practices into the organization through education, standardization, and cheerleading**: This could be a secondary or supportive role for procurement, but not their primary focus within FinOps.
+   
+    There are clearly labeled roles for each 'Persona' and we must learn these for the exam.
+   
+    Reference : [https://www.finops.org/framework/personas/#procurement](https://www.finops.org/framework/personas/#procurement)
+
+ 105. FinOps Principles are north stars that guide the activities of our FinOps practice. They’re developed by FinOps Foundation members, and honed through experience. When it comes to the FinOps principle of 'A centralized team drives FinOps' which of the following statements would be true? (Select Two)
+   
+    **Centralized discount buying process removes rate negotiations from engineering team consideration**
+
+    **Centrally govern and control Committed Use Discounts, Reserved Instances, and Volume/Custom Discounts with Cloud Providers**
+
+    Using a granular approach is recommended and Track team-level targets to drive accountability is not under the A centralized team section, it is under 'Everyone takes ownership for their cloud usage'
+
+    Please review this page before the exam. https://www.finops.org/framework/principles/
+
+ 106. Distributed decision making coupled with the move to variable spending in cloud allows technology teams to efficiently partner with finance and business teams to make informed decisions that drive continual optimization. (True or False)  
+ 
+    **True**
+
+    Explicación. Statement is correct. Remember that FinOps is really about collaboration. Please review the following
+
+ 107. True or False:In FinOps decisions are driven by the business value of the cloud.
+
+      True
+
+    Explicación: Cloud has been commonly looked to a 'Cost Center'. With FinOps we look at the cloud as a business value creator. One of the main roles of FinOps is to maximize the value of the cloud spending.
+
+    Reference: https://www.finops.org/framework/principles/
+
+ 108. When managing cloud costs specifically around containers there are several things in Google Cloud we can do to manage costs and identify these costs. Which of the following would be ways we could break down costs? (Select Three)
+   
+    **Labels**
+
+    **Namespaces**
+
+    **Billing Hierarchy**
+
+    Explicación: Google Cloud provides some robust methods to identify costs and also segment. Availability Zones is actually an AWS concept so thats incorrect. One method, recommended by Debo Aderibigbe, a Google Cloud Billing Product Manager, is to break down costs by:
+
+    **Billing Hierarchy**: Organizations, folders, projects, normalizing them with cross-cloud concepts: Linked Accounts, Tags, Subscriptions, etc.
+    
+    Resources: Compute cores, RAM, GPU, TPU, Load Balancers, Persistent Disk, Custom Machines, Network Egress
+    
+    **Namespaces**: labeling specific, isolated containers
+    
+    **Labels**: Teams, cost centers, app names, environment, and more
+    
+    With a deep labeling and tagging of all of these cost drivers, users can improve the accuracy of how they invoice teams, audit costs, allocate costs, optimize overrun costs, model budgeting scenarios, or fit workload costs within quotas or under budget caps.
+    
+    Please review this page before the exam...https://www.finops.org/projects/calculating-container-costs/
+
+ 109. FinOps is about saving money. (True or False)
+
+    **False**
+
+    Explicación:FinOps is about making money. Cloud spend can drive more revenue, signal customer base growth, enable more product and feature release velocity, or even help shut down a data center. Please refer to this page.
+
+    [What is FinOPs](https://www.finops.org/introduction/what-is-finops/)
+
+ 110. When considering shared costs we know that there are three main ways to accomplish this according to the FinOps Foundation. What approach would we want to use if we wanted to use a 'relative percentage of direct costs' for our costs? (Select One)
+    
+    **Proportional**
+
+    There are typically three ways to split up shared costs:
+    **Proportional**: Based on relative percentage of direct costs
+    Even split: Split total amount evenly across targets
+    Fixed: User-defined coefficient (the sum of coefficients needs to be 100%)
+    This page here is perhaps one of the most important pages to review and understand before the exam.
+    
+    [Identifying Shared Costs](https://www.finops.org/projects/identifying-shared-costs/)
+
+ 111. When rightsizing your containers which of following would be focused on responding dynamically to different conditions? (Select One)
+
+    **Autoscaling**
+
+    Explicación **Auto-scaling** provides the ability to respond dynamically to different conditions, such as increased or decreased demand. This can take some architecting and iterative adjustments to get right for your application, and there is room for waste along the way. However, the more tightly your horizontal pod autoscaling (when we need more / less pods) and cluster autoscaling (when do we need more / less nodes) are configured, the less waste and unnecessary cost to run your application.
+
+    Please review this page before the exam. (Section Optimize)
+
+    Reference:
+    
+    https://learn.microsoft.com/en-us/azure/architecture/best-practices/auto-scaling
+
+    https://www.finops.org/framework/domains/cloud-usage-optimization/
+
+ 112. Multiple Selection: (Select two) Your currently adopting FinOps in your organization and are in Stage 1 - Planning for FinOps in an organization. Which of the following two exercises would be understand Stage 1?
+    
+    **Do Your Research** 
+    
+    **Create a Plan**
+
+    Reference: https://www.finops.org/projects/adopting-finops/
+
+ 113. What is the model of constraints that is used in project management called? (Select One)
+    
+    **Iron Triangle**
+
+    Explicación **The Iron Triangle** (Project Triangle”), is a model of the constraints of project management: speed, cost, and quality. It contends that a project manager can trade among constraints in determining the way a project is completed. A change in one constraint necessitates changes in the others to compensate. With FinOps we would use measures such as good, fast and cheap.
+
+ 114. Your organization has recently adopted a FinOps based method for dealing with cloud costs and adopting FinOps. Currently, your organization has recently completed 'Step Two' for FinOps culture in your company. What would the next stage for the organization to accomplish? (Select One)
+    
+    **Preparing the organization for FinOps**
+
+    Explicación: The next step after Stage 1 - Planning for FinOps in an Organization (Laying the groundwork) is the Stage 2 - Socializing FinOps for adoption in an organization. Then After Step 2 would be Stage 3 - Preparing the organization for FinOps
+
+    Please reference this page before the exam. [Adopting FinOps](https://www.finops.org/projects/adopting-finops/)
+
+ 115. Which of the following would be correct when comparing TBM to FinOps? (Select Three)
+    
+    **TBM takes a top-down view whereas FinOps takes a more bottoms up view.**
+
+    **FinOps has great controls into cloud, granulatity, and prescriptive methods but does not incluide decision data.**
+
+    **FinOps focuses on cloud processes, cloud data, and cloud execution whereas TBM provides the genereal ledger (GL) data (labor costs, licensing, revenue data)**
+
+    
+    Explicación **TBM is a value management framework** for decision making by CIOs, CTOs, CFO, and the team. Technology Business Management defines the tools, processes, data, and people needed to manage the business of technology.(Looks at all IT Investments and is a top down model) FinOps is the practice of bringing financial accountability to the variable spend model of cloud, enabling distributed
+
+    **teams to make business trade-offs between speed, cost, and quality.(Cloud Only and is bottom up model) TBM = Broad Focused while FinOps = Very Focused**
+
+ 116. When proposing the adoption of a FinOps function within an organization, there will be a need to brief a variety of personas among the executive team to gain approval, buy-in, and involvement in conducting FinOps and achieving its goals. Every role has a clearly documented Primary Goal. What is the primary goal for a Chief Technology Officer (CTO)? (Select One)
+    
+    **Leverage technology to give the business a market and competitive advantage**
+
+    Explicación: There are clearly labeled roles for each 'Persona' and we must learn these for the exam.
+
+    Reference : https://www.finops.org/framework/personas/
+
+ 117. In a FinOps based organization spending is a concern only for finance team and the FinOps team members. (True or False)
+    
+    **False**
+
+    Explicación: False.
+
+    Spending is a concern for everyone, whether the finance team, engineering, production, etc.
+    In a FinOps-based organization, spending is a concern for all teams, not just the finance team and FinOps team members. FinOps is a collaborative effort that requires everyone in the organization to be aware of and accountable for their cloud spending. This includes engineering teams, product teams, and even executives.
+    Here are some of the reasons why spending is a concern for all teams in a FinOps-based organization:
+    
+    - Engineering teams: Engineering teams are responsible for designing and implementing cloud-based systems. They need to be aware of the cost implications of their design decisions.
+    - Product teams: Product teams are responsible for developing and launching new products and features. They need to understand the cost of running these products and features in the cloud.
+    - Executives: Executives are ultimately responsible for the financial performance of the organization. They need to have a clear understanding of cloud spending and how it is impacting the bottom line.
+    
+    By making spending a concern for all teams, organizations can achieve the following benefits:
+    
+    - Reduced cloud costs: When everyone is aware of the cost of cloud usage, they are more likely to make decisions that will optimize costs.
+    - Increased agility: When teams are empowered to make their own decisions about cloud usage, they can move more quickly and innovate more effectively.
+    - Improved financial transparency: When everyone has access to accurate and up-to-date information about cloud spending, there is more transparency and accountability.
+    
+    In short, FinOps is not just about saving money. It is also about driving business value by enabling teams to make informed decisions about cloud usage. When spending is a concern for all teams, organizations can achieve the best of both worlds: they can save money and innovate more effectively.
+    
+    Please review [What is FinOps](https://www.finops.org/introduction/what-is-finops/)
+
+ 118. When proposing the adoption of a FinOps function within an organization, there will be a need to brief a variety of personas among the executive team to gain approval, buy-in, and involvement in conducting FinOps and achieving its goals. Every role has a clearly documented Primary Goal. What is the primary goal for the Engineering Lead? (Select One)
+    
+    **Delivery faster and high quality services to the organization, whilst maintaining business as usual**
+
+    Explicación: There are clearly labeled roles for each 'Persona' and we must learn these for the exam.
+
+    References: [FinOps Personas](https://www.finops.org/framework/personas/)
+
+ 119. In the Inform Stage of the FinOps cycle which of the following would be true regarding. (Select One)
+    
+     **The IT, finance, and business departments rely on timely and relevant data to create customized FinOps frameworks and processes.**
+
+    Explanation: The Inform stage of the FinOps cycle is focused on providing timely and relevant data to the IT, finance, and business departments. This data is used to create customized FinOps frameworks and processes that align with the organization's operational and financial goals. The Inform stage is about collecting, analyzing, and presenting data to inform decision-making and optimize cloud operations. Option 1 is incorrect because it describes the Optimize stage of the FinOps cycle. Option 3 and 4 are not directly related to the Inform stage.
+
+ 120. 'IT Asset Management' would be under what domain according to the FinOps Foundation? (Select One)
+    
+    **Understanding Cloud Usage and Cost**
+
+    Explicación: There are six specific domains in FinOps according to the FinOps Foundation. We will want to be able to understand what topics are covered by each domain. The FinOps Foundation has put out an excellent downloadable poster that we should use as a study aid. https://www.finops.org/img//resources/FinOps%20Poster_011021.pdf
+
+ 121. Which phase of the FinOps cycle is where continuous optimization should really occur? (Select One)
+    
+    **Operate**
+
+    Explicación The lifecycle phase operate in summary is focused continuous improvement. It is critical you understand these three phases for the exam. Review this page here. [FinOps Phases](https://www.finops.org/framework/phases/)
+
+ 122. Which of the following statements would be correct about Weighted Average Cost of Capital? (Select One)
+    
+    **This is the rate company is expected to pay on average to all its securities holders to finance the operation of the business.**
+
+    Explicación: eighted Average Cost of Capital - the rate the company is expected to pay on average to all its securities holders to finance the operation of the business. Importantly this is set by the external market (what the market is willing to pay for various forms of the company’s securities) not by management.
+
+    Please review this page before the exam. https://www.finops.org/resources/terminology/
+
+ 123. Which of the following methods would we use if we wanted to ensure 'a user defined coefficient' ?
+    
+    **Fixed**
+
+    Explicación: There are typically three ways to split up shared costs: Proportional: Based on relative percentage of direct costs Even split: Split total amount evenly across targets Fixed: User-defined coefficient (the sum of coefficients needs to be 100%) This page here is perhaps one of the most important pages to review and understand before the exam.
+
+    Reference:  [A Guide to Spreading Out Shared Cloud Costs (finops.org)](https://www.finops.org/project/identifying-shared-costs/)
+
+ 124. FinOps Principles are north stars that guide the activities of our FinOps practice. These principles are clearly broken down and we must encourage members to practice these. When it comes to these principles which of the following activities would be under the 'Teams need to Collaborate' principle? (Select One)
+    
+    **Define governance and controls for cloud usage**
+
+    Explicación
+    Honestly, some of these activities may or not intuitively seem like they are under specific principles. This is perhaps the most confusing part of the content to remember.
+    
+    For Teams need to collaborate these are the activities specified by the FinOps Foundation:
+    
+    Finance moves at the speed and granularity of IT
+    
+    Engineering considers cost as a new efficiency metric
+    
+    Continuously improve your practice to gain efficiency and innovation Define governance and controls for cloud usage
+    
+    Please refer to this page before the exam. https://www.finops.org/framework/principles/
+
+ 125. What is the primary goal of a FinOps Practitioner in an organization? (Select One)
+
+    **Drive best practice into the organization through education, standardization and cheerleading.**
+
+    Explicación: Being a FinOps practitioner about collaboration thru several means. There are clear objectives, metrics, benefits and frustrations that come with the job. A FinOps champion will be able to describe the value of FinOps more effectively, minimizing the time and effort to gain alignment.
+
+    [FinOps Personas](https://www.finops.org/framework/personas/)
+
+ 126. How has cloud computing impacted enterprise financial operations? (Select Two)
+
+    **Change from a fixed spending model to a variable spending model**
+
+    **Utilization of an OPEX based procurement**
+
+    Explicación: With advent of Cloud Computing organizations went from a fixed and predictable spending model to cloud driven model that based on variable and less predictable spending model. Because of these spending changes organization went to a procurement model that is now OPEX based as compared to the on premises which was a procurement model that driven by CAPEX funding.
+
+ 127. You have started working a new role in an organization that practices FinOps. Your new role has focused on FinOps for some of your duties. Which of the following would likely be considered a FinOps professionals responsibility? (Select Two)
+    
+    **Maximize the value of the cloud spend**
+
+    **Continuously improve upon the metrics for efficiency**
+
+    Explicación: A FinOps professional should be more administrative in nature. Proactive but not a manager either. The role should be focused on metrics and providing value. The other answers would be a better choice for an engineer or cloud architect.
+
+ 128. AWS has a wealth of FinOps capabilities that we could use as an AWS user. Which of the following AWS Services would we use to track costs and usage and send alerts when a threshold is exceeded? (Select One)
+    
+    **AWS Budgets**
+
+    Explicación: AWS Budgets allows users to set up alerts, initiated when actual or forecasted costs and usage exceed predetermined budget thresholds. The goal of AWS Budgets is to reduce unintentional over-spending. AWS Budgets also allows for the configuration of automated responses if costs or usage exceed desired limits.
+
+ 129. You have been asked to assemble the first FinOps team for your company. What would be two factors you must consider when organizing your team? (Select Two)
+    
+    **Complexity of your cloud usage**
+    
+    **Complexity of your organization**
+
+    Explicación: The complexity of your organization can entail the layers of your management, size of the business units, experience of employees, etc. The complexity of your cloud usage can be really critical to understand what cost structure are efficient and what ones may not be. Team members from engineering think and speak differently as opposed to members from finance so we must have a common approach to communications to reduce complexity.
+
+ 130. What is the purpose of a blended rate?
+    
+    **To standardize the rate you pay for the same tupe of resource**
+
+    Explicación: Blended Rate information on its invoice showing the effective rate for a group of resources with the same attributes where some of the resources are receiving a discount from reservations and some are not.
+
+ 131. What is the primary purpose of the FinOps Framework?
+    
+    **To provide a set of concepts and measurements to support an analysis of current operating maturity.**
+
+    Expliación:
+
+    ![qa-131](images/focp-131.png)
+
+    [FinOps Framework Overview:](https://www.finops.org/framework/)
+
+    [FinOps Maturity Model:](https://www.finops.org/framework/maturity-model/)
+
+ 132. What is the concept of a "Lens" used for in FinOps?
+    
+    **To talk about how you inspect and analyze a FinOps Practice**
+
+    Explicación
+    References: https://www.finops.org/projects/finops-assessment/
+
+ 133. How has cloud computing impacted enterprise financial operations?
+    
+    **Utilization of OPEX based procurement**
+
+    Explicación: With advent of Cloud Computing organizations went from a fixed and predictable spending model to cloud driven model that based on variable and less predictable spending model. Because of these spending changes organization went to a procurement model that is now OPEX based as compared to the on premises which was a procurement model that driven by CAPEX funding.
+
+ 134. You have been asked to assemble the first FinOps team for your company. What would be two factors you must consider when organizing your team? (Select Two)
+    
+    **Complexity of your organization**
+
+    **Complexity of the Cloud usage**
+
+    Explicación: The complexity of your organization can entail the layers of your management, size of the business units, experience of employees, etc. The complexity of your cloud usage can be really critical to understand what cost structure are efficient and what ones may not be. Team members from engineering think and speak differently as opposed to members from finance so we must have a common approach to communications to reduce complexity.
+
+ 135. What is the name of the file format used in AWS Cost and Usage reports? (Select One)
+    
+    **CSV**
+
+    Explicación: The AWS Cost and Usage Reports (AWS CUR) contains the most comprehensive set of cost and usage data available.
+
+    ![qa-135](images/focp-135.png)
+
+
+
+ 136. Which of following is a simple formula for cloud spending? (Select One)
+    
+    **Spend = Usage × Rate**
+
+    The simple formula plays a key part of deciding both how to optimize and who in the organization takes optimization. Usage could be the number of hours of a resource used and the rate is the hourly (or per second) amount paid for the usage of that resource.
+
+ 137. “Manage Commitment Based Discounts” would be under what domain according to the FinOps Foundation? (Select One)
+    
+    **Cloud Rate Optimization**
+
+    There are six specific domains in FinOps according to the FinOps Foundation. We will want to be able to understand what topics are covered by each domain. The FinOps Foundation has put out an excellent downloadable poster that we should use as a study aid.
+
+    https://www.finops.org/img//resources/FinOps%20Poster_011021.pdf
+
+ 138. Which of the following is true regarding teams working in FinOps organizations? (Select Two)
+    
+    **All teams have a role to play in FinOps** 
+    
+    **Teams have different motivators that drive spend and savings.**
+
+    Some other basic realities are with FinOps teams are 1. Teams need to work together with a balance of empathy for one another’s goals. 2. FinOps practitioners help align teams to organizational goals. Teams inside your organization are able to work together to understand one another’s goals alongside a centralized FinOps team that is helping to build out reporting and practices to assist everyone in achieving them.
+
+ 139. What is the model of constraints that is used in project management called? (Select One)
+    
+    **Iron Triangle**
+    
+    Explicación: The Iron Triangle (Project Triangle”), is a model of the constraints of project management: speed, cost, and quality. It contends that a project manager can trade among constraints in determining the way a project is completed. A change in one constraint necessitates changes in the others to compensate. With FinOps we would use measures such as good, fast and cheap.
+
+ 140. Your FinOps lead has requested all cloud expenses and would like to understand all costs realized and paid for this quarter. What type of expense would consider this? (Select One)
+    
+    **Operational Expenditure (OPEX)**
+
+    Explicación: When you capitalize something, it becomes an asset of the company, whether or not it gets expensed within a specific period(CAPEX). If it benefits only the current period, then it’s an expense that is expended in this period with no future benefit, making it an operational expense(OPEX). Capitalization causes total outlays to differ from expenses in a similar period, with the delta being that which is capitalized.
+
+ 141. The FinOps journey consists of three detailed phases which are Inform, Optimize and Operate. Which of the following statements would be a correct description of the Inform Phase? (Select One)
+    
+    **Empowering organizations and teams with visibility, allocation, benchmarking, budgeting, and forecasting.**
+
+    The on-demand and elastic nature of cloud, along with customized pricing and discounts, makes it necessary for accurate and timely visibility for intelligent decisions. Accurate allocation of cloud spend based on tags, accounts, or business mappings enable accurate chargeback and showback. Business and financial stakeholders also want to ensure they are driving ROI while staying within budget and accurately forecasting spend, avoiding surprises. Benchmarking as a cohort and against teams provides organizations with the necessary metrics to develop a high performing team.
+
+    For the exam it is critical we can distinguish between the Phases… References:  https://www.finops.org/framework/phases/
+
+ 142. What is the name of the organization that created the FinOps Principles?
+    
+    **FinOps Fundation**
+
+    Explicación References: https://www.finops.org/framework/principles/
+
+ 143. What is the name of the first principle?
+    
+    **Teams need to collaborate**
+
+    Explicación References: https://www.finops.org/framework/principles/
+
+ 144. What drives continuous improvement?
+    
+    **Automation of resources**
+
+    Explicación References: https://www.finops.org/framework/principles/
+
+ 145. What is the Data Efficiency team responsible for?
+    
+    **Tracks the latencies to access and use data, and can estimate the performance impact of applying data efficiency approaches.**
+    
+    Explicación References: https://www.finops.org/projects/managing-data-efficiency-playbook/
+
+ 146. How frequently are forecast updates needed in FinOps?
+
+    **As required by finance**
+
+    Explicación References: https://www.finops.org/framework/phases/
+
+ 147. What is the most common type of forecast?
+    
+    **Annual forecast**
+
+    Explicación References: https://www.finops.org/framework/phases/
+
+ 148. What is budgeting for Cloud?
+    
+    **A process of collecting estimated expenses for a specific period of time**
+
+ 149. What does the term 'favorable to budget' mean?
+    
+    **There are less expenses than as planned inthe budget**
+
+    Explicación References: https://www.finops.org/framework/capabilities/budget-management/
+
+ 150. Which of the following are not considered goals of the FinOps journey? (Select Two)
+    
+    **Efficiency**
+
+    **SLO's**
+
+    Explanation: The Inform Phase of the FinOps journey is about understanding the current state of your system. Due to the on-demand and elastic nature of access to cloud resources, along with variable pricing structures, it is critical to have access to timely and accurate system metrics to make appropriate, informed decisions. In this phase there are five primary goals: Visibility Allocation Benchmarking Budgeting Forecasting
+    
+    Please review this page before the exam https://www.finops.org/framework/phases/
+
+
+
+
+
+
+
+
+
