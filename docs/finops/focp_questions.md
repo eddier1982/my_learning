@@ -1712,10 +1712,632 @@
     Please review this page before the exam https://www.finops.org/framework/phases/
 
 
+ 151. When proposing the adoption of a FinOps function within an organization, there will be a need to brief a variety of personas among the executive team to gain approval, buy-in, and involvement in conducting FinOps and achieving its goals. Every role has a clearly documented Primary Goal. What is the primary goal for the procurement business unit? (Select One)
+    
+    **Cloud platform relationshio management**
 
+ 152. Please refer to the graphic of the Phases of the FinOps Lifecycle for this question What is the correct order of the FinOps Lifecycle phases? Please replace 1,2,3 with correct sequence (Select One)
+    
+    Inform, Optimize and Operate
 
+ 153. Which of the following is most important when Benchmarking performance of internal cloud teams?
+    
+    **Benchmarking cloud teams consistenly against each other**
 
+ 154. why would companies consider including trainers or process design experts on the FinOps team?
+    
+    **creating training or processes that are independient of functional domain can be as important as actual FinOps Capability training to FinOps team success**
 
+ 155. In Aligning optimization plans to the business, which of the following are the most important?
+    
+    **Ensuring that commintment-based discounts are purchased before optimization is done**
 
+ 156. Which of these would NOT be an example of a Rightsizing action?
+    
+    **changing database instances to run on smaller servers**
 
+ 157. In which phase of the FinOps lifecycle would the FinOps team execute a purchase of a commitment-based discount that meets the threshold of their commitment purchasing metric?
 
+    **Optimize**
+
+ 158. Which of these is a KPI a FinOps team might use to determine what percentage of a commitment purchase is being applied to running resources?
+
+    **commitment/reservation coverage%**
+
+ 159. Which of these is NOT a feature of FinOps?
+
+    **FinOps should be completed prior to beginning cloud migration**
+
+ 160. What two outcomes does the FinOps team seek above all? (Select two)
+
+    **Optimization and operation**
+
+    **Breaking down cultural barriers and distributed responsability for managibg Cloud usage Cost**
+
+ 161. Which item is a common mistake a FinOps might make while Rightsizing?
+    
+    **Not considering peak demand, but planning using average**
+
+ 162. By reducing resource usage by removing or only running a resource when we need it, we can reduce overall cost. this describes
+    
+    **Workload management**
+
+ 163. The FinOps team's skills in the various FinOps capabilities will grow from being basic to greater mastery over time as it iterates through the FinOps lifecycle. this concept is best described as
+    
+    **Crawl, Walk, Run**
+
+ 164. Each time it cycles through the FinOps lifecycle, the FinOps team will:
+    
+    **build experience and mature its capabilities**
+
+ 165. During the operate phase of the FinOps lifecycle, which of these would be a key to success with FinOps stakeholders?
+    
+    **Automation of all rightsizing actions**
+
+ 166. You have started working a new role in an organization that practices FinOps. Your new role has focused on FinOps for some of your duties. Which of the following would likely be considered a FinOps professionals responsibility? (Select Two)
+    
+    **Continuously improve upon the agreed metrics for efficiency**
+    
+    **Maximize the value of the cloud spend**
+
+ 167. What is the primary goal of a FinOps Practitioner in an organization? (Select One)
+    
+    **Drive best practices into the organization through education, standardization, and cheerleading**
+
+ 168. IT Asset Management' would be under what domain according to the FinOps Foundation? (Select One)
+    
+    **Understanding Cloud Usage and Cost**
+
+ 169. Your organization has recently adopted a FinOps based method for dealing with adopting FinOps. Currently, your organization has recently completed 'Laying the Groundwork' for FinOps culture in your company. What would the next stage for the organization to accomplish? (Select One)
+    
+     **Socializing FinOps for adoption in an organization**
+
+ 170. Cloud providers such as AWS and GCP allow for discounts by letting customers commit to a cloud service provider for a set amount of resource usage such as using a Reserved Instance or Committed Discounts. What is the term we would call this pricing strategy? (Select One)
+    
+    **Reservations**
+
+ 171. The spending patterns have changed quite a bit when compared to on premises consumption models. Which of the following statements would correct how DevOps and Cloud have changed IT purchasing. (Select two)
+    
+    **Engineers have the power to spend company money with code**
+    
+    **spending is dynamic.**
+
+ 172. When a resource charge is discounted by a reservation what would that usage be called? (Select One)
+    
+    **Covered**
+
+ 173. What is the model of constraints that is used in project management called? (Select One)
+    
+    **Iron Triangle**
+
+ 174. How has cloud computing impacted enterprise financial operations?
+    
+    **Change from a fixed spending model to a variable spending model**
+
+ 175. What is the correct definition of an image? (Select One)
+    
+    **A template of a container with the software that needs to be run.**
+
+ 176. The CFO has just approached the FinOps team members and requested that all costs that are being submitted and analyzed should be amortized. The CFO also requested that the costs be allocated to each business unit. Would this be a best practice? (True or False)
+    
+    **True**
+
+ 177. Which of the following is the FinOps simple definition of 'forecasting'. (Select One)
+    
+     **Forecasting is the practice of predicting future spending**
+
+ 178. Ticketing systems, Monitoring systems, Configuration management systems, workflow systems, CI/CD pipeline automation tools, all can provide ways to automate parts of your FinOps process (True or False)
+    
+    **True**
+
+ 179. Which of the following are not considered goals of the FinOps journey?
+    
+    **Efficiency**
+
+ 180. Which of the following would be considered a 'measure of success' for a FinOps based organization? (Select Two)
+    
+    **Overall Tagging Compliance is 90% or above** 
+    
+    **The cloud cost reporting ecosystem becomes a fundamental aspect of the IT department**
+   
+ 181. Your currently working with the head of finance to understand how to identify specific cloud usage to specific business units. What would we use to account for costs for each business units and then debit the business unit for the cloud usage?
+
+    **Chargeback**
+
+ 182. Which of the following would be the most direct description of what FinOps is about? (Select One)
+
+    **FinOps brings financial accountability to the variable spend model of cloud.**
+
+ 183. which of the following would be true regarding the Inform Stage of the FinOps cycle . (Select One)
+
+    **The IT, finance, and business departments rely on timely and relevant data to create customized FinOps frameworks and processes.**
+
+ 184. Anomaly detection isn’t just about identifying expense thresholds but It’s also important to identify unusual spikes in usage. (True or False)
+
+    **True**
+
+ 185. FinOps as we likely learned requires a culture shift in how our organization addresses cloud spend. Which of the following would be a true statement regarding the decision making in a FinOps organization? (Select One)
+
+    **Distributed decision making coupled with the move to variable spending in cloud allows technology teams to efficiently partner with finance and business teams to make informed decisions that drive continual optimization.**
+
+ 186. The variable cost model of the cloud is a risk for cloud spending of an organization. (True or False)
+
+    **False**
+
+ 187. In a FinOps based organization spending is a concern only for finance team and the FinOps team members. (True or False)
+
+    **False**
+
+ 188. In the world of FinOps the process of spreading out shared costs is iterative, and evolves over time.(True or False)
+
+    **True**
+
+ 189. Should the FinOps team be a gatekeeper to cloud spending? (Select One)
+
+    **No**
+
+ 190. Your FinOps lead has requested all cloud expenses and would like to understand all costs realized and paid for this quarter. What type of expense would consider this? (Select One)
+
+    **Operational ependiture (OPEX)**
+
+ 191. Which of the following is an open source container management platform that we use in the cloud routinely? (Select One)
+
+    **Kubernetes**
+
+ 192. Distributed decision making, coupled with the move to variable spending in cloud, allows technology teams to efficiently partner with finance and business teams to make informed decisions that drive continual optimization. (True or False)
+
+    **True**
+
+ 193. Which of the following methods would we use if we wanted to ensure 'a user defined coefficient' ? (Select One)
+
+    **Fixed**
+
+ 194. There are effectively two 'levers' that are used to reduce costs in cloud computing. What are they? (Select Two)
+
+    **Avoiding Costs** 
+    
+    **Reducing Costs**
+
+ 195. Which of the following are some common reasons it can be harder to bill and report on Kubernetes costs? (Select Two)
+    
+    **one-to-one mappings of tags to teams don’t cover some of the complex use cases that container utilization can create**
+    
+    **Containerized environments are much more dynamic than noncontainerized ones**
+
+ 196. In Finops, Everyone Should take ownership of their cloud usage. (True or False)
+    
+    **True**
+
+ 197. Which of the following would be the correct description of what a 'cluster' is in Kubernetes? (Select One)
+    
+    **A group of server instances, managed by container orchestration.**
+
+ 198. In FinOps, Rate and Discount Optimization is Centralized. (True or False)
+    
+    True
+
+ 199. Finance teams should bring their deeper understanding of Finance concepts to the FinOps team and help the organization understand the Finance impacts of decisions at every stage (True or False)
+    
+    **True**
+
+ 200. Which of the following term used to refer to company owned or company-controlled data center space. Usually used to differentiate from public cloud environments where application migrations are targeting workloads.
+    
+    **On-premises**
+
+ 201. Which of the following is a cloud cost optimization strategy for storage?
+    
+    **Using cold storage for infrequently accessed data**
+
+ 202. Which of the following is a cloud cost optimization strategy for content delivery?
+    
+    **Using CDN services instead of just object storage**
+
+ 203. What is the main challenge after cloud migration is finished?
+    
+    **Cost management and efficient optimization**
+
+ 204. What are the teams that need to collaborate strongly for effective cloud cost management and optimization?
+    
+    **Finance, operation, product mamagement, and engineering teams**
+
+ 205. What are some of the commonly cited pain points when it comes to financial cloud management?
+    
+    **All of the above**
+
+ 206. What is required for accurate cloud cost forecasting?
+    
+    **Deep expertise and real-time data**
+
+ 207. What is cloud cost projection?
+    
+    **The process of estimating the impacts of changes to your company's cloud hosting solution**
+
+ 208. What is the first step in cloud expense management?
+    
+    **Keeping track of past expenses**
+
+ 209. What is the purpose of creating a cloud spend budget?
+    
+    **To set guidelines for maximum cloud spend**
+
+ 210. What is one of the reasons that lead to oversizing in cloud environments?
+    
+    **Weak performance of testing methods**
+
+ 211. What is the benefit of using a cloud cost comparison tool?
+    
+    **To project your company´s cloud costs against other cloud platforms and regions**
+
+ 212. What is the purpose of multi-cloud adoption?
+    
+    **to reduce cloud costs by switching between multiple cloud platforms.**
+
+ 213. Which of the following is a cloud cost optimization strategy for virtual machines?
+    
+    **Using spot instances for short-term task**
+
+ 214. What does workload management suggest in terms of variable cost resources?
+    
+    **Only run the resource while using it**
+
+ 215. What is the primary goal of the CEO in the context of FinOps?
+    
+    **Assurance that cloud investments are aligned with business objectives.**
+
+ 216. What is the primary goal of the IT Finance Manager in the context of FinOps?
+    
+    **Accurately budget, forecast, and report cloud costs.**
+
+ 217. Which of the following is a cost optimization strategy for object storage in the cloud?
+    
+    **enabling retention settings for partial objects**
+
+ 218. What is the primary goal of the Procurement role in the context of FinOps?
+    
+    **Cloud platform relationship management.**
+
+ 219. What is the frustration of the CFO role in the context of FinOps?
+    
+    **Extreme pressure to either justify or bring the cloud bill down**
+
+ 220. Which of the following is a cloud cost driver?
+    
+    **All of the above**
+
+ 221. What is the term for the process of forecasting future cloud costs based on historical usage patterns?
+    
+    **Cost forecasting**
+
+ 222. Which of the following is an AWS service that 
+    
+    **AWS CloudFormation**
+
+ 223. What is the primary benefit of using reserved instances?
+    
+    **Lower hourly cost**
+
+ 224. What is the term for the process of analyzing and optimizing cloud spend on an ongoing basis?
+    
+    **Cloud cost management**
+
+ 225. Which of the following is a pricing model used by cloud providers?
+    
+    **All of the above**
+
+ 226. How can organizations gain a better understanding of the cost of their cloud?
+    
+    **By trackimg their cloud usage and costs across their entire cloud estates**
+
+ 227. What is the benefit of having visibility into cloud spend?
+    
+    **It enchances understanding of the real cost of cloud and how it translates into bisiness value**
+
+ 228. What is the purpose of a financial audit in financial operations?
+    
+    **To ensure the accuracy and completeness of financial data**
+
+ 229. Which of the following is NOT a typical function of a Cloud financial operations (FinOps) team?
+    
+    **Developing and executing marketing campaigns**
+
+ 230. Your currently adopting FinOps in your organization and are in Stage 1 - Planning for FinOps in an organization. Which of the following two exercises would be understand Stage 1? (Select Two)
+    
+    **Do Your Research** 
+    
+    **Create a Plan**
+ 
+ 231. FinOps Principles are north stars that guide the activities of our FinOps practice. These principles are clearly broken down and we must encourage members to practice these. When it comes to these principles which of the following activities would be under the 'Teams need to Collaborate' principle? (Select One)
+
+    **Define governance and controls for cloud usage**
+
+ 232. Which of the following is a cloud cost optimization strategy for networking?
+    
+    **Consolidating data transfers**
+
+ 233. The FinOps journey consists of three iterative phases ― Inform, Optimize and Operate. Which of the following statements would be a correct description of the Inform Phase? (Select One)
+    
+    **Empowering organizations and teams with visibility, allocation, benchmarking, budgeting, and forecasting.**
+
+ 234. AWS provides what is called a 'Blended Rate' on its invoices. What is the blended rate showing? (Select One)
+    
+    **Shows the effective rate for a group of resources with the same attributes**
+
+ 235. In Cloud Computing some costs can be considered fixed and some are variable. Which of the following costs would generally a fixed costs, meaning predictable monthly or annual costs? (Select One)
+    
+    **Support and Maintenance**
+
+ 236. What is the first step in planning for FinOps in an organization?
+    
+     **Seeking out stakeholders within the organization**
+
+ 237. In order to determine adoption strategy for FinOps in an organization during research, what should be done? 
+    
+    **Conduct research on pain points being experienced by the organization during your conversations, such as cloud costs breaking busuness cases, general perception of cost overruns, lack of cost visibility by cloud consumers, etc.**
+
+ 238. Which of the following should be done to measure the FinOps function and stakeholder engagement in planning for FinOps in an organization?
+    
+    **Identity KPIs (Key Performance Indicators) that will be used to measure the FinOps function**
+
+ 239. What is the main cause of cloud wastage?
+    
+    **Running non-productionresources 24/7**
+
+ 240. What is the potential savings that companies can make by turning off idle resources overnight and on weekends?
+    
+    **65%**
+
+ 241. Why would companies consider including trainers or process design experts on the FinOps team?
+    
+    **Creating training or processes that are independent of functional domain can be as important as actual FinOps Capability training to FinOps team success.**
+
+ 242. The daily view in Azure cost explorer is designed to show what?
+    
+    **Irregularities as cost spikes or dips from day to day**
+
+ 243. Your currently working with the head of finance to understand how to identify specific cloud usage to specific business units. What would we use to account for costs for each business units and then debit the business unit for the cloud usage?
+
+    **Chargeback**
+
+ 244. What is the best course of action when wanting to shut off resources?
+    
+    **Consult Engineering teams**
+
+ 245. In which maturity level of the FinOps framework are the capabilities well understood and followed within the organization?
+    
+    **Run**
+
+ 246. When rightsizing your containers which of following would be focused on responding dynamically to different conditions?
+    
+    **Autoscaling**
+
+ 247. Which of the following is an open source container management platform that we use in the cloud routinely?
+    
+    **Kubernetes**
+
+ 248. How can organizations gain a better understanding of the cost of their cloud?
+    
+    **By tracking their cloud usage and costs across their entire cloud estates**
+
+ 249. What would be some common names that could used for a FinOps team? (Select Three)
+    
+    **Cloud Business Office**
+
+    **Cloud Economics Team**
+
+    **Cloud Center of Excellence**
+
+ 250. Which of the following is NOT a key component of FinOps?
+    
+    **Risk assessment and mitigation**
+
+ 251. What is the key challenge of FinOps?
+    
+    **Transitioning to a Finops culture from a data center culture**
+
+ 252. Why 'Policy and Governance' frameworks important?
+    
+    **Organizations cnnot sustainably deliver business value from cloud without them**
+
+ 253. What are the three types of governance?
+    
+    **Guidelines, Guardrails, Automation**
+
+ 254. When configuring access to the Budgets API, what is the best practice for giving multiple IAM users query access to the API?
+    
+    **Creating a programmatic access IAM role for each of them**
+
+ 255. What are the two AWS managed policies for budget actions?
+    
+    **user and budgets**
+
+ 256. How Cost analysis in Azure used to show a potential budget breach?
+    
+    **When there's a potential budget breach, projected overspending is shown in red**
+
+ 257. The daily view in Azure cost explorer is designed to show what?
+    
+    **irregularities as cost spikes or dips from day to day.**
+
+ 258. Which of the following are the three ways that we would be able to split up shared costs? (Select Three)
+    
+    **Proportional**
+
+    **Even Split**
+
+    **Fixed**
+
+ 259. Which of the following are the Fin-Ops Maturity Assessment Model steps/phases? (Select Three)
+    
+    **Crawl**
+
+    **Walk**
+
+    **Run**
+
+ 260. Which phase of the FinOps cycle is where continuous optimization should really occur?  (Select One) 
+    
+    **Operate**
+
+ 261. Distributed decision making coupled with the move to variable spending in cloud allows technology teams to efficiently partner with finance and business teams to make informed decisions that drive continual optimization. (True or False)
+    
+    **True**
+
+ 262. Which of the following would be the correct description of what a 'cluster" is in Kubernetes? (Select One)
+    
+    **A group of server instance, manage by container orchestration**
+
+ 263. How many types of forecasting methods are there?
+    
+    **four**
+
+ 264. Which of the following is not a type of forecasting?
+    
+    **Maximum Forecasting**
+
+ 265. What is the main advantage of Cloud Forecasting?
+    
+    **The ability to automatically adapt to changes in cloud spend behavior**
+
+ 266. What is the conservative approach to forecasting?
+    
+    **Use the forecast for the last month of the forecast period and project that forward at a flat rate**
+
+ 267. How far into the future do organizations typically forecast workloads?
+    
+    **12 months**
+
+ 268. Which of the following NIST Cloud characteristics uses the business model of shared resources in a cloud environment? (Select one)
+    
+    **Multi-Tenancy**
+
+ 269. Why is forecasting important?
+
+    **It helps organizations make decisions about the future**
+
+ 270. State whether the following statement is true or False. A capability may sit within one or more Domains, and may encompass a variety of related specific skills and specializations in order to execute successfully. (True or False)
+    
+    **True**
+
+ 271. What is the key objective of FinOps teams?
+    
+    **To promote both 'cost avoidance,' wich related to usage, and 'cost optimization,' which relates to rate**
+
+ 272. What is the primary driver of effort for engineers?
+    
+    **Functionality and delivery deadines**
+
+ 273. What are the two drivers of engineering action?
+    
+    **Culture & Governance**
+
+ 274. What is the primary focus of a FinOps team?
+    
+    **To drive engineering action on cost avoidance through cultural and governance initiatives**
+
+ 275. What is fundamental to effective cost avoidance?
+    
+    **Ownership an accountability**
+
+ 276. Which of the following is not a significant tactic which respondents use to drive accountability?
+    
+    **Cost Reduction and Cost Control**
+
+ 277. What is the goal of "showback" reporting?
+    
+    **To provide real-time information on cloud usage and costs**
+
+ 278. What is the main aim of financial accountability?
+    
+    **To join up the organization's financial management processes with the dynamic and granular patterns of cloud spend**
+
+ 279. What is the key element in developing engineer's financial accountability?
+    
+    **Chargeback of clous costs**
+
+ 280. What is the best course of action when wanting to shut off resources?
+    
+    **Consult with Engineering teams**
+
+ 281. Which of the following is an advantage of consulting Engineering teams before presenting cost optimization savings to leadership?
+    
+    **Avoiding accidental conflict by not getting consensus from business units or functional areas.**
+
+ 282. What is the main incentive for volume discounts?
+    
+    **To reward large cloud users**
+
+ 283. Which of the following is not needed to identify in order to calculate projected costs correctly on the cloud platform?
+    
+    **The Infraesructure costs**
+
+ 284. State whether the following statement is true or false. Benchmarking as a cohort and against teams provides organizations with the necessary metrics to develop a high performing team.
+
+    **True**
+
+ 285. State whether the following statement is true or false. Any company may be in multiple phases at any time depending on which business unit, application or team is on the journey.
+    
+    **True**
+
+ 286. State whether the following statement is true or false. The Fin-Ops principles are in no particular order, and they should be taken as a whole.
+
+    **True**
+
+ 287. State whether the following statement is true or false. Teams should understand how their contributions help the organization reach goals.
+
+    **True**
+
+ 288. State whether the following statement is true or false. Teams should not rely on the organization guidance.
+
+    **False**
+
+ 289. State whether the following statement is true or false. In the containerized world, traditional FinOps cost allocation (e.g. capacity planning) is no longer needed.
+
+    **False**
+
+ 290. State whether the following statement is true or false. Shared resources, like containers, create challenges with cost allocation, cost visibility, and resource optimization.
+
+   **True**
+
+ 291. What is the billing model for cloud services?
+    
+    **Pay-as-you-go**
+
+ 292. You can run Kubernetes on virtual machine services provided by which of the following?
+    
+    **All major cloud providers**
+
+ 293. State whether the following statement is true or false. KPIs can be things like active accounts, widgets sold, ad impressions and so forth.
+
+    **True**
+
+ 294. For driver-based forecasting, the goal is not to identify why workloads scale differently from their drivers.
+    
+    **False**
+
+ 295. State whether the following statement is true or false. Depending on the maturity of the organization, tagging may be manual, use automated tag hygiene monitoring, or integrated in CI/CD pipelines with tag-or-terminate policies in place.
+    
+    **True**
+
+ 296. State whether the following statement is true or false. Trend based forecasting will be able to capture out-of-band events such as launching a new product or feature, launching in a new country, or the effect of TV commercials on consumer behavior.
+    
+    **False**
+
+ 297. Multiple Selection (Select Three) Which of the following are part of Fin-Ops Principles ?
+    
+    **Teams need to collaborate**
+
+    **Everyone takes ownership for their cloud usage**
+
+    **A centralized team drives FinOps**
+
+ 298. Which of the following is not a FinOps Domain?
+    
+    **True**
+
+ 299. The FinOps journey consists of three iterative phases — Inform, Optimize and Operate.
+    
+    **True**
+
+ 300. State whether the following statement is true or false. Teams and organizations can optimize the environment by buying more resources.
+    
+    **False**
