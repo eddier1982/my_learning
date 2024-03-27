@@ -6,8 +6,13 @@ nav:
   - About: about.md
   - Learning:
     - Red Hat: 
-      - RH199: 'redhat/01-RH199/01-RH199.md'
+      - RH199: 
+        - Capitulo 1 "Access Systems and Get Support": 'redhat/01-RH199/c1_Access_Systems_and_Get_Support.md'
+        - Capitulo 2 "Manage Files from the Command Line": 'redhat/01-RH199/c2_Manage_Files_from_the_Command_Line.md'
       - RH294: 'redhat/02-RH294/02-RH294.md'
+      - DO374:
+        - Prácticas: 
+          - Práctica Norlan: 'redhat/03-DO374/practice_norlan.md'
     - FinOps Practitioner:
       - FinOps Certified Practitioner Introduction : 'finops/01_Introduction_finops.md'
       - Cloud Changes IT: 'finops/02_cloud_changes_it.md'
@@ -19,6 +24,10 @@ nav:
       - Anatomy of a Cloud Bill: 'finops/08_Anatomy_of_a_Cloud_Bill.md'
       - FOCUS: 'finops/09_FOCUS.md'
       - Running the FinOps Team: 'finops/10_Running_the_FinOps_Team.md'
+      - Inform Phase: 'finops/11_Inform_Phase.md'
+      - Optimize Phase: 'finops/12_Optimize_Phase.md'
+      - Operate Phase: 'finops/13_Operate_Phase.md'
+      - Maturing FinOps: 'finops/14_Maturing_FinOps.md'
       - FOCP: 'finops/focp_questions.md'
     - Cisco Networking Academy:
       - Fundamentos de Python 1: 'cisco/fundamentos_python_1.md'
