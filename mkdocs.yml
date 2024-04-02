@@ -32,7 +32,11 @@ nav:
     - Cisco Networking Academy:
       - Fundamentos de Python 1: 'cisco/fundamentos_python_1.md'
 theme:
-  name: readthedocs
-  highlightjs: true
-  locale: en
+  name: material
+  logo: logo.png
+  palette:
+    primary: light green
+  #name: readthedocs
+  #highlightjs: true
+  #locale: en
 
