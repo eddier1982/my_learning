@@ -1,0 +1,2289 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../11_Inform_Phase/">
+      
+      
+        <link rel="next" href="../13_Operate_Phase/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>Optimize Phase - My Learning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#optimize-phase-overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Learning" class="md-header__button md-logo" aria-label="My Learning" data-md-component="logo">
+      
+  <img src="../../logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Learning
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Optimize Phase
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Learning" class="md-nav__button md-logo" aria-label="My Learning" data-md-component="logo">
+      
+  <img src="../../logo.png" alt="logo">
+
+    </a>
+    My Learning
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Learning
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Learning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Red Hat
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Red Hat
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    RH199
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            RH199
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../redhat/01-RH199/c1_Access_Systems_and_Get_Support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Capitulo 1 "Access Systems and Get Support"
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../redhat/01-RH199/c2_Manage_Files_from_the_Command_Line/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Capitulo 2 "Manage Files from the Command Line"
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../redhat/02-RH294/02-RH294/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RH294
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_3" id="__nav_3_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DO374
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            DO374
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_3_1" id="__nav_3_1_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Prácticas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_1_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Prácticas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../redhat/03-DO374/practice_norlan/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Práctica Norlan
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    FinOps Practitioner
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            FinOps Practitioner
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_Introduction_finops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FinOps Certified Practitioner Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_cloud_changes_it/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cloud Changes IT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_what_is_FinOps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    What is FinOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_FinOps_framework_%26_principles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FinOps Framework & Principles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_personas_%26_teams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Personas & Teams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_domains_%26_capabilities/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Domains & Capabilities
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_Motivations_%26_Common_Language/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Motivations & Common Language
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08_Anatomy_of_a_Cloud_Bill/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Anatomy of a Cloud Bill
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09_FOCUS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FOCUS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10_Running_the_FinOps_Team/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Running the FinOps Team
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11_Inform_Phase/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inform Phase
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Optimize Phase
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Optimize Phase
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#recap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recap
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimize-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimize Phase
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Optimize Phase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-optimize-phase-supports-the-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Optimize phase supports the principles:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-majority-of-the-capabilities-we-will-use-to-accomplish-the-optimize-phase-are-in-the-domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      The majority of the capabilities we will use to accomplish the Optimize phase are in the domains:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-optimize-phase-is-all-about-identifying-opportunities" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Optimize phase is all about identifying opportunities:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kpis-outcomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      KPIs &amp; Outcomes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="KPIs & Outcomes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defining-kpi-challenges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defining KPI Challenges
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-kpis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample KPI's
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#incremental-goals-and-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Incremental Goals and Targets
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Incremental Goals and Targets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expectations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expectations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#goal-setting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Goal Setting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#taking-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      Taking Action
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitoring
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defining-good-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defining Good Goals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resources
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primary-ways-to-optimize-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Primary Ways to Optimize Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Primary Ways to Optimize Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workload-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workload Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalability-and-elasticity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scalability and Elasticity
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scalability and Elasticity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rightsizing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rightsizing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rightsizing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Started
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cadence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cadence
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rightsizing-versus-commitment-based-discounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rightsizing Versus Commitment Based Discounts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#candidates-for-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Candidates for Optimization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Candidates for Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimize-rates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimize Rates
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Optimize Rates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#discounting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discounting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Discounting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#before-you-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Before you Commit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-optimize" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Optimize
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discounting-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discounting Decisions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Discounting Decisions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commitment-based-discounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commitment-Based Discounts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Commitment-Based Discounts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discount-purchasing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discount Purchasing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spot-market" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spot Market
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Spot Market">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benefits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#business-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Business Cases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Business Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#business-cases_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Business Cases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Business Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#business-case-cadence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Business Case Cadence
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13_Operate_Phase/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operate Phase
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14_Maturing_FinOps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Maturing FinOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../focp_questions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FOCP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cisco Networking Academy
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Cisco Networking Academy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cisco/fundamentos_python_1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fundamentos de Python 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#recap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recap
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimize-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimize Phase
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Optimize Phase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-optimize-phase-supports-the-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Optimize phase supports the principles:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-majority-of-the-capabilities-we-will-use-to-accomplish-the-optimize-phase-are-in-the-domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      The majority of the capabilities we will use to accomplish the Optimize phase are in the domains:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-optimize-phase-is-all-about-identifying-opportunities" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Optimize phase is all about identifying opportunities:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kpis-outcomes" class="md-nav__link">
+    <span class="md-ellipsis">
+      KPIs &amp; Outcomes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="KPIs & Outcomes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defining-kpi-challenges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defining KPI Challenges
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-kpis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample KPI's
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#incremental-goals-and-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Incremental Goals and Targets
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Incremental Goals and Targets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expectations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expectations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#goal-setting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Goal Setting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#taking-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      Taking Action
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitoring
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defining-good-goals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defining Good Goals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resources
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#primary-ways-to-optimize-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Primary Ways to Optimize Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Primary Ways to Optimize Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workload-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workload Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalability-and-elasticity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scalability and Elasticity
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scalability and Elasticity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rightsizing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rightsizing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rightsizing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Started
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cadence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cadence
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rightsizing-versus-commitment-based-discounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rightsizing Versus Commitment Based Discounts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#candidates-for-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Candidates for Optimization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Candidates for Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimize-rates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimize Rates
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Optimize Rates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#discounting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discounting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Discounting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#before-you-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Before you Commit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-optimize" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Optimize
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discounting-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discounting Decisions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Discounting Decisions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commitment-based-discounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commitment-Based Discounts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Commitment-Based Discounts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discount-purchasing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discount Purchasing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spot-market" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spot Market
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Spot Market">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benefits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#business-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Business Cases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Business Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#business-cases_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Business Cases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Business Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#business-case-cadence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Business Case Cadence
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="optimize-phase-overview">Optimize Phase Overview</h1>
+<h2 id="recap">Recap</h2>
+<p>Now that we've learned about exercising all of the capabilities and understanding our use and spending in the Inform phase, let's look at opportunities to optimize. This could look like optimizing usage, cost profile, coverage, automation, or even level of visibility.</p>
+<h2 id="optimize-phase">Optimize Phase</h2>
+<p>In the Optimize phase we target, define, and document optimization opportunities; this is all about triage and prioritization.</p>
+<h3 id="the-optimize-phase-supports-the-principles">The Optimize phase supports the principles:</h3>
+<ul>
+<li>Business value of cloud drives decisions</li>
+<li>A centralized team drives FinOps</li>
+<li>Take advantage of the variable cost model of the cloud</li>
+</ul>
+<p><img alt="op support principles" src="../images/course/65-focp.png" /></p>
+<p>### During the Optimize phase, we're looking to see:</p>
+<ul>
+<li>Are we doing enough?</li>
+<li>Is each of these capabilities mature enough?</li>
+<li>Are we making progress toward our goals?</li>
+<li>Do we know enough to make good progress?</li>
+</ul>
+<p><img alt="we're looking" src="../images/course/66-focp.png" /></p>
+<h3 id="the-majority-of-the-capabilities-we-will-use-to-accomplish-the-optimize-phase-are-in-the-domains">The majority of the capabilities we will use to accomplish the Optimize phase are in the domains:</h3>
+<ul>
+<li>All of the domains and capabilities will come into play in this phase</li>
+</ul>
+<p><img alt="majority capability" src="../images/course/67-focp.png" /></p>
+<h3 id="the-optimize-phase-is-all-about-identifying-opportunities">The Optimize phase is all about identifying opportunities:</h3>
+<ul>
+<li>To do FinOps better</li>
+<li>To understand usage better</li>
+<li>To improve usage (do more where valuable, do less where valuable)</li>
+<li>To improve rates </li>
+</ul>
+<p><img alt="identifying opportunities" src="../images/course/68-focp.png" /></p>
+<h2 id="kpis-outcomes">KPIs &amp; Outcomes</h2>
+<p>In order to drive the rest of the work you will do in the Optimize phase we need to know:</p>
+<ul>
+<li>What outcomes are expected by the business? </li>
+<li>What Key Performance Indicators (KPIs) will our business use to measure success?</li>
+</ul>
+<p>Your organization may already have defined KPIs related to cloud use or to IT use in general. If not, you may need to take a look at what outcomes you are trying to achieve with cloud:  </p>
+<ul>
+<li>What behavior will help achieve those outcomes?</li>
+<li>How you can measure or determine that you are accomplishing that work?</li>
+</ul>
+<h3 id="defining-kpi-challenges">Defining KPI Challenges</h3>
+<p>Defining good KPIs for cloud use can be challenging  because cloud use is new to many teams and  because there is so much to measure and so much data to measure it with. </p>
+<h3 id="sample-kpis">Sample KPI's</h3>
+<p>Examples of ways to measure each of the capabilities is found in the real-world resources section within each capability on <a href="https://www.finops.org/framework/capabilities/">FinOps.org</a></p>
+<ul>
+<li>Consider difference in reserved coverage rate when using cost versus usage</li>
+<li>Do you want to promote spot use? Or reserved use? Or total?</li>
+<li>Do KPIs measure the performance of the FinOps team or the development teams?</li>
+<li>Reservation coverage rate (cost or usage)</li>
+<li>Reservation utilization rate </li>
+<li>Optimization opportunities as a percent of spending</li>
+<li>Spot/preemptible/low priority as a percent of compute</li>
+</ul>
+<h2 id="incremental-goals-and-targets">Incremental Goals and Targets</h2>
+<p>As you perform the Optimize phase, do so with an eye toward taking steps to improve KPIs or achieve the outcomes you have defined. Remember, you do not have to achieve the outcomes in one step, think incrementally. Make your immediate term goals and targets achievable, actionable, and clear. <strong>Revisit these goals each time you move through the FinOps lifecycle.</strong></p>
+<ul>
+<li>What were we trying to achieve last time?</li>
+<li>Did we achieve it by doing what we did?<ul>
+<li>Yes. Then more of that, please.</li>
+<li>No. Then, do we need to act with more scale? Less scale? Different action?</li>
+</ul>
+</li>
+</ul>
+<h3 id="example">Example</h3>
+<p>We have an OKR (Objective and Key Results) of having a highly rate optimized cloud environment for all production systems. We have established a KPI to measure this: discount percentage for consistent-use, production compute workloads - which we would like to achieve and sustain at 50%.</p>
+<p>This means we would like our average discount to be 50% for all of our consistently running production compute instances. Some will be covered by three-year savings plans, some compute, some EC2, some will be covered by one-year savings plans, and some will be paid on demand. All of these are providing different rates of savings for various resources, and of course, our workload mix and total demand is changing/growing over time as well. </p>
+<h4 id="expectations">Expectations</h4>
+<p>It is unreasonable to expect to go from the time we establish this KPI to meeting it in one cycle. </p>
+<ul>
+<li>First, we don’t want to buy all of our reservation at once, we want to buy them incrementally over time</li>
+<li>Second, we don’t want to make too large a bet at any one time, we want to watch trending over time and take small incremental actions</li>
+</ul>
+<h4 id="goal-setting">Goal Setting</h4>
+<p>As a goal during this cycle in the Optimize phase, we may want to look to improve this KPI from where it is now to something slightly better. Perhaps we’re currently at 32%. To make it better we have to consider several things:</p>
+<ul>
+<li>Cover more resources that are currently at 0% discount</li>
+<li>Cover resources currently getting lower discount coverage with higher discount options</li>
+<li>We have the option to purchase some or all of our recommended purchases of discount options</li>
+<li>What do we do?</li>
+</ul>
+<h4 id="taking-action">Taking Action</h4>
+<p>Once we have a plan of what we would like to accomplish, we look at options, and attempt to not only identify what incremental step we take now, but what effect we expect it will have.</p>
+<p>If we take that step, we can then, in the next loop through the lifecycle, look at the impact we actually had and determine if our estimations were correct. This will give us more information about how our actions impact our KPIs and give us a better understanding of what to do next time.</p>
+<p>By taking small steps we are passing up some potential savings, but in the long run, our incremental improvement approach and the confidence created by this approach, will pay larger dividends.</p>
+<h4 id="monitoring">Monitoring</h4>
+<p>We will put our goals and opportunities into a tracking system.</p>
+<ul>
+<li>For Agile, create a backlog of items to address</li>
+<li>Create visibility into how we are doing, what we are working on, and how we are prioritizing</li>
+</ul>
+<h3 id="defining-good-goals">Defining Good Goals</h3>
+<p>The first goal of any optimization effort should be good cost allocation. Without a full understanding of all of the costs, optimization will aim off target. Cost savings can be a goal - just not the only, or most important, goal. Be sure to express cost savings in ways that allow for flexibility (the model of the cloud).</p>
+<p><img alt="q - c - s" src="../images/course/69-focp.png" /></p>
+<p><strong>Remember the iron triangle. The goal is to make value-based decisions knowing that trade offs between cost, speed, and quality are required.</strong></p>
+<h3 id="resources">Resources</h3>
+<p><strong>KPIs</strong> See a list of common KPIs. <a href="https://fino.ps/0WFunK">Learn More</a></p>
+<h2 id="primary-ways-to-optimize-usage">Primary Ways to Optimize Usage</h2>
+<h3 id="workload-management">Workload Management</h3>
+<p>The first primary way you can optimize usage is through workload management. This means turning things on only when you need them. A central FinOps team, as well as utilizing automation, can help make this easier. Note that this is not appropriate for all workloads. </p>
+<p><img alt="click each information" src="../images/course/70-focp.png" /></p>
+<p><strong>Crawl</strong> - Manually turn off resources when idle</p>
+<p><strong>Walk</strong> - Schedule an automated off of resources when idle</p>
+<p><strong>Run</strong> - Identify and auto-terminate idle resources</p>
+<h3 id="scalability-and-elasticity">Scalability and Elasticity</h3>
+<p>Another way to optimize your usage is by introducing scalability or elasticity. The idea is to use a number of smaller resources to accomplish a task or support a workload such that as the demands of that workload vary over time, the number of small resources can be adjusted. Scalability and elasticity is a function of the architecture of the systems running in the cloud. Architecture teams, development teams, and platform teams should look for ways to accomplish this by incorporating scalable architecture choices as early as possible and completing involved re-architecting.</p>
+<h4 id="examples">Examples</h4>
+<ul>
+<li>Microservice architectures are ones where the end user app or website are made up of many smaller services each of which provides a piece of what the user sees. Because each can be scaled and developed separately this provides the ability to serve the webpage by having all sections generating their content at once on separate machines</li>
+<li>Stateless compute instances. These don’t need to handle a long series of transactions in a particular order, but can just work on atomic transactions, and can be used instead of stateful process servers which must wait around for long sequences to finish (or for very slow humans to respond) by using queueing techniques or developing what are called loosely coupled architectures</li>
+<li>Serverless architectures bypass many of the scalability challenges by only calling on compute resources when there is actual demand, and having each individual call its own resources to run</li>
+<li>Container-based applications are often built to scale horizontally, adding capacity as it becomes necessary </li>
+<li>Basic websites often have what’s called a three-tiered architecture where the front-end servers that users connect to can be stateless and can be reached via a “load balancer” which allows multiple front end web servers to work together to handle the load. The number of these can be adjusted for actual or anticipated demand</li>
+</ul>
+<h3 id="rightsizing">Rightsizing</h3>
+<p>Rightsizing always has to be approached as a collaborative effort. The centralized FinOps team cannot do this alone and will need to: ask for help, talk, discuss, agree, and then build a business case. The FinOps team should talk about opportunities with other teams regularly, not just when there’s a “problem." Additionally, the FinOps team will need to collaborate with the architecture team to build a working relationships and stay informed about about planned changes. </p>
+<p><strong>It is as important to confirm good workload match as it is to identify change opportunities!</strong></p>
+<h4 id="getting-started">Getting Started</h4>
+<p>Where to start?</p>
+<ul>
+<li>Unattached and idle resources (find and remove underutilized resources)</li>
+<li>Storage types and classes (rightsizing, management plan)</li>
+<li>Ultra low utilization (rightsizing)</li>
+<li>Old generation instances (modernization)</li>
+</ul>
+<h4 id="cadence">Cadence</h4>
+<p>Maintain a monthly cadence with development teams.</p>
+<ul>
+<li>Identify opportunities for rightsizing throughout the month</li>
+<li>Everyone should look for rightsizing opportunities</li>
+<li>Maintain regular cadence with architecture and platform teams <ul>
+<li>Planned architecture changes / platform changes</li>
+<li>Verify continued use of services and resources, watch out for trials and tests</li>
+</ul>
+</li>
+</ul>
+<h4 id="rightsizing-versus-commitment-based-discounts">Rightsizing Versus Commitment Based Discounts</h4>
+<p>Optimization and commitment purchasing are two sides of the same coin. We will want to create loose ties and checks as we do both.<br />
+ * Be sure not to commit to resources you might rightsize
+ * Be sure not to rightsize without checking what you are already committed to using</p>
+<p>We will perform both sets of activities on their own cadence. Include touchpoints with the other process at key decision points and prior to detailed analysis. The FinOps team can give development teams timely information for them to take action while allowing them to work optimization into their sprint.</p>
+<p><img alt="activity Cadence" src="../images/course/71-focp.png" /></p>
+<p>## Optimize Usage</p>
+<h3 id="candidates-for-optimization">Candidates for Optimization</h3>
+<p>In the Optimize phase is where you will identify optimization opportunities. Look for a mix of easy wins and harder elements. It will become tougher as you become more advanced (fewer easy wins, better team usage). You will want to do a combination of all items listed below as you go through your work.</p>
+<p><img alt="candicates" src="../images/course/72-focp.png" /></p>
+<h4 id="examples_1">Examples</h4>
+<p>This is a potential list of optimization opportunities. They are more or less in order of difficulty. Some of these are slightly more concrete examples of optimization opportunities you could go after. </p>
+<p><img alt="examples" src="../images/course/73-focp.png" /></p>
+<ul>
+<li>Turn off/turn on development, test, sandbox environments</li>
+<li>Create/manage storage policies to deprecate storage over time to cheaper tiers</li>
+<li>Rightsize compute, databases, networks, environments </li>
+<li>Change from 3rd party licensed resources to cloud native resources</li>
+<li>Modernize resources</li>
+<li>Service substitution (or license substitution)</li>
+<li>Mature your DevOps approach </li>
+<li>Move to/expand use of containers</li>
+<li>Move to serverless</li>
+</ul>
+<p>Based on what you are seeing in your Inform phase, your FinOps team might create such a list of optimization opportunities as a triage or brainstorming exercise. With each opportunity ask the following questions:</p>
+<ul>
+<li>What is the value of each of these? </li>
+<li>What is the effort required?</li>
+<li>Which are reasonable to consider for the Operate phase?</li>
+<li>Who would we need to talk to to get all these answers?</li>
+</ul>
+<h2 id="optimize-rates">Optimize Rates</h2>
+<p>Optimizing rates is the job of the central team (FinOps principle). Committed based discount purchasing, like reserved instances, savings plans, CUDs are the main focus here.</p>
+<h3 id="discounting">Discounting</h3>
+<p>Although the specifics can vary greatly by vendor and service, discounting in general is similar regardless of vendor or type. Commitment to the cloud provider – in terms of dollars, time, and details – will get you discounts. The more specific, the larger, or the longer your commitments, the more you can generally save.</p>
+<p>"<a href="../images/course/74-focp.png">discount types</a></p>
+<p>Cloud providers discount because they want predictability (the same as private data centers, but with more scale). Because you are committing to pay, you are by definition giving up flexibility that on-demand service usage offers. The other way to think about this is the cloud providers are buying your flexibility. Despite the fact that this is scary, do not wait. Constantly work on getting discounts. </p>
+<h4 id="before-you-commit">Before you Commit</h4>
+<p>Cloud providers are experts at discounting. So, before you commit, be able to forecast your demand and understand what commitments you can live with.</p>
+<p>You do not need to get the highest discount ever (Crawl Walk Run applies here too). If you can only forecast a total spend number over the next year, take a 15% discount over nothing. If you can forecast that you will use a particular instance family in a particular region for three years, go for the 74% off. Also, mix up what you buy and how you negotiate.</p>
+<h4 id="how-to-optimize">How to Optimize</h4>
+<p>What discounts you buy and how you buy them will impact the tools you need to have in place. How would you optimize?</p>
+<ul>
+<li>Primarily through procurement for negotiated discounts</li>
+<li>If you have enterprise agreements for licenses or other contracts, handle like that and spend an appropriate amount of time given the scale of your spending</li>
+<li>You can’t optimize much in time-based or usage based discounts</li>
+<li>It is important to know what discounts are happening so you can use them in any other arrangements</li>
+</ul>
+<h3 id="discounting-decisions">Discounting Decisions</h3>
+<p>When looking for discounts, whether it’s negotiated, tiered, or commitment based discounts, you have several decisions to make. </p>
+<ol>
+<li>Are you willing to pay upfront? This is increasingly not beneficial, but still gets you a 10% bump in discount if that works with your internal cost of capital. If you pay up front, where will that money come from? How will it be recovered by those who provide it? </li>
+<li>How will you collect, recognize, and apply the discounts when they come in?</li>
+<li>Will you show discounts to your engineers or others responsible for cloud costs?</li>
+</ol>
+<h4 id="commitment-based-discounts">Commitment-Based Discounts</h4>
+<p>RIs, savings plans, and committed use discounts are commitments to use a certain type of resource (maybe in a certain place or of a certain type), or to spend a certain amount of money (over a period of one or three years, every hour of every day). </p>
+<h5 id="examples_2">Examples</h5>
+<ul>
+<li>Reserved Instances (RIs)</li>
+<li>Committed Use Discounts (CUDs)</li>
+<li>Capacity Reservations</li>
+<li>Savings Plans</li>
+</ul>
+<h5 id="features">Features</h5>
+<ul>
+<li>Like coupons, not actual resources</li>
+<li>1-year or 3-year</li>
+<li>17-75% discounts</li>
+<li>The less flexible they are, the bigger the discount</li>
+<li>Up-front payments or monthly </li>
+<li>ocation, instance family, size, tenancy decisions</li>
+</ul>
+<h4 id="discount-purchasing">Discount Purchasing</h4>
+<p>Managing discounts is complex and there are a lot of decisions to make. That is one reason we recommend managing centrally with input from finance (your cost of money) and technology groups (your future usage) to inform decisions.</p>
+<p><img alt="Discount Purchasing" src="images" /></p>
+<p>Discounts are complex to figure out correctly and maintain well. It may be best to have a person on your team who knows all the options you have, inside and out. Then, have someone else learn from that person. </p>
+<p>When you own these discounts they will apply against running resources your engineering team launches. This is why we have to be sure they will continue to use them. There is no indication that a resource is covered when you stop using it (coverage will apply randomly across your whole cloud estate). </p>
+<h4 id="spot-market">Spot Market</h4>
+<p><strong>Spot Market available on all three major CSPs:</strong></p>
+<ul>
+<li>AWS Spot Instances</li>
+<li>GCP has Preemptible and Spot VMs</li>
+<li>Azure Low Priority VMs, Spot VMs</li>
+</ul>
+<h5 id="benefits">Benefits</h5>
+<ul>
+<li>Provides “spare” capacity for sale at deep discounts</li>
+<li>Many limitations and restrictions on use</li>
+<li>Can be pulled at any time on very short notice</li>
+<li>Usually priced 70-91% lower than on-demand rates</li>
+<li>Not appropriate for all workloads</li>
+</ul>
+<h5 id="limitations">Limitations</h5>
+<ul>
+<li>VMs can be recalled within 30 seconds or 2 minutes.</li>
+<li>The FinOps team cannot implement this itself</li>
+<li>Challenge teams and architects to find uses for spot if you use AWS. Cost savings can be a game changer if you can deal with the volatility</li>
+<li>You can attach EBS volumes to spot instances and allow them hibernate, or turn them off based on price changes or preemption</li>
+<li>Many more uses means discount will probably decrease because more are in ”normal” use</li>
+</ul>
+<h5 id="applications">Applications</h5>
+<ul>
+<li>Dev boxes, test boxes, trials, short-cycle jobs, stateless taskers</li>
+<li>More and more services in AWS are starting to allow the use of Spot (e.g. Sagemaker, ECS Fargate, etc.)</li>
+<li>Applications can include Jenkins, batch things, even K8s when managed correctly</li>
+</ul>
+<h2 id="business-cases">Business Cases</h2>
+<p><strong>Never bring a business case to a discussion fight.</strong></p>
+<h3 id="business-cases_1">Business Cases</h3>
+<p>Don’t spend too much time on a business case until you know that time will be valuable. The amount of data needed to build a business case around an opportunity can be tremendous.  Business cases should: </p>
+<ul>
+<li>Be as simple, clear, and concise as possible</li>
+<li>Have something for everyone (business, technology, finance)</li>
+<li>Use measurable, achievable, and actionable goals/targets</li>
+<li>Be agreed upon before drafting the details</li>
+</ul>
+<h4 id="business-case-cadence">Business Case Cadence</h4>
+<ol>
+<li>Gather Reports – Pull together the information needed to flesh out the opportunity.</li>
+<li>Analyze – Evaluate the data; look at options and different parameters. This could be things like: what terms to use for an RI purchase, what instance types should be the focus of a round of rightsizing, or what old instance types are the focus of upgrading. Figure out what you want to achieve with the action.</li>
+<li>Document – Write down your decisions, your rationale, your thought process, approvals, etc. and save it in an appropriate repository for your organization.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+    
+  </body>
+</html>
