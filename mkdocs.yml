@@ -33,7 +33,10 @@ nav:
     - Cisco Networking Academy:
       - Fundamentos de Python 1: 'cisco/fundamentos_python_1.md'
     - English (Smart Online): 
-      - Week 1: '04_english/week_01/lets_start.md'
+      - Week 1: 
+        - '04_english/week_01/greetings_&_farewells.md'
+        - '04_english/week_01/personal_introduction.md'
+    
 theme:
   name: material
   logo: logo.png
