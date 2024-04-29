@@ -30,21 +30,21 @@
  | Y | uai|as in Yogurt|
  | Z | dsi|as in Zebra|
 
- emilee
- jayden
- catherin
- damian
- nicholas
- isabelle
- zoey
+ - emilee
+ - jayden
+ - catherin
+ - damian
+ - nicholas
+ - isabelle
+ - zoey
 
- chair
- eraser
- desk
- board
- scissors
- rulers
- book
- Pensicl
- clip
- folder
+ - chair
+ - eraser
+ - desk
+ - board
+ - scissors
+ - rulers
+ - book
+ - Pensicl
+ - clip
+ - folder
