@@ -34,8 +34,10 @@ nav:
       - Fundamentos de Python 1: 'cisco/fundamentos_python_1.md'
     - English (Smart Online): 
       - Week 1: 
-        - '04_english/week_01/greetings_&_farewells.md'
-        - '04_english/week_01/personal_introduction.md'
+        - '04_english/week_01/01-greetings_&_farewells.md'
+        - '04_english/week_01/02-personal_introduction.md'
+        - '04_english/week_01/03-alphabet.md'
+        - '04_english/week_01/04-numbers.md'
     
 theme:
   name: material
