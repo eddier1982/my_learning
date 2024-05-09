@@ -1,0 +1,43 @@
+---
+- name: Validate URL's
+  hosts: all
+  gather_facts: false
+  become: true
+  vars_files:
+    - vars/urls.yml
+  
+  tasks:
+    - name: Test URL
+      ansible.builtin.uri:
+        url: '{{ item }}'
+        return_content: no
+        validate_certs: false
+        follow_redirects: yes
+        status_code: 200
+      loop:
+        - https://registry.redhat.io
+        - http://registry.redhat.io
+        - https://automation-hub-prd.s3.amazonaws.com
+        - https://automation-hub-prd.s3.us-east-2.amazonaws.com/
+        - https://ansible-galaxy-ng.s3.dualstack.us-east-1.amazonaws.com
+        - https://access.redhat.com
+        - https://subscription.rhsm.redhat.com 
+        - https://subscription.rhn.redhat.com 
+        - https://cdn.redhat.com
+        - https://console.redhat.com 
+        - https://api.access.redhat.com 
+        - https://cert-api.access.redhat.com 
+        - https://sso.redhat.com
+        - https://galaxy.ansible.com
+        - https://cert.console.redhat.com
+        - https://catalog.redhat.com
+        - http://cdn.quay.io
+        - https://cdn.quay.io
+        - http://cdn01.quay.io
+        - https://cdn01.quay.io
+        - http://cdn02.quay.io
+        - https://cdn02.quay.io
+        - http://cdn03.quay.io
+        - https://cdn03.quay.io
+        - *.akamaiedge.net
+        - *.akamaitechnologies.com

@@ -1,0 +1,13 @@
+---
+- name: Update OS of servers
+  hosts: all
+  gather_facts: false
+  become: true
+  tasks:
+    - name: Update OS
+      ansible.buitin.dnf:
+        name: '*'
+        state: latest
+    - name: reboot the server
+      ansible.buitin.reboot:
+        reboot_timeout: 3600

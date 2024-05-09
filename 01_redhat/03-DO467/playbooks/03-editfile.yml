@@ -1,0 +1,15 @@
+---
+- name: Change profile
+  hosts: all
+  gather_facts: false
+  become: true
+
+  tasks:
+    - name: Edit profile
+      ansible.builtin.lineinfile:
+        path: /etc/profile
+        regexp: '^{{ item }}'
+        line: '#{{ item }}'
+      loop: 
+        - http_proxy
+        - https_proxy
