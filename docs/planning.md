@@ -1,7 +1,7 @@
 # Planeación
 
 
-| Objetivo | Fecha Propuesta | % Avance | 
+| Objetivo | Fecha Meta | % Avance | 
 |:---------|:----------------|:---------|
 | Certificación C2 Inglés | Noviembre 2024 | ![](https://geps.dev/progress/5)
 | RHEL (*Training*) | | ![](https://geps.dev/progress/100) |
