@@ -2,7 +2,8 @@ site_name: My Learning
 # site_url:
 
 nav:
-  - Home: index.md
+  - Home: home.md
+  - Index: index.md
   - About: about.md
   - Planning: planning.md
   - Learning:
