@@ -10,6 +10,21 @@
 
  ![pronouns](./images/subject_pronouns.jpg)
 
+ | Country | Nationality |
+ | :------ | :---------- |
+ |Canada | Canadians |
+ |Unites States | Americans |
+ |Belize | Belozean |
+ |Bahamas | Bahamian |
+ |Jamaica | Jamaicans |
+ |Trinidad and Tobago | Trinidadian(s)and Tobagonian(s) |
+ |Guyana | Guyanese |
+ |United Kingdom | Britsh |
+ |Ireland | Irish |
+ |Malta |Maltese |
+ |Australia | Autralian |
+ |New Zealand | New Zealander |
+
 
 
 
