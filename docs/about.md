@@ -1,4 +1,4 @@
-# Acerca de este sitio
+# Acerca de mi
 
-Este micrositio está diseñado para el estudio y practica de las certificaciones y estudios.
+
 
