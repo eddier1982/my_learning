@@ -4,6 +4,7 @@ site_name: My Learning
 nav:
   - Home: index.md
   - About: about.md
+  - Planning: planning.md
   - Learning:
     - Red Hat: 
       - RHCSA Rapid Track (RH199):
@@ -50,4 +51,9 @@ theme:
   #name: readthedocs
   #highlightjs: true
   #locale: en
+
+markdown_extensions:
+  - attr_list
+
+
 
