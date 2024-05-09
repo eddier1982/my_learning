@@ -19,6 +19,9 @@ nav:
         - Prácticas: 
           - Práctica Norlan: '01_redhat/04-DO374/practice_norlan.md'
       - Red Hat Satellite 6 Administration (): '01_redhat/05-RHSA6/01-RHSA6.md'
+      - Red Hat OpenShift Administration I (DO180): 
+        - Operating a Production Cluster: '01_redhat/06-DO180/01-DO180.md'
+        - Notas de práctica: '01_redhat/06-DO180/DO180_notes.md'
     - FinOps Practitioner:
       - FinOps Certified Practitioner Introduction : '02_finops/01_Introduction_finops.md'
       - Cloud Changes IT: '02_finops/02_cloud_changes_it.md'
