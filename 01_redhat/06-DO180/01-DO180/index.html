@@ -9,25 +9,25 @@
       
       
       
-        <link rel="prev" href="../about/">
+        <link rel="prev" href="../../05-RHSA6/01-RHSA6/">
       
       
-        <link rel="next" href="../01_redhat/01-RH199/01-EX200_RHCSA/">
+        <link rel="next" href="../DO180_notes/">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
     
     
       
-        <title>Planning - My Learning</title>
+        <title>Operating a Production Cluster - My Learning</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.bcfcd587.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.bcfcd587.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#planeacion" class="md-skip">
+        <a href="#red-hat-openshift-administration-i" class="md-skip">
           Skip to content
         </a>
       
@@ -86,9 +86,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="My Learning" class="md-header__button md-logo" aria-label="My Learning" data-md-component="logo">
+    <a href="../../.." title="My Learning" class="md-header__button md-logo" aria-label="My Learning" data-md-component="logo">
       
-  <img src="../logo.png" alt="logo">
+  <img src="../../../logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Planning
+              Operating a Production Cluster
             
           </span>
         </div>
@@ -180,9 +180,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="My Learning" class="md-nav__button md-logo" aria-label="My Learning" data-md-component="logo">
+    <a href="../../.." title="My Learning" class="md-nav__button md-logo" aria-label="My Learning" data-md-component="logo">
       
-  <img src="../logo.png" alt="logo">
+  <img src="../../../logo.png" alt="logo">
 
     </a>
     My Learning
@@ -197,7 +197,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../home/" class="md-nav__link">
+      <a href="../../../home/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -217,7 +217,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -237,7 +237,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about/" class="md-nav__link">
+      <a href="../../../about/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -254,19 +254,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../planning/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -275,7 +266,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -284,17 +274,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -308,7 +300,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Learning
@@ -319,17 +311,19 @@
                 
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
         
           
           <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
@@ -343,7 +337,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_1">
             <span class="md-nav__icon md-icon"></span>
             Red Hat
@@ -392,7 +386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01_redhat/01-RH199/01-EX200_RHCSA/" class="md-nav__link">
+      <a href="../../01-RH199/01-EX200_RHCSA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -413,7 +407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01_redhat/01-RH199/c1_Access_Systems_and_Get_Support/" class="md-nav__link">
+      <a href="../../01-RH199/c1_Access_Systems_and_Get_Support/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -434,7 +428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01_redhat/01-RH199/c2_Manage_Files_from_the_Command_Line/" class="md-nav__link">
+      <a href="../../01-RH199/c2_Manage_Files_from_the_Command_Line/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -463,7 +457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01_redhat/02-RH294/02-RH294/" class="md-nav__link">
+      <a href="../../02-RH294/02-RH294/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -519,7 +513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01_redhat/03-DO467/RHAAP_notes/" class="md-nav__link">
+      <a href="../../03-DO467/RHAAP_notes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -618,7 +612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01_redhat/04-DO374/practice_norlan/" class="md-nav__link">
+      <a href="../../04-DO374/practice_norlan/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -655,7 +649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01_redhat/05-RHSA6/01-RHSA6/" class="md-nav__link">
+      <a href="../../05-RHSA6/01-RHSA6/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -673,17 +667,19 @@
                 
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_6" checked>
         
           
           <label class="md-nav__link" for="__nav_5_1_6" id="__nav_5_1_6_label" tabindex="0">
@@ -697,7 +693,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_1_6">
             <span class="md-nav__icon md-icon"></span>
             Red Hat OpenShift Administration I (DO180)
@@ -708,10 +704,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../01_redhat/06-DO180/01-DO180/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -720,6 +725,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -732,7 +738,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01_redhat/06-DO180/DO180_notes/" class="md-nav__link">
+      <a href="../DO180_notes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -804,7 +810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_finops/01_Introduction_finops/" class="md-nav__link">
+      <a href="../../../02_finops/01_Introduction_finops/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -825,7 +831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_finops/02_cloud_changes_it/" class="md-nav__link">
+      <a href="../../../02_finops/02_cloud_changes_it/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -846,7 +852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_finops/03_what_is_FinOps/" class="md-nav__link">
+      <a href="../../../02_finops/03_what_is_FinOps/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -867,7 +873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_finops/04_FinOps_framework_%26_principles/" class="md-nav__link">
+      <a href="../../../02_finops/04_FinOps_framework_%26_principles/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -888,7 +894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_finops/05_personas_%26_teams/" class="md-nav__link">
+      <a href="../../../02_finops/05_personas_%26_teams/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -909,7 +915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_finops/06_domains_%26_capabilities/" class="md-nav__link">
+      <a href="../../../02_finops/06_domains_%26_capabilities/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -930,7 +936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_finops/07_Motivations_%26_Common_Language/" class="md-nav__link">
+      <a href="../../../02_finops/07_Motivations_%26_Common_Language/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -951,7 +957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_finops/08_Anatomy_of_a_Cloud_Bill/" class="md-nav__link">
+      <a href="../../../02_finops/08_Anatomy_of_a_Cloud_Bill/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -972,7 +978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_finops/09_FOCUS/" class="md-nav__link">
+      <a href="../../../02_finops/09_FOCUS/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -993,7 +999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_finops/10_Running_the_FinOps_Team/" class="md-nav__link">
+      <a href="../../../02_finops/10_Running_the_FinOps_Team/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1014,7 +1020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_finops/11_Inform_Phase/" class="md-nav__link">
+      <a href="../../../02_finops/11_Inform_Phase/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1035,7 +1041,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_finops/12_Optimize_Phase/" class="md-nav__link">
+      <a href="../../../02_finops/12_Optimize_Phase/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1056,7 +1062,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_finops/13_Operate_Phase/" class="md-nav__link">
+      <a href="../../../02_finops/13_Operate_Phase/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1077,7 +1083,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_finops/14_Maturing_FinOps/" class="md-nav__link">
+      <a href="../../../02_finops/14_Maturing_FinOps/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1098,7 +1104,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_finops/focp_questions/" class="md-nav__link">
+      <a href="../../../02_finops/focp_questions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1162,7 +1168,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03_cisco/fundamentos_python_1/" class="md-nav__link">
+      <a href="../../../03_cisco/fundamentos_python_1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1261,7 +1267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04_english/week_01/01-greetings_%26_farewells/" class="md-nav__link">
+      <a href="../../../04_english/week_01/01-greetings_%26_farewells/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1282,7 +1288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04_english/week_01/02-personal_introduction/" class="md-nav__link">
+      <a href="../../../04_english/week_01/02-personal_introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1303,7 +1309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04_english/week_01/03-alphabet/" class="md-nav__link">
+      <a href="../../../04_english/week_01/03-alphabet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1324,7 +1330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04_english/week_01/04-numbers/" class="md-nav__link">
+      <a href="../../../04_english/week_01/04-numbers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1394,63 +1400,14 @@
                   
 
 
-<h1 id="planeacion">Planeación</h1>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Objetivo</th>
-<th style="text-align: left;">Fecha Objetivo</th>
-<th style="text-align: left;">% Avance</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Certificación C2 Inglés</td>
-<td style="text-align: left;">Noviembre 2024</td>
-<td style="text-align: left;"><img alt="" src="https://geps.dev/progress/3" /></td>
-</tr>
-<tr>
-<td style="text-align: left;">RHEL (<em>Training</em>)</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"><img alt="" src="https://geps.dev/progress/100" /></td>
-</tr>
-<tr>
-<td style="text-align: left;">RHEL Automation with Ansible (<em>Training</em>)</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"><img alt="" src="https://geps.dev/progress/100" /></td>
-</tr>
-<tr>
-<td style="text-align: left;">Manage Enterprise Automation with RH-AAP (<em>Training</em>)</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"><img alt="" src="https://geps.dev/progress/100" /></td>
-</tr>
-<tr>
-<td style="text-align: left;">Developing Advanced Automation with RH-AAP (<em>Training</em>)</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"><img alt="" src="https://geps.dev/progress/100" /></td>
-</tr>
-<tr>
-<td style="text-align: left;">Red Hat Satellite 6 Administration (<em>Training</em>)</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"><img alt="" src="https://geps.dev/progress/100" /></td>
-</tr>
-<tr>
-<td style="text-align: left;">Red Hat OpenShift Administration (Training)</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"><img alt="" src="https://geps.dev/progress/19" /></td>
-</tr>
-<tr>
-<td style="text-align: left;">Red Hat OpenShift Administration II</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"><img alt="" src="https://geps.dev/progress/3" /></td>
-</tr>
-<tr>
-<td style="text-align: left;">Red Hat OpenShift Development I</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"><img alt="" src="https://geps.dev/progress/12" /></td>
-</tr>
-</tbody>
-</table>
+<h1 id="red-hat-openshift-administration-i">Red Hat OpenShift Administration I</h1>
+<ul>
+<li>Containers and Kubernetes</li>
+<li>Red Hat OpenShift Components and Editions</li>
+<li>Navigate the OpenShift Web Console</li>
+<li>Console</li>
+<li>Monitor an OpenShift Cluster</li>
+</ul>
 
 
 
@@ -1497,10 +1454,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.1e8ae164.min.js"></script>
       
     
   </body>
