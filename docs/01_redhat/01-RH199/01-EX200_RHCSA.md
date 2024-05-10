@@ -6,7 +6,7 @@
 
  | Objetivo | Estado |
  |:-------- |:------ |
- | Acceder a Shell prompt y ejecutar comandos con la sintaxis correcta | <img src="../../../../../images/no_check.png" alt="image" width="20" height="auto"> |
+ | Acceder a Shell prompt y ejecutar comandos con la sintaxis correcta | <img src="../../../images/no_check.png" alt="image" width="20" height="auto"> |
  | Usar *input-output*  de redirección '(>, >>,&#124;, 2>, etc.)' | <img src="../../../images/no_check.png" alt="image" width="20" height="auto"> |
  | Acceso remoto a systemas usando SSH | <img src="../../../images/no_check.png" alt="image" width="20" height="auto"> |
  | Log in y switch de usuarios en obketivos multiusuario | <img src="../../../images/no_check.png" alt="image" width="20" height="auto"> |
