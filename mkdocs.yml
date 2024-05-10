@@ -6,58 +6,47 @@ nav:
   - Index: index.md
   - About: about.md
   - Planning: planning.md
-  - Learning:
-    - Red Hat: 
-      - RHCSA Rapid Track (RH199):
-        - Red Hat Certified System Administrator (RHCSA): '01_redhat/01-RH199/01-EX200_RHCSA.md'
-        - Capitulo 1 "Access Systems and Get Support": '01_redhat/01-RH199/c1_Access_Systems_and_Get_Support.md'
-        - Capitulo 2 "Manage Files from the Command Line": '01_redhat/01-RH199/c2_Manage_Files_from_the_Command_Line.md'
-      - RHEL Automation with Ansible (RH294): '01_redhat/02-RH294/02-RH294.md'
-      - Managing Enterprimse Automation with RH AAP (DO467): 
-        - Notas de práctica: '01_redhat/03-DO467/RHAAP_notes.md'
-      - Developing Advanced Automation with RH AAP (DO374):
-        - Prácticas: 
-          - Práctica Norlan: '01_redhat/04-DO374/practice_norlan.md'
-      - Red Hat Satellite 6 Administration (): '01_redhat/05-RHSA6/01-RHSA6.md'
-      - Red Hat OpenShift Administration I (DO180): 
-        - Operating a Production Cluster: '01_redhat/06-DO180/01-DO180.md'
-        - Notas de práctica: '01_redhat/06-DO180/DO180_notes.md'
-    - FinOps Practitioner:
-      - FinOps Certified Practitioner Introduction : '02_finops/01_Introduction_finops.md'
-      - Cloud Changes IT: '02_finops/02_cloud_changes_it.md'
-      - What is FinOps: '02_finops/03_what_is_FinOps.md'
-      - FinOps Framework & Principles: '02_finops/04_FinOps_framework_&_principles.md'
-      - Personas & Teams: '02_finops/05_personas_&_teams.md'
-      - Domains & Capabilities: '02_finops/06_domains_&_capabilities.md'
-      - Motivations & Common Language: '02_finops/07_Motivations_&_Common_Language.md'
-      - Anatomy of a Cloud Bill: '02_finops/08_Anatomy_of_a_Cloud_Bill.md'
-      - FOCUS: '02_finops/09_FOCUS.md'
-      - Running the FinOps Team: '02_finops/10_Running_the_FinOps_Team.md'
-      - Inform Phase: '02_finops/11_Inform_Phase.md'
-      - Optimize Phase: '02_finops/12_Optimize_Phase.md'
-      - Operate Phase: '02_finops/13_Operate_Phase.md'
-      - Maturing FinOps: '02_finops/14_Maturing_FinOps.md'
-      - FOCP: '02_finops/focp_questions.md'
-    - Cisco Networking Academy:
-      - Fundamentos de Python 1: '03_cisco/fundamentos_python_1.md'
-    - English (Smart Online): 
-      - Week 1: 
-        - '04_english/week_01/01-greetings_&_farewells.md'
-        - '04_english/week_01/02-personal_introduction.md'
-        - '04_english/week_01/03-alphabet.md'
-        - '04_english/week_01/04-numbers.md'
+  - Red Hat: 
+    - 01 RHCSA Rapid Track (RH199):
+      - Objetivos RH199: '01_redhat/01-RH199/01-EX200_RHCSA.md'
+      - Red Hat Enterprise Linux 9.0: '01_redhat/01-RH199/02-RH199.md'
+      - Notas de práctica: '01_redhat/01-RH199/03-RH199_notes.md'
+    - 02 RHEL Automation with Ansible (RH294): 
+      - Red Hat Enterprise Linux Automation with Ansible: '01_redhat/02-RH294/01-RH294.md'
+      - Notas de práctica: '01_redhat/02-RH294/02-RHELAA_notes.md'
+    - 03 Managing Enterprimse Automation with RH AAP (DO467):
+      - Managing Enterprise Automation with Red Hat Ansible Automation Platform: '01_redhat/03-DO467/01-DO467.md' 
+      - Notas de práctica: '01_redhat/03-DO467/RHAAP_notes.md'
+    - 04 Developing Advanced Automation with RH AAP (DO374):
+      - Prácticas: 
+        - Práctica Norlan: '01_redhat/04-DO374/practice_norlan.md'
+    - 05 Red Hat Satellite 6 Administration (RH403): '01_redhat/05-RHSA6/01-RHSA6.md'
+    - 06 Red Hat OpenShift Administration I (DO180): 
+      - Operating a Production Cluster: '01_redhat/06-DO180/01-DO180.md'
+      - Notas de práctica: '01_redhat/06-DO180/DO180_notes.md'
+  - FinOps Foundation:
+    - FinOps Certified Practitioner : '02_finops/01_finops_practitioner.md'
+    - FOCP: '02_finops/focp_questions.md'
+  - Cisco Networking Academy:
+    - Fundamentos de Python 1: '03_cisco/fundamentos_python_1.md'
+  - English (Smart Online): 
+    - A1: '04_english/A1.md'
     
 theme:
   name: material
   logo: logo.png
   palette:
     primary: light green
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
   #name: readthedocs
   #highlightjs: true
   #locale: en
 
 markdown_extensions:
   - attr_list
+  
 
 
 

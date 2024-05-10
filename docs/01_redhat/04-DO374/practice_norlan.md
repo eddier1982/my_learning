@@ -157,7 +157,7 @@ Ir a: **Collections** → **Namespaces**  (Select Namespace) → **Upload collec
 
 Para que el collection este disponible para los usuarios es necesario aprobarla.
 
-![Approval](images/approval.png)
+[Approval] (images/approval.png)
 
 Cada vez que se modifique la colección, Es necesario editar el archivo **galaxy.yml** y actualizar la versión. De lo contrario, la plataforma de distribución rechazará tu colección.
 

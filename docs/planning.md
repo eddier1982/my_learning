@@ -1,5 +1,15 @@
 # Planeación
 
+## Semanal
+
+ | Time | MON | TUE | WEM | THU | FRI | Weekend |
+ |:-----|:---:|:---:|:---:|:---:|:---:|:-------:|
+ | 03:15|OCP 4.X | English | Satellite | English | Ansible | |
+ | 5:15 | Meditación    |
+ |14:00 | | | | | | English |
+
+
+##
 
 | Objetivo | Fecha Objetivo | % Avance | 
 |:---------|:----------------|:---------|
