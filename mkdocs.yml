@@ -18,7 +18,10 @@ nav:
     - 04 Developing Advanced Automation with RH AAP (DO374):
       - Prácticas: 
         - Práctica Norlan: '01_redhat/04-DO374/practice_norlan.md'
-    - 05 Red Hat Satellite 6 Administration (RH403): '01_redhat/05-RHSA6/01-RHSA6.md'
+    - 05 Red Hat Satellite 6 Administration (RH403): 
+      - Install & Manage Red Hat Satellite: '01_redhat/05-RHSA6/01-RHSA6.md'
+      - Notas de práctica: '01_redhat/05-RHSA6/RH403_notes.md'
+      - Pre-requisitos: '01_redhat/05-RHSA6/RH403_prereq.md'
     - 06 Red Hat OpenShift Administration I (DO180): 
       - Operating a Production Cluster: '01_redhat/06-DO180/01-DO180.md'
       - Notas de práctica: '01_redhat/06-DO180/DO180_notes.md'
