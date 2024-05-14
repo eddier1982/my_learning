@@ -1,0 +1,1 @@
+# Notas Red Hat Satellite 6.X
