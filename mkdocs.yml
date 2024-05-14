@@ -3,8 +3,6 @@ site_name: My Learning
 
 nav:
   - Home: home.md
-  - Index: index.md
-  - About: about.md
   - Planning: planning.md
   - Red Hat: 
     - 01 RHCSA Rapid Track (RH199):
@@ -14,7 +12,7 @@ nav:
     - 02 RHEL Automation with Ansible (RH294): 
       - Red Hat Enterprise Linux Automation with Ansible: '01_redhat/02-RH294/01-RH294.md'
       - Notas de práctica: '01_redhat/02-RH294/02-RHELAA_notes.md'
-    - 03 Managing Enterprimse Automation with RH AAP (DO467):
+    - 03 Managing Enterprise Automation with RH AAP (DO467):
       - Managing Enterprise Automation with Red Hat Ansible Automation Platform: '01_redhat/03-DO467/01-DO467.md' 
       - Notas de práctica: '01_redhat/03-DO467/RHAAP_notes.md'
     - 04 Developing Advanced Automation with RH AAP (DO374):
@@ -31,6 +29,7 @@ nav:
     - Fundamentos de Python 1: '03_cisco/fundamentos_python_1.md'
   - English (Smart Online): 
     - A1: '04_english/A1.md'
+  - About: about.md
     
 theme:
   name: material
