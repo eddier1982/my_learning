@@ -895,6 +895,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Notas de práctica
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -904,6 +915,52 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#guias-de-documentacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gúias de documentación
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comandos-de-validacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos de validación
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1293,6 +1350,41 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#guias-de-documentacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gúias de documentación
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deployment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comandos-de-validacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos de validación
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1307,6 +1399,53 @@
 
 
 <h1 id="notas-red-hat-satellite-6x">Notas Red Hat Satellite 6.X</h1>
+<h2 id="guias-de-documentacion">Gúias de documentación</h2>
+<ul>
+<li><a href="https://access.redhat.com/documentation/en-us/red_hat_satellite/">Dpcumentación de producto 6.15</a></li>
+</ul>
+<h2 id="deployment">Deployment</h2>
+<ul>
+<li><a href="https://access.redhat.com/documentation/en-us/red_hat_satellite/6.15/html/installing_satellite_server_in_a_connected_network_environment">Instalación Satellite Server conectado</a></li>
+<li><a href="https://access.redhat.com/documentation/en-us/red_hat_satellite/6.15/html/installing_capsule_server">Instalación de Capsula</a></li>
+</ul>
+<h2 id="comandos-de-validacion">Comandos de validación</h2>
+<p>Apertura de puertos para clientes en RHS</p>
+<pre><code>    firewall-cmd \
+    --add-port="5647/tcp" \
+    --add-port="8000/tcp" \
+    --add-port="9090/tcp"
+</code></pre>
+<p>Apertura de servicios en RHS:</p>
+<pre><code>    firewall-cmd \
+    --add-service=dns \
+    --add-service=dhcp \
+    --add-service=tftp \
+    --add-service=http \
+    --add-service=https \
+    --add-service=puppetmaster
+</code></pre>
+<p>Creando persitencia en las reglas del FW:</p>
+<pre><code>    firewall-cmd --runtime-to-permanent
+</code></pre>
+<p>Validando el estado del FW:</p>
+<pre><code>    firewall-cmd --list-all
+</code></pre>
+<p>Validación de resolución de ping localmente</p>
+<pre><code>    ping -c1 localhost
+    ping -c1 `hostname -f`
+</code></pre>
+<p>Validación de acceso a URL's</p>
+<pre><code>cat &lt;&lt; 'EOF' &gt; SITES
+</code></pre>
+<p>subscription.rhn.redhat.com
+cdn.redhat.com
+console.redhat.com
+api.access.redhat.com
+cert-api.access.redhat.com
+e29511.dscb.akamaiedge.net
+a184-87-197-90.deploy.static.akamaitechnologies.com
+EOF
+[root@localhost ~]# for URL in $(cat SITES); do  timeout 3 bash -c "&lt;/dev/tcp/$URL/443 &amp;&amp; echo Port is open for $URL || echo Port is closed" for $URL || echo Connection timeout for $URL; done</p>
 
 
 

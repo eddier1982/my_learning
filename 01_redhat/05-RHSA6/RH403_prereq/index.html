@@ -989,13 +989,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#conectividad-requerida-por-la-plataforma2" class="md-nav__link">
+  <a href="#conectividad-requerida-por-la-plataforma" class="md-nav__link">
     <span class="md-ellipsis">
-      Conectividad requerida por la plataforma2
+      Conectividad requerida por la plataforma:
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Conectividad requerida por la plataforma2">
+    <nav class="md-nav" aria-label="Conectividad requerida por la plataforma:">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1546,13 +1546,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#conectividad-requerida-por-la-plataforma2" class="md-nav__link">
+  <a href="#conectividad-requerida-por-la-plataforma" class="md-nav__link">
     <span class="md-ellipsis">
-      Conectividad requerida por la plataforma2
+      Conectividad requerida por la plataforma:
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Conectividad requerida por la plataforma2">
+    <nav class="md-nav" aria-label="Conectividad requerida por la plataforma:">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1782,7 +1782,7 @@
 </table>
 <p><strong>NOTA 1:</strong> Todas las particiones deben ir sobre LVM, con excepción del <strong>boot</strong></p>
 <p><strong>NOTA 2 (300'*'):</strong> Espacio estimado para un entorno con los repositorios <strong>Red Hat Enterprise Linux 7,8 y 9</strong> sincronizados. Preferiblemente use discos <strong>SSD</strong> para un rendimiento óptimo de la plataforma.</p>
-<h2 id="conectividad-requerida-por-la-plataforma2">Conectividad requerida por la plataforma2</h2>
+<h2 id="conectividad-requerida-por-la-plataforma">Conectividad requerida por la plataforma:</h2>
 <p>Desde las máquinas que se utilicen para instalar y/o administrar Satellite, hacia el servidor Satellite, se requieren los siguientes puertos:</p>
 <p>Mayor detalle sobre los puertos de red requeridos puede obtenerse en el siguiente enlace: https://access.redhat.com/solutions/1193673
  3/6</p>
@@ -1812,17 +1812,17 @@
 <li>25 / 587 (SMTP/SMTPS) al servidor de correo electrónico (para notificaciones)</li>
 <li>53 UDP (DNS) al servidor DNS interno</li>
 <li>123 UDP (NTP) al servidor NTP interno</li>
-<li>389 TCP (HTTP) LDAP</li>
+<li>389 UDP / 636 TCP (LDAP/LDAPS)</li>
 </ul>
 <h4 id="datos-de-servidor-de-mensajeria">Datos de servidor de mensajería</h4>
 <ul>
-<li>Usuario y password de conexión</li>
-<li>IP de servidor de relay</li>
+<li>SMTP Address</li>
+<li>Usuario y password SMTP </li>
 </ul>
 <h4 id="datos-de-configuracion-de-usuarios-externos-ldap">Datos de configuración de usuarios externos LDAP</h4>
 <ul>
 <li>Usuario y password de conexión</li>
-<li>IP y FQDN del servicor controlador de dominio</li>
+<li>IP y FQDN del servidor LDAP</li>
 <li>Grupos y su pertenecia a las Unidades organizativas (OU) que se tendrán acceso</li>
 </ul>
 <h3 id="acceso-urls-de-internet-en-el-servidor-satellite">Acceso URL's de Internet en el servidor Satellite</h3>
