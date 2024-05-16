@@ -17,7 +17,7 @@ tasks:
 
   - name: Permisions sudoers
     ansible.builtin.copy:
-      dest: /etc/sudoers.d/ansible-service-account
+      dest: /etc/sudoers.d/{{ useradd }}-service-account
       content: '{{ useradd }} ALL=(ALL) NOPASSWD:ALL'
       mode: u=rw,g=r,o=r
       owner: root
