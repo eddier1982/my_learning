@@ -38,7 +38,7 @@
 
  **NOTA 2 (300'*'):** Espacio estimado para un entorno con los repositorios **Red Hat Enterprise Linux 7,8 y 9** sincronizados. Preferiblemente use discos **SSD** para un rendimiento óptimo de la plataforma.
        
-## Conectividad requerida por la plataforma2
+## Conectividad requerida por la plataforma:
 
  Desde las máquinas que se utilicen para instalar y/o administrar Satellite, hacia el servidor Satellite, se requieren los siguientes puertos:
 
@@ -68,17 +68,18 @@ Mayor detalle sobre los puertos de red requeridos puede obtenerse en el siguient
  - 25 / 587 (SMTP/SMTPS) al servidor de correo electrónico (para notificaciones)
  - 53 UDP (DNS) al servidor DNS interno
  - 123 UDP (NTP) al servidor NTP interno
- - 389 TCP (HTTP) LDAP
+ - 389 UDP / 636 TCP (LDAP/LDAPS)
 
 #### Datos de servidor de mensajería
 
- - Usuario y password de conexión
- - IP de servidor de relay
+ - SMTP Address
+ - Usuario y password SMTP 
+
 
 #### Datos de configuración de usuarios externos LDAP
 
  - Usuario y password de conexión
- - IP y FQDN del servicor controlador de dominio
+ - IP y FQDN del servidor LDAP
  - Grupos y su pertenecia a las Unidades organizativas (OU) que se tendrán acceso
   
 ### Acceso URL's de Internet en el servidor Satellite
