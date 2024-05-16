@@ -1,0 +1,4 @@
+# Variables de ejecución
+
+validate_aap: true
+validate_rhs: true
