@@ -69,6 +69,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#comandos" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -599,6 +604,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Notas de práctica
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -608,6 +624,50 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#comandos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#archivos-de-configuracion-base-de-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Archivos de configuración base de proyecto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modulos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modulos
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1284,6 +1344,41 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#comandos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#archivos-de-configuracion-base-de-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Archivos de configuración base de proyecto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modulos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modulos
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1299,7 +1394,141 @@
 
   <h1>Notas de práctica</h1>
 
+<h2 id="comandos">Comandos</h2>
+<pre><code>dnf install ansible-core
+ansible --version
 
+dnf install ansible-navigator
+ansible-navigator --version
+
+podman login registry.redhat.io
+podman pull registry.redhat.io/ansible-automation-platform-22/ee-supported-rhel8:latest
+
+ansible-navigator images
+
+ansible-navigator inventory
+ansible-navigator inventory -m stdout --host fqdn_host
+ansible-navigator inventory -m stdout --list
+ansible-navigator inventory -m stdout --graph group_name
+
+ansible-navigator run  -m stdout name.yml
+ansible-navigator run  -m stdout name.yml --syntax-check
+ansible-navigator run  -m stdout name.yml --check
+
+ansible-navigator doc -l
+
+</code></pre>
+<h2 id="archivos-de-configuracion-base-de-proyecto">Archivos de configuración base de proyecto</h2>
+<ul>
+<li>ansible.cfg</li>
+<li>ansible-navigator.yml</li>
+</ul>
+<p>Se configuran 2 tipos de variables en ansible.cfg</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">[defaults]</th>
+<th style="text-align: left;">[privilege_escalation]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">inventory = ./inventory</td>
+<td style="text-align: left;">become = true</td>
+</tr>
+<tr>
+<td style="text-align: left;">remote_user = user</td>
+<td style="text-align: left;">become_method = sudo</td>
+</tr>
+<tr>
+<td style="text-align: left;">ask_pass = false</td>
+<td style="text-align: left;">become_user = root</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">become_ask_pass = false</td>
+</tr>
+</tbody>
+</table>
+<h2 id="modulos">Modulos</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Categoría</th>
+<th style="text-align: left;">Modulo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Files</td>
+<td style="text-align: left;">ansible.builtin.copy: Copy a local file to the managed host.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">ansible.builtin.file: Set permissions and other properties of files.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">ansible.builtin.lineinfile: Ensure a particular line is or is not in a file.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">ansible.posix.synchronize: Synchronize content using rsync.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Software</td>
+<td style="text-align: left;">ansible.builtin.package: Manage packages using the automatically detected package manager native to the operating system.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">ansible.builtin.dnf: Manage packages using the DNF package manager.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">ansible.builtin.apt: Manage packages using the APT package manager.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">ansible.builtin.pip: Manage Python packages from PyPI.</td>
+</tr>
+<tr>
+<td style="text-align: left;">System</td>
+<td style="text-align: left;">ansible.posix.firewalld: Manage arbitrary ports and services using firewalld.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">ansible.builtin.reboot: Reboot a machine.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">ansible.builtin.service: Manage services.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">ansible.builtin.user: Add, remove, and manage user accounts.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Net Tools</td>
+<td style="text-align: left;">ansible.builtin.get_url: Download files over HTTP, HTTPS, or FTP.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">ansible.builtin.uri: Interact with web services.</td>
+</tr>
+<tr>
+<td style="text-align: left;">run command arbitrary</td>
+<td style="text-align: left;">ansible.builtin.command</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">ansible.builtin.shell</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
 
 
 
