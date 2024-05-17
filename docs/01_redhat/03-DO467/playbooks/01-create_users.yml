@@ -21,3 +21,11 @@ tasks:
       content: '{{ useradd }} ALL=(ALL) NOPASSWD:ALL'
       mode: u=rw,g=r,o=r
       owner: root
+
+  - name: Ensure key is in root's ~/.ssh/authorized_hosts
+    ansible.posix.authorized_key:
+      user: root
+      state: present
+      key: '{{ item }}'
+    with_file:
+      - ~/.ssh/id_rsa.pub
