@@ -55,10 +55,86 @@
 
        oc get pod
        oc get all
+       oc get nodes
+       oc get clusteroperator
+       oc get clusteroperators dns -o yaml
+       oc get pods -n openshift-apiserver
+       
        oc describe mysql-openshift-1-xxxxx
        oc create -f pod.yaml
        oc status
        oc delete pod quotes-ui
-       oc get pods -n openshift-apiserver
+       
+       oc api-versions
+       oc api-resources
+       oc api-resources --namespaced=true --api-group apps --sort-by name
 
- 
+
+Ayuda
+
+      oc help
+      oc create --help
+      oc version
+      oc explain services
+
+Login
+
+      oc login -u admin -p redhatocp
+
+
+      oc get pod --selector group=developers
+
+      oc get pods -o yaml
+      oc get pods -o yaml | yq r - 'items[0].status.podIP'
+
+      oc get pods -o json
+      oc get pods -o json | jq '.items[0].status.podIP'
+      oc get pods \
+      -o custom-columns=PodName:".metadata.name",\
+      ContainerName:"spec.containers[].name",\
+      Phase:"status.phase",\
+      IP:"status.podIP",\
+      Ports:"spec.containers[].ports[].containerPort"
+
+      oc get pods  \
+      -o jsonpath='{range .items[]}{"Pod Name: "}{.metadata.name}
+      {"IP: "}{.status.podIP}
+      {"Ports: "}{.spec.containers[].ports[].containerPort}{"\n"}{end}'
+
+      oc api-resources --namespaced=false -o name | wc -l
+      oc api-resources --api-group ''
+
+      
+
+Examinando:
+
+      oc adm top pods -A --sum
+      oc adm top pods etcd-master01 -n openshift-etcd --containers
+      oc get events -n openshift-kube-controller-manager
+      oc get all -n openshift-monitoring --show-kind
+      oc logs alertmanager-main-0 -n openshift-monitoring
+      oc cluster-info
+      oc get node master01 -o jsonpath=\
+      *'{"Allocatable:\n"}{.status.allocatable}{"\n\n"}{"Capacity:\n"}{.status.capacity}{"\n"}'
+      oc get node master01 -o json | jq '.status.conditions'
+      oc adm node-logs master01 -u crio --tail 1
+      oc debug 
+      oc debug node/node-name
+      oc debug job/test --as-user=1000000
+      oc debug node/master01
+      oc get node master01 -o jsonpath='{.status.allocatable.pods}{"\n"}'
+
+
+      sh-4.4# chroot /host
+      sh-4.4# for SERVICES in kubelet crio; do echo ---- $SERVICES ---- ;systemctl is-active $SERVICES ;  echo ""; done
+      systemctl status kubelet
+
+      oc logs pod-name -c container-name
+
+      oc adm must-gather --dest-dir /home/student/must-gather
+      tar cvaf mustgather.tar must-gather/
+      
+      oc adm inspect clusteroperator/openshift-apiserver \
+      clusteroperator/kube-apiserver
+
+      oc adm inspect clusteroperator/openshift-apiserver --since 10m
