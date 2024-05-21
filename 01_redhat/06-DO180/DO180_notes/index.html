@@ -1093,10 +1093,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Reference v.4.15">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#yq-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      yq tool
+    </span>
+  </a>
+  
 </li>
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algunos-conceptos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algunos conceptos:
+    </span>
+  </a>
   
 </li>
       
@@ -1451,10 +1475,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Reference v.4.15">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#yq-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      yq tool
+    </span>
+  </a>
+  
 </li>
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algunos-conceptos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algunos conceptos:
+    </span>
+  </a>
   
 </li>
       
@@ -1515,14 +1563,55 @@
 <ul>
 <li><a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/4.15/html/cli_tools">CLI tools</a></li>
 </ul>
+<h4 id="yq-tool">yq tool</h4>
+<ul>
+<li><a href="https://mikefarah.gitbook.io/yq/">yq tool </a></li>
+<li><a href="https://jqlang.github.io/jq/">yqlang</a></li>
+</ul>
+<h2 id="algunos-conceptos">Algunos conceptos:</h2>
+<ul>
+<li><strong>Pods (pod)</strong> Represent a collection of containers that share resources, such as IP addresses and persistent storage volumes. It is the primary unit of work for Kubernetes.</li>
+<li><strong>Services (svc)</strong> Define a single IP/port combination that provides access to a pool of pods. By default, services connect clients to pods in a round-robin fashion.</li>
+<li><strong>ReplicaSet (rs)</strong> Ensure that a specified number of pod replicas are running at any given time.</li>
+<li><strong>Persistent Volumes (pv)</strong> Define storage areas for Kubernetes pods to use.</li>
+<li><strong>Persistent Volume Claims (pvc)</strong> Represent a request for storage by a pod. PVCs link a PV to a pod so that its containers can use the provisioned storage, usually by mounting the storage into the container's file system.</li>
+<li><strong>ConfigMaps (cm) and Secrets</strong> Contain a set of keys and values that other resources can use. ConfigMaps and Secrets centralize configuration values that several resources use. Secrets differ from ConfigMaps in that the values of Secrets are always encoded (not encrypted), and their access is restricted to fewer authorized users.</li>
+<li>
+<p><strong>Deployment (deploy)</strong> A representation of a set of containers that are included in a pod, and the deployment strategies to use. A deployment object contains the configuration to apply to all containers of each pod replica, such as the base image, tags, storage definitions, and the commands to execute when the containers start. Although Kubernetes replicas can be created stand-alone in OpenShift, they are usually created by higher-level resources such as deployment controllers.</p>
+<p>Red Hat OpenShift Container Platform (RHOCP) adds the following main resource types to Kubernetes:</p>
+</li>
+<li>
+<p><strong>BuildConfig (bc)</strong> Defines a process to execute in the OpenShift project. The OpenShift Source-to-Image (S2I) feature uses a BuildConfig to build a container image from application source code that is stored in a Git repository. A bc works together with a dc to provide an extensible continuous integration and continuous delivery workflows.</p>
+</li>
+<li>
+<p><strong>DeploymentConfig (dc)</strong> OpenShift 4.5 introduced the Deployment resource concept to replace the DeploymentConfig default configuration for pods. Both concepts represent a set of containers that are included in a pod, and the deployment strategies to use.</p>
+<p>The Deployment object serves as the improved version of the DeploymentConfig object. Some functional replacements between both objects are as follows:</p>
+<ul>
+<li>
+<p>Deployment objects no longer support automatic rollback or lifecyle hooks.</p>
+</li>
+<li>
+<p>Every change in the pod template that Deployment objects use triggers a new rollout automatically.</p>
+</li>
+<li>
+<p>The deployment process of a Deployment object can be paused at any time without affecting the deployer process.</p>
+</li>
+<li>
+<p>A Deployment object can have as many active replica sets as the user wants, and can scale down previous replicas. In contrast, the DeploymentConfig object can have only two active replication sets at a time.</p>
+</li>
+</ul>
+<p>Although Deployment objects are the default replacement of the deprecated DeploymentConfig objects in OpenShift 4.12 and later versions, you can still use DeploymentConfig objects if you need a specific feature that they provide, but they are not recommended for new installations. In this case, you must specify the type of object when creating a new application by including the --as-deployment-config flag.</p>
+</li>
+</ul>
 <h2 id="comandos">Comandos</h2>
 <p>Conectarse a la granja:</p>
 <pre><code>    oc login -u &lt;usuario&gt; -p &lt;password&gt;  https://api.ocp4.example.com:6443
+    oc login -u admin -p redhatocp
 </code></pre>
 <p>Mostrar la URL de la consola:</p>
 <pre><code>    oc whoami --show-console
 </code></pre>
-<p>Descargar kubectl e instalarla en uno de los nodos master:</p>
+<p>Descargar kubectl e instalarla en uno de los nodos master incluso en la máquina desktop si hay conexión</p>
 <pre><code>   curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 </code></pre>
 <p>Crear un nuevo proyecto:</p>
@@ -1556,17 +1645,13 @@
   oc version
   oc explain services
 </code></pre>
-<p>Login</p>
-<pre><code>  oc login -u admin -p redhatocp
-
-
-  oc get pod --selector group=developers
-
+<p>Operaciones con pods:</p>
+<pre><code>  oc get pod --selector group=developers
   oc get pods -o yaml
   oc get pods -o yaml | yq r - 'items[0].status.podIP'
-
   oc get pods -o json
   oc get pods -o json | jq '.items[0].status.podIP'
+
   oc get pods \
   -o custom-columns=PodName:".metadata.name",\
   ContainerName:"spec.containers[].name",\
@@ -1578,8 +1663,9 @@
   -o jsonpath='{range .items[]}{"Pod Name: "}{.metadata.name}
   {"IP: "}{.status.podIP}
   {"Ports: "}{.spec.containers[].ports[].containerPort}{"\n"}{end}'
-
-  oc api-resources --namespaced=false -o name | wc -l
+</code></pre>
+<p>Operaciones con api's</p>
+<pre><code>  oc api-resources --namespaced=false -o name | wc -l
   oc api-resources --api-group ''
 </code></pre>
 <p>Examinando:</p>
@@ -1599,11 +1685,6 @@
   oc debug node/master01
   oc get node master01 -o jsonpath='{.status.allocatable.pods}{"\n"}'
 
-
-  sh-4.4# chroot /host
-  sh-4.4# for SERVICES in kubelet crio; do echo ---- $SERVICES ---- ;systemctl is-active $SERVICES ;  echo ""; done
-  systemctl status kubelet
-
   oc logs pod-name -c container-name
 
   oc adm must-gather --dest-dir /home/student/must-gather
@@ -1613,6 +1694,11 @@
   clusteroperator/kube-apiserver
 
   oc adm inspect clusteroperator/openshift-apiserver --since 10m
+</code></pre>
+<p>Examinando en el nodo:</p>
+<pre><code>  sh-4.4# chroot /host
+  sh-4.4# for SERVICES in kubelet crio; do echo ---- $SERVICES ---- ;systemctl is-active $SERVICES ; done
+  systemctl status kubelet
 </code></pre>
 
 
