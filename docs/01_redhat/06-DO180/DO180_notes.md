@@ -26,18 +26,49 @@
 ### Reference v.4.15
  - [CLI tools](https://access.redhat.com/documentation/en-us/openshift_container_platform/4.15/html/cli_tools)
 
+#### yq tool 
+ - [yq tool ](https://mikefarah.gitbook.io/yq/)
+ - [yqlang](https://jqlang.github.io/jq/)
+
+## Algunos conceptos:
+
+ - **Pods (pod)** Represent a collection of containers that share resources, such as IP addresses and persistent storage volumes. It is the primary unit of work for Kubernetes.
+ - **Services (svc)** Define a single IP/port combination that provides access to a pool of pods. By default, services connect clients to pods in a round-robin fashion.
+ - **ReplicaSet (rs)** Ensure that a specified number of pod replicas are running at any given time.
+ - **Persistent Volumes (pv)** Define storage areas for Kubernetes pods to use.
+ - **Persistent Volume Claims (pvc)** Represent a request for storage by a pod. PVCs link a PV to a pod so that its containers can use the provisioned storage, usually by mounting the storage into the container's file system.
+ - **ConfigMaps (cm) and Secrets** Contain a set of keys and values that other resources can use. ConfigMaps and Secrets centralize configuration values that several resources use. Secrets differ from ConfigMaps in that the values of Secrets are always encoded (not encrypted), and their access is restricted to fewer authorized users.
+ - **Deployment (deploy)** A representation of a set of containers that are included in a pod, and the deployment strategies to use. A deployment object contains the configuration to apply to all containers of each pod replica, such as the base image, tags, storage definitions, and the commands to execute when the containers start. Although Kubernetes replicas can be created stand-alone in OpenShift, they are usually created by higher-level resources such as deployment controllers.
+
+      Red Hat OpenShift Container Platform (RHOCP) adds the following main resource types to Kubernetes:
+
+ - **BuildConfig (bc)** Defines a process to execute in the OpenShift project. The OpenShift Source-to-Image (S2I) feature uses a BuildConfig to build a container image from application source code that is stored in a Git repository. A bc works together with a dc to provide an extensible continuous integration and continuous delivery workflows.
+ - **DeploymentConfig (dc)** OpenShift 4.5 introduced the Deployment resource concept to replace the DeploymentConfig default configuration for pods. Both concepts represent a set of containers that are included in a pod, and the deployment strategies to use.
+
+    The Deployment object serves as the improved version of the DeploymentConfig object. Some functional replacements between both objects are as follows:
+
+      - Deployment objects no longer support automatic rollback or lifecyle hooks.
+
+      - Every change in the pod template that Deployment objects use triggers a new rollout automatically.
+
+      - The deployment process of a Deployment object can be paused at any time without affecting the deployer process.
+
+      - A Deployment object can have as many active replica sets as the user wants, and can scale down previous replicas. In contrast, the DeploymentConfig object can have only two active replication sets at a time.
+
+      Although Deployment objects are the default replacement of the deprecated DeploymentConfig objects in OpenShift 4.12 and later versions, you can still use DeploymentConfig objects if you need a specific feature that they provide, but they are not recommended for new installations. In this case, you must specify the type of object when creating a new application by including the --as-deployment-config flag.
 
 ## Comandos
 
  Conectarse a la granja:
 
         oc login -u <usuario> -p <password>  https://api.ocp4.example.com:6443
+        oc login -u admin -p redhatocp
 
  Mostrar la URL de la consola:
 
         oc whoami --show-console
 
- Descargar kubectl e instalarla en uno de los nodos master:
+ Descargar kubectl e instalarla en uno de los nodos master incluso en la máquina desktop si hay conexión
 
        curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 
@@ -77,18 +108,14 @@ Ayuda
       oc version
       oc explain services
 
-Login
-
-      oc login -u admin -p redhatocp
-
+Operaciones con pods:
 
       oc get pod --selector group=developers
-
       oc get pods -o yaml
       oc get pods -o yaml | yq r - 'items[0].status.podIP'
-
       oc get pods -o json
       oc get pods -o json | jq '.items[0].status.podIP'
+      
       oc get pods \
       -o custom-columns=PodName:".metadata.name",\
       ContainerName:"spec.containers[].name",\
@@ -101,10 +128,10 @@ Login
       {"IP: "}{.status.podIP}
       {"Ports: "}{.spec.containers[].ports[].containerPort}{"\n"}{end}'
 
-      oc api-resources --namespaced=false -o name | wc -l
-      oc api-resources --api-group ''
-
+Operaciones con api's
       
+      oc api-resources --namespaced=false -o name | wc -l
+      oc api-resources --api-group ''    
 
 Examinando:
 
@@ -124,11 +151,6 @@ Examinando:
       oc debug node/master01
       oc get node master01 -o jsonpath='{.status.allocatable.pods}{"\n"}'
 
-
-      sh-4.4# chroot /host
-      sh-4.4# for SERVICES in kubelet crio; do echo ---- $SERVICES ---- ;systemctl is-active $SERVICES ;  echo ""; done
-      systemctl status kubelet
-
       oc logs pod-name -c container-name
 
       oc adm must-gather --dest-dir /home/student/must-gather
@@ -138,3 +160,11 @@ Examinando:
       clusteroperator/kube-apiserver
 
       oc adm inspect clusteroperator/openshift-apiserver --since 10m
+      
+
+Examinando en el nodo:
+
+      sh-4.4# chroot /host
+      sh-4.4# for SERVICES in kubelet crio; do echo ---- $SERVICES ---- ;systemctl is-active $SERVICES ; done
+      systemctl status kubelet
+
