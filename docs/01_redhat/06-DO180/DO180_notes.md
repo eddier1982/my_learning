@@ -168,3 +168,10 @@ Examinando en el nodo:
       sh-4.4# for SERVICES in kubelet crio; do echo ---- $SERVICES ---- ;systemctl is-active $SERVICES ; done
       systemctl status kubelet
 
+Creando Kubernetes y pods
+
+      oc run RESOURCE/NAME --image IMAGE --command -- cmd arg1 ... argN
+
+      oc run -it my-app \
+      --image registry.access.redhat.com/ubi9/ubi \
+      --restart Never --command -- date
