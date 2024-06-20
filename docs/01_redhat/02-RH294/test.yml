@@ -96,4 +96,4 @@
     - name: Ensure the webserver is reachable
       ansible.builtin.uri:
         url: http://servera.lab.example.com
-        status_code: 200  
+        status_code: 200
