@@ -25,6 +25,9 @@ nav:
     - 06 Red Hat OpenShift Administration I (DO180): 
       - Operating a Production Cluster: '01_redhat/06-DO180/01-DO180.md'
       - Notas de práctica: '01_redhat/06-DO180/DO180_notes.md'
+    - 07 Red Hat OpenShift Administration II (DO280):
+      - Red Hat OpenShift Administration II: '01_redhat/07-DO280/01-DO280.md'
+      - Notas de práctica: '01_redhat/07-DO280/DO280_notes.md'
   - FinOps Foundation:
     - FinOps Certified Practitioner : '02_finops/01_finops_practitioner.md'
     - FOCP: '02_finops/focp_questions.md'
