@@ -26,7 +26,8 @@ nav:
       - Operating a Production Cluster: '01_redhat/06-DO180/01-DO180.md'
       - Notas de práctica: '01_redhat/06-DO180/DO180_notes.md'
     - 07 Red Hat OpenShift Administration II (DO280):
-      - Red Hat OpenShift Administration II: '01_redhat/07-DO280/01-DO280.md'
+      - Capítulo 1, Gestión Declarativa de recursos: '01_redhat/07-DO280/01-DO280_C1.md'
+      - Capítulo 2, Despliegue de aplicaciones empaquetadas: '01_redhat/07-DO280/01-DO280_C2.md'
       - Notas de práctica: '01_redhat/07-DO280/DO280_notes.md'
   - FinOps Foundation:
     - FinOps Certified Practitioner : '02_finops/01_finops_practitioner.md'
