@@ -17,7 +17,7 @@ nav:
       - Notas de práctica: '01_redhat/03-DO467/RHAAP_notes.md'
     - 04 Developing Advanced Automation with RH AAP (DO374):
       - Prácticas: 
-        - Práctica Norlan: '01_redhat/04-DO374/practice_norlan.md'
+        - Práctica Colecciones: '01_redhat/04-DO374/practice_collections.md'
     - 05 Red Hat Satellite 6 Administration (RH403): 
       - Install & Manage Red Hat Satellite: '01_redhat/05-RHSA6/01-RHSA6.md'
       - Notas de práctica: '01_redhat/05-RHSA6/RH403_notes.md'
