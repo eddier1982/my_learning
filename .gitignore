@@ -1,4 +1,6 @@
+/site
 .vscode
 .DS_Store
 .git
 .github
+.nojekyll
