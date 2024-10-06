@@ -5,3 +5,4 @@ site
 .git
 .github
 .nojekyll
+.github/workflows/ci.yml
