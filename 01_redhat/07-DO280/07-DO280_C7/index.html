@@ -2605,6 +2605,54 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Operador de Kubernetes & el Administrador del Ciclo de vida de Operadores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementacion-de-operadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementación de operadores
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementación de operadores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operadores-de-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operadores de Clúster
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#administrador-del-ciclo-de-vida-de-operadores-y-operatorhub" class="md-nav__link">
+    <span class="md-ellipsis">
+      Administrador del ciclo de vida de operadores y OperatorHub
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentación
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2984,6 +3032,54 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Operador de Kubernetes & el Administrador del Ciclo de vida de Operadores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementacion-de-operadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementación de operadores
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementación de operadores">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operadores-de-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operadores de Clúster
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#administrador-del-ciclo-de-vida-de-operadores-y-operatorhub" class="md-nav__link">
+    <span class="md-ellipsis">
+      Administrador del ciclo de vida de operadores y OperatorHub
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentación
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3020,8 +3116,89 @@
 
 
 <h1 id="capitulo-7-gesion-de-operador-de-kubernetes">Capitulo 7 - Gesión de Operador de Kubernetes</h1>
+<p>Instalar y actualizar operadore del ciclo de vida y operadores de versión del cluster</p>
+<ul>
+<li>Explicar operadores y sus enfoques para instalar y actualizar</li>
+<li>Instalar y actualizar operadores por medio de la consola Web y el ciclo de vida</li>
+<li>Instalar y actualizar operadores mediante API del ciclo de vida </li>
+</ul>
 <h2 id="operador-de-kubernetes-el-administrador-del-ciclo-de-vida-de-operadores">Operador de Kubernetes &amp; el Administrador del Ciclo de vida de Operadores</h2>
+<p>Desplegar <em>Workloads</em> para K8S con recursos como <strong>deplyments, replica sets, stateful sets, daemon sets, jobs y cron jobs</strong>. Cada uno de los recursos desplegados cumplen una funcion en particular, por ejemplo: los <strong>jobs</strong> ejecutan una tarea única; los <strong>cron jobs</strong> ejecutan tareas periódicamente y los demás recursos crean <em>Workloads</em> persistentes. Los recursos como los deployment, los stateful sets o los daemon sets difieren en la forma en que se distribuye la carga de trabajo en un clúster.</p>
+<p>Aqui las cargar pueden estar representadas por los diferentes modelos que existen para implementar en un clúster, sin embargo grandes <em>Workloads</em> pueden requerir diferentes componentes como un servidor de DB un servidor de backend o frontend. Las <em>Workloads</em> necesitan tareas de mantenimiento que se pueden automatizar </p>
+<p>Un operador tiene recursos personalizados (CRs Custom Resources). Los CRs del operador contienen la información necesaria para imnplementar y gestionar las <em>Workloads</em>. Un operador observa el clúster buscando instancias de CRs y luego crea los Workloads necesarios. </p>
+<h3 id="implementacion-de-operadores">Implementación de operadores</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tipo de Operador</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Operadores de Clúster</td>
+<td style="text-align: left;">Servicios de plataforma OCP (servidor Web y OAth)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Operadores Complementarios</td>
+<td style="text-align: left;">(OLM - Operator Lifecycle Manager), Ayuda a instalar y actualizar los operadores en el clúster</td>
+</tr>
+<tr>
+<td style="text-align: left;">Otros operadores</td>
+<td style="text-align: left;">Desde los proveedores de SW diseñan y distrubuyen SW como manifiestos, chart de Helm y otro mecanismo de distribución</td>
+</tr>
+</tbody>
+</table>
+<h4 id="operadores-de-cluster">Operadores de Clúster</h4>
+<p>EL CVO (Cluster Version Operator) instala y actualiza los operadores del clúster como parte de los procesos de instalación y actualización de OCP. El CVO provee información e inspecciona los recursos del clúster para examinar todo su estado. Esto incluye condiciones para identificar problemas </p>
+<pre><code class="language-bash">oc get clusteroperator
+</code></pre>
+<p>Tambien se púede ir a <strong>Administration</strong> &gt; <strong>Cluster Settings</strong> y luego en la pestaña <strong>ClusterOperators</strong></p>
+<h4 id="administrador-del-ciclo-de-vida-de-operadores-y-operatorhub">Administrador del ciclo de vida de operadores y OperatorHub</h4>
+<p>Los admin pueden utilizar el OLM para instalar y actualizar operadores. Se usa la interfaz Web para interactuar con el OLM y proporciona CR para gestionar los operadores con el API de K8S. El OLM utiliza catálogos para encontrar los que están disponibles para instalar que son imágenes de contenedores con info de los operadores y sus versiones disponibles. Los catálogos disponibles son:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Catálogo</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Red Hat</td>
+<td style="text-align: left;">Operadores soportados por Red Hat</td>
+</tr>
+<tr>
+<td style="text-align: left;">Certified</td>
+<td style="text-align: left;">Operadores soportados por SW de terceros</td>
+</tr>
+<tr>
+<td style="text-align: left;">Community</td>
+<td style="text-align: left;">Operadores sin soporte oficial</td>
+</tr>
+<tr>
+<td style="text-align: left;">Marketplace</td>
+<td style="text-align: left;">Operadores con opción de comprar en le Red Hat Marketplace</td>
+</tr>
+</tbody>
+</table>
+<p>El OLM crea un recurso tipo <strong>PackageManifest</strong> para cada operador que esté disponible que también se pueden ver por el entorno Web. </p>
+<p>La implementación de operadores de compone de una definición de CR y Workloads de K8S. <strong>NOTA:</strong>  Un clúster contiene 2 Workloads por cada operador:
+ 1. Operador de Workloads. Gestiona el OLM.
+ 2. Los Workloads estan asociados con el CR y el gestor de imágenes. </p>
+<p>Se implementan operadores para automatizar cualquier tarea manual de K8S que se ajuste al patron del operador. Los SDK proporcionan componentes y marcos para el desarrollo de operadores.</p>
+<ul>
+<li><strong><em>Operador SDK</em></strong> contiene herramientas para desarrollar operadores con el lenguaje de programación Go y Ansible. También contiene tools para empaquetar chats de Helm.</li>
+<li><strong><em>Operador de Java SDK</em></strong> contiene herramientas para desarrollar operadores con el lenguaje Java. Tiene una extensión de Quarkus.</li>
+</ul>
+<h3 id="documentacion">Documentación</h3>
+<p><a href="https://docs.redhat.com/en/documentation/openshift_container_platform/4.14/html-single/operators/index">Operadores en la documentación de OCP</a> </p>
+<p><a href="https://sdk.operatorframework.io/">SDK de operadores</a> </p>
+<p><a href="https://javaoperatorsdk.io/">SDK de operadores Java</a> </p>
+<p><a href="https://github.com/quarkiverse/quarkus-operator-sdk">SDK de operadores Quarkus</a> </p>
 <h2 id="instalacion-de-operadores-con-la-consola-web">Instalación de operadores con la consola web</h2>
+<p>La consola Web de OCP proporciona una interfaz gráfica para el administrador de OLM. La página de <strong>OperatorHub</strong> muestra los operadores disponibles y cómo instalarlos, mientras los de la página <strong>Installed Operators</strong> muestra los que ya están instalados.</p>
+<p><img alt="OperatorHub" height="400" src="../images/do288_c07_01.png" style="display: block; margin: 0 auto" width="600" /></p>
 <h2 id="instalacion-de-operadores-con-cli">Instalación de operadores con CLI</h2>
 
 

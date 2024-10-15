@@ -2473,9 +2473,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sesion-1-manifiesto-de-recursos" class="md-nav__link">
+  <a href="#manifiesto-de-recursos" class="md-nav__link">
     <span class="md-ellipsis">
-      Sesión 1: Manifiesto de recursos
+      Manifiesto de recursos
     </span>
   </a>
   
@@ -2984,9 +2984,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sesion-1-manifiesto-de-recursos" class="md-nav__link">
+  <a href="#manifiesto-de-recursos" class="md-nav__link">
     <span class="md-ellipsis">
-      Sesión 1: Manifiesto de recursos
+      Manifiesto de recursos
     </span>
   </a>
   
@@ -3032,84 +3032,84 @@
 
 
 <h1 id="capitulo-1-gestion-declarativa-de-recursos">Capitulo 1 - Gestión Declarativa de recursos</h1>
-<h2 id="sesion-1-manifiesto-de-recursos">Sesión 1: Manifiesto de recursos</h2>
+<h2 id="manifiesto-de-recursos">Manifiesto de recursos</h2>
 <p>Existen 2 modos de crear los recursos: <strong>imperativa</strong> y <strong>declarativa</strong>. Ambas son igual de validas, la imperativa es la agrupación de argumentos por linea de comandos</p>
-<pre><code>    kubectl create deployment db-pod --port 3306 --image registry.ocp4.example.com:8443/rhel8/mysql-80
+<pre><code class="language-bash">kubectl create deployment db-pod --port 3306 --image registry.ocp4.example.com:8443/rhel8/mysql-80
 </code></pre>
 <p>En esta opción se pueden aplicar cambios en un pod en ejecución, por ejemplo:</p>
-<pre><code>    kubectl set env deployment/db-pod \
-        MYSQL_USER='user1' \
-        MYSQL_PASSWORD='mypa55w0rd' \
-        MYSQL_DATABASE='items'
+<pre><code class="language-bash">kubectl set env deployment/db-pod \
+MYSQL_USER='user1' \
+MYSQL_PASSWORD='mypa55w0rd' \
+MYSQL_DATABASE='items'
 </code></pre>
 <p>La otra opción es declarativa, esto representa un archivo YAML con todas las configuraciones necesarias para crear el recurso. Se puede crear el recurso a partir de CLI de kubectl y enviarlo al final a un archivo *.yaml, así:</p>
-<pre><code>    kubectl create deployment hello-openshift -o yaml \
-        --image registry.ocp4.example.com:8443/redhattraining/hello-world-nginx:v1.0 \
-        --save-config \
-        --dry-run=client \
-        &gt; ~/my-app/example-deployment.yaml
+<pre><code class="language-bash">kubectl create deployment hello-openshift -o yaml \
+--image registry.ocp4.example.com:8443/redhattraining/hello-world-nginx:v1.0 \
+--save-config \
+--dry-run=client \
+&gt; ~/my-app/example-deployment.yaml
 </code></pre>
 <p>Se puede tener un manifiesto ya creado y apartir de él, crear el recurso. Un ejemplo del manifiesto:</p>
-<pre><code>    apiVersion: apps/v1
-    kind: Deployment
+<pre><code class="language-yaml">apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: resource-manifests 1
+  labels:
+    app: hello-openshift
+  name: hello-openshift
+spec:
+  replicas: 2 2
+  selector:
+    matchLabels:
+      app: hello-openshift
+  template:
     metadata:
-      namespace: resource-manifests 1
       labels:
         app: hello-openshift
-      name: hello-openshift
     spec:
-      replicas: 2 2
-      selector:
-        matchLabels:
-          app: hello-openshift
-      template:
-        metadata:
-          labels:
-            app: hello-openshift
-        spec:
-          containers:
-          - image: quay.io/redhattraining/hello-world-nginx:v1.0
-            name: hello-world-nginx
-            ports:
-            - containerPort: 8080 3
-              protocol: TCP
+      containers:
+      - image: quay.io/redhattraining/hello-world-nginx:v1.0
+        name: hello-world-nginx
+        ports:
+        - containerPort: 8080 3
+          protocol: TCP
 </code></pre>
 <p>Y se puede crear el recurso de acuerdo a la ubicación de los archivos yml en el cliente de kbctl</p>
-<pre><code>    kubectl create -f path-to-yaml # puede ser la URL del yml
+<pre><code class="language-bash">kubectl create -f path-to-yaml # puede ser la URL del yml
 
-    kubectl create -R -f ~/mi-applicacion
-    deployment.apps/hello-openshift created
-    service/hello-openshift created
+kubectl create -R -f ~/mi-applicacion
+deployment.apps/hello-openshift created
+service/hello-openshift created        
 
-    tree mi-aplicacion
-    mi-aplicacion
-    ├── example_deployment.yaml
-    └── service
-        └── example_service.yaml
+tree mi-aplicacion
+mi-aplicacion
+├── example_deployment.yaml
+└── service
+    └── example_service.yaml
 </code></pre>
 <p>Los recursos ya creados se pueden actualizar con la opción <strong>apply</strong></p>
-<pre><code>    kubectl apply -f ~/my-app/example-deployment.yaml --dry-run=server --validate=true
+<pre><code class="language-bash">kubectl apply -f ~/my-app/example-deployment.yaml --dry-run=server --validate=true
 </code></pre>
 <p>Puede validar comparando los objetos en el manifiesto versus con los objetos del recurso en vivo con el argumento <strong>diff</strong>. Al igual que <em>git</em>, se mostrará que le falta con <strong>---</strong> y lo agregado con <strong>+++</strong></p>
-<pre><code>    kubectl diff -f example-deployment.yaml
-    ...output omitted...
-    diff -u -N /tmp/LIVE-2647853521/apps.v1.Deployment.resource...
-    --- /tmp/LIVE-2647853521/apps.v1.Deployment.resource-manife...
-    +++ /tmp/MERGED-2640652736/apps.v1.Deployment.resource-mani...
-    @@ -6,7 +6,7 @@
-         kubectl.kubernetes.io/last-applied-configuration: |
-           ...output omitted...
-       creationTimestamp: "2023-04-27T16:07:47Z"
-    -  generation: 1 1
-    +  generation: 2
+<pre><code class="language-bash">kubectl diff -f example-deployment.yaml
+...output omitted...
+diff -u -N /tmp/LIVE-2647853521/apps.v1.Deployment.resource...
+--- /tmp/LIVE-2647853521/apps.v1.Deployment.resource-manife...
++++ /tmp/MERGED-2640652736/apps.v1.Deployment.resource-mani...
+@@ -6,7 +6,7 @@
+     kubectl.kubernetes.io/last-applied-configuration: |
+       ...output omitted...
+   creationTimestamp: &quot;2023-04-27T16:07:47Z&quot;
+-  generation: 1 1
++  generation: 2
 </code></pre>
 <p><strong><em>NOTA</em></strong> Si hay cambios en el recurso, es necesario reiniciar los pod's por medio de un rollout, o bajando las réplicas a una menor expresión (1) y luego volverlas a subir</p>
 <h2 id="modificacion-de-recursos-en-kubernetes">Modificación de recursos en kubernetes</h2>
 <p>Es la modificación a partir de un fragmento o un archivo json/yml a un recurso en OCP. Se utiliza el comando <strong>oc patch</strong>. Se utiliza el argumento <strong>-p</strong> para agregar el fragmento necesario:</p>
-<pre><code>    oc patch deployment hello -p '{"spec":{"template":{"spec":{"resources":{"requests":{"cpu": "100m"}}}}}}'
+<pre><code class="language-bash">oc patch deployment hello -p '{&quot;spec&quot;:{&quot;template&quot;:{&quot;spec&quot;:{&quot;resources&quot;:{&quot;requests&quot;:{&quot;cpu&quot;: &quot;100m&quot;}}}}}}'
 </code></pre>
 <p>O utilizando el archivo completo:</p>
-<pre><code>    oc patch deployment hello --patch-file ~/volume-mount.yaml
+<pre><code class="language-bash">oc patch deployment hello --patch-file ~/volume-mount.yaml
 </code></pre>
 <h3 id="argumentos">Argumentos</h3>
 <table>

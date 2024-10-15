@@ -3143,15 +3143,16 @@ oc process my-cache-service -p APPLICATION_USER=user1 -o yaml &gt; my-cache-serv
 oc process -f my-cache-service.yaml -p APPLICATION_USER=user1 -o yaml &gt; my-cache-service-manifest.yaml
 
 oc process my-cache-service -o yaml \
- -p TOTAL_CONTAINER_MEM=1024 \
- -p APPLICATION_USER='cache-user' \
- -p APPLICATION_PASSWORD='my-secret-password' \
- &gt; my-cache-service-manifest.yaml
+-p TOTAL_CONTAINER_MEM=1024 \
+-p APPLICATION_USER='cache-user' \
+-p APPLICATION_PASSWORD='my-secret-password' \
+&gt; my-cache-service-manifest.yaml
 </code></pre>
 <h3 id="update-de-aplicaciones-desde-template">Update de aplicaciones desde template</h3>
 <pre><code class="language-bash">oc process my-cache-service -o yaml \
 --param-file=my-cache-service-params-2.env | oc diff -f -
 ...output omitted...
+
 - generation: 1
 + generation: 2
   labels:
