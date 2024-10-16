@@ -2665,11 +2665,53 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#visualizacion-de-operadores-instalados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualización de operadores instalados
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solucion-de-problemass" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solución de problemass
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#instalacion-de-operadores-con-cli" class="md-nav__link">
     <span class="md-ellipsis">
       Instalación de operadores con CLI
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Instalación de operadores con CLI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pasos-para-instalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pasos para instalación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recursos-del-operador" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recursos del operador
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3092,11 +3134,53 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#visualizacion-de-operadores-instalados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualización de operadores instalados
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solucion-de-problemass" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solución de problemass
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#instalacion-de-operadores-con-cli" class="md-nav__link">
     <span class="md-ellipsis">
       Instalación de operadores con CLI
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Instalación de operadores con CLI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pasos-para-instalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pasos para instalación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recursos-del-operador" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recursos del operador
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3199,7 +3283,90 @@
 <h2 id="instalacion-de-operadores-con-la-consola-web">Instalación de operadores con la consola web</h2>
 <p>La consola Web de OCP proporciona una interfaz gráfica para el administrador de OLM. La página de <strong>OperatorHub</strong> muestra los operadores disponibles y cómo instalarlos, mientras los de la página <strong>Installed Operators</strong> muestra los que ya están instalados.</p>
 <p><img alt="OperatorHub" height="400" src="../images/do288_c07_01.png" style="display: block; margin: 0 auto" width="600" /></p>
+<p>En <strong>Operators &gt; OperatorHub</strong> mueestra los operadores disponibles, tiene filtros que ayudan a la búsqueda por categoría, source, proveedor o suscripción requerida. Se hace click en <strong>Install</strong> para iniciar el asistente de instalar el operador con las siguientes opciones</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Opción</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Update channel</td>
+<td style="text-align: left;">Elegir el canal de actualización mas adecuado</td>
+</tr>
+<tr>
+<td style="text-align: left;">Installation mode</td>
+<td style="text-align: left;">Por defecto ( <strong>All namespaces on the cluster</strong> ), es el sugerido y mas adecuado para la mayoría de operadores. Los usuarios pueden crear recursos personalizados en sus namespaces. Los AdminCluster se ayudan para combinar aciones basadas en acceso por roles y políticas de red</td>
+</tr>
+<tr>
+<td style="text-align: left;">Installed namespace</td>
+<td style="text-align: left;">OLM instala el workload del operador en un namespace, algunos se instalan por defecto en <strong>openshift-operator</strong> . Solo los AdminCluster requieren acceso al workload</td>
+</tr>
+<tr>
+<td style="text-align: left;">Update approval</td>
+<td style="text-align: left;">OLM actualiza los operadores automaticamente cuando hay nuevas versiones disponibles. Se pueden elegir las actualizaciones manuales.</td>
+</tr>
+</tbody>
+</table>
+<p>Si un operador incluye monitoreo en su definició, el asistente mostrará una opción para habilitar el monitoreo. Se debe revisar la documentación del operador para conocer las opciones admitidas. Una ves configurada la instalación, en la opción <strong>Install</strong> instalará los recursos del operador.</p>
+<h2 id="visualizacion-de-operadores-instalados">Visualización de operadores instalados</h2>
+<p>En <strong>View Operator</strong> muestra la lista de detalles de ese operador instalado. También puede a traves de <strong>Operators &gt; Installed Operators</strong>. allí se muestra con la versión  y cada uno tiene un CSV el cual es usado por el OLM para instalar el operador. El CSV queda con la información actualizada una ves cambia el status.</p>
+<h2 id="solucion-de-problemass">Solución de problemass</h2>
+<p>Si el OLM no instala o actualiza los operadores, se utiliza el CSV para identificar la causa del error, por lo general son pueden ser problemas del operador en específico</p>
 <h2 id="instalacion-de-operadores-con-cli">Instalación de operadores con CLI</h2>
+<h3 id="pasos-para-instalacion">Pasos para instalación</h3>
+<ol>
+<li>Buscar el operador a instalar</li>
+<li>Revisar el ooperador y su documentación (conocer pre-requisitos y opciones disponibles)</li>
+<li>Definir el canal de actualización a utilizar</li>
+<li>Definir el modo de instalación. en la mayoría de operadores se disponen para todos los namaspace</li>
+<li>Definir el workload del operador en un namesapce existente o uno nuevo</li>
+<li>Crear grupo de operadores, depende del modo de instalación, si aplica</li>
+<li>Crear el namaspace, si aplica</li>
+<li>Crear la suscripción del operador</li>
+<li>Revisar y validar la instalación</li>
+</ol>
+<h3 id="recursos-del-operador">Recursos del operador</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tipos de recursos</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Catalog source</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Package manifest</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Operator group</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Subscription</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Operator</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Install plan</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Cluster service version (CSV)</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
 
 
 
