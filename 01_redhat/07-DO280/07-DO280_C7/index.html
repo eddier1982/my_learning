@@ -2710,6 +2710,39 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#examinando-los-operadores-disponibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examinando los operadores disponibles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instalación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalar-plans" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalar Plans
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3179,6 +3212,39 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#examinando-los-operadores-disponibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examinando los operadores disponibles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instalación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalar-plans" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalar Plans
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3339,34 +3405,94 @@
 <tbody>
 <tr>
 <td style="text-align: left;">Catalog source</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">Cada recurso de este tipo hace referencia a un repositorio. OLM cada cierto tiempo examina las fuentes y recupera la información de los operadores</td>
 </tr>
 <tr>
 <td style="text-align: left;">Package manifest</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">OLM crea un manifiesto para c/operador y este contiene la info necesaria para instalar un operador (por ejemplo los canales)</td>
 </tr>
 <tr>
 <td style="text-align: left;">Operator group</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">Definen como el OLM presenta los namespaces</td>
 </tr>
 <tr>
 <td style="text-align: left;">Subscription</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">Los admincluster crear suscripciones para instalar operadores</td>
 </tr>
 <tr>
 <td style="text-align: left;">Operator</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">OLM crea recursos para guardar información de los operadores</td>
 </tr>
 <tr>
 <td style="text-align: left;">Install plan</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">OLM crea estos planes como parte del proceso de instalación y updates, al momento de aprobaciones los admincluster lo aprueban</td>
 </tr>
 <tr>
 <td style="text-align: left;">Cluster service version (CSV)</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">Cada versión de un operador le corresponde uno que contiene la información  que el OLM requiere para instalar el operador</td>
 </tr>
 </tbody>
 </table>
+<h3 id="examinando-los-operadores-disponibles">Examinando los operadores disponibles</h3>
+<p>En el namespace <strong>openshift-marketplace</strong> contiene los origenes del catálogos disponibles</p>
+<pre><code class="language-bash">oc get catalogsource -n openshift-marketplace
+oc get packagemanifests
+oc describe packagemanifest lvms-operator -n openshift-marketplace
+</code></pre>
+<h3 id="instalacion">Instalación</h3>
+<p>Una ves revisado y examindo el manifiesto del paquete se revisa la documentación del operador para validar los procedimientos para la instalación de ese operador. Al decidir instalar el workload del operador en un <strong>namespace nuevo</strong> crear el namespace. Algunos operadores recomiendan instalar el operador en el namespace <strong>openshift-operators</strong>  o a veces requiere uno especpifico.</p>
+<p>Es necesario validar si se requiere crear <strong>operator group</strong>. Los operadores utilizan el grupo en este namesapce los cuales monitorean los recursos. El namspace <strong>openshift-operators</strong> contiene un <em>operator group</em> llamado <strong>global-operator</strong>. Si este <em>operator group</em> no es el indicado puede crearse uno nuevo.</p>
+<p>Ejemplo YAML que describe la estructura de un <em>operator group</em>:</p>
+<pre><code class="language-yaml">apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: name
+  namespace: namespace
+spec:
+  targetNamespaces:
+  - namespace
+</code></pre>
+<p>Luego de crear el <em>namaspace</em> o el <em>operator group</em> necesarios, se crea la suscripción, como el siguiente ejemplo:</p>
+<pre><code class="language-yaml">apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: lvms-operator
+  namespace: openshift-storage
+spec:
+  channel: stable-4.14
+  name: lvms-operator
+source: do280-catalog-cs
+installPlanApproval: Automatic
+sourceNamespace: openshift-marketplace
+</code></pre>
+<h4 id="instalar-plans">Instalar Plans</h4>
+<p>El OLM crea un Resource Plan para representar el proceso para instalar o actualizar un operador. Y en el campo <em>status.components.refs</em> se puede ver la referencia:</p>
+<pre><code class="language-bash">oc describe operator file-integrity-operator
+Name: file-integrity-operator.openshift-file-integrity
+Namespace:
+Labels: &lt;none&gt;
+Annotations: &lt;none&gt;
+API Version: operators.coreos.com/v1
+Kind: Operator
+...output omitted...
+Status:
+  Components:
+  ...output omitted...
+  Refs:
+    API Version: operators.coreos.com/v1alpha1
+    Kind: InstallPlan
+    Name: install-pmh78
+    Namespace: openshift-file-integrity
+    API Version: operators.coreos.com/v1alpha1
+    Conditions:
+      Last Transition Time: 2024-01-26T17:53:27Z
+      Message: all available catalogsources are healthy
+      Reason: AllCatalogSourcesHealthy
+      Status: False
+      Type: CatalogSourcesUnhealthy
+      Last Transition Time: 2024-01-26T17:53:49Z
+      Reason: RequiresApproval
+</code></pre>
 
 
 
