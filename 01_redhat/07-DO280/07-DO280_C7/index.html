@@ -2743,6 +2743,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#uso-de-operadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uso de operadores
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting-de-operadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting de operadores
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3245,6 +3263,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#uso-de-operadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uso de operadores
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting-de-operadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting de operadores
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3493,6 +3529,14 @@ Status:
       Last Transition Time: 2024-01-26T17:53:49Z
       Reason: RequiresApproval
 </code></pre>
+<p>Se utiliza oc patch para aprobar un plan de instalación cuando está establecido en Manual</p>
+<pre><code class="language-bash">oc patch installplan install-pmh78 --type merge -p '{&quot;spec&quot;:{&quot;approved&quot;:true}}' -n openshift-file-integrity
+</code></pre>
+<h3 id="uso-de-operadores">Uso de operadores</h3>
+<p>Hay definiciones personalizadas de recursos de las cuales se pueden crear recursos personalizados Puede validar cadad una de las definiciones</p>
+<pre><code class="language-bash">oc get csv metallb-operator.v4.14.0-202401151553 -o jsonpath=&quot;{.spec.customresourcedefinitions.owned[*].name}{'\n'}&quot;
+</code></pre>
+<h3 id="troubleshooting-de-operadores">Troubleshooting de operadores</h3>
 
 
 
