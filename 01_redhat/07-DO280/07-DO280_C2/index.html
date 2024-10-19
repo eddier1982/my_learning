@@ -2553,6 +2553,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#usando-helm-charts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usando Helm Charts
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3070,6 +3079,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#usando-helm-charts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usando Helm Charts
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3149,8 +3167,7 @@ oc process my-cache-service -o yaml \
 &gt; my-cache-service-manifest.yaml
 </code></pre>
 <h3 id="update-de-aplicaciones-desde-template">Update de aplicaciones desde template</h3>
-<pre><code class="language-bash">oc process my-cache-service -o yaml \
---param-file=my-cache-service-params-2.env | oc diff -f -
+<pre><code class="language-bash">oc process my-cache-service -o yaml --param-file=my-cache-service-params-2.env | oc diff -f -
 ...output omitted...
 
 - generation: 1
@@ -3180,17 +3197,41 @@ oc create -f my-cache-service.yaml
 oc create -f my-cache-service.yaml -n shared-templates
 </code></pre>
 <h2 id="graficos-de-helm">Gráficos de Helm</h2>
-<p>Helm es una aplicación de código abierto que ayuda a gestionar el ciclo de vida de las aplicaciones de Kubernetes. Helm presenta el concepto de <em>charts</em> (gráficos). Un chart es un paquete que describe un conjunto de recursos de Kubernetes que puede implementar. Los charts de Helm definen valores que puede personalizar al implementar una aplicación. Helm incluye funciones para distribuir charts y actualizaciones</p>
-<p>Un chart de Helm define los recursos de Kubernetes que puede implementar. Un chart es una colección de archivos con una estructura definida. Estos archivos incluyen metadatos del chart (como el nombre o la versión), definiciones de recursos y material de apoyo.</p>
+<p><strong>Helm</strong> aplicación <em>open source</em> que ayuda a gestionar el lifecycle de las apps de K8S a través del concepto de gráficos, describiendo un conjunto de recursos a implementar. Algunas organizaciones distribuyen Helm Chart para desplegar apps. Importante resaltar que esto no cubre todas las necesidades de la gestión de algunas aplicaciones.</p>
+<p><strong>Helm Charts</strong> define los recursos que se pueden desplegar, es una colección de archivos definidos en una estructura los cuales contienen la metadata, definición de recursos y material de soporte. Algunos desarrolladores de este suelen utilizar lenguaje <em>Go</em> para definir recursos</p>
 <ul>
 <li>Estructura básica de archivos Helm</li>
 </ul>
-<pre><code class="language-bash">sample/
+<pre><code class="language-bash">ejemplo_chart/
 ├── Chart.yaml
 ├── templates
 | |── example.yaml
 └── values.yaml
 </code></pre>
+<h2 id="usando-helm-charts">Usando Helm Charts</h2>
+<p>Como tal es una app CLI con comandos interactivos con las siguientes identidades</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Identidad</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Charts</td>
+<td style="text-align: left;">Apps empaquetadas que despliegan con <code>helm</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Releases</td>
+<td style="text-align: left;">La implementación de un Chart. Cada implemenatción es un <em>Release</em> diferente y puede hacerlo n veces en el mismo clúster</td>
+</tr>
+<tr>
+<td style="text-align: left;">Versions</td>
+<td style="text-align: left;">Un chart puede tener muchas <em>versiones</em></td>
+</tr>
+</tbody>
+</table>
 
 
 

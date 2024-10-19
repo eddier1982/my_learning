@@ -3537,6 +3537,11 @@ Status:
 <pre><code class="language-bash">oc get csv metallb-operator.v4.14.0-202401151553 -o jsonpath=&quot;{.spec.customresourcedefinitions.owned[*].name}{'\n'}&quot;
 </code></pre>
 <h3 id="troubleshooting-de-operadores">Troubleshooting de operadores</h3>
+<p>Alguno operadores requieren pasos adicionales para installar o ser actualizados. Debe revisarse la documentación del operador para comprobar todos los pasos necesarios.</p>
+<p>Es posible que el OLM instale un operador y puede suceder que no funcione correctamente. Los operadores tiene 2 workloads:
+ - WorkLoad del Operador (revisa los recursos custom)
+ - WorkLoads de instancias custom </p>
+<p><code>bash spec.install.spec.deployments</code> en su CSV contiene implementaciones que el OLM crea al instalar</p>
 
 
 
