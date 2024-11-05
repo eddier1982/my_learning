@@ -1,4 +1,5 @@
 site/
+site
 .vscode
 .DS_Store
 .git
