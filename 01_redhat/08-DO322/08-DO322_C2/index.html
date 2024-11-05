@@ -3375,8 +3375,8 @@ find ${HOME}/$INSTALLDIR -name '*.ign' | xargs ls -lrt
 </code></pre>
 <h4 id="desplegar-lo-faltante-en-unq-instalacion-pre-existente">Desplegar lo faltante en unq instalación pre-existente</h4>
 <p>No se puede ejecutar el <code>openshift-install create cluster</code> porque este ya existe, lo que se hace es la ejecución del bootstrap y completar la instalación</p>
-<pre><code class="language-bash">openshift-install wait-for bootstrap-complete --dir=${HOME}/ocp4-cluster --log-level=debug
-openshift-install wait-for install-complete  --dir=${HOME}/ocp4-cluster --log-level=debug
+<pre><code class="language-bash">openshift-install wait-for bootstrap-complete --dir=${HOME}/$INSTALLDIR --log-level=debug
+openshift-install wait-for install-complete  --dir=${HOME}/$INSTALLDIR --log-level=debug
 </code></pre>
 
 
