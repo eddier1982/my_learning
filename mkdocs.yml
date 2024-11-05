@@ -103,6 +103,7 @@ nav:
       - Notas de práctica: '01_redhat/07-DO280/DO280_notes.md'
     - 08 Red Hat Openshift Installation (DO322):
       - Capitulo 1, - Descripción del proceso de Instalación de OCP: '01_redhat/08-DO322/08-DO322_C1.md'
+      - Capitulo 2, - Ejecutando la instalación de OCP: '01_redhat/08-DO322/08-DO322_C2.md'
   - FinOps Foundation:
     - FinOps Certified Practitioner : '02_finops/01_finops_practitioner.md'
     - FOCP: '02_finops/focp_questions.md'
