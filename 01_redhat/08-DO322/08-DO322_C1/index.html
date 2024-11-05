@@ -2864,26 +2864,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#personalizando-las-instalaciones-personalizadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Personalizando las instalaciones personalizadas
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#-repositorio-de-imagenes-de-ocp-provee-imagenes-que-se-usan-durante-la-instalacion-o-el-upgrade" class="md-nav__link">
-    <span class="md-ellipsis">
-      - Repositorio de imágenes de OCP (provee imágenes que se usan durante la instalación o el upgrade)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#servicios-en-el-ocp" class="md-nav__link">
-    <span class="md-ellipsis">
-      Servicios en el OCP
-    </span>
-  </a>
   
 </li>
       
@@ -3321,26 +3312,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#personalizando-las-instalaciones-personalizadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Personalizando las instalaciones personalizadas
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#-repositorio-de-imagenes-de-ocp-provee-imagenes-que-se-usan-durante-la-instalacion-o-el-upgrade" class="md-nav__link">
-    <span class="md-ellipsis">
-      - Repositorio de imágenes de OCP (provee imágenes que se usan durante la instalación o el upgrade)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#servicios-en-el-ocp" class="md-nav__link">
-    <span class="md-ellipsis">
-      Servicios en el OCP
-    </span>
-  </a>
   
 </li>
       
@@ -3850,8 +3832,64 @@ dig @dns.ocp4.example.com -x 192.168.50.254
 <li>Copia de las imágenes requeridas para la instalación en el <em>registry</em> local</li>
 </ul>
 <p>Se debe obtener aparte de todas las imagenes necesarias para instalar en el <em>registry</em> local, la data de la versión de OCP: <code>imageContentSource</code>. Se debe copiar todo el siguiente contenido en el <em>registry</em> local:</p>
-<h2 id="-repositorio-de-imagenes-de-ocp-provee-imagenes-que-se-usan-durante-la-instalacion-o-el-upgrade">- Repositorio de imágenes de OCP (provee imágenes que se usan durante la instalación o el upgrade)</h2>
-<h2 id="servicios-en-el-ocp">Servicios en el OCP</h2>
+<ul>
+<li>Repositorio de imágenes de OCP (provee imágenes que se usan durante la instalación o el upgrade)</li>
+<li>Provee las imagenes durante el proceso de instalación o upgrade de OCP</li>
+<li>Tiene ejemplos de OCP Container Platform</li>
+</ul>
+<p>La mayoría de imágenes de importancia del namespace <code>openshift</code> usa imagenes locales de <strong>registry.redhat.io</strong> de Red Hat, la principal rélica de estas imágenes</p>
+<ul>
+<li>Orígenes remotos de OperatorHub</li>
+<li>Orígenes remotos de Operator Hub</li>
+</ul>
+<p>En un clúster desconectado el OLM no tiene acceso al los origenes del proveedor Operator Hub en <strong>quay.io</strong> por ello se debe hacer descarga localmente</p>
+<h3 id="personalizando-las-instalaciones-personalizadas">Personalizando las instalaciones personalizadas</h3>
+<p>Despues de descargar localmente las imágenes al registry local, se inicia el proceso de instalación. Se puede modificar el archivos <code>install-config.yaml</code> para personalizar el proceso de instalación</p>
+<p><strong>Ejemplo YAML de instalación conectada</strong> </p>
+<pre><code class="language-bash">cat ${HOME}/ocp4-cluster/install-config.yaml
+
+apiVersion: v1
+baseDomain: example.com
+#proxy:
+# httpProxy: http://&lt;username&gt;:&lt;pswd&gt;@&lt;ip&gt;:&lt;port&gt;
+# httpsProxy: http://&lt;username&gt;:&lt;pswd&gt;@&lt;ip&gt;:&lt;port&gt;
+# noProxy: example.com
+compute:
+- hyperthreading: Enabled
+  name: worker
+  replicas: 2
+controlPlane:
+  hyperthreading: Enabled
+  name: master
+  replicas: 3
+metadata:
+  name: ocp4
+networking:
+  clusterNetwork:
+  - cidr: 10.128.0.0/14
+    hostPrefix: 23
+  networkType: OpenShiftSDN
+  serviceNetwork:
+  - 172.30.0.0/16
+platform:
+  none: {}
+fips: false
+pullSecret: |
+  {&quot;auths&quot;:...output omitted...}
+sshKey: |
+  ssh-rsa AA...output omitted...
+</code></pre>
+<p><strong>Ejemplo de YAML instalación desconectada</strong></p>
+<pre><code class="language-bash">cat ${HOME}/ocp4-cluster/install-config.yaml
+apiVersion: v1
+baseDomain: example.com
+compute:
+- hyperthreading: Enabled
+  name: worker
+  replicas: 2
+controlPlane:
+  hyperthreading: Enabled
+</code></pre>
 <h2 id="urls-de-documentacion">URL's de documentación</h2>
 <ul>
 <li><a href="https://coreos.github.io/ignition/examples">Config Files starup Ignition </a></li>
