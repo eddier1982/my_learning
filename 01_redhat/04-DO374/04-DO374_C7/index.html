@@ -69,6 +69,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#capitulo-7-transformando-data-con-filtros-y-plug-ins" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1635,6 +1640,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Capítulo 7, Transformando data con Filtros y Plug-ins
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1645,6 +1663,49 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#filtros-ansible" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filtros Ansible
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Filtros Ansible">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#provision-de-valores-de-variables-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      Provisión de valores de variables Default
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2690,7 +2751,7 @@
         
   
   <span class="md-ellipsis">
-    Capitulo 1, - Descripción del proceso de Instalación de OCP
+    Capitulo 1, Descripción del proceso de Instalación de OCP
   </span>
   
 
@@ -2711,7 +2772,7 @@
         
   
   <span class="md-ellipsis">
-    Capitulo 2, - Ejecutando la instalación de OCP
+    Capitulo 2, Ejecutando la instalación de OCP
   </span>
   
 
@@ -2992,6 +3053,40 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#filtros-ansible" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filtros Ansible
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Filtros Ansible">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#provision-de-valores-de-variables-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      Provisión de valores de variables Default
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -3006,9 +3101,62 @@
                   
 
 
-  <h1>Capítulo 7, Transformando data con Filtros y Plug-ins</h1>
-
-
+<h1 id="capitulo-7-transformando-data-con-filtros-y-plug-ins">Capítulo 7, Transformando data con Filtros y Plug-ins</h1>
+<p>Poblar, manipular y gestionar la data de variables usando filtros y plug-ins</p>
+<ul>
+<li>Formatear, analizar y definir los valores de variables usando filtros</li>
+<li>Poblar variables con data desde fuentes externas usando el plugin-ins <em>lookup</em></li>
+<li>Implementar ciclos usando estructuras como simples listas usando el plug-in lookup y filtros</li>
+<li>Usar filtros para inspeccionar, validar y manipular variables que tienen información de red</li>
+</ul>
+<h2 id="filtros-ansible">Filtros Ansible</h2>
+<p>Ansible aplica valores de variable a los playbook y templates usando expresiones <strong>Jinja2</strong>, como es su forma mas simple: el nombre de una variable en llaves dobles <code>{{ variable }}</code>.</p>
+<p>Algunos filtros estan provistos por el lenguaje <strong>Jinja2</strong> y otros incluidos por Red Hat AAP como <strong>plug-ins</strong></p>
+<p>Para el uso inicial de filtros con expresión <strong>Jinja2</strong> es agregando el caracter <em>pipe</em> <code>|</code> y luego el nombre o valor escrito como expresión <code>{{ variable | filter }}</code></p>
+<h3 id="provision-de-valores-de-variables-default">Provisión de valores de variables Default</h3>
+<p>Se puede usar le filtro <code>default</code> para ignorar una variable no definida o proveer un valor a una variable no definida. En ambos casos se utiliza cuando el mensaje es el siguiente:</p>
+<p><code>FAILED! =&gt; {"msg": "The task includes an option with an undefined variable. The error was: 'dict object' has no attribute 'shell'</code></p>
+<p>Revisar el siguiente ejemplo:</p>
+<pre><code class="language-yaml">- name: Manage user
+  ansible.builtin.user:
+    name: &quot;{{ item['name'] }}&quot;
+    groups: &quot;{{ item['groups'] | default(omit) }}&quot;
+    system: &quot;{{ item['system'] | default(false) }}&quot;
+    shell: &quot;{{ item['shell'] | default('/bin/bash') }}&quot;
+    state: &quot;{{ item['state'] | default('present') }}&quot;
+    remove: &quot;{{ item['remove'] | default(false) }}&quot;
+  loop: &quot;{{ user_list }}&quot;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Por <code>default</code> el valor será</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>item['groups'] | default(omit)</code></td>
+<td style="text-align: left;">omitido</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>item['system'] | default(false)</code></td>
+<td style="text-align: left;"><code>false</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>item['shell'] | default('/bin/bash')</code></td>
+<td style="text-align: left;"><code>/bin/bash</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>item['state'] | default('present')</code></td>
+<td style="text-align: left;"><code>present</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>item['remove'] | default(false)</code></td>
+<td style="text-align: left;"><code>false</code></td>
+</tr>
+</tbody>
+</table>
 
 
 
