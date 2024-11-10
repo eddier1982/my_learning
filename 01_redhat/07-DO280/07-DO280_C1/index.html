@@ -2528,8 +2528,35 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#validacion-de-yaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validación de YAML
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparacion-de-recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparación de recursos
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parchado-de-recursos-kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parchado de recursos Kubernetes
+    </span>
+  </a>
   
 </li>
         
@@ -2539,26 +2566,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#modificacion-de-recursos-en-kubernetes" class="md-nav__link">
+  <a href="#kustomize-overlays" class="md-nav__link">
     <span class="md-ellipsis">
-      Modificación de recursos en kubernetes
+      Kustomize Overlays
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Modificación de recursos en kubernetes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#argumentos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Argumentos
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -3184,8 +3196,35 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#validacion-de-yaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validación de YAML
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparacion-de-recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparación de recursos
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parchado-de-recursos-kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parchado de recursos Kubernetes
+    </span>
+  </a>
   
 </li>
         
@@ -3195,26 +3234,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#modificacion-de-recursos-en-kubernetes" class="md-nav__link">
+  <a href="#kustomize-overlays" class="md-nav__link">
     <span class="md-ellipsis">
-      Modificación de recursos en kubernetes
+      Kustomize Overlays
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Modificación de recursos en kubernetes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#argumentos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Argumentos
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -3352,7 +3376,33 @@ mi-aplicacion
 <p>Los recursos ya creados se pueden actualizar con la opción <code>kubectl apply</code></p>
 <pre><code class="language-bash">kubectl apply -f ~/my-app/example-deployment.yaml --dry-run=server --validate=true
 </code></pre>
-<p>Puede validar comparando los objetos en el manifiesto versus con los objetos del recurso en vivo con el argumento <strong>diff</strong>. Al igual que <em>git</em>, se mostrará que le falta con <strong>---</strong> y lo agregado con <strong>+++</strong></p>
+<p>Ejecutar <code>kubectl create -f</code> cuando el recurso está <em>running</em> sale error, en cambio con el comando <code>kubectl apply -f</code> al ser <em>declarativo</em> tiene en cuenta el estado del recurso en el clúster y el estado en el manifiesto</p>
+<h4 id="validacion-de-yaml">Validación de YAML</h4>
+<p>Antes de aplicaer los cambios en un recurso, se puede aplicar el argumento <code>--dry-run=server</code> y <code>--validate=true</code> para revisar posibles errores</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">opción</th>
+<th style="text-align: left;">explicación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>--dry-run=server</code></td>
+<td style="text-align: left;">Envía solicitud al servidor sin mantener el recurso</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--validate=true</code></td>
+<td style="text-align: left;">opciómn utilizada pára validar el input y si el request no es válido falla</td>
+</tr>
+</tbody>
+</table>
+<p>Ejemplo:</p>
+<pre><code class="language-yaml">kubectl apply -f ~/my-app/example-deployment.yaml --dry-run=server --validate=true
+deployment.apps/hello-openshift created (server dry-run)
+</code></pre>
+<h4 id="comparacion-de-recursos">Comparación de recursos</h4>
+<p>Con el comando <code>kubectl diff</code> se puede revisar las diferencias entre los objetos <em>activos</em> y los objetos en el <em>manifiesto</em></p>
 <pre><code class="language-bash">kubectl diff -f example-deployment.yaml
 ...output omitted...
 diff -u -N /tmp/LIVE-2647853521/apps.v1.Deployment.resource...
@@ -3366,40 +3416,18 @@ diff -u -N /tmp/LIVE-2647853521/apps.v1.Deployment.resource...
 +  generation: 2
 </code></pre>
 <p><strong><em>NOTA</em></strong> Si hay cambios en el recurso, es necesario reiniciar los pod's por medio de un rollout, o bajando las réplicas a una menor expresión (1) y luego volverlas a subir</p>
-<h2 id="modificacion-de-recursos-en-kubernetes">Modificación de recursos en kubernetes</h2>
-<p>Es la modificación a partir de un fragmento o un archivo json/yml a un recurso en OCP. Se utiliza el comando <strong>oc patch</strong>. Se utiliza el argumento <strong>-p</strong> para agregar el fragmento necesario:</p>
+<h3 id="parchado-de-recursos-kubernetes">Parchado de recursos Kubernetes</h3>
+<p>Es la modificación a partir de una parte o un archivo json/yml a un recurso en OCP. Se utiliza el comando <code>oc patch</code>. Se utiliza el argumento <code>-p</code> para agregar el la parte necesaria:</p>
 <pre><code class="language-bash">oc patch deployment hello -p '{&quot;spec&quot;:{&quot;template&quot;:{&quot;spec&quot;:{&quot;resources&quot;:{&quot;requests&quot;:{&quot;cpu&quot;: &quot;100m&quot;}}}}}}'
 </code></pre>
 <p>O utilizando el archivo completo:</p>
 <pre><code class="language-bash">oc patch deployment hello --patch-file ~/volume-mount.yaml
 </code></pre>
-<h3 id="argumentos">Argumentos</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Argumento</th>
-<th style="text-align: left;">Descripción</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">--save-config</td>
-<td style="text-align: left;">Guarda la configuración del recurso en <em>kubectl.kubernetes.io/last-applied-configuration</em></td>
-</tr>
-<tr>
-<td style="text-align: left;">--dry-run=client</td>
-<td style="text-align: left;">previene la creación del recurso en el cluster, solo crea en el cliente</td>
-</tr>
-<tr>
-<td style="text-align: left;">--dry-run=server</td>
-<td style="text-align: left;">envía la ejecución al servir sin persistencia en los datos</td>
-</tr>
-<tr>
-<td style="text-align: left;">--validate=true</td>
-<td style="text-align: left;">Valida el input y falla si el request es inválido</td>
-</tr>
-</tbody>
-</table>
+<h2 id="kustomize-overlays">Kustomize Overlays</h2>
+<ul>
+<li>Desplegar aplicaciones desde  manifiesto de recursos que son ampliados por Kustomize</li>
+</ul>
+<p>Cuando se usa K8S multiples equipos usan ambientes para desarrollo, staging, testing, producción para desplegar aplicaciones</p>
 
 
 
