@@ -2494,19 +2494,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#plantillas-openshift" class="md-nav__link">
+  <a href="#openshift-templates" class="md-nav__link">
     <span class="md-ellipsis">
-      Plantillas Openshift
+      Openshift Templates
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Plantillas Openshift">
+    <nav class="md-nav" aria-label="Openshift Templates">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#descrubiendo-los-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descrubiendo los Templates
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#uso-de-templates" class="md-nav__link">
     <span class="md-ellipsis">
-      Uso de templates
+      Uso de Templates
     </span>
   </a>
   
@@ -3108,19 +3117,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#plantillas-openshift" class="md-nav__link">
+  <a href="#openshift-templates" class="md-nav__link">
     <span class="md-ellipsis">
-      Plantillas Openshift
+      Openshift Templates
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Plantillas Openshift">
+    <nav class="md-nav" aria-label="Openshift Templates">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#descrubiendo-los-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descrubiendo los Templates
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#uso-de-templates" class="md-nav__link">
     <span class="md-ellipsis">
-      Uso de templates
+      Uso de Templates
     </span>
   </a>
   
@@ -3192,16 +3210,26 @@
 
 
 <h1 id="capitulo-2-despliegue-de-aplicaciones-empaquetadas">Capitulo 2 - Despliegue de aplicaciones empaquetadas</h1>
-<h2 id="plantillas-openshift">Plantillas Openshift</h2>
-<p>Recurso personalizado de configuraciones de k8s</p>
-<p>Listar las plantillas ejemplo del cluster de OCP</p>
+<p>Desplegar aplicaciones desde manifiestros de recursos que se empaquetan para compartir y distribuir</p>
+<ul>
+<li>Desplegar apps y sus dependencias desde manifiestos que se almacenan como templates en OCP </li>
+<li>Despligue y actualización de apps desde manifiestos que se empaquetan como Helm charts</li>
+</ul>
+<h2 id="openshift-templates">Openshift Templates</h2>
+<p>Es un recurso personalizado de configuraciones recursos de k8s. Los templates tiene parámetros. Un recurso <em>template</em> es una extensión en Kubernetes que es proporcianado por Red Hat para OCP. Existen <em>templates</em> disponibles en el <em>namespace</em> <code>openshift</code> y durante la instalación se pueden adicionar. También se puede crear plantillas desde cero o tomar una plantilla para adaptarla para una necesidad de un proyecto.</p>
+<h3 id="descrubiendo-los-templates">Descrubiendo los Templates</h3>
+<p>Listar las plantillas ejemplo del cluster de OCP del <em>namespace</em> <code>openshift</code></p>
 <pre><code class="language-bash">$ oc get templates -n openshift
 NAME                     DESCRIPTION           PARAMETERS   OBJECTS
 cache-service            Red Hat Data Grid...  8 (1 blank)  4
 cakephp-mysql-example    An example CakePHP... 21 (4 blank) 8
 cakephp-mysql-persistent An example CakePHP... 22 (4 blank) 9
-...output omitted...
-
+.
+.
+.
+</code></pre>
+<p>Si se quiere revisar el contenido de un <em>template</em></p>
+<pre><code class="language-bash">
 [user@host ~]$ oc describe template cache-service -n openshift
 Name: cache-service
 Namespace: openshift
@@ -3210,7 +3238,9 @@ Labels: samples.operator.openshift.io/managed=true
 template=cache-service
 Description: Red Hat Data Grid is an in-memory, distributed key/value store.
 Annotations: iconClass=icon-datagrid
-...output omitted...
+.
+.
+.
 
 Parameters:
     Name: APPLICATION_NAME
@@ -3219,7 +3249,9 @@ Parameters:
     Required: true
     Value: cache-service
 
-...output omitted...
+.
+.
+.
 
     Name: APPLICATION_PASSWORD
     Display Name: Client Password
@@ -3239,9 +3271,39 @@ Objects:
 </code></pre>
 <p>Ver solamente los parametros que usa un template:</p>
 <pre><code class="language-bash">oc process --parameters cache-service -n openshift
+oc process --parameters -f  my-cache-service.yaml
+oc get template cache-service -o yaml -n openshift
 </code></pre>
-<h3 id="uso-de-templates">Uso de templates</h3>
+<h3 id="uso-de-templates">Uso de Templates</h3>
+<p>El comando <code>oc new-app</code> con el argumento <code>--template</code> puede desplegar un template directamente en el proyecto <code>openshift</code>, como el siguiente ejemplo:</p>
+<pre><code class="language-bash">oc new-app --template=cache-service -p APPLICATION_USER=my-user
+</code></pre>
+<p>Se puede utilizar la opción <code>oc process</code> para aplicar los parámetros de un <em>template</em> en producción.</p>
 <h3 id="crear-una-aplicacion-a-partir-del-template">Crear una aplicación a partir del template:</h3>
+<p>Los siguientes ejemplos muestran cómo se puede crear aplicaciones utilizando la data de <em>templates</em>, ya que todos deben al final enviar la salida a un manifiesto final para luego aplicarlo:</p>
+<pre><code class="language-bash">## With process directly
+oc process my-cache-service -p APPLICATION_USER=user1 -o yaml &gt; my-cache-service-manifest.yaml
+
+## With a file
+oc process -f my-cache-service.yaml -p APPLICATION_USER=user1 -o yaml &gt; my-cache-service-manifest.yaml
+
+oc process my-cache-service -o yaml \
+  -p TOTAL_CONTAINER_MEM=1024 \
+  -p APPLICATION_USER='cache-user' \
+  -p APPLICATION_PASSWORD='my-secret-password' \
+  &gt; my-cache-service-manifest.yaml
+
+## With *.env to variables
+cat my-cache-service-params.env
+TOTAL_CONTAINER_MEM=1024
+APPLICATION_USER='cache-user'
+APPLICATION_PASSWORD='my-secret-password'
+
+oc process my-cache-service -o yaml --param-file=my-cache-service-params.env &gt; my-cache-service-manifest.yaml
+</code></pre>
+<p><strong>NOTA</strong> Normalmente un manifiesto no se requiere  para el uso del template por lo que se puede aoplicar directamente por medio de un filtro <code>| oc apply -f -</code></p>
+<pre><code class="language-bash">oc process my-cache-service --param-file=my-cache-service-params.env | oc apply -f -
+</code></pre>
 <pre><code class="language-bash">oc new-app --template=cache-service -p APPLICATION_USER=my-user
 
 oc process my-cache-service -p APPLICATION_USER=user1 -o yaml &gt; my-cache-service-manifest.yaml
@@ -3255,8 +3317,11 @@ oc process my-cache-service -o yaml \
 &gt; my-cache-service-manifest.yaml
 </code></pre>
 <h3 id="update-de-aplicaciones-desde-template">Update de aplicaciones desde template</h3>
+<p>Como se utiliza <code>oc apply</code>, despues de desplegar, se puede procesar el template despues para aplicar actualizaciones, pero no todos los <em>workloads</em> de updates permites esta acción, entonce se debe comparar con <code>oc diff -f -</code> agregando comop filtro para validar la diferncia entre ñps parametros aplicados:</p>
 <pre><code class="language-bash">oc process my-cache-service -o yaml --param-file=my-cache-service-params-2.env | oc diff -f -
-...output omitted...
+.
+.
+.
 
 - generation: 1
 + generation: 2
@@ -3277,7 +3342,12 @@ oc process my-cache-service -o yaml \
  volumeMounts:
 </code></pre>
 <h3 id="gestion-de-plantillas">Gestión de plantillas</h3>
-<p>Copia de template a archivo YAML. Renombrar el archivo, aplicar los cambios a las variables y eliminar el campo de <em>namespace</em></p>
+<p>Para producción, realice una copia del contenido del manifiesto del <em>template</em>, de esta forma podrá perosnalizar los valores que quiere aplicar, como:</p>
+<ul>
+<li>Renombrar el archivo manifiesto </li>
+<li>Modificar los valores de los parámetros</li>
+<li>Eliminar el <em>namespace</em></li>
+</ul>
 <pre><code class="language-bash">oc get template cache-service -o yaml -n openshift &gt; my-cache-service.yaml
 
 oc create -f my-cache-service.yaml
