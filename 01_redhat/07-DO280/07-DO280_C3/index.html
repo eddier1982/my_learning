@@ -2636,8 +2636,77 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#actualizandoel-secret-del-htpasswd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actualizandoel secret del HTPasswd
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurando-el-idp-htpasswd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurando el IdP HTPasswd
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configurando el IdP HTPasswd">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configurando-el-recurso-oauth-tipo-personalizado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurando el recurso OAuth tipo personalizado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actulizando-el-recurso-personalizadode-oauth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actulizando el recurso personalizadode OAuth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminando-usuarios-e-idp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eliminando usuarios e IdP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asignacion-de-privilegios-de-administracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asignación de privilegios de administración
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentación
+    </span>
+  </a>
   
 </li>
         
@@ -3301,8 +3370,77 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#actualizandoel-secret-del-htpasswd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actualizandoel secret del HTPasswd
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurando-el-idp-htpasswd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurando el IdP HTPasswd
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configurando el IdP HTPasswd">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configurando-el-recurso-oauth-tipo-personalizado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurando el recurso OAuth tipo personalizado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actulizando-el-recurso-personalizadode-oauth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actulizando el recurso personalizadode OAuth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminando-usuarios-e-idp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eliminando usuarios e IdP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asignacion-de-privilegios-de-administracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asignación de privilegios de administración
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentación
+    </span>
+  </a>
   
 </li>
         
@@ -3445,6 +3583,91 @@
 </code></pre>
 <p><strong>NOTA</strong> Un secret que tiene el IdP (Identity Provider) HTPasswd debe tener el prefijo <code>htpasswd=</code> antes de especificar la rurta del archivo</p>
 <h4 id="extrayendo-los-datos-del-secret">Extrayendo los datos del <em>secret</em></h4>
+<p>Cuando se agregan o remueven usuarios se tiliza el comando <code>oc extract</code> para recuperar el <em>secret</em>. Por defecto el comando guarda cada llave del <em>secret</em> en un archivo separado, sin embargo se puede reubicar la salida de todos las llaves a un solo archivo, asi:</p>
+<pre><code class="language-bash">oc extract secret/htpasswd-secret -n openshift-config --to /tmp/ --confirm
+</code></pre>
+<h4 id="actualizandoel-secret-del-htpasswd">Actualizandoel <em>secret</em> del HTPasswd</h4>
+<p>El <em>secret</em> se debe actualizar luego de adicionar, modificar o incluso eliminar un usuario y se puejde hacer con el comando <code>oc set data secret</code> para actualizar. A menos que el nombre del archivo no sea <code>htpasswd</code> se debe especificar, asi:</p>
+<pre><code class="language-bash">oc set data secret/htpasswd-secret --from-file htpasswd=/tmp/htpasswd -n openshift-config
+</code></pre>
+<p>Una ves actualizado el <em>secret</em> el operador OAuth re-despliega los pods del <em>namespace</em> <code>openshift-authentication</code>. Se puede monitorrear asi:</p>
+<pre><code class="language-bash">watch oc get pods -n openshift-authentication
+</code></pre>
+<h3 id="configurando-el-idp-htpasswd">Configurando el IdP HTPasswd</h3>
+<p>El IdP valida los usuarios contra un <em>secret</em> que contiene los nombres de usuario y contraseñas y solo el Admin del Clúster puede modifcar los datos.</p>
+<h4 id="configurando-el-recurso-oauth-tipo-personalizado">Configurando el recurso OAuth tipo personalizado</h4>
+<p>Para usar el IdP HTPasswd, la personalización del recurso OAuth debe editarse para agregar una entrada a la matriz de <code>.spec.identityProviders</code></p>
+<pre><code class="language-yml">apiVersion: config.openshift.io/v1
+kind: OAuth
+metadata:
+  name: cluster
+spec:
+  identityProviders:
+  - name: my_htpasswd_provider
+    mappingMethod: claim
+    type: HTPasswd
+    htpasswd:
+      fileData:
+        name: htpasswd-secret
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">entry</th>
+<th style="text-align: left;">explicación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">- name: my_htpasswd_provider</td>
+<td style="text-align: left;">Nombre del IdP</td>
+</tr>
+<tr>
+<td style="text-align: left;">mappingMethod: claim</td>
+<td style="text-align: left;">La opción <code>claim</code> no permite el inicio de sesión con diferentes IdP</td>
+</tr>
+<tr>
+<td style="text-align: left;">name: htpasswd-secret</td>
+<td style="text-align: left;"><em>secret</em> existente que contiene los datos</td>
+</tr>
+</tbody>
+</table>
+<h4 id="actulizando-el-recurso-personalizadode-oauth">Actulizando el recurso personalizadode OAuth</h4>
+<p>Primero se exporta el contenido a un yaml con el comando <code>get</code> . En el output generado se edita para modificar los cambios del IdP y sus configuraciones y al completarse se guardan los cambios y luego se reemplaza con el comando <code>replace</code> así:</p>
+<pre><code class="language-bash">oc get oauth cluster -o yaml &gt; oauth.yaml
+
+oc replace -f oauth.yaml
+</code></pre>
+<h4 id="eliminando-usuarios-e-idp">Eliminando usuarios e IdP</h4>
+<ul>
+<li>Elimiando un usuario del <code>httpsswd</code></li>
+</ul>
+<pre><code class="language-bash">htpasswd -D /tmp/htpasswd manager
+</code></pre>
+<ul>
+<li>Actualizar el <em>secret</em> eliminando que queda del password del recurso del usuario</li>
+</ul>
+<pre><code class="language-bash">oc set data secret/htpasswd-secret --from-file htpasswd=/tmp/htpasswd -n openshift-config
+</code></pre>
+<ul>
+<li>Eliminar el usuario</li>
+</ul>
+<pre><code class="language-bash">oc delete user manager
+</code></pre>
+<ul>
+<li>IdP, se busca el IdP en el clúster y luego se elimina:</li>
+</ul>
+<pre><code class="language-bash">oc get identities | grep manager
+
+oc delete identity my_htpasswd_provider:manager
+</code></pre>
+<h4 id="asignacion-de-privilegios-de-administracion">Asignación de privilegios de administración</h4>
+<pre><code class="language-bash">adm policy add-cluster-role-to-user cluster-admin eocampo
+</code></pre>
+<h3 id="documentacion">Documentación</h3>
+<ul>
+<li><a href="https://docs.redhat.com/en/documentation/openshift_container_platform/4.14/html-single/authentication_and_authorization/index#understanding-identity-provider">Understanding Identity Provider Configuration</a></li>
+</ul>
 <h2 id="definir-y-aplicar-permisos-con-rbac">Definir y aplicar permisos con RBAC</h2>
 
 

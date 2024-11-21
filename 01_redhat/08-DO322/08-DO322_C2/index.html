@@ -2872,6 +2872,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#troubleshooting-de-la-instalacion-de-ocp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting de la instalación de OCP
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3284,6 +3293,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#troubleshooting-de-la-instalacion-de-ocp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting de la instalación de OCP
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3397,8 +3415,45 @@ find ${HOME}/$INSTALLDIR -name '*.ign' | xargs ls -lrt
 openshift-install wait-for install-complete  --dir=${HOME}/$INSTALLDIR --log-level=debug
 </code></pre>
 <h2 id="monitoreando-la-instalacion">Monitoreando la instalación</h2>
-<p>Primero se debe configurar el archivo KUBECONFIG para que apunte al ambiente</p>
-<p>```bash</p>
+<p>Primero se debe configurar el archivo KUBECONFIG para que apunte al ambiente y para empezar a usar el comando <code>oc</code> con cualquiera de os 2 métodos:</p>
+<ul>
+<li><code>kubeconfig</code></li>
+</ul>
+<pre><code class="language-bash">export KUBECONFIG=${HOME}/ocp4-cluster/auth/kubeconfig
+</code></pre>
+<ul>
+<li>Usando <code>kubeadmin</code></li>
+</ul>
+<p><img alt="warning kubeadmin" height="20" src="../../../images/warning.png" style="display: block" width="30" />
+Tener presente respaldae el archivo del <code>kubeadmin</code> es un lugar seguro.</p>
+<p>Una ves ingresado al cluster, podemos validar inicialmente algunos estados:</p>
+<pre><code class="language-bash">watch 'oc get clusterversion; oc get clusteroperators;  oc get pods --all-namespaces | grep -v -E &quot;Running|Completed&quot;; oc get nodes'
+</code></pre>
+<p>El comando <code>watch</code> puede visualizar en tiempo real  como el CVO instala los operadores. Con <code>oc get events -A -w</code> se puede ver en tiempo real los mensajes de eventos de OCP, para ver también los proceso de isntalación en <em>background</em></p>
+<h2 id="troubleshooting-de-la-instalacion-de-ocp">Troubleshooting de la instalación de OCP</h2>
+<p>Existen 3 estapas del proceso de despliegue de un clúster de OCP:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Stage</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Bootstrap (Bootkube)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Bootstrap (Temporary Control Plane)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Production Control Plane</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
 
 
 
