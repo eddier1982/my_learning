@@ -2722,6 +2722,90 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Definir y aplicar permisos con RBAC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rbac-role-based-access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      RBAC (Role-based Access Control)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RBAC (Role-based Access Control)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proceso-de-autorizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proceso de autorización
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alcance-de-rbac" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alcance de RBAC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestionando-rbac-con-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestionando RBAC con CLI
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roles-por-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      Roles por default
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de usuarios
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-grupos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestión de grupos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentacion_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentación
+    </span>
+  </a>
+  
 </li>
       
     </ul>
@@ -3456,6 +3540,90 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Definir y aplicar permisos con RBAC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rbac-role-based-access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      RBAC (Role-based Access Control)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RBAC (Role-based Access Control)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proceso-de-autorizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proceso de autorización
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alcance-de-rbac" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alcance de RBAC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestionando-rbac-con-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestionando RBAC con CLI
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roles-por-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      Roles por default
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos de usuarios
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-grupos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestión de grupos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentacion_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentación
+    </span>
+  </a>
+  
 </li>
       
     </ul>
@@ -3669,6 +3837,132 @@ oc delete identity my_htpasswd_provider:manager
 <li><a href="https://docs.redhat.com/en/documentation/openshift_container_platform/4.14/html-single/authentication_and_authorization/index#understanding-identity-provider">Understanding Identity Provider Configuration</a></li>
 </ul>
 <h2 id="definir-y-aplicar-permisos-con-rbac">Definir y aplicar permisos con RBAC</h2>
+<p>Definir controles de acceso basados en roles y aplicar permisos a <em>usuarios</em></p>
+<h3 id="rbac-role-based-access-control">RBAC (Role-based Access Control)</h3>
+<p>RBAC es una técnica para gestionar acceso a los recursos es un sistema de cómputo. En OCP, RBAC determina que acciones se pueden ejecutar dentro de un Clúster o proyecto. Se pueden elegir entre 2 tipos de role, dependiendo del nivel de responsabilida del usuario: <strong>cluster</strong> y <strong>local</strong></p>
+<p><img alt="Auth &amp; Aute" height="400" src="../images/do288_c03_02.png" style="display: block; margin: 0 auto" width="600" /></p>
+<h4 id="proceso-de-autorizacion">Proceso de autorización</h4>
+<p>Este es gestionado por reglas, roles y enlaces</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Objeto RBAC</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Rule</td>
+<td style="text-align: left;">Permite acciones sobre objetos o grupo de objetos</td>
+</tr>
+<tr>
+<td style="text-align: left;">Role</td>
+<td style="text-align: left;">Conjunto de reglas. Los usuarios y grupos se pueden asociar a varios roles</td>
+</tr>
+<tr>
+<td style="text-align: left;">Binding</td>
+<td style="text-align: left;">Asignación de usuarios/grupos a un role</td>
+</tr>
+</tbody>
+</table>
+<h4 id="alcance-de-rbac">Alcance de RBAC</h4>
+<p>RHOCP tiene definido 2 tipos de nivel de grupos que depende del alcance y responsabilidad</p>
+<ul>
+<li><strong>Cluster RBAC:</strong> Roles y enlaces aplicados a través de todos los objetos</li>
+<li><strong>Local RBAC:</strong> Roles y enlaces para un proyecto determinado. Los enlaces de role local puede refernciar ambos: cluster o local.</li>
+</ul>
+<h4 id="gestionando-rbac-con-cli">Gestionando RBAC con CLI</h4>
+<p>Utiliza el comando <code>oc adm policy</code> para agregar o eliminar roles del cluster</p>
+<p>Cambiar usuario normal a administrador del cluster y luego ejemplo para removerlo</p>
+<pre><code class="language-bash">oc adm policy add-cluster-role-to-user cluster-admin eocampo
+
+oc adm policy remove-cluster-role-from-user cluster-admin eocampo
+</code></pre>
+<p>Para saber si el usuario puede ejecutar una acción se utliza el comando <code>oc adm policy who-can</code> así:</p>
+<pre><code class="language-bash">oc adm policy who-can delete eocampo
+</code></pre>
+<h3 id="roles-por-default">Roles por default</h3>
+<p>Por defecto el cluster de OCP tiene roles que pueden ser asignados localmente en todo el clúster, lo cuales se pueden modificar ser mas precisos en la asignación del contrtol de acceso a los recursos</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Default Role</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>admin</code></td>
+<td style="text-align: left;">Puede gestionar todos los recursos de un proyecto, incluyedo otorgar acceso a otros usuarios. Otorga acceso a los recursos de un proyecto incluyendo <em>limits</em> y <em>quotas</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>basic-user</code></td>
+<td style="text-align: left;">Acceso de solo lectura al proyecto</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>cluster-admin</code></td>
+<td style="text-align: left;">Superusurio ya que tiene acceso a los recursos del Clúster. Puede hacer cualquier acción</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>cluster-status</code></td>
+<td style="text-align: left;">Acceso a la informción de estado del clúster</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>cluster-reader</code></td>
+<td style="text-align: left;">Acceso y/o vista a la mayoría de objetos en el clúster, pero no modificarlos</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>edit</code></td>
+<td style="text-align: left;">Crear, modificar y eliminar recursos comunes de la app de un proyecto (services, deplyments). No puede realizar acciones sobre recursos de gestión [<em>limits</em>, <em>quotas</em>], tampoco gestionar permisos de acceso al proyecto. Acceso tipo desarrollador</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>self-provisioner</code></td>
+<td style="text-align: left;">Pueden cerar sus propios proyectos. Permite crear recursos <code>projectrequests</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>view</code></td>
+<td style="text-align: left;">Pueden ver los recursos de un proyecto sin modificarlos</td>
+</tr>
+</tbody>
+</table>
+<p>Agregar un role a un usuario específico:</p>
+<pre><code class="language-bash">oc policy add-role-to-user role-name eocampo -n miproyecto
+</code></pre>
+<h3 id="tipos-de-usuarios">Tipos de usuarios</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tipos de usuarios</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Regular users</td>
+<td style="text-align: left;">Son los usuarios con mas interacción y se representan como <code>User</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">System users</td>
+<td style="text-align: left;">Creados automaticamente con la definición de la infra. Principalmente para la seguridad de la infraestructura e interacción con la API <strong><em>cluster adminitrator</em></strong> <br/> Utiliza el prefijo <code>system:</code> por ejemplo <code>system:admin</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Service accounts</td>
+<td style="text-align: left;">Usuario de sistema asociados con proyectos. Los Workloads pueden usar <em>service account</em> para conectarse a APIs de K8S <br/> Se podría crear de forma automática momento de cerar un poryecto <br/> No tiene roles <br/> Se otorga roles a los <em>service account</em> <br/> Se representa como <code>ServiceAccount</code> <br/> tiene el prefijo <code>system:serviceaccount:default:eocampo</code> (default is a namespace)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gestion-de-grupos">Gestión de grupos</h3>
+<p>Crear un grupo en el clúster:</p>
+<pre><code class="language-bash">oc adm groups new ocampos
+</code></pre>
+<p>Agregar usuarios al grupo:</p>
+<pre><code class="language-bash">oc adm groups add-users ocampos eocampo
+</code></pre>
+<h2 id="documentacion_1">Documentación</h2>
+<ul>
+<li><a href="https://docs.redhat.com/en/documentation/openshift_container_platform/4.14/html-single/authentication_and_authorization/index#authorization-overview_using-rbac">Using RBAC to Define and Apply Permissions</a></li>
+<li><a href="https://docs.redhat.com/en/documentation/openshift_container_platform/4.14/html-single/authentication_and_authorization/index#understanding-authentication">Understanding Authentication</a></li>
+</ul>
 
 
 
