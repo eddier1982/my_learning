@@ -2584,6 +2584,96 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Quotas en Proyectos y Cluster">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#limites-de-workloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Límites de Workloads
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quotas-de-recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quotas de recursos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quotas de recursos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quotas-de-recursos-de-computo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quotas de recursos de cómputo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quotas-de-cantidad-de-objetos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quotas de cantidad de objetos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creando-quotas-a-proyectos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creando Quotas a proyectos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting-de-quotas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting de Quotas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting de Quotas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#craando-quotas-para-varios-proyectos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Craando Quotas para varios proyectos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentación:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3072,6 +3162,96 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Quotas en Proyectos y Cluster">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#limites-de-workloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Límites de Workloads
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quotas-de-recursos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quotas de recursos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quotas de recursos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quotas-de-recursos-de-computo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quotas de recursos de cómputo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quotas-de-cantidad-de-objetos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quotas de cantidad de objetos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creando-quotas-a-proyectos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creando Quotas a proyectos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting-de-quotas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting de Quotas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting de Quotas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#craando-quotas-para-varios-proyectos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Craando Quotas para varios proyectos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentación:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3108,7 +3288,115 @@
 
 
 <h1 id="capitulo-6-habilitacion-de-autoservicio-de-desarrollo">Capitulo 6 - Habilitación de autoservicio de desarrollo</h1>
+<p>Configurar para un autoservicio seguro para desarrolladores de múltiples equipos sin el personal de operaciones aprovisionen servicios.</p>
 <h2 id="quotas-en-proyectos-y-cluster">Quotas en Proyectos y Cluster</h2>
+<ul>
+<li>Configurar <em>quotas</em> de rcudos de computo y recursos de K8S por cantidades en los proyectos y en el clúster</li>
+</ul>
+<h3 id="limites-de-workloads">Límites de Workloads</h3>
+<p>Un usuario tipo RBAC con acceso al clúster puede cerar <em>workloads</em>. Los límites de las granjas de K8S con limitados, incluso si hay autoescalamiento. Es necesario controlar los crecimientos para evitar desboradmientos de costos o malfuncionamiento de <em>workloads</em>. Por ello existen los límites, las cuales existe de 2 tipos:</p>
+<ul>
+<li>Límites de recursos (<strong>limits</strong>): Valor por superior de los recursos que un <em>workload</em> va a utilizar.</li>
+<li>Límittes de solicitudes (<strong>request</strong>): Valor mínimo de <em>workload</em></li>
+</ul>
+<p>Los límites también se pueden aplicar a los <em>namespaces</em> para controlar a los <em>workloads</em> en la utilización de los recursos con otros <em>namespaces</em></p>
+<h3 id="quotas-de-recursos">Quotas de recursos</h3>
+<p>Se aplica el concepto a los <em>namespaces</em> como un tipo de recurso <code>ResourceQuota</code>, lo que impide la creación de recursos si el límite es superado, ejemplo:</p>
+<pre><code class="language-yaml">apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: memory
+  namespace: example
+spec:
+  hard:
+    limits.memory: 4Gi
+    requests.memory: 2Gi
+  scopes: {}
+  scopeSelector: {}
+</code></pre>
+<h4 id="quotas-de-recursos-de-computo">Quotas de recursos de cómputo</h4>
+<p>Son 4 definiciones: <code>limits.cpu</code>, <code>limits.memory</code>, <code>requests.cpu</code> y <code>requests.memory</code>. Los <code>limit.*</code> se aplican a los recursos con el valor máximo a consumir y los <code>requests.*</code> a las solicitudes y van enfocadas al máximo de reserva en un <em>namespace</em>.</p>
+<p>Es contraproducente definir quotas excesivas debido a la suubutilización de recursos</p>
+<h4 id="quotas-de-cantidad-de-objetos">Quotas de cantidad de objetos</h4>
+<p>Por ejemplo el número máximo de <em>workloads</em> que puede crearse en un <em>namespace</em>. Es importante tener los recursos necesarios para soportar la cantidad de objetos que puede tener un clúster de K8S, ya que de no tenerlo y existir un mal uso de ello puede ocasionar malfuncionamiento o dañar el performance del clúster. </p>
+<p>Es posible que la cantidad de ciertos recursos afectes sistemas externos como un storage, ya que por ejemplo tener volúmenes persistentes y no tener control de su creanción en el Clúster, podría crear problemas.</p>
+<p>Con el comando <code>oc api-resources</code> con el subargumento en campo vacio <code>--api-group=""</code> para listar los grupos del <em>core</em>:</p>
+<pre><code class="language-bash">oc api-resources --api-group=&quot;&quot;  --namespaced=true
+</code></pre>
+<h4 id="creando-quotas-a-proyectos">Creando Quotas a proyectos</h4>
+<p>Por la parte Web <strong>Administration</strong> → <strong>ResourceQuotas</strong> para crear las <em>Quotas</em> aunque también se puede hacer con un editor YAML, con la opción <code>oc create resourcequota --help</code> se puede ver ejemplos de creación.</p>
+<p>Ejemplo de numero de pods en un <em>namespace</em> y posteriormente su equivalente en YAML</p>
+<pre><code class="language-bash">oc create resourcequota example --hard=count/pods=1
+</code></pre>
+<p>YAML:</p>
+<pre><code class="language-yaml">apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: example
+spec:
+  hard:
+    count/pods: &quot;1&quot;
+</code></pre>
+<p>Para consultar, se puede así:</p>
+<pre><code class="language-bash">oc get quota example -o yaml
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  creationTimestamp: &quot;2024-01-30T17:59:52Z&quot;
+  name: example
+  namespace: default
+  resourceVersion: &quot;193658&quot;
+  uid: df12b484-4e78-4920-acb4-e04ab286a4a1
+spec:
+  hard:
+    count/pods: &quot;1&quot;
+status:
+  hard:
+    count/pods: &quot;1&quot;
+  used:
+    count/pods: &quot;0&quot;
+
+oc get quota
+</code></pre>
+<p>Las <em>quotas</em> generan métricas las cuales se pueden examinar por la parte Web.</p>
+<h3 id="troubleshooting-de-quotas">Troubleshooting de Quotas</h3>
+<p>Una granja de K8S no puede verificar si una <em>quota</em> es correcta o no, por ello se recomienda crearla primero en un ambiente previo y con un valor "supuesto", luego revisar el estaod de <em>quota</em></p>
+<p>Validación:</p>
+<pre><code class="language-bash">oc get resourcequota
+</code></pre>
+<p>Si un despliegue al momento de ejeuctarse supera una <em>quota</em> generará error inmediatamente. Sin menbargo no todas las <em>quotas</em> se pueden ver si se superan, por ello es importante ver los eventos de un <em>namespace</em></p>
+<pre><code class="language-bash">oc get event --sort-by .metadata.creationTimestamp
+</code></pre>
+<p>Por lla misma ruta por donde se crea una <em>quota</em> por Web, por allí también se puede validar el estado.</p>
+<h4 id="craando-quotas-para-varios-proyectos">Craando Quotas para varios proyectos</h4>
+<p>Cuando un equipo de desarrolladores tiene a cargo múltiples <em>namespaces</em> puede ser contraproducente asignarle cuotas cada uno de ellos, por ello, OCP puede aplicar <em>quotas</em> a nivel del <em>Clúster</em> basado en <code>selectors</code>, así:</p>
+<pre><code class="language-yaml">apiVersion: quota.openshift.io/v1
+kind: ClusterResourceQuota
+metadata:
+  name: example
+spec:
+  quota:
+    hard:
+      limits.cpu: 4
+  selector:
+    annotations: {}
+    labels:
+      matchLabels:
+        kubernetes.io/metadata.name: example
+</code></pre>
+<p>Por el entorno Web se puede llegar a través de <strong>Administration</strong> → <strong>CustomResourceDefinitions</strong> o también utilizando el comando, así:</p>
+<pre><code class="language-bash">oc create clusterresourcequota example --project-label-selector=group=dev --hard=requests.cpu=10
+</code></pre>
+<p>Solo los Admin del proyecto pueden validar  us uso de los <em>Quotas</em> en un <em>namepace</em> específico. El comando no funciona a todos <em>namespaces</em> solo al 1 en específico o selecionado</p>
+<pre><code class="language-bash">oc describe AppliedClusterResourceQuota -n example-2
+</code></pre>
+<h3 id="documentacion">Documentación:</h3>
+<ul>
+<li><a href="https://docs.redhat.com/en/documentation/openshift_container_platform/4.14/html-single/building_applications/index#quotas-setting-per-project">Building Applications</a></li>
+<li><a href="https://docs.redhat.com/en/documentation/openshift_container_platform/4.14/html-single/scalability_and_performance/index#ibm-z-platform">Planning Your Environment According to Object Maximums</a></li>
+<li><a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits">request &amp; Limits</a></li>
+<li><a href="https://kubernetes.io/docs/concepts/policy/resource-quotas/">Resources Quotas</a></li>
+</ul>
 <h2 id="limites-de-recursos-por-proyecto-limit-range">Límites de Recursos por proyecto (Limit Range)</h2>
 <h2 id="template-de-proyecto-y-role-de-autoaprovisionamiento">Template de Proyecto y Role de Autoaprovisionamiento</h2>
 
