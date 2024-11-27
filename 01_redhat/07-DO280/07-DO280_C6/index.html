@@ -2683,6 +2683,72 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Límites de Recursos por proyecto (Limit Range)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gestionando-recursos-namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestionando recursos Namespace
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limite-de-rangos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Límite de rangos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Límite de rangos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configurar-rangos-de-limites-maximos-y-minimos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurar rangos de límites máximos y mínimos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valores-por-defecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Valores por defecto
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creando-rango-de-limites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creando rango de límites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentacion_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentación
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3261,6 +3327,72 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Límites de Recursos por proyecto (Limit Range)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gestionando-recursos-namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestionando recursos Namespace
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limite-de-rangos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Límite de rangos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Límite de rangos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configurar-rangos-de-limites-maximos-y-minimos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurar rangos de límites máximos y mínimos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valores-por-defecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Valores por defecto
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creando-rango-de-limites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creando rango de límites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentacion_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentación
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3398,6 +3530,150 @@ spec:
 <li><a href="https://kubernetes.io/docs/concepts/policy/resource-quotas/">Resources Quotas</a></li>
 </ul>
 <h2 id="limites-de-recursos-por-proyecto-limit-range">Límites de Recursos por proyecto (Limit Range)</h2>
+<ul>
+<li>Configuración default y reuquerimientos de recursos máximo de computo para pods por proyecto</li>
+</ul>
+<h3 id="gestionando-recursos-namespace">Gestionando recursos Namespace</h3>
+<p>A un <em>namespace</em> se le puede aplicar quotas para controlar los <em>workloads que alli utilizan los recursos, y se convierte en una gestión de recursos, para evitar la sobrecarga de </em>workloads<em> que impidan la ejecución de otros </em>workloads<em>. K8S tiene la capacidad de rangos de límites para los </em>workloads*</p>
+<h3 id="limite-de-rangos">Límite de rangos</h3>
+<p>Se aplican a pods, contenedores, imagenes, streams y reclamación de volúmenes persistentes</p>
+<pre><code class="language-yaml">apiVersion: v1
+kind: LimitRange
+metadata:
+  name: mem-limit-range
+  namespace: default
+spec:
+  limits:
+    - default:
+        memory: 512Mi
+      defaultRequest:
+        memory: 256Mi
+      type: Container
+</code></pre>
+<p>Tiene los siguientes tipos:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Default limit</td>
+<td style="text-align: left;">La llave en <code>default</code> especifica el limite por defecto para los <em>workloads</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">Default request</td>
+<td style="text-align: left;">La llave <code>defaultRequest</code> especifica el valor por defecto de los <em>request</em> para los <em>workloads</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">Maximum</td>
+<td style="text-align: left;">La llave <code>max</code> especifica el valor máximo tanto de <em>request</em> como de <em>limits</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">Minimum</td>
+<td style="text-align: left;">La llave <code>min</code> especifica el valor mínimo tanto de <em>request</em> como de <em>limits</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">Limit-to-request ratio</td>
+<td style="text-align: left;">la llave <code>maxLimitRequestRatio</code> controla la relación entre <em>limits</em> y <em>request</em></td>
+</tr>
+</tbody>
+</table>
+<h4 id="configurar-rangos-de-limites-maximos-y-minimos">Configurar rangos de límites máximos y mínimos</h4>
+<ul>
+<li>No se pueden crear <em>workloads</em> que superen los topes maximos.</li>
+<li>Se utiliza para evitar el alto uso de <em>request</em> o <em>limits</em></li>
+<li><em>limits</em> muy bajos puedes impedir que creen <em>workloads</em> legitimas</li>
+<li>Útiles para garantizar que los <em>workloads</em> cre creen con buena cantidad de <em>request</em> y <em>limits</em></li>
+</ul>
+<h4 id="valores-por-defecto">Valores por defecto</h4>
+<ul>
+<li>Son adecuados en los <em>namespaces</em> con <em>quotas</em>, se evita la configuración de <em>limits</em> en cada <em>workload</em></li>
+<li>Si se establece <code>default</code> y <code>defaultRequest</code> los <em>workloads</em> utilizan el límite de rango por defecto</li>
+<li>Ideal para creación dinámica de <em>workloads</em>, escenarios de prueba, entre otros</li>
+<li>No adecuado al momento de determinar los valores si el <em>namespace</em> tiene <em>workloads</em> variados</li>
+</ul>
+<h3 id="creando-rango-de-limites">Creando rango de límites</h3>
+<p><em>Cuota</em> del <em>namespace</em>:</p>
+<pre><code class="language-yaml">apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: example
+  namespace: example
+spec:
+  hard:
+    limits.cpu: &quot;8&quot;
+    limits.memory: 8Gi
+    requests.cpu: &quot;4&quot;
+    requests.memory: 4Gi
+</code></pre>
+<p>Comando de creación de un <em>deployment</em>:</p>
+<pre><code class="language-bash">oc create deployment example --image=image
+</code></pre>
+<p>Mensaje de <em>quota</em> evitando la creación de pods:</p>
+<pre><code class="language-bash">oc get event --sort-by .metadata.creationTimestamp
+LAST SEEN   TYPE      REASON              OBJECT                          MESSAGE
+...output omitted...
+13s         Warning   FailedCreate        replicaset/example-74c57c8dff   Error creating: pods &quot;example-74c57c8dff-rzl7w&quot; is forbidden: failed quota: example: must specify limits.cpu for: hello-world-nginx; limits.memory for: hello-world-nginx; requests.cpu for: hello-world-nginx; requests.memory for: hello-world-nginx
+</code></pre>
+<p>Ejemplo de <em>limite de rango</em> de todod los tipos:</p>
+<pre><code class="language-yaml">piVersion: v1
+kind: LimitRange
+metadata:
+  name: example
+  namespace: example
+spec:
+  limits:
+  - default:
+      cpu: 500m
+      memory: 512Mi
+    defaultRequest:
+      cpu: 250m
+      memory: 256Mi
+    max:
+      cpu: &quot;1&quot;
+      memory: 1Gi
+    min:
+      cpu: 125m
+      memory: 128Mi
+    type: Container
+</code></pre>
+<p>Los límites de rango no afectan los pods existentes. Si se elimina el <em>deployment</em> y luego lo crea con <code>oc create</code>, el <em>deployment</em> crea los pods aplicando el límite de rango:</p>
+<pre><code class="language-bash">oc describe pod
+.
+.
+.
+Containers:
+  hello-world-nginx:
+    Limits:
+      cpu:     500m
+      memory:  512Mi
+    Requests:
+      cpu:        250m
+      memory:     256Mi
+.
+.
+.
+</code></pre>
+<p>Modificación directa de límite en un <em>deployment</em></p>
+<pre><code class="language-bash">oc set resources deployment example --limits=cpu=new-cpu-limit
+</code></pre>
+<p>Validación:</p>
+<pre><code class="language-bash">oc get event --sort-by .metadata.creationTimestamp
+</code></pre>
+<p>NOTA: validar al momento de un nuevo despliegue, ya que las <em>quote</em> pueden afectar el <em>rollout</em></p>
+<ul>
+<li>El valor max de CPU/MEM debe ser mayor o igual que el valor por defecto.</li>
+<li>El valor por defecto de CPU/MEM debe ser mayor o igual que el valor defaultRequest.</li>
+<li>El valor defaultRequest de CPU/MEM debe ser mayor o igual que el valor min.</li>
+<li>No aplicar valores que esten en conflicto</li>
+</ul>
+<h3 id="documentacion_1">Documentación</h3>
+<ul>
+<li><a href="https://docs.redhat.com/en/documentation/openshift_container_platform/4.14/html-single/nodes/index#nodes-cluster-limit-ranges">Restrict Resource Consumption with Limit Ranges </a></li>
+</ul>
 <h2 id="template-de-proyecto-y-role-de-autoaprovisionamiento">Template de Proyecto y Role de Autoaprovisionamiento</h2>
 
 
