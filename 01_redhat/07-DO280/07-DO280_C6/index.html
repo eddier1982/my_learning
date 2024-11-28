@@ -2758,6 +2758,66 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Template de Proyecto y Role de Autoaprovisionamiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de Proyecto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#planeando-un-project-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      Planeando un Project Template
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creando-un-project-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creando un Project Template
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurando-le-project-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurando le Project Template
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-permisos-de-autoaprovisionamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestión de permisos de autoaprovisionamiento.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentacion_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentación
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3402,6 +3462,66 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Template de Proyecto y Role de Autoaprovisionamiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de Proyecto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#planeando-un-project-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      Planeando un Project Template
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creando-un-project-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creando un Project Template
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurando-le-project-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurando le Project Template
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-permisos-de-autoaprovisionamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestión de permisos de autoaprovisionamiento.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentacion_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentación
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3675,6 +3795,205 @@ Containers:
 <li><a href="https://docs.redhat.com/en/documentation/openshift_container_platform/4.14/html-single/nodes/index#nodes-cluster-limit-ranges">Restrict Resource Consumption with Limit Ranges </a></li>
 </ul>
 <h2 id="template-de-proyecto-y-role-de-autoaprovisionamiento">Template de Proyecto y Role de Autoaprovisionamiento</h2>
+<ul>
+<li>Configurar quotas default, limit range, role bindings y otras restricciones para nuevos proyectos, y permitir a usuarios el autoaprovisionamiento de proyectos.</li>
+</ul>
+<h3 id="creacion-de-proyecto">Creación de Proyecto</h3>
+<p>K8S provee <em>namespaces</em> para separar <em>workloads</em> y su metadata tiene implicaciones de seguridad en un clúster, puede existir <em>labels</em> a nivel de los controladores de políticas que limitan las capacidades del <em>ns</em>. Si los usuarios puede modificar el <em>ns</em> también pueden llegar a modificar la metadata del <em>ns</em> y sobreescribir las opciones de seguridad.</p>
+<p>OCP introduce Proyectos para mejorar la seguridad y la experiencia de trabajo con <em>ns</em>. Se tiene el tipo de recurso <code>Project</code> que está en el API de OCP. Con esta opción se puede listar los <em>ns</em>, filtrarlos por los visible para el usuario y regresar en formato visible del proyecto.</p>
+<p>Tambien se incorpora en OCP <code>Projectrequest</code> como otro tipo de recurso. Este permite al momento de realizar una solicitud al proyecto, el API de OCP puede crear un <em>ns</em> desde un template (el template puede contener por defecto permisos, quoatas o rangos de límites).</p>
+<p>Todas estas características son parte del autoservicio de gestión de <em>ns</em> y tener la acapacidad de entregarle a un usuario el role de creación de <em>ns</em> sin la opción de modificar su metadata.</p>
+<h3 id="planeando-un-project-template">Planeando un Project Template</h3>
+<p>Puede agregar los siguientes tipos de recursos a un <em>Project Template</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tipos de Project Template</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Roles &amp; role bindings</td>
+<td style="text-align: left;">Por default el template entrega el role de Admin a quien solicita el proyecto, este permiso se puede mantener o utlizar otro similar. Se pueden agregar otros tipos de permisos.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Resource quotas &amp; limit ranges</td>
+<td style="text-align: left;">Con esta opción se garantiza que los nuevos proyectos tengan límites</td>
+</tr>
+<tr>
+<td style="text-align: left;">Network policies</td>
+<td style="text-align: left;">Políticas de red para fortalecer la separación de requerimientos de red</td>
+</tr>
+</tbody>
+</table>
+<h3 id="creando-un-project-template">Creando un Project Template</h3>
+<p>Se utiliza el comando <code>oc adm create-bootstrap-project-template</code> para imprimir el tamplate que se puede usar para la creación de su proyecto template.</p>
+<p>Creación inicial del template:</p>
+<pre><code class="language-bash">oc adm create-bootstrap-project-template -o yaml &gt; file
+</code></pre>
+<p>El cual tendrá el siguiente contenido:</p>
+<pre><code class="language-yaml">apiVersion: template.openshift.io/v1
+kind: Template
+metadata:
+  creationTimestamp: null
+  name: project-request
+objects:
+- apiVersion: project.openshift.io/v1
+  kind: Project
+  metadata:
+    annotations:
+      openshift.io/description: ${PROJECT_DESCRIPTION}
+      openshift.io/display-name: ${PROJECT_DISPLAYNAME}
+      openshift.io/requester: ${PROJECT_REQUESTING_USER}
+    creationTimestamp: null
+    name: ${PROJECT_NAME}
+  spec: {}
+  status: {}
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    creationTimestamp: null
+    name: admin
+    namespace: ${PROJECT_NAME}
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: ClusterRole
+    name: admin
+  subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: User
+    name: ${PROJECT_ADMIN_USER}
+parameters:
+- name: PROJECT_NAME
+- name: PROJECT_DISPLAYNAME
+- name: PROJECT_DESCRIPTION
+- name: PROJECT_ADMIN_USER
+- name: PROJECT_REQUESTING_USER
+</code></pre>
+<p>Modifique la lista de objetos y adicione los recursos requeridos para el nuevo <em>ns</em></p>
+<p>Con el siguiente comando se puede ver como muestra una lista de objetos en un formato similar a la llave de un template:</p>
+<pre><code class="language-bash">oc get limitrange,resourcequota -o yaml
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: LimitRange
+  metadata:
+    creationTimestamp: &quot;2024-01-31T17:48:23Z&quot;
+    name: example
+    namespace: example
+    resourceVersion: &quot;881771&quot;
+    uid: d0c19c60-00a9-4028-acc5-22680f1ea658
+  spec:
+    limits:
+    - default:
+        cpu: 500m
+        memory: 512Mi
+      defaultRequest:
+        cpu: 250m
+        memory: 256Mi
+      max:
+        cpu: &quot;1&quot;
+        memory: 1Gi
+      min:
+        cpu: 125m
+        memory: 128Mi
+      type: Container
+- apiVersion: v1
+  kind: ResourceQuota
+  metadata:
+    creationTimestamp: &quot;2024-01-31T17:48:04Z&quot;
+    name: example
+    namespace: example
+    resourceVersion: &quot;881648&quot;
+    uid: 108f0771-dc11-4289-ae76-6514d58bbece
+  spec:
+    hard:
+      count/pods: &quot;1&quot;
+  status:
+.
+.
+.
+kind: List
+metadata:
+  resourceVersion: &quot;&quot;
+</code></pre>
+<p>Pasos para la definir un Project Template:
+- Crear el <em>ns</em>
+- Crear los recursos que eligió y realizar pruebas hasta vallidar el comportamiento deseado
+- Listar los recursos en el YAML
+- Editar el listado de recursos para confirmar que las definiciones ceran los recursos correctos
+- Modificar la variable por el valor real
+- Adicionar la lista de recursos al template del proyecto que se genera con el comando <code>oc adm create-bootstrap-project-template</code> </p>
+<p><strong><em>NOTA:</em></strong> No se recomienda copiar las definiciones de un recurso existente, ya que puede ocacionar resultados incorrectos o entregar los atributos que no cumplan con lo deseado.</p>
+<p>Creación del <em>template</em>:</p>
+<pre><code class="language-bash">oc create -f template -n openshift-config
+</code></pre>
+<h3 id="configurando-le-project-template">Configurando le Project Template</h3>
+<p>Para usar un nuevo <em>template</em> se modifica el recurso: <code>projects.config.openshift.io/cluster</code> en la sección <code>spec</code>, por defecto el nombre del <em>template</em> es <code>project-request</code></p>
+<pre><code class="language-yaml">apiVersion: config.openshift.io/v1
+kind: Project
+metadata:
+.
+.
+.
+  name: cluster
+.
+.
+.
+spec:
+  projectRequestTemplate:
+    name: project-request
+</code></pre>
+<p>Una actualización correcta genera una nueva versión del recurso <code>apiserver</code> del <em>ns</em> <code>openshift-apiserver</code></p>
+<p><strong><em>NOTA:</em></strong> durante el update del <code>apiserver</code> se pueden producir resultados inesperados en las solicitudes al API.</p>
+<p>Para restablecer el <em>template</em> a su valor original, se modifica el recurso <code>spec</code> en formato {} que estpa en <code>projects.config.openshift.io/cluster</code></p>
+<h3 id="gestion-de-permisos-de-autoaprovisionamiento">Gestión de permisos de autoaprovisionamiento.</h3>
+<p>Los usuarios con este role pueden crear proyecto y por default la tienen todos los usuarios autenticados. Se puede controlar el <em>binding</em> de el role para limitar que usuarios puede hacer solicitud de nuevos proyectos.</p>
+<p>Visualizar  el <em>role binding</em></p>
+<pre><code class="language-bash">oc describe clusterrolebinding.rbac self-provisioners
+Name:         self-provisioners
+Labels:       &lt;none&gt;
+Annotations:  rbac.authorization.kubernetes.io/autoupdate: true
+Role:
+  Kind:  ClusterRole
+  Name:  self-provisioner
+Subjects:
+  Kind   Name                        Namespace
+  ----   ----                        ---------
+  Group  system:authenticated:oauth
+</code></pre>
+<p>Para realizar cambios, desactive las actualizaciones automáticas con la anotación y edite los temas en la vinculación.</p>
+<p><strong><em>Importante</em></strong> El comando oc adm policy remove-cluster-role-from-group elimina la vinculación del rol de clúster cuando se elimina el último asunto.</p>
+<p>Deshabilitar el autoaprovisionamiento:</p>
+<pre><code class="language-bash">oc annotate clusterrolebinding/self-provisioners --overwrite rbac.authorization.kubernetes.io/autoupdate=false
+clusterrolebinding.rbac.authorization.k8s.io/self-provisioners annotated
+
+oc patch clusterrolebinding.rbac self-provisioners -p '{&quot;subjects&quot;: null}'
+clusterrolebinding.rbac.authorization.k8s.io/self-provisioners patched
+</code></pre>
+<p>Ejemplo de edición:</p>
+<pre><code class="language-bash">oc edit clusterrolebinding/self-provisioners
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+.
+.
+.
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: self-provisioner
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: Group
+  name: provisioners
+</code></pre>
+<h3 id="documentacion_2">Documentación</h3>
+<ul>
+<li><a href="https://docs.redhat.com/en/documentation/openshift_container_platform/4.14/html-single/building_applications/index#configuring-project-creation">Configuring Project Creation </a></li>
+<li><a href="https://developers.redhat.com/blog/2020/02/05/customizing-openshift-project-creation/">Customizing OpenShift Project Creation</a></li>
+</ul>
 
 
 
