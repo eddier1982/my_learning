@@ -4,7 +4,8 @@ site_name: My Learning
 nav:
   - Home: home.md
   - Planning: planning.md
-  - Red Hat: 
+  - Red Hat:
+    - Notas Red Hat: '01_redhat/notes_redhat.md' 
     - 01 RHCSA Rapid Track (RH199):
       - Objetivos RH199: '01_redhat/01-RH199/01-EX200_RHCSA.md'
       - Capítulo 1, Sistema de accesos y soporte: '01_redhat/01-RH199/01-RH199_C1.md'
