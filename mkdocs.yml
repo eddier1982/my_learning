@@ -38,6 +38,7 @@ nav:
       - Capítulo 8, Troubleshooting: '01_redhat/02-RH294/02-RH294_C8.md'
       - Capítulo 9, Automatización de tareas de Administración Linux: '01_redhat/02-RH294/02-RH294_C9.md'
       - Notas de práctica: '01_redhat/02-RH294/02-RHELAA_notes.md'
+      - Ejecicio de práctica, playbooks: '01_redhat/02-RH294/02-RH294_playbooks.md'
     - 03 Managing Enterprise Automation with RH AAP (DO467):
       - Managing Enterprise Automation with Red Hat Ansible Automation Platform: '01_redhat/03-DO467/01-DO467.md'
       - Capítulo 1, Instalación de Red Hat Ansible Automation Platform: '01_redhat/03-DO467/03-DO467_C1.md'
