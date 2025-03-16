@@ -69,6 +69,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#gestion-de-variables" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -986,6 +991,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Capítulo 3, Gestión de variables y facts
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -996,6 +1014,67 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definicion-de-variables-en-el-playbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definición de variables en el playbook
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Definición de variables en el playbook">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enviando-variable-extra" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enviando variable extra
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diccionarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diccionarios:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registrando-el-output-en-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Registrando el output en variables
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1140,6 +1219,27 @@
   
   <span class="md-ellipsis">
     Notas de práctica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-RH294_playbooks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ejecicio de práctica, playbooks
   </span>
   
 
@@ -3002,6 +3102,58 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definicion-de-variables-en-el-playbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definición de variables en el playbook
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Definición de variables en el playbook">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enviando-variable-extra" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enviando variable extra
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diccionarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diccionarios:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registrando-el-output-en-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Registrando el output en variables
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -3016,9 +3168,174 @@
                   
 
 
-  <h1>Capítulo 3, Gestión de variables y facts</h1>
+<h1 id="gestion-de-variables">Gestion de variables</h1>
+<p>Ansible soporta variables que pueden ser usadas y están almacenadas y pueden ser reusadas como archivos en el proyecto de Ansible.</p>
+<p>Los nombres no pueden:
+- tener espacios
+- tener puntos
+- iniciar con numeros
+- tener caracteres especiales</p>
+<p>Se pueden definir las variables a un grupos de hosts o a hosts individuales. Algunas variables llamadas <em>facts</em> pueden ser asignadas por Ansible basado en la configuración del sistema. Otras pueden ser declaradas en el playbook y tener efecto en el playbook o una tarea específica. Támbién se pueden enviar como <em>extra variables</em> con la opción <code>-e</code>para especigficarlas a la hora de ejecutar <code>ansible-navigator</code></p>
+<h2 id="definicion-de-variables-en-el-playbook">Definición de variables en el playbook</h2>
+<pre><code class="language-yaml">- hosts: all
+  vars:
+    user: eddier
+    home: /home/eddier
+  vars_files:
+    - vars/usuarios.yml
+</code></pre>
+<p>Se hace llamado de una variables con doble llave <code>{{ }}</code>. En el nombre de la tarea no lleva comillas dobles, pero al invocarla en un argumento de un modulo si <code>"{{ }}"</code></p>
+<p>En un inventario estático, se pueden definir variables así:</p>
+<pre><code>[servers]
+demo.example.com ansible_user=joe
 
+[servers:vars]
+user=joe
+</code></pre>
+<h3 id="enviando-variable-extra">Enviando variable extra</h3>
+<pre><code class="language-bash">ansible-navigator run main.yml -e &quot;package=apache&quot;
+</code></pre>
+<h3 id="diccionarios">Diccionarios:</h3>
+<pre><code class="language-yaml">users:
+  bjones:
+    first_name: Bob
+    last_name: Jones
+    home_dir: /users/bjones
+  acook:
+    first_name: Anne
+    last_name: Cook
+    home_dir: /users/acook
+</code></pre>
+<p>Se usa la data de este diccionaio así:</p>
+<pre><code class="language-yaml">users.bjones.first_name
+</code></pre>
+<p>o</p>
+<pre><code class="language-yaml">users['bjones']['first_name']
+</code></pre>
+<h3 id="registrando-el-output-en-variables">Registrando el output en variables</h3>
+<pre><code class="language-yaml">---
+- name: Installs a package and prints the result
+  hosts: all
+  tasks:
+    - name: Install the package
+      ansible.builtin.dnf:
+        name: httpd
+        state: installed
+        register: install_result
+    - debug:
+        var: install_result
+</code></pre>
+<h1 id="gestionando-secretos">Gestionando secretos</h1>
+<p>Ansible Vault es una herramienta incluida en Anisble que permite encriptar data sensible.</p>
+<h2 id="comandos">Comandos</h2>
+<pre><code class="language-bash">ansible-vault create secret.yml
+ansible-vault create --vault-password-file=vault-pass secret.yml
+ansible-vault edit secret.yml
+ansible-vault encrypt secret1.yml secret2.yml
+ansible-vault decrypt secret1.yml --output=secret1-decrypted.yml
+ansible-vault rekey secret.yml #Tener el actual password para poder cambiarlo
+</code></pre>
+<h2 id="ejecucion-en-playbook">Ejecución en PLaybook</h2>
+<p>Se debe desactivar <em>playbook artifacts</em> (<code>--playbook-artifact-enable false</code> o <code>--pae</code>) para poder interactuar ingresando el password usando <code>ansible-navigator</code></p>
+<p>Ejemplos:</p>
+<pre><code class="language-bash">ansible-navigator run -m stdout --playbook-artifact-enable false site.yml --vault-id @prompt
+ansible-navigator run -m stdout site.yml --vault-password-file=vault-pw-file
+</code></pre>
+<p><strong>NOTA</strong> Se recomienda utilizar variables separadas en diferentes archivos para simpleficar la administración</p>
+<pre><code class="language-bash">.
+├── ansible.cfg
+├── group_vars
+│   └── webservers
+│       └── vars
+├── host_vars
+│   └── demo.example.com
+│       ├── vars
+│       └── vault
+├── inventory
+└── playbook.yml
+</code></pre>
+<h1 id="gestionando-facts">Gestionando "Facts"</h1>
+<p>Los <em>Ansible Facts</em> son variables descubiertas automáticamente por Ansible en los hosts gestionados. Se pueden crean <em>custom facts</em> y estos estarán en cada host gestionado de manera local. Con el modulo <code>ansible.builtin.setup</code> se puede obtener toda la información. Con el modulo <code>degug</code> se puede imprimir toda la lista con el argumento <code>var: ansible_facts</code> y este se puede ver en formato JSON</p>
+<h2 id="ejemplos-de-ansible-facts">Ejemplos de Ansible Facts</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Variable <br/> Diccionario</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ansible_facts['hostname']</td>
+<td style="text-align: left;">ansible_facts.hostname</td>
+</tr>
+<tr>
+<td style="text-align: left;">ansible_facts['fqdn']</td>
+<td style="text-align: left;">ansible_facts.fqdn</td>
+</tr>
+<tr>
+<td style="text-align: left;">ansible_facts['default_ipv4']['address']</td>
+<td style="text-align: left;">ansible_facts.default_ipv4.address</td>
+</tr>
+<tr>
+<td style="text-align: left;">ansible_facts['interfaces']</td>
+<td style="text-align: left;">ansible_facts.interfaces</td>
+</tr>
+<tr>
+<td style="text-align: left;">ansible_facts['devices']['vda']['partitions']['vda1']['size']</td>
+<td style="text-align: left;">ansible_facts.vda.partitions.vda1.size</td>
+</tr>
+<tr>
+<td style="text-align: left;">ansible_facts['dns']['nameservers']</td>
+<td style="text-align: left;">ansible_facts.dns</td>
+</tr>
+<tr>
+<td style="text-align: left;">ansible_facts['kernel']</td>
+<td style="text-align: left;">ansible_facts.kernel</td>
+</tr>
+</tbody>
+</table>
+<p>La connotación <code>ansible_</code><em>nombre</em> esta en tendencia a desaparecer por parte del desarrollo de la comunidad.</p>
+<p>Se pueden desahbilitar los <em>facts</em> en el metadata:</p>
+<pre><code class="language-yaml">---
+- name: Ejemplo deshabilitando Facts
+  hosts: all
+  gather_facts: no
 
+</code></pre>
+<p>Especificar unos <em>facts</em> específicos durante la impresión. Se puede antepone el signo de admiración hacia abajo (!) para todo excepto...</p>
+<pre><code class="language-yaml">- name: Solo los facts de hardware
+  ansible.buitin.setup:
+    gather_subset:
+      - hardware
+</code></pre>
+<p>Se pueden crear <em>facts</em> personalizados, asi:
+- En el host gestionado en la ruta <code>/etc/ansible/facts.d</code> 
+- Los archivos deben finalizar en <code>.fact</code>
+- Puede tener formato INI o formato JSON
+- Se invocan con el argumento <code>ansible-local</code></p>
+<h2 id="variables-magicas">Variables mágicas</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Variable mágica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">hostvars</td>
+</tr>
+<tr>
+<td style="text-align: left;">group_names</td>
+</tr>
+<tr>
+<td style="text-align: left;">groups</td>
+</tr>
+<tr>
+<td style="text-align: left;">inventory_hostname</td>
+</tr>
+</tbody>
+</table>
 
 
 

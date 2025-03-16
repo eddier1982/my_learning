@@ -69,6 +69,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#implementando-ansible-playbook" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -965,6 +970,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Capítulo 2, Implementación de Ansible Playbook
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -975,6 +993,184 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#construyendo-un-inventario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Construyendo un inventario
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Construyendo un inventario">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comandos-de-validacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos de validación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sobreescribiendo-el-archivo-de-inventario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sobreescribiendo el archivo de inventario
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inventarios-dinamicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inventarios Dinámicos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentación
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-de-ansible" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración de Ansible
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuración de Ansible">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conexion-con-hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conexión con hosts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#escalacion-de-privilegios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Escalación de privilegios
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#escribieno-y-ejecutando-playbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Escribieno y ejecutando Playbooks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Escribieno y ejecutando Playbooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#consideraciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consideraciones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comandos-de-ejecucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos de ejecución
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scribiendo-varios-plays" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scribiendo varios Plays
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scribiendo varios Plays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algunos-mudulos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algunos múdulos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejecucion-directa-de-comandos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejecución directa de comandos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sintaxis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sintaxis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1140,6 +1336,27 @@
   
   <span class="md-ellipsis">
     Notas de práctica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-RH294_playbooks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ejecicio de práctica, playbooks
   </span>
   
 
@@ -3002,6 +3219,175 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#construyendo-un-inventario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Construyendo un inventario
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Construyendo un inventario">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comandos-de-validacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos de validación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sobreescribiendo-el-archivo-de-inventario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sobreescribiendo el archivo de inventario
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inventarios-dinamicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inventarios Dinámicos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentación
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracion-de-ansible" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración de Ansible
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuración de Ansible">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conexion-con-hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conexión con hosts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#escalacion-de-privilegios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Escalación de privilegios
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#escribieno-y-ejecutando-playbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Escribieno y ejecutando Playbooks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Escribieno y ejecutando Playbooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#consideraciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consideraciones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comandos-de-ejecucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandos de ejecución
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scribiendo-varios-plays" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scribiendo varios Plays
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scribiendo varios Plays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algunos-mudulos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algunos múdulos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejecucion-directa-de-comandos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejecución directa de comandos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sintaxis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sintaxis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -3016,9 +3402,140 @@
                   
 
 
-  <h1>Capítulo 2, Implementación de Ansible Playbook</h1>
+<h1 id="implementando-ansible-playbook">Implementando Ansible Playbook</h1>
+<p>Meta: 
+- Crear inventario para gestionar los host, crear un simple playbook y automatizar algunas tareas en los hosts</p>
+<p>Objetivos:
+- Describir los conceptos de un inventario de Ansible y gestionar inventarios estáticos
+- Describir la configuración de archivos Ansible, su ubicación, edición y apliacción de cambios
+- Escribir un playbook usando <code>ansible-navigator</code> 
+- Escribir un playbook usando múltiples tareas dcon escalación de privilegios, uso de <em>collections</em> y <em>roles</em></p>
+<h2 id="construyendo-un-inventario">Construyendo un inventario</h2>
+<p>Definición: Se define como la colección dme hosts administrados por Ansible y que pueden ser asignados a grupos. Se especifican en un archivo de texto por lo general llamado <em>inventory</em> donde escriben los hosts y/o grupos. Ansible soporta múltipes formatos de inventarios, el más común es formato <em>INI-style</em> que trabaja en formato de hostname o dirección IP. Normalmente se crean grupos para gestionar los hosts dentro de ellos. </p>
+<p>Un host administrado equivale a una linea en un grupo o línea simple. Los grupos se definen con los llaves '[]'. Los inventarios se pueden organizar por ambientes, ubicación física, roles o otra categoría. Existen 2 tipos de grupos siempre van a existir: <code>all</code> y <code>ungrouped</code>.</p>
+<p>Los subgrupos o anidación de un grupo sobre otro se trabaja con el sufijo <code>:children</code> luego del nombre del grupo. Para simplificar la construcción e inventarios se puede especificar rangos basados en <em>numeros</em> o <em>letras</em>. Los rangos se aplican a los hosts gestionados con la siguiente nomenclatura: <code>[inicio:fin]</code>. Si se quiere anteponer el <code>0</code> el formato lo soporta.</p>
+<h3 id="comandos-de-validacion">Comandos de validación</h3>
+<pre><code class="language-bash">ansible-navigator inventory -i inventory -m stdout --host/list/graph
+</code></pre>
+<h3 id="sobreescribiendo-el-archivo-de-inventario">Sobreescribiendo el archivo de inventario</h3>
+<p>Aunque la ruta pode defecto es <code>/etc/ansible/hosts</code> no es buena práctica trabajar con este archivo y se recomienda modificar la ruta del inventario, por ello se invoca en el comando <code>ansible-navigator</code> la opción de <code>-i</code> o <code>--inventory</code> para especificar la ruta del inventario.</p>
+<h3 id="inventarios-dinamicos">Inventarios Dinámicos</h3>
+<p>Ansible soporta la conectividad a diferentes plataformas para consultar información y crear invenatrios dinámicamente, por ejemplo VMware, AWS, Azure... </p>
+<h3 id="documentacion">Documentación</h3>
+<p><a href="http://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html">How to build your inventory: Ansible Documentation</a></p>
+<h2 id="configuracion-de-ansible">Configuración de Ansible</h2>
+<p>Se pueden editar 2 archivos en su ruta de directorio del proyyecto de Anisble para trabajar con <code>ansible-navigator</code>:
+ - <code>ansible.cfg</code>
+ - <code>ansible-navigator.yml</code></p>
+<p>En el primer archivo se configuran las entradas <code>[defaults]</code> que son de la operación de Ansible y <code>[privalege_escalation]</code> que configura los privilegios de escalación en los hosts manejados</p>
+<pre><code class="language-yaml">[defaults]
+inventory = ./inventory
+remote_user = user
+ask_pass = false
 
-
+[privilege_escalation]
+become = true
+become_method = sudo
+become_user = root
+become_ask_pass = false
+</code></pre>
+<p>Por defecto el archivo de configuración <code>ansible.cfg</code> estará en la carpeta del proyecto <code>$HOME/proyecto</code> del usuario donde se ejecuta <code>ansible-navigator</code></p>
+<h3 id="conexion-con-hosts">Conexión con hosts</h3>
+<pre><code class="language-bash">ssh-copy-id usuario_de_conexion@hosts.fqdn
+</code></pre>
+<h3 id="escalacion-de-privilegios">Escalación de privilegios</h3>
+<p>Para habilitar los privilegios de escalamiento del usuario por defecto es <code>become = true</code> en el archivo de configuración. Con la opción <code>become_method</code> se utiliza el método <code>sudo</code> para escalar con root</p>
+<p>En el directorio <code>/etc/sudoers.d</code> se crea con el comando <code>visudo</code> un archivo con el nombre del usuario que va a tener los permisos de escalar a <code>root</code></p>
+<pre><code class="language-text">## password-less sudo for Ansible user
+someuser ALL=(ALL) NOPASSWD:ALL
+</code></pre>
+<h2 id="escribieno-y-ejecutando-playbooks">Escribieno y ejecutando Playbooks</h2>
+<p><strong>Anisble PLaybooks</strong>: Es un archivo de texto que contiene una lista de 1 o mas plays. Un play es una secuencia de <em>tasks</em> a ser aplicadas en orden en 1 o mas hosts selecionados en el inventario. Y por último una <em>task</em> es la aplicación de un módulo con una unidad de trabajo esécífico.</p>
+<p>El playbook está escrito en formato YAML y se utiliza la extensión <code>.yaml</code> o <code>.yml</code>. Usa la identación con <em>espacios</em> para indicar a estructura. Los elementos de la lista son de jerarquía <strong><em>Solo se debe utilizar espacios</em></strong></p>
+<h3 id="consideraciones">Consideraciones</h3>
+<ul>
+<li>Se inicia con <code>---</code> y finaliza con <code>...</code> aunque para finalizar no se utiliza mucho.</li>
+<li>Las listas inician con un 'guión' <code>-</code> </li>
+<li>El nombre o <code>name</code>de la tarea debe iniciar con letra mayúscula</li>
+<li>Ansible ejecuta en el orden listado</li>
+<li>Los paquetes de los modulos son llamados <em>Collections</em></li>
+<li><code>ansible-core</code> tiene el <em>collection</em> `ansible.builtin</li>
+<li>El <em>execution enviroment</em> default usado en <code>ansible-navigator</code> soporta la anterior <em>collection</em> y muchas mas <code>ee-rhel8-supported</code></li>
+<li>Se recomienda usar el nombre completo del modulo al ser invocado (FQCNs)</li>
+</ul>
+<h3 id="comandos-de-ejecucion">Comandos de ejecución</h3>
+<pre><code class="language-bash">ansible-navigator run -m stdout playbook.yml
+ansible-navigator run -m stdout playbook.yml --check
+ansible-navigator run -m stdout playbook.yml --syntax-check
+</code></pre>
+<h3 id="scribiendo-varios-plays">Scribiendo varios Plays</h3>
+<p>Un playbook puede tener en el mismo archivo 1 play o mas. Esto permite ejecutar unas tareas a unos hosts determinados en un play y otras tareas en otro play a otro grupo aparte</p>
+<p>Si se requiere que un play sea ejecutado con un usuario diferente, este se puede especificar en la metadata del play <code>remote_user: usuarioremoto</code>. También en esta metadata se puede agregar si requiere escalar a root <code>become: true</code></p>
+<h4 id="algunos-mudulos">Algunos múdulos</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Categoría</th>
+<th style="text-align: left;">Modulos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Archivos</td>
+<td style="text-align: left;">ansible.builtin.copy <br/> ansible.builtin.file <br/> ansible.builtin.lineinfile <br/> ansible.posix.synchronize</td>
+</tr>
+<tr>
+<td style="text-align: left;">Software o <br/> paquetes</td>
+<td style="text-align: left;">ansible.builtin.package <br/> ansible.builtin.dnf <br/> ansible.builtin.apt <br/> ansible.builtin.pip</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sistema</td>
+<td style="text-align: left;">ansible.posix.firewalld <br/> ansible.builtin.reboot <br/> ansible.builtin.service <br/> ansible.builtin.user</td>
+</tr>
+<tr>
+<td style="text-align: left;">Herramientas <br/> de red</td>
+<td style="text-align: left;">ansible.builtin.get_url <br/> ansible.builtin.uri</td>
+</tr>
+</tbody>
+</table>
+<p>Para obtener documentación de los módulos se puede utiliza el <em>execution enviroment</em> de <code>ansible-navigator</code> para obtener toda la info</p>
+<pre><code class="language-bash">ansible-navigator doc -l
+ansible-navigator doc ansible.builtin.user
+</code></pre>
+<h4 id="ejecucion-directa-de-comandos">Ejecución directa de comandos</h4>
+<p>Cuando no existe el módulo o la <em>collection</em> específica, se utiliza la ejecución directa de comandos: </p>
+<pre><code class="language-yaml">- name: Run the /opt/bin/makedb.sh command
+  ansible.builtin.command:
+    cmd: /opt/bin/makedb.sh
+</code></pre>
+<p>Y si se requiere interactuar con las variables de entorno se utiliza <code>ansible.builtin.shell</code>. Ambas utilizan Python instalado en los hosts manejados.</p>
+<h4 id="sintaxis">Sintaxis</h4>
+<ul>
+<li>Los comentarios están soportados y es con el signo de número (#) al inicio o al final de la linea</li>
+<li>
+<p>Las cadenas o <em>strings</em> no requieren comillas si las utiliza pueden un en comillas simples o dobles</p>
+</li>
+<li>
+<p>Se pueden incluir múltiples cadenas con la opción barra vertival (|)</p>
+</li>
+<li>También se puede utilizar mayor que (&gt;) y sirve para una mejor legilibilidad y omitir espacios</li>
+<li>Los diccionarios son llaves-valor en un lo,que identado
+  <code>yaml
+  name: svcrole
+  svcservice: httpd
+  svcport: 80</code>
+  Tambíen se puede escribir <code>{name: svcrole, svcservice: httpd, svcport: 80}</code></li>
+<li>Las listas se representan con un simple guión (-)
+    ```yaml
+    hosts:<ul>
+<li>servera</li>
+<li>serverb</li>
+<li>serverc
+<code>``
+También se puede escribir así:</code>hosts: [servera, serverb, serverc]`</li>
+</ul>
+</li>
+</ul>
 
 
 

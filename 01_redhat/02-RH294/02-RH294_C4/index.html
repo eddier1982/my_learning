@@ -69,6 +69,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#escribiendo-loops-y-tareas-condicionales" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1007,6 +1012,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Capítulo 4, Implementación de tareas de control
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1017,6 +1035,52 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#task-con-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task con Loops
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#condicionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Condicionales
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combinando-loops-y-tareas-condicionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combinando Loops y Tareas condicionales
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1140,6 +1204,27 @@
   
   <span class="md-ellipsis">
     Notas de práctica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-RH294_playbooks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ejecicio de práctica, playbooks
   </span>
   
 
@@ -3002,6 +3087,43 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#task-con-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task con Loops
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#condicionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Condicionales
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combinando-loops-y-tareas-condicionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combinando Loops y Tareas condicionales
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -3016,9 +3138,193 @@
                   
 
 
-  <h1>Capítulo 4, Implementación de tareas de control</h1>
-
-
+<h1 id="escribiendo-loops-y-tareas-condicionales">Escribiendo Loops y tareas condicionales</h1>
+<h2 id="task-con-loops">Task con Loops</h2>
+<p>Loops ayudan a hacer posible que una tarea se pueda ejecutar varias veces usando el mismo módulo</p>
+<ul>
+<li>Loop simple
+  ```yaml</li>
+<li>name: Postfix and Dovecot are running
+    ansible.builtin.service:
+      name: "{{ item }}"
+      state: started
+    loop:<ul>
+<li>postfix</li>
+<li>dovecot
+  ```</li>
+</ul>
+</li>
+<li>Loops con listas de diccionarios
+  ```yaml</li>
+<li>name: Users exist and are in the correct groups
+    user:
+      name: "{{ item['name'] }}"
+      state: present
+      groups: "{{ item['groups'] }}"
+    loop:<ul>
+<li>name: jane
+    groups: wheel</li>
+<li>name: joe
+    groups: root
+  ```</li>
+</ul>
+</li>
+<li><code>with_items</code>, <code>with_file</code> y <code>with_sequence</code> es otro estilo de Loops, pero se encuentra en proceso de deprecación, ternerlo en cuenta si la documentación del modulo ya tiene el cambio.</li>
+<li>Registrar y luego mostrar resultados. Se utiliza el <code>stdout</code> así: <code>item['stdout']</code> o <code>item.stdout</code></li>
+</ul>
+<h2 id="condicionales">Condicionales</h2>
+<ul>
+<li>Condicional en una tarea
+  ```yaml</li>
+<li>
+<p>name: Tarea con facto booleano
+    hosts: all
+    vars:
+      ejecutar_mi_tarea: true</p>
+<p>tasks:
+  - name: Validar paquete instalado https
+    ansible.builtin.dnf:
+      name: httpd
+    when: ejecutar_mi_tarea
+  <code>- Tener en cuenta que no sea un string
+  - Para evitar la lectura string</code>yaml
+when: ejecutar_mi_tarea | bool
+<code>- Cuando está definida:</code> yaml
+  when: ejecutar_mi_tarea is defined
+  ```
+- Operaciones Condicionales 
+  | Operación | Simbolo
+  |:----------|:-------
+  | Igual string | == "valor"
+  | Igual numero | == 512
+  | Menor que | &lt;
+  | Mayor que | &gt;
+  | Menor o igual que | &lt;=
+  | Mayor o igual que | &gt;=
+  | No es igual que | !=
+  | Variable existe | is defined
+  | Variable no existe | is not defined
+  | Variable Booleana en verdadero | memoria_disponible
+  | Variable Booleana en falso | not memoria_disponible
+  | Primera variable con valor <br/> segunda variable lista de variable | in <em>nombre_variable</em></p>
+</li>
+<li>
+<p>Multiples condiciones
+  <code>yaml
+  when: ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "Fedora"</code>
+  o (aplica <em>and</em>)
+  ```yaml
+  when:</p>
+<ul>
+<li>ansible_facts['distribution_version'] == "9.0"</li>
+<li>ansible_facts['kernel'] == "5.14.0-70.13.1.el9_0.x86_64"</li>
+</ul>
+</li>
+</ul>
+<h2 id="combinando-loops-y-tareas-condicionales">Combinando Loops y Tareas condicionales</h2>
+<pre><code class="language-yaml">- name: install mariadb-server if enough space on root
+  ansible.builtin.dnf:
+    name: mariadb-server
+    state: latest
+  loop: &quot;{{ ansible_facts['mounts'] }}&quot;
+  when: item['mount'] == &quot;/&quot; and item['size_available'] &gt; 300000000
+</code></pre>
+<h1 id="implementando-handlers">Implementando Handlers</h1>
+<p>Ansible está diseñado para ser idenpotente, lo que significa que uno puede ejecutar el playbook muchas veces y el resultado siempre será el mismo. Los <em>Handlers</em> son tareas que repondes por <em>trigger</em> de configuración de otras tareas. Si la tarea no notifica al <em>handler</em> este no se ejecuta. Solo es necesario que una o mas tareas notifiquen al handler y este se ejecutará al final de la ejecución de todas las tareas del play.</p>
+<ul>
+<li>Se ejecutan siempre en el orden específico por la sección de <code>handlers</code> del play</li>
+<li>Normalmente se ejecutan al final de otras tareas en el play completas</li>
+<li>Los nombre del <code>handler</code> es único. </li>
+<li>Siempre que una o mas tareas notifiquen al <code>handler</code> este se ejecuta una sola ves, si no le notifica no se ejecuta</li>
+<li>Para que se ejecute, el argumento que recibe es <code>changed</code> que se lo pasa <code>notify</code></li>
+</ul>
+<h1 id="gestion-de-fallos-en-las-tareas">Gestión de fallos en las tareas</h1>
+<h2 id="gestionde-errores-en-los-play">Gestionde errores en los Play</h2>
+<ul>
+<li>Ignorando el fallo de la tarea 
+  <code>yaml
+  ignore_errors: yes</code></li>
+<li>Forzando la ejecución de <em>Handlers</em> despues de un fallo de tarea
+  ```yaml</li>
+</ul>
+<hr />
+<ul>
+<li>hosts: all
+    force_handlers: yes
+    tasks:<ul>
+<li>name: a task which always notifies its handler
+    ansible.builtin.command: /bin/true
+    notify: restart the database
+  ```</li>
+</ul>
+</li>
+<li>
+<p>Condiciones de fallo de tareas
+  ```yaml
+  tasks:</p>
+<ul>
+<li>name: Run user creation script
+  ansible.builtin.shell: /usr/local/bin/create_users.sh
+  register: command_result
+  failed_when: "'Password missing' in command_result.stdout"
+  <code>Usando el modulo `ansible.builtin.fail` usada para forzar el fallo de una tarea</code>yaml
+  tasks:</li>
+<li>
+<p>name: Run user creation script
+  ansible.builtin.shell: /usr/local/bin/create_users.sh
+  register: command_result
+  ignore_errors: yes</p>
+</li>
+<li>
+<p>name: Report script failure
+  ansible.builtin.fail:
+    msg: "The password is missing in the output"
+  when: "'Password missing' in command_result.stdout"
+  ```</p>
+</li>
+<li>Asignando "When" para el método <em>changed</em>
+  ```yaml</li>
+<li>name: Validate httpd configuration
+ansible.builtin.command: httpd -t
+changed_when: false
+register: httpd_config_status
+  <code>o modificando con un condicional:</code>yaml
+  tasks:</li>
+<li>ansible.builtin.shell:
+    cmd: /usr/local/bin/upgrade-database
+  register: command_result
+  changed_when: "'Success' in command_result.stdout"
+  notify:<ul>
+<li>restart_database
+  ```</li>
+</ul>
+</li>
+<li>En Blocks
+  ```yaml</li>
+<li>name: block example
+hosts: all
+tasks:</li>
+<li>name: installing and configuring DNF versionlock plugin
+    block:<ul>
+<li>name: package needed by dnf
+    ansible.builtin.dnf:
+      name: python3-dnf-plugin-versionlock
+      state: present<ul>
+<li>name: lock version of tzdata
+ansible.builtin.lineinfile:
+  dest: /etc/yum/pluginconf.d/versionlock.list
+  line: tzdata-2016j-1
+  state: present
+when: ansible_distribution == "RedHat"
+  ```</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Las tareas en <code>block</code> pueden tener un apartada llamado <code>rescue</code> en caso de fallo y un apartado llamado <code>always</code> que siempre se ejecuttara sin importar el estado de la ejecución de las tareas del bloque</li>
+</ul>
+</li>
+</ul>
 
 
 

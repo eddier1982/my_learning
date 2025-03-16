@@ -12,7 +12,7 @@
         <link rel="prev" href="../02-RH294_C9/">
       
       
-        <link rel="next" href="../../03-DO467/01-DO467/">
+        <link rel="next" href="../02-RH294_playbooks/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -1183,6 +1183,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ayudas-para-generar-codigo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ayudas para generar código
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#archivos-de-configuracion-base-de-proyecto" class="md-nav__link">
     <span class="md-ellipsis">
       Archivos de configuración base de proyecto
@@ -1198,12 +1207,66 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Modulos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#de-modulos" class="md-nav__link">
+    <span class="md-ellipsis">
+      De modulos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#para-ejecutar-con-ansible-navigator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Para ejecutar con ansible-navigator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-agregar-pae-false-para-ingresar-el-password-de-manera-interactiva-playbook-artifact-enable" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Agregar --pae false para ingresar el password de manera interactiva (--playbook-artifact-enable)
+    </span>
+  </a>
+  
 </li>
       
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-RH294_playbooks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ejecicio de práctica, playbooks
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -3079,6 +3142,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ayudas-para-generar-codigo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ayudas para generar código
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#archivos-de-configuracion-base-de-proyecto" class="md-nav__link">
     <span class="md-ellipsis">
       Archivos de configuración base de proyecto
@@ -3091,6 +3163,39 @@
   <a href="#modulos" class="md-nav__link">
     <span class="md-ellipsis">
       Modulos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modulos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#de-modulos" class="md-nav__link">
+    <span class="md-ellipsis">
+      De modulos
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#para-ejecutar-con-ansible-navigator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Para ejecutar con ansible-navigator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-agregar-pae-false-para-ingresar-el-password-de-manera-interactiva-playbook-artifact-enable" class="md-nav__link">
+    <span class="md-ellipsis">
+      - Agregar --pae false para ingresar el password de manera interactiva (--playbook-artifact-enable)
     </span>
   </a>
   
@@ -3137,6 +3242,10 @@ ansible-navigator run  -m stdout name.yml --check
 ansible-navigator doc -l
 
 </code></pre>
+<h2 id="ayudas-para-generar-codigo">Ayudas para generar código</h2>
+<p>autocmd FileType yaml setlocal ai ts=2 sw=2 et &gt; $HOME/.vimrc</p>
+<p>:set cursorcolumm
+:set cursorline</p>
 <h2 id="archivos-de-configuracion-base-de-proyecto">Archivos de configuración base de proyecto</h2>
 <ul>
 <li>ansible.cfg</li>
@@ -3248,6 +3357,12 @@ ansible-navigator doc -l
 </tr>
 </tbody>
 </table>
+<h3 id="de-modulos">De modulos</h3>
+<ul>
+<li>El módulo <code>ansible.builtin.service</code> si son varios servicios a intervenir, se debe revisar con loop mas no con lista de items</li>
+</ul>
+<h2 id="para-ejecutar-con-ansible-navigator">Para ejecutar con <code>ansible-navigator</code></h2>
+<h2 id="-agregar-pae-false-para-ingresar-el-password-de-manera-interactiva-playbook-artifact-enable">- Agregar <code>--pae false</code> para ingresar el password de manera interactiva (<code>--playbook-artifact-enable</code>)</h2>
 
 
 

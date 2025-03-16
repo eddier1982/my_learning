@@ -69,6 +69,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#introduccion-a-ansible" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -944,6 +949,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Capítulo 1, Introducción Ansible
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -954,6 +972,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#administracion-y-automatizacion-de-sistemas-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Administración y automatización de sistemas Linux
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-ansible" class="md-nav__link">
+    <span class="md-ellipsis">
+      Que es Ansible?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conceptos-y-arquitectura-de-ansible" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conceptos y arquitectura de Ansible
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#obtener-soporte-para-ansible" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtener soporte para Ansible
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#casos-de-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Casos de Uso
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1140,6 +1222,27 @@
   
   <span class="md-ellipsis">
     Notas de práctica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-RH294_playbooks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ejecicio de práctica, playbooks
   </span>
   
 
@@ -3002,6 +3105,61 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#administracion-y-automatizacion-de-sistemas-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Administración y automatización de sistemas Linux
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-ansible" class="md-nav__link">
+    <span class="md-ellipsis">
+      Que es Ansible?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conceptos-y-arquitectura-de-ansible" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conceptos y arquitectura de Ansible
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#obtener-soporte-para-ansible" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtener soporte para Ansible
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#casos-de-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Casos de Uso
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -3016,9 +3174,85 @@
                   
 
 
-  <h1>Capítulo 1, Introducción Ansible</h1>
-
-
+<h1 id="introduccion-a-ansible">Introducción a Ansible</h1>
+<p>Meta: 
+- Descrbir los conceptos fundametales de Ansible y como se usan</p>
+<p>Objetivos:
+- Describir la motivación para automatizar tareas de admin Linux con Ansible, sus conceptos y arquitectura
+- Instalar nodo de control y diferenciar Ansible community y Red Hat AAP</p>
+<h2 id="administracion-y-automatizacion-de-sistemas-linux">Administración y automatización de sistemas Linux</h2>
+<p>La automatización puede ayudar a resolver problemas causados por la administración manual y la administración de infraestructura. Como SysAdmin se puede usar la automatización para asegurar nuestros sistemas de manera rápida y correctamente desplegada y configurada</p>
+<p><em>Infraestructura como Código (IaC - Infraestructure as Code)</em> significa que puede usar un lenguaje de automatización de máquina leible que define los reuqerimientos de estado de nuestra infraestrutura de TI.</p>
+<p>El lenguaje de automatización es representado por archivos de texto simples, son de fácil administració y control de sistemas de versión</p>
+<h2 id="que-es-ansible">Que es Ansible?</h2>
+<p>Es una plataforma de automatización <em>open source</em>. Es un simple lenguaje de automatización que puede con precisión describir las aplicaciones de infraestructura de TI en PLaybook de Ansible.</p>
+<p>Características de Playbook de Ansible:</p>
+<ul>
+<li><strong>Es simple</strong>: Provee automatización legible para humanos</li>
+<li><strong>Es potente</strong>: Se puede usar para desarrollar aplicaciones para administrar configuración, para flujos de automatización, redes y hasta orquestrar el cliclo completo de vida de una aplicación</li>
+<li><strong>Sin agentes</strong>: Es construidos para trabajar sin agesten de infraestructura (usualmente SSH o WinRM)</li>
+</ul>
+<p>Puntos importantes
+- <em>Soporte multiplataforma</em>: Linux, Windows, dispositivos de red, fisicos, virtuales, nube y ambientes contenerizados
+- <em>Automatización legible para humanos</em>
+- <em>Descripción precisa de aplicaciones</em>
+- <em>Fácil de administrar por control de versiones</em>
+- <em>Soporta inventarios dinámicos</em>
+- <em>Orquetación integrada con otros sistemas</em></p>
+<h2 id="conceptos-y-arquitectura-de-ansible">Conceptos y arquitectura de Ansible</h2>
+<p>Consite en 2 tipos de máquinas: nodos de control y hosts gestionados. Ansible se instala en un nodo de control y en esta máquina se copia  los archivos de proyecto de Ansible. Los hosts gestionados es una lista de inventario <em>inventory</em> y se puede organizar por grupos para facilitar la administración.</p>
+<p>Los scripts que son creados bajo ansible son llamados <em>plays</em> y son basados en formato YAML en un archivo de texto y uno o mas <em>plays</em> son llamados en el Playbook. La tareas los <em>play</em> y Playbooks estan diseñados para ser idempotentes, lo que significa que se puede ejecutar en múltiples hosts muchas veces y el resultado en el mismo.</p>
+<p>Ansible usa Plug-ins que son código que se puede adicionar a Ansible como extensión para adaptar y usar plataformas</p>
+<h2 id="obtener-soporte-para-ansible">Obtener soporte para Ansible</h2>
+<p>Red Hat AAP provee los siguientes beneficios:
+- Soporte oficial de la herramienta <code>ansible core</code>
+- Contenido de Colecciones certificadas por Red Hat
+- Herramientas on-premises que ayudan a centralizar la entrega contenido de automatización
+- Servicios Cloud</p>
+<h2 id="casos-de-uso">Casos de Uso</h2>
+<ul>
+<li>Gestión de configuración</li>
+<li>Despliegue de aplicaciones</li>
+<li>Aprovisionamiento</li>
+<li>CD</li>
+<li>Seguridad y Normatividad</li>
+<li>Orquestación</li>
+</ul>
+<h1 id="instalacion-de-ansible">Instalación de Ansible</h1>
+<h2 id="ansible-y-red-hat-ansible-automation-platform-aap">Ansible y Red Hat Ansible Automation Platform AAP</h2>
+<p>Se puede obtener de diferentes caminos y cada uno con diferente nivel de soporte</p>
+<ol>
+<li>Desde la comunidad. Se puede obtener de 2 maneras</li>
+<li>Con la opción mínima que es <code>ansible core</code> que incluye la colección <code>ansible.builtin</code></li>
+<li><em>Ansible Community</em>, que es la distribuición plus de la comunidad</li>
+<li>Como parte de RHEL (soporte limitado). Contiene <code>ansible_core</code> incluido en el repositorio AppStream</li>
+<li>Full soporte con el producto AAP. El cual contiene:</li>
+<li><code>ansible-core</code></li>
+<li><em>Contenido de colecciones de Ansible</em></li>
+<li><code>`ansible-navigator</code> herramienta de test y desarrollo</li>
+<li>Entornos de ejecución [Automation Execution Environments - EE]</li>
+<li><em>Automation Controller</em></li>
+<li>Automation Hub</li>
+</ol>
+<h3 id="preparando-el-nodo-de-control">Preparando el nodo de control</h3>
+<p>Para ejecutar os Playbook, instalar <code>ansible-navigator</code>en el nodo de control y descragar el EE</p>
+<p>Proceso de instalación y comandos:</p>
+<pre><code class="language-bash">sudo dnf install ansible-core
+sudo dnf install ansible-navigator
+ansible-navigator --version
+podman login registry.redhat.io -u eocampo@redhat.com -p ********
+podman pull registry.redhat.io/ansible-automation-platform-24/ee-supported-rhel8:latest
+ansible-navigator images
+</code></pre>
+<h3 id="preparando-los-hosts">Preparando los hosts</h3>
+<ul>
+<li>En Linux y Unix deben tener Python 3.8 o superior instalado</li>
+<li>Si el SELinux está habilitado (enabled) asegurarse de tener el paquete <code>python3-libselinux</code>, con esto se podrá utilizar <code>ansible.builtin.dnf</code>y <code>ansible.builtin.package</code></li>
+<li>Requiere tener un usuario con sudo habilitado sin password</li>
+<li>Para Windows requiere</li>
+<li>PowerShell 3.0 o superior</li>
+<li>.NET Framework 4.0 o superior instalado</li>
+</ul>
 
 
 
