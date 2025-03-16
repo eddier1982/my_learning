@@ -25,6 +25,14 @@ ansible-navigator doc -l
 
 ```
 
+## Ayudas para generar código
+
+autocmd FileType yaml setlocal ai ts=2 sw=2 et > $HOME/.vimrc
+
+:set cursorcolumm
+:set cursorline
+
+
 ## Archivos de configuración base de proyecto
 
  - ansible.cfg
@@ -62,5 +70,15 @@ ansible-navigator doc -l
 | | ansible.builtin.shell | ansible.builtin.raw |
 | | 
 
+
+### De modulos
+
+- El módulo `ansible.builtin.service` si son varios servicios a intervenir, se debe revisar con loop mas no con lista de items
+
+
+## Para ejecutar con `ansible-navigator`
+
+- Agregar `--pae false` para ingresar el password de manera interactiva (`--playbook-artifact-enable`)
+- 
 
 
