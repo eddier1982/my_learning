@@ -69,6 +69,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#troubleshooting-de-ansible" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1091,6 +1096,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Capítulo 8, Troubleshooting
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1101,6 +1119,118 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#debbug-de-de-playbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Debbug de de Playbooks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Debbug de de Playbooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examinando-valores-de-variables-con-modulo-debug" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examinando valores de variables con modulo debug
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#revisando-errores-de-playbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Revisando errores de Playbooks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#revisando-artefectos-del-playbook-y-archivos-de-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      Revisando Artefectos del Playbook y archivos de Log
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-de-hosts-gestionados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting de Hosts gestionados
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting de Hosts gestionados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problemas-con-python-en-los-hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problemas con Python en los Hosts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-el-modo-check-como-herramienta-de-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use el modo Check como herramienta de testing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modulos-de-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modulos de testing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejecucion-de-comandos-ad-hoc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejecución de comandos Ad Hoc
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3023,6 +3153,109 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#debbug-de-de-playbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Debbug de de Playbooks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Debbug de de Playbooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examinando-valores-de-variables-con-modulo-debug" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examinando valores de variables con modulo debug
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#revisando-errores-de-playbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Revisando errores de Playbooks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#revisando-artefectos-del-playbook-y-archivos-de-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      Revisando Artefectos del Playbook y archivos de Log
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-de-hosts-gestionados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting de Hosts gestionados
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting de Hosts gestionados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problemas-con-python-en-los-hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problemas con Python en los Hosts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-el-modo-check-como-herramienta-de-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use el modo Check como herramienta de testing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modulos-de-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modulos de testing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejecucion-de-comandos-ad-hoc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejecución de comandos Ad Hoc
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -3037,9 +3270,84 @@
                   
 
 
-  <h1>Capítulo 8, Troubleshooting</h1>
-
-
+<h1 id="troubleshooting-de-ansible">Troubleshooting de Ansible</h1>
+<h2 id="debbug-de-de-playbooks">Debbug de de Playbooks</h2>
+<ul>
+<li><code>ansible-navigator run</code> permite visualizar los <em>issues</em> de la ejecución de un <em>play</em></li>
+<li>Los encabezados de cada PLAY tienen el nombre del <code>inventory_hostname</code> donde se ejecuta</li>
+<li>La siguiente linea es un estado, puede ser <code>ok</code>, <code>fatal``changed</code> o <code>skipping</code></li>
+<li>Con la opción <code>ansible-navigator run -v</code> se agrega <em>verbosity</em> a la salida. Hast 4 <code>v</code></li>
+</ul>
+<h3 id="examinando-valores-de-variables-con-modulo-debug">Examinando valores de variables con modulo <code>debug</code></h3>
+<ul>
+<li>Se puede agrear como parte de la metadata del módulo <code>ansible.builtin.debug</code>, el argumento <code>verbosity: 2</code> y equivale al número de -<code>v</code> en el debug</li>
+</ul>
+<h3 id="revisando-errores-de-playbooks">Revisando errores de Playbooks</h3>
+<ul>
+<li>Checheo de sintanxis</li>
+<li><code>ansible-navigator run -m stdout playbook.yml --syntax-check</code></li>
+<li>
+<p><code>ansible-lint playbook.yml</code></p>
+</li>
+<li>
+<p>Buenas ptrácticas de revisar Playbook por <em>Issues</em></p>
+</li>
+<li>Utilizar una bueba descripción en el <code>name</code> del <em>tasks</em></li>
+<li>Utilizar comentarios cuando se adiciona líneas en la documentaciónd e las tareas</li>
+<li>Organice las <em>tasks</em> de manera vertical</li>
+<li>Identación horizontal es crítica, usar <em>espacios</em> y no <strong>tabs</strong></li>
+<li>Hacer el playbook lo mas simple posible.</li>
+</ul>
+<h3 id="revisando-artefectos-del-playbook-y-archivos-de-log">Revisando Artefectos del Playbook y archivos de Log</h3>
+<ul>
+<li>La ejecución de <code>ansible-navigator</code> genera archivos artefacto de log y se guardan como formato JSON</li>
+<li>Se crea un registro cada ves que se ejecuta</li>
+<li>Se crea con la palabra <code>artifact</code> y se le agrega el la tiempo de ejecución</li>
+<li><code>ansible-navigator replay</code> es un modo interactivo donde se lee un artefacto log y muestra el <em>output</em> en la terminal</li>
+</ul>
+<h2 id="troubleshooting-de-hosts-gestionados">Troubleshooting de Hosts gestionados</h2>
+<ul>
+<li>Revisar si el el usuarios remoto <code>remote_user</code> es correcto o si tiene los permisos adecuados</li>
+<li>Validar la correcta resolución de nombres por DNS, si no resuelve deberá agregar la variable <code>ansible_host</code> en el host</li>
+<li><code>mimaquina.eocampo.lab ansible_host= 192.168.1.25</code></li>
+<li>Validar que el <code>remote_user</code>tenga permisos de <em>sudo</em> en el host</li>
+<li>Si no tiene configurado "no pedir password" debe tener configurado <code>become_password</code></li>
+<li>Si la accción es con el usuario <em>root</em> y tiene permisos debe ir la variable <code>become</code></li>
+<li>Si la acción debe ser ejecutada con otro usuario, utilizar la variable <code>become_user</code></li>
+</ul>
+<h3 id="problemas-con-python-en-los-hosts">Problemas con Python en los Hosts</h3>
+<ul>
+<li>Un error comun: <code>"No python interpreters found for host..."</code>.</li>
+<li>Asegurese que Python está correctamente instalado en el host</li>
+</ul>
+<h3 id="use-el-modo-check-como-herramienta-de-testing">Use el modo Check como herramienta de testing</h3>
+<p>Similar a <code>ansible-navigator run -m stdout --syntax-check</code> se puede agregar este modo de check en una <em>tasks</em></p>
+<pre><code class="language-yaml">tasks:
+  - name: Tarea siempre en modo Check
+    ansible.builtin.shell: uanme -a
+    check_mode: yes
+</code></pre>
+<ul>
+<li>Si está <code>check_mode: no</code> al ejecutar <code>ansible-navigator run --check</code> esta tarea siempre se ejecutará</li>
+<li>En versiones anteriores a Ansible 2.6 se utilizaba a opción <code>always_run: yes</code> ya deprecada</li>
+<li>No se confie de ejecutar con <code>--check</code> ya que si la tarea tiene <code>check_mode: no</code> la <em>tasks</em> se ejecutará</li>
+</ul>
+<h3 id="modulos-de-testing">Modulos de testing</h3>
+<ul>
+<li><code>ansible.builtin.uri</code></li>
+<li><code>ansible.builtin.stat</code></li>
+<li><code>ansible.builtin.script</code></li>
+<li><code>ansible.builtin.fail</code></li>
+<li><code>ansible.builtin.assert</code></li>
+</ul>
+<h3 id="ejecucion-de-comandos-ad-hoc">Ejecución de comandos Ad Hoc</h3>
+<ul>
+<li>Estructura `ansible -m nombre_modulo [-a 'argumentos del modulo'] -i inventory</li>
+<li>Ejemplos:</li>
+<li><code>ansible -m ansible.builtin.ping -i inventory all</code></li>
+<li><code>ansible -m ansible.builtin.ping -i inventory all --become</code></li>
+<li><code>ansible -m ansible.builtin.command -i inventory -a 'df -hT' all</code> </li>
+</ul>
 
 
 
