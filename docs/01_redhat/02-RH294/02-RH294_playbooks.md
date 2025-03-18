@@ -259,3 +259,192 @@ with_file:
         state: restarted
 
 ```
+
+# File manage
+
+```yaml
+---
+- name: Ejercicio de gestion de archivos
+  hosts: servers
+  vars:
+    path_log: /var/log/secure
+    nombre_directorio: files
+    nombre_archivo: users.txt
+  tasks:
+    - name: Obtener la informacion de {{ path_log }}
+      ansible.builtin.fetch:
+        src: "{{ path_log }}"
+        dest: secure-backups
+      register:
+
+    - name: Crear directorio {{ nombre_directorio }}
+      ansible.builtin.file:
+        path: "/home/devops/{{ nombre_directorio }}"
+        state: directory
+        owner: devops
+        group: devops
+        mode: 0755
+        setype: _default
+
+    - name: Agregar linea en /home/devops/{{ nombre_directorio }}/{{ nombre_archivo }}
+      ansible.builtin.lineinfile:
+        path: "/home/devops/{{ nombre_directorio }}/{{ nombre_archivo }}"
+        line: This line was added by the lineinfile module 
+        state: present
+        create: yes
+        owner: devops
+        group: devops
+        mode: 0644
+    
+    - name: Copiar archivo system en /home/devops/{{ nombre_directorio }}
+      ansible.builtin.copy:
+        src: system
+        dest: /home/devops/{{ nombre_directorio }}
+        owner: devops
+        group: devops
+        mode: 0664
+
+    - name: Agregar bloque de lineas en /home/devops/{{ nombre_directorio }}/{{ nombre_archivo }}
+      ansible.builtin.blockinfile:
+        path: "/home/devops/{{ nombre_directorio }}/{{ nombre_archivo }}"
+        block: |
+          This block of text consists of two lines.
+          They have been added by the blockinfile module.
+        state: present
+...
+```
+
+## Remove directory
+
+```yaml
+---
+- name: Ejercicio de eliminar directorio
+  hosts: servers
+  vars:
+    nombre_directorio: files
+  tasks:
+    - name: Eliminar directorio {{ nombre_directorio }}
+      ansible.builtin.file:
+        path: "/home/devops/{{ nombre_directorio }}"
+        state: absent
+...
+```
+
+# Template templates/motd.j2
+```jinja
+Este es el sistema {{ ansible_facts['fqdn'] }}
+Es un {{ ansible_facts['distribution'] }} con la version {{ ansible_facts['distribution_version'] }} de sistema
+
+{% if ansible_facts['fqdn'] in groups['workstations'] %}
+Es un usuario de workstation, usted requiere crear ticket para recibir ayuda con el problema
+{% elif ansible_facts['fqdn'] in groups['webservers'] %}
+Reporte este incidente a {{ system_owner }}.
+{% endif %}
+```
+
+## playbook de aplicación
+
+```yaml
+---
+- name: Ejercicio de template
+  hosts: all
+  remote_user: devops
+  become: true
+  vars:
+    system_owner: eocampo@redhat.com
+
+  tasks:
+    - name: Configurar mensaje del dia
+      ansible.builtin.template:
+        src: templates/motd.j2
+        dest: /etc/motd
+        owner: root
+        group: root
+        mode: 0644
+...
+```
+
+# Review template
+```j2
+{{ ansible_managed }}
+
+Memoria total del sistema {{ ansible_facts['memtotal_mb'] }}
+CPU total del sistema {{ ansible_facts['processor_count'] }}
+```
+
+## Playbook
+```yaml
+---
+- name: Laboratorio de Templates
+  hosts: all
+  remote_user: devops
+  become: true
+  vars:
+    path_destino: /etc/motd
+
+  tasks:
+    - name: Copiar template
+      ansible.builtin.template:
+        src: templates/motd.j2
+        dest: "{{ path_destino }}"
+        owner: root
+        group: root
+        mode: 0644
+
+    - name: Verificar si el archivo {{ path_destino }} existe 
+      ansible.builtin.stat:
+        path: "{{ path_destino }}"
+      register: validar_archivo
+
+    - name: Imprimir consulta estado archivo {{ path_destino }}
+      ansible.builtin.debug:
+        var: validar_archivo
+
+    - name: Copiar archivos en /etc/issue
+      ansible.builtin.copy:
+        src: files/issue
+        dest: /etc/issue
+        owner: root
+        group: root
+        mode: 0644
+
+    - name: Copiar archivos en /etc/issue como link simbolico
+      ansible.builtin.file:
+        src: files/issue
+        dest: /etc/issue.net
+        state: link
+        owner: root
+        group: root
+        force: yes
+
+```
+
+# Ejercicio de import & include tasks/playbook
+
+```yaml
+---
+- name: Configure web server
+  hosts: servera.lab.example.com
+  tasks:
+    - ansible.builtin.include_tasks: tasks/environment.yml
+      vars:
+        package: httpd
+        service: httpd
+
+    - ansible.builtin.import_tasks: tasks/firewall.yml
+      vars:
+        firewall_pkg: firewalld
+        firewall_svc: firewalld
+        rule: 
+          - http
+          - https
+
+    - ansible.builtin.import_tasks: tasks/placeholder.yml
+      vars:
+        file: /var/www/html/index.html
+
+- name: Import content
+  ansible.builtin.import_playbook: plays/test.yml
+  vars:
+    url: 'http://servera.lab.example.com'
+```
