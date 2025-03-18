@@ -69,6 +69,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#simplificando-playbook-con-roles-y-contenido-de-collections" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1070,6 +1075,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Capítulo 7, Simplificando Playbook's con roles y contenido de Colecciones (Collections)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1080,6 +1098,289 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-del-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura del role
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Estructura del role">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subdirectorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subdirectorios
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables-y-defaults" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables y Defaults
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usando-roles-en-un-play" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usando roles en un Play
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usando roles en un Play">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#incluirimportar-roles-como-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Incluir/importar roles como Tasks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usando-seccion-de-roles-en-un-play" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usando sección de roles en un Play
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seccion-especiales-de-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sección especiales de Tasks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sección especiales de Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre_tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      pre_tasks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post_tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      post_tasks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creando-estructura-de-directorio-de-un-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creando estructura de directorio de un Role
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definiendo-el-contenido-de-un-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definiendo el contenido de un Role
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Definiendo el contenido de un Role">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recomendaciones-practicas-para-desarrollar-contenido-de-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recomendaciones prácticas para desarrollar contenido de Roles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cambiando-el-comprtamiento-de-un-role-con-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cambiando el comprtamiento de un Role con Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definiendo-dependencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definiendo dependencias
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desplegando-roles-desde-una-fuente-externa-de-contenido" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desplegando Roles desde una fuente externa de contenido
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Desplegando Roles desde una fuente externa de contenido">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fuentes-externas-de-contenido" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fuentes externas de contenido
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansible-galaxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ansible Galaxy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cl-tool-de-ansible-galaxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      CL Tool de Ansible Galaxy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CL Tool de Ansible Galaxy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalando-roles-con-archivo-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalando roles con archivo Requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buscando-roles-de-la-comunidad-en-ansible-galaxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buscando Roles de la comunidad en Ansible Galaxy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#obteniedo-roles-y-modulos-desde-collecciones-de-contenido" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obteniedo Roles y Modulos desde Collecciones de Contenido
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Obteniedo Roles y Modulos desde Collecciones de Contenido">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ansible-content-collections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ansible Content Collections
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ansible Content Collections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seleccionando-fuentes-de-collections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Seleccionando fuentes de collections
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalando-contenido-de-collections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalando contenido de Collections
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3023,6 +3324,280 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#estructura-del-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura del role
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Estructura del role">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#subdirectorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subdirectorios
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables-y-defaults" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables y Defaults
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usando-roles-en-un-play" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usando roles en un Play
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usando roles en un Play">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#incluirimportar-roles-como-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Incluir/importar roles como Tasks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usando-seccion-de-roles-en-un-play" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usando sección de roles en un Play
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seccion-especiales-de-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sección especiales de Tasks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sección especiales de Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre_tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      pre_tasks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post_tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      post_tasks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creando-estructura-de-directorio-de-un-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creando estructura de directorio de un Role
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definiendo-el-contenido-de-un-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definiendo el contenido de un Role
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Definiendo el contenido de un Role">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recomendaciones-practicas-para-desarrollar-contenido-de-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recomendaciones prácticas para desarrollar contenido de Roles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cambiando-el-comprtamiento-de-un-role-con-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cambiando el comprtamiento de un Role con Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definiendo-dependencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definiendo dependencias
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desplegando-roles-desde-una-fuente-externa-de-contenido" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desplegando Roles desde una fuente externa de contenido
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Desplegando Roles desde una fuente externa de contenido">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fuentes-externas-de-contenido" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fuentes externas de contenido
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansible-galaxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ansible Galaxy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cl-tool-de-ansible-galaxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      CL Tool de Ansible Galaxy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CL Tool de Ansible Galaxy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalando-roles-con-archivo-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalando roles con archivo Requirements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buscando-roles-de-la-comunidad-en-ansible-galaxy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buscando Roles de la comunidad en Ansible Galaxy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#obteniedo-roles-y-modulos-desde-collecciones-de-contenido" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obteniedo Roles y Modulos desde Collecciones de Contenido
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Obteniedo Roles y Modulos desde Collecciones de Contenido">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ansible-content-collections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ansible Content Collections
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ansible Content Collections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seleccionando-fuentes-de-collections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Seleccionando fuentes de collections
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalando-contenido-de-collections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalando contenido de Collections
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -3037,9 +3612,269 @@
                   
 
 
-  <h1>Capítulo 7, Simplificando Playbook's con roles y contenido de Colecciones (Collections)</h1>
+<h1 id="simplificando-playbook-con-roles-y-contenido-de-collections">Simplificando Playbook con Roles y contenido de Collections</h1>
+<h2 id="estructura-del-role">Estructura del role</h2>
+<p>Los <em>Roles</em> de Ansible permiten ser creados fácilmente y con código general que puede ser reusado. Puede incluir archivos de variables, archivos, templates y otros tipos de recursos.</p>
+<p>RHEL incluye los roles <code>rhel-system-roles</code>  como paquete del OS.</p>
+<pre><code class="language-bash">pruebas_eddier/
+├── README.md
+├── defaults
+│   └── main.yml
+├── files
+├── handlers
+│   └── main.yml
+├── meta
+│   └── main.yml
+├── tasks
+│   └── main.yml
+├── templates
+├── tests
+│   ├── inventory
+│   └── test.yml
+└── vars
+    └── main.yml
+</code></pre>
+<h3 id="subdirectorios">Subdirectorios</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Subdirectorio</th>
+<th style="text-align: left;">Funcion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>defaults</code></td>
+<td style="text-align: left;">Valores de variables que se pueden sobreescribir mientras el <em>role</em> es usado</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>files</code></td>
+<td style="text-align: left;">Archivos estáticos referenciados en los <em>tasks</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>handlers</code></td>
+<td style="text-align: left;">Contiene las definciones de <em>handlers</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>meta</code></td>
+<td style="text-align: left;">Información acerca del role, autor licencia y dependencias</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>tasks</code></td>
+<td style="text-align: left;">Definiciones de tareas principales en <code>main.yml</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>templates</code></td>
+<td style="text-align: left;">Contiene los archivos template tipo <em>Jinja2</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>tests</code></td>
+<td style="text-align: left;">Contiene uninventory y YAML llamado <em>test.yml</em> para hacer pruebas con el role</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>vars</code></td>
+<td style="text-align: left;">Directorio de valores de variables</td>
+</tr>
+</tbody>
+</table>
+<h2 id="variables-y-defaults">Variables y Defaults</h2>
+<ul>
+<li>Las <em>Variables del Role</em> s¿son definidas en <code>vars/main.yml</code> con pares llaves-valor. </li>
+<li>Se referencia en el <em>tasks</em> `{{ VAR_NAME }}</li>
+<li>Tienen la mas alta precedencia y no pueden ser sobreescritas.</li>
+<li>Uso interno de Role</li>
+<li>Las <em>Variables Default</em> son valores definidos para variables que pueden ser usadas en el <em>play</em> para configurar el <em>role</em> o algo en él.</li>
+<li>Se encunetran en <code>defaults/main.yml</code></li>
+<li><em>Default</em> tienen la menor precedencia sobre otras variables</li>
+<li><em>Default</em> peuden ser sobreescitas</li>
+<li>Se define una variable en <code>vars/main.yml</code> o en <code>defaults/main.yml</code> mas no en ambas</li>
+<li>No se recomeinda definir credenciales o data sensible</li>
+</ul>
+<h2 id="usando-roles-en-un-play">Usando roles en un Play</h2>
+<ul>
+<li>Se puede incluir o importar como una tarea en la lista de tareas</li>
+<li>Se pueden crear <em>roles</em> con ejecuciones específicas para ejecutar antes de ejecutar su tareas</li>
+</ul>
+<h3 id="incluirimportar-roles-como-tasks">Incluir/importar roles como Tasks</h3>
+<p>Los roles se pueden agregar a un <em>play</em> como una <em>tasks</em> en su lista de <em>tasks</em></p>
+<p>Se usa <code>ansible.builtin.import_role</code> (importar estáticamente un rol) y <code>ansible.builtin.include_role</code> (incluir dinámicamente un rol)</p>
+<p>Si se importa un role, entonces:
+- Se agrega cada uno de las tasks al play, de cada uno de los siguientes (si lo tiene)
+  - <code>tasks/main.yml</code>
+  - <code>handlers/main.yml</code>
+  - <code>defaults/main.yml</code>
+  - <code>vars/main.yml</code>
+  <em>import_roles</em> es procesado cuando es analizado, entonces los <code>handlers defaults</code> y <code>vars</code> son expuestas a todas las tareas y roles en el play y pueden ser accedidas
+- Se pueden configurar variables que se pueden llamar en el <em>tasks</em>
+- Las <em>tasks</em> condicionas y <em>loops</em> se aplican a cada <em>tasks</em> importada</p>
+<p><code>ansible.builtin.include_role</code> funciona similar pero es dinámico
+- Las <em>tasks</em> condicionas y <em>loops</em> se aplican a la definición del <em>tasks</em> mas no a lo incluido en el</p>
+<h3 id="usando-seccion-de-roles-en-un-play">Usando sección de roles en un Play</h3>
+<p>Otra farma de llamr los roles en un <em>play</em> es como una lista de <em>sección</em> llamada <code>roles</code> asi como se llama a <code>tasks</code> pero en ves de llamar <em>tasks</em> se llama <em>roles</em>.</p>
+<pre><code class="language-yaml">---
+- name: Un play con solo roles
+  hosts: all
+  roles:
+    - role: nombre_role1
+    - role: nombre_role2
 
+</code></pre>
+<ul>
+<li>Al llamarla asi, cada <em>tasks</em>, <em>handlers</em> y <em>variables</em> y <em>dependencias</em> del Roles son importados en el play. Al invocarlos en modo <em>sección</em> los roles se ejecutan primero antes de <em>tasks</em> que se tengan definidas en el <em>play</em>.</li>
+<li>Se puede definir <em>roles</em> antes o despues de la sección de <em>tasks</em>.</li>
+<li>La seción de <em>tasks</em> no es requerida, es una buena práctica no utilizar ambos en el <em>play</em> ya que se puede prestar para confusión.</li>
+<li>Es preferible o recomendado utilizar <code>ansible.builtin_import_role</code> o <code>ansible.builtin.include.role</code> como <em>tasks</em> para correr los puntos de manera correcta.</li>
+<li>En la sección de <em>roles</em>, cada role puede llevar sus variables, lo que sobreescribiran las que tengan en el Role</li>
+<li>Si 2 roles son listados en sección con los mismo parámetros, solo se ejecuta 1, a menos que tengan alguna diferencia de parámetros</li>
+</ul>
+<h3 id="seccion-especiales-de-tasks">Sección especiales de Tasks</h3>
+<h4 id="pre_tasks"><code>pre_tasks</code></h4>
+<ul>
+<li>se ejecutan primero que cualquier role en la sección de <em>roles</em></li>
+<li>Si una task notifica un <em>handler</em> se ejecuta antes de los <em>roles</em> o las <em>tasks</em> normales</li>
+</ul>
+<h4 id="post_tasks"><code>post_tasks</code></h4>
+<ul>
+<li>Se ejecutan despues de <em>tasks</em> y los <em>handlers</em> notificados en el play</li>
+</ul>
+<h3 id="creando-estructura-de-directorio-de-un-role">Creando estructura de directorio de un Role</h3>
+<p>Como ya se conoce la estructura de un <em>role</em> personalizado, por lo general un Role de comunidad o certificado tiene similar estructura. Allí, el archvo README.md será el archivo que tiene toda la documentación, ejemplo de uso y hasta requerimeintos.</p>
+<p>Para crear una estructura limpia o vacía tipo esqueleto de un Role, se utiliza el siguiente comando:</p>
+<pre><code class="language-bash">ansible-galaxy init pruebas_eddier
+</code></pre>
+<h3 id="definiendo-el-contenido-de-un-role">Definiendo el contenido de un Role</h3>
+<ul>
+<li>Se suguiere iniciar con <code>pruebas_eddier/tasks/main.yml</code> la principal lista de tareas a ejecutar en el role</li>
+<li>Puede agregar algunas variables en <code>defaults/main.yml</code> para garantizar siempre el funcioanmiento</li>
+</ul>
+<h4 id="recomendaciones-practicas-para-desarrollar-contenido-de-roles">Recomendaciones prácticas para desarrollar contenido de Roles</h4>
+<ul>
+<li>Mantener el desarrollo de codigo en un repositorio de control de versiones. Ansible trabaja bien con repositorios basados en Git</li>
+<li>Usar variables para facilitar el reuso del Role</li>
+<li>No incluir información sensible en el role. Utilizar <code>ansible_vault</code></li>
+<li>Si crea una estructura limpia de un Role, elimine las carpeta innecesarias</li>
+<li>Crear y mantener un archivo README.md y un archivo meta/main.yml que ayudan a documentar el propósito del Role</li>
+<li>Cree un role para una solo propósito. Si requiere mas alcances, cree mas roles</li>
+<li>Siempre reuse los Roles</li>
+</ul>
+<p><a href="https://redhat-cop.github.io/automation-good-practices/#_roles_good_practices_for_ansible">Lista no oficial de buenas ´rácticas</a></p>
+<h3 id="cambiando-el-comprtamiento-de-un-role-con-variables">Cambiando el comprtamiento de un Role con Variables</h3>
+<ul>
+<li>Los valores de variables definidos en <code>defaults</code> es sobre escrita por </li>
+<li>variables en el inventario, </li>
+<li>YANL en <code>group_var</code> o <code>host_var</code> </li>
+<li>Variables en la sección <code>vars</code> del <em>play</em></li>
+<li>
+<p>Variables de role en la sección <code>roles</code> del <em>play</em></p>
+</li>
+<li>
+<p>Variables que pueden modificar las variables en <code>vars</code>:</p>
+</li>
+<li>Facts</li>
+<li><code>include_vars</code></li>
+<li>variables registradas y </li>
+<li>parámetros de Role</li>
+</ul>
+<h3 id="definiendo-dependencias">Definiendo dependencias</h3>
+<p>Las dependencias de un roles siempre inclye otros roles como dependencias que está en: <code>meta/main.yml</code></p>
+<pre><code class="language-yaml">---
+dependencies:
+  - role: apache
+    port: 8080
+  - role: postgres
+    dbname: serverlist
+    admin_user: eddier
 
+</code></pre>
+<h2 id="desplegando-roles-desde-una-fuente-externa-de-contenido">Desplegando Roles desde una fuente externa de contenido</h2>
+<h3 id="fuentes-externas-de-contenido">Fuentes externas de contenido</h3>
+<ul>
+<li>Siempre almacene su desarrollos en un SCM (Source Central Manager), sea público o privado.</li>
+<li>repositorios privados puede encontrar en Automation Hub y replicarlos al Private Automation Hun</li>
+<li>Repositorio públicos en (Ansible Galaxy)[https://galaxy.ansible.com]</li>
+</ul>
+<h3 id="ansible-galaxy">Ansible Galaxy</h3>
+<ul>
+<li>Librería pública de contenido de Ansible. </li>
+<li>Contiene miles de Roles de Ansible</li>
+<li>Con el comando <code>ansible-galaxy</code>se puede utilizar para descargar y gestionar roles desde Anisble Galaxy y otros repositorios Git</li>
+</ul>
+<h3 id="cl-tool-de-ansible-galaxy">CL Tool de Ansible Galaxy</h3>
+<ul>
+<li>busca</li>
+<li>muestra información acerca de</li>
+<li>instala</li>
+<li>lista</li>
+<li>elimina o inicializa Roles</li>
+</ul>
+<h4 id="instalando-roles-con-archivo-requirements">Instalando roles con archivo Requirements</h4>
+<p>Puede crear en el directorio del proyecto la siguiente ruta completa <code>roles/requirements.yml</code> donde se puede especificar los roles que se necesitan. Antes de ejecutar <code>ansible-navigator run</code> debe ejecutar <code>ansible-galaxy</code> para instalar los roles un su directorio de <code>roles</code>. Con <em>Automation Controller</em> este descarga automaticamente los roles.</p>
+<p>Ejemplo de archivo <code>roles/requirements.yml</code>:</p>
+<pre><code class="language-yaml">- src: https://git.example.com/eddier/eddier.mirole
+  scm: git
+  version: &quot;1.5.0&quot;
+
+</code></pre>
+<p>En el atributo <code>src</code> puede utlizar tambien el tipo de conexión SSH y <code>version</code>puede llevar la rama del repositorio o el Git commit hash y si no se especifica traerá la última version (<em>latest</em>)</p>
+<ul>
+<li>Instalando el role <code>ansible-galaxy role install</code></li>
+<li><code>-r roles/requirements.yml</code> para especificar la ruta del archivo de requerimeintos</li>
+<li><code>-p roles</code> instala el role en el subdirectorio <code>roles</code></li>
+<li>Validar primero si está creado el repositorio en la raiz del proyecto</li>
+<li>Se puede evitar esta opción agregando en la opción <code>[defaults]</code> del archivo <code>ansible.cfg</code>la opción <code>roles_path = roles</code></li>
+<li>Si se tiene un archivo .tar con todo el contenido del role, también se puede referenciar en este archivo (no se recomienda mucho)</li>
+</ul>
+<h4 id="buscando-roles-de-la-comunidad-en-ansible-galaxy">Buscando Roles de la comunidad en Ansible Galaxy</h4>
+<p>Este sitio es valido mas no soportado por Red Hat. Es mantenido por la comunidad</p>
+<ul>
+<li>Se puede usar el comando para buscar <code>ansible-galaxy search</code></li>
+<li>argumentos adicionales<ul>
+<li><code>--autor</code></li>
+<li><code>--plataforms</code></li>
+<li><code>--galaxy-tags</code></li>
+</ul>
+</li>
+<li>Con el comando <code>ansible-galaxy info</code> se obtiene información de un role</li>
+<li><code>ansible-galaxy list</code> para listar los roles instalados</li>
+<li>y con <code>ansible-galaxy remove</code>para eliminar un role específico</li>
+</ul>
+<h2 id="obteniedo-roles-y-modulos-desde-collecciones-de-contenido">Obteniedo Roles y Modulos desde Collecciones de Contenido</h2>
+<h3 id="ansible-content-collections">Ansible Content Collections</h3>
+<h4 id="seleccionando-fuentes-de-collections">Seleccionando fuentes de collections</h4>
+<ul>
+<li>Automation Hub: Servicio provisto por Red Hat con contenido certificado y soportado</li>
+<li>Private Automation Hub: Automation Hub privado en el cliente, para re-distribuir las colecciones. Debe tener AAP</li>
+<li>Ansible Galaxy: servicio soportado por la comunidad</li>
+<li>Repositorios de Terceros o Archivos: archivo .tar</li>
+</ul>
+<h3 id="instalando-contenido-de-collections">Instalando contenido de Collections</h3>
+<ul>
+<li>En <code>ansible.cfg</code> en <code>[defaults]</code> se puede agregar <code>collections_paths = ~/.ansible/collections:/usr/share/ansible/collections</code> </li>
+<li>Para instalar una collection este es el comando: <code>ansible-galaxy collection install community.vmware -p collections</code></li>
+<li><code>-p</code>para especificar el path donde se debe instalar<ul>
+<li>Validar que el directorio esté creado</li>
+</ul>
+</li>
+<li>Se puede instalar urilizando archivo de requerimientos:</li>
+<li><code>collections/requirements.yml</code> en el directorio del proyecto</li>
+</ul>
+<pre><code class="language-yaml">---
+collections:
+  - name: community.vmware
+
+  - name: ansible.posix
+    version: 1.2.0
+
+  - name: /tmp/community-dns-1.2.0.tar.gz
+
+  - name: http://www.example.com/redhat-insights-1.0.5.tar.gz
+
+</code></pre>
+<ul>
+<li>Comando para la instalación manual <code>ansible-galaxy collection install -r collections/requirements.yml -p collections</code></li>
+<li><code>-r collections/requirements.yml</code> para especificar la ruta del archivo de requerimeintos</li>
+<li><code>-p collections</code> instala la colleción en el subdirectorio <code>collections</code></li>
+</ul>
 
 
 

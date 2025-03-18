@@ -1212,6 +1212,87 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#file-manage" class="md-nav__link">
+    <span class="md-ellipsis">
+      File manage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File manage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remove-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remove directory
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#template-templatesmotdj2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Template templates/motd.j2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Template templates/motd.j2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#playbook-de-aplicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      playbook de aplicación
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#review-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      Review template
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Review template">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#playbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Playbook
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-de-import-include-tasksplaybook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio de import &amp; include tasks/playbook
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3099,6 +3180,87 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#file-manage" class="md-nav__link">
+    <span class="md-ellipsis">
+      File manage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File manage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remove-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remove directory
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#template-templatesmotdj2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Template templates/motd.j2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Template templates/motd.j2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#playbook-de-aplicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      playbook de aplicación
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#review-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      Review template
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Review template">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#playbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Playbook
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-de-import-include-tasksplaybook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio de import &amp; include tasks/playbook
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3113,8 +3275,6 @@
                 
                   
 
-
-  <h1>Ejecicio de práctica, playbooks</h1>
 
 <h2 id="configurar-la-llave-en-todos-los-hosts-gestionados">Configurar la llave en todos los hosts gestionados</h2>
 <pre><code class="language-bash">ansible-navigator run playbook.yml -m stdout --ask-pass`
@@ -3361,6 +3521,177 @@ with_file:
         name: &quot;{{ web_service }}&quot;
         state: restarted
 
+</code></pre>
+<h1 id="file-manage">File manage</h1>
+<pre><code class="language-yaml">---
+- name: Ejercicio de gestion de archivos
+  hosts: servers
+  vars:
+    path_log: /var/log/secure
+    nombre_directorio: files
+    nombre_archivo: users.txt
+  tasks:
+    - name: Obtener la informacion de {{ path_log }}
+      ansible.builtin.fetch:
+        src: &quot;{{ path_log }}&quot;
+        dest: secure-backups
+      register:
+
+    - name: Crear directorio {{ nombre_directorio }}
+      ansible.builtin.file:
+        path: &quot;/home/devops/{{ nombre_directorio }}&quot;
+        state: directory
+        owner: devops
+        group: devops
+        mode: 0755
+        setype: _default
+
+    - name: Agregar linea en /home/devops/{{ nombre_directorio }}/{{ nombre_archivo }}
+      ansible.builtin.lineinfile:
+        path: &quot;/home/devops/{{ nombre_directorio }}/{{ nombre_archivo }}&quot;
+        line: This line was added by the lineinfile module 
+        state: present
+        create: yes
+        owner: devops
+        group: devops
+        mode: 0644
+
+    - name: Copiar archivo system en /home/devops/{{ nombre_directorio }}
+      ansible.builtin.copy:
+        src: system
+        dest: /home/devops/{{ nombre_directorio }}
+        owner: devops
+        group: devops
+        mode: 0664
+
+    - name: Agregar bloque de lineas en /home/devops/{{ nombre_directorio }}/{{ nombre_archivo }}
+      ansible.builtin.blockinfile:
+        path: &quot;/home/devops/{{ nombre_directorio }}/{{ nombre_archivo }}&quot;
+        block: |
+          This block of text consists of two lines.
+          They have been added by the blockinfile module.
+        state: present
+...
+</code></pre>
+<h2 id="remove-directory">Remove directory</h2>
+<pre><code class="language-yaml">---
+- name: Ejercicio de eliminar directorio
+  hosts: servers
+  vars:
+    nombre_directorio: files
+  tasks:
+    - name: Eliminar directorio {{ nombre_directorio }}
+      ansible.builtin.file:
+        path: &quot;/home/devops/{{ nombre_directorio }}&quot;
+        state: absent
+...
+</code></pre>
+<h1 id="template-templatesmotdj2">Template templates/motd.j2</h1>
+<pre><code class="language-jinja">Este es el sistema {{ ansible_facts['fqdn'] }}
+Es un {{ ansible_facts['distribution'] }} con la version {{ ansible_facts['distribution_version'] }} de sistema
+
+{% if ansible_facts['fqdn'] in groups['workstations'] %}
+Es un usuario de workstation, usted requiere crear ticket para recibir ayuda con el problema
+{% elif ansible_facts['fqdn'] in groups['webservers'] %}
+Reporte este incidente a {{ system_owner }}.
+{% endif %}
+</code></pre>
+<h2 id="playbook-de-aplicacion">playbook de aplicación</h2>
+<pre><code class="language-yaml">---
+- name: Ejercicio de template
+  hosts: all
+  remote_user: devops
+  become: true
+  vars:
+    system_owner: eocampo@redhat.com
+
+  tasks:
+    - name: Configurar mensaje del dia
+      ansible.builtin.template:
+        src: templates/motd.j2
+        dest: /etc/motd
+        owner: root
+        group: root
+        mode: 0644
+...
+</code></pre>
+<h1 id="review-template">Review template</h1>
+<pre><code class="language-j2">{{ ansible_managed }}
+
+Memoria total del sistema {{ ansible_facts['memtotal_mb'] }}
+CPU total del sistema {{ ansible_facts['processor_count'] }}
+</code></pre>
+<h2 id="playbook">Playbook</h2>
+<pre><code class="language-yaml">---
+- name: Laboratorio de Templates
+  hosts: all
+  remote_user: devops
+  become: true
+  vars:
+    path_destino: /etc/motd
+
+  tasks:
+    - name: Copiar template
+      ansible.builtin.template:
+        src: templates/motd.j2
+        dest: &quot;{{ path_destino }}&quot;
+        owner: root
+        group: root
+        mode: 0644
+
+    - name: Verificar si el archivo {{ path_destino }} existe 
+      ansible.builtin.stat:
+        path: &quot;{{ path_destino }}&quot;
+      register: validar_archivo
+
+    - name: Imprimir consulta estado archivo {{ path_destino }}
+      ansible.builtin.debug:
+        var: validar_archivo
+
+    - name: Copiar archivos en /etc/issue
+      ansible.builtin.copy:
+        src: files/issue
+        dest: /etc/issue
+        owner: root
+        group: root
+        mode: 0644
+
+    - name: Copiar archivos en /etc/issue como link simbolico
+      ansible.builtin.file:
+        src: files/issue
+        dest: /etc/issue.net
+        state: link
+        owner: root
+        group: root
+        force: yes
+
+</code></pre>
+<h1 id="ejercicio-de-import-include-tasksplaybook">Ejercicio de import &amp; include tasks/playbook</h1>
+<pre><code class="language-yaml">---
+- name: Configure web server
+  hosts: servera.lab.example.com
+  tasks:
+    - ansible.builtin.include_tasks: tasks/environment.yml
+      vars:
+        package: httpd
+        service: httpd
+
+    - ansible.builtin.import_tasks: tasks/firewall.yml
+      vars:
+        firewall_pkg: firewalld
+        firewall_svc: firewalld
+        rule: 
+          - http
+          - https
+
+    - ansible.builtin.import_tasks: tasks/placeholder.yml
+      vars:
+        file: /var/www/html/index.html
+
+- name: Import content
+  ansible.builtin.import_playbook: plays/test.yml
+  vars:
+    url: 'http://servera.lab.example.com'
 </code></pre>
 
 

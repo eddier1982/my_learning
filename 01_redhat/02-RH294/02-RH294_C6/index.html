@@ -69,6 +69,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#gestion-compleja-de-plays-y-playbooks" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1049,6 +1054,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Capítulo 6, Gestión de Play y Playbook complejos
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1059,6 +1077,118 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#referencia-de-hosts-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Referencia de Hosts Inventory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#incluyendo-e-importando-archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Incluyendo e importando archivos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Incluyendo e importando archivos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#importando-playbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importando playbooks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importandoincluyendo-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importando/incluyendo Tasks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Importando/incluyendo Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#importando-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importando Tasks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#incluyendo-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Incluyendo Tasks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#casos-para-archivos-de-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      Casos para archivos de Task
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-archivo-de-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestión de archivo de Task
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables-externas-para-play-y-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables externas para Play y Tasks
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3023,6 +3153,109 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#referencia-de-hosts-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Referencia de Hosts Inventory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#incluyendo-e-importando-archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Incluyendo e importando archivos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Incluyendo e importando archivos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#importando-playbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importando playbooks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importandoincluyendo-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importando/incluyendo Tasks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Importando/incluyendo Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#importando-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importando Tasks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#incluyendo-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Incluyendo Tasks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#casos-para-archivos-de-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      Casos para archivos de Task
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-archivo-de-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestión de archivo de Task
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables-externas-para-play-y-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables externas para Play y Tasks
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -3037,9 +3270,79 @@
                   
 
 
-  <h1>Capítulo 6, Gestión de Play y Playbook complejos</h1>
-
-
+<h1 id="gestion-compleja-de-plays-y-playbooks">Gestión compleja de Plays y Playbooks</h1>
+<h2 id="referencia-de-hosts-inventory">Referencia de Hosts Inventory</h2>
+<p>Los llamados <em>host patterns</em> es utilizado para elegir donde se ejecutaran los <em>play</em>. Los llamados pueden ser a un host, a un grupo o con filtros de nombres</p>
+<ul>
+<li>La primera acción de un playbook al ejecutarse por defecto es ejecutar la tareas de <code>Gathering Facts</code> en todos los hosts objetivo. Se puede remover si falla.</li>
+<li>Si el host no está en el inventario por <em>hostname</em> o <em>fqdn</em> se puede utilizando la IP (No es una buena práctica).</li>
+<li>En caso de que no resulva por DNS, se puede agregar variable al inventario o como variables de host en: <code>host_var/nombre_del_host.lab</code> asi<code>ansible_host: 192.168.1.10</code></li>
+<li>Se especifica el nombre del <em>target</em> en la metatada del playbook. Puede estar all, el nombre del grupo, un hosts específico, etc...</li>
+</ul>
+<pre><code class="language-yaml">---
+- name: Ejemplo metadata
+  hosts: all
+</code></pre>
+<ul>
+<li>Grupo siempre incluido por defecto en todo inventario: <code>ungrouped</code></li>
+<li><code>all</code> se puede reemplazar por <code>'*'</code></li>
+<li>Todos lo terminados en eocampo.lab <code>'*.eocampo.lab'</code></li>
+<li>Todos los del segmento 192.168.2 <code>'192.168.2.*'</code></li>
+<li>Todos los que inicien con datacenter <code>'datacenter*'</code></li>
+<li>Una lista es el nombre de cada uno separado por comas <code>,</code> sin espacios</li>
+<li>Una lista tambien puede tener filtros</li>
+<li>El filtro con el prefijo <code>!</code> quiere decir que este objeto no</li>
+<li>El prefijo <code>&amp;</code> es similar a proceso logico <em>AND</em> </li>
+</ul>
+<h2 id="incluyendo-e-importando-archivos">Incluyendo e importando archivos</h2>
+<p>Sirve para el manejo de largos playbook, simplificarlos y generar fácil gestión del código. Son 2 operaciones soportadas:</p>
+<ul>
+<li><code>include_</code> es una operación dinámica, su llamado es de acuerdo al contenido</li>
+<li><code>import_</code> es una operación estática, se preprocesa al inicio del playbook</li>
+</ul>
+<h3 id="importando-playbooks">Importando playbooks</h3>
+<ul>
+<li><code>import_playbook</code>es una lista de llamadas directa s otros playbooks</li>
+<li>Solo puede usarse al inicio del playbook y no se usa en un <em>play</em></li>
+<li>Se ejecutan en orden a como se invocan</li>
+</ul>
+<h3 id="importandoincluyendo-tasks">Importando/incluyendo Tasks</h3>
+<h4 id="importando-tasks">Importando Tasks</h4>
+<ul>
+<li>Importar sirve para simplificar muchos archivos de con <em>plays</em></li>
+<li><code>import_tasks</code> va como argumeto primario  en ves de nombre</li>
+</ul>
+<pre><code class="language-yaml">---
+- name: Ejemplo llamado de import
+  hosts: webservers
+  tasks:
+    - import_tasks: playbook_de_tareas.yml
+</code></pre>
+<ul>
+<li><code>when</code> este se aplica a cada tarea importada</li>
+<li>El condicional se aplica a todas las tareas importadas en el archivo de <em>tasks</em></li>
+<li>No se puede usar <em>loops</em></li>
+<li>Se pueden usar variables menos el host o un grupo del inventario</li>
+</ul>
+<h4 id="incluyendo-tasks">Incluyendo Tasks</h4>
+<ul>
+<li>Incluir para uso dinamico de la tarea</li>
+<li><code>include_tasks</code> va como argumento primario en ves de nombre</li>
+<li>Impacta el orden donde va declarado</li>
+<li>El condicional <code>when</code> se aplica a todos los <em>play</em></li>
+<li>El condicional se aplica solo asi misma y no a todas las tareas incluidas en el archivo de <em>tasks</em></li>
+<li>No se puede usar el argumento de <code>notify</code></li>
+</ul>
+<h4 id="casos-para-archivos-de-task">Casos para archivos de Task</h4>
+<ul>
+<li>Varias tipos de tareas, como crear usuarios, intervenir servicios, etc</li>
+<li>Facil integración entre equipos desarrolladores</li>
+<li>Configuraciones particulares a host o grupo de hosts</li>
+</ul>
+<h4 id="gestion-de-archivo-de-task">Gestión de archivo de Task</h4>
+<p>Se puede crear un directorio para almacenar </p>
+<h2 id="variables-externas-para-play-y-tasks">Variables externas para Play y Tasks</h2>
+<p>Como parte de la metadata de un play que utiliza <code>import_tasks</code> se puede definir variables con el arcumeto <code>vars</code> las cuales pasan a ser utilizadas en el archivo de task. Lo mismo sucede con <code>import_playbook</code></p>
 
 
 
