@@ -69,6 +69,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#automatizando-tareas-de-admin-linux" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -1112,6 +1117,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Capítulo 9, Automatización de tareas de Administración Linux
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1122,6 +1140,283 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-de-sw-y-suscripciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestión de SW y suscripciones
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestión de SW y suscripciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-paquetes-con-ansible" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestión de paquetes con Ansible
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registrando-y-gestionando-systemas-con-rh-subscription-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Registrando ,y gestionando systemas con RH Subscription Manager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurando-repositorio-de-paquetes-rpm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurando Repositorio de paquetes RPM
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-y-autenticacion-de-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestion y autenticación de usuarios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestion y autenticación de usuarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modulo-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modulo User
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group" class="md-nav__link">
+    <span class="md-ellipsis">
+      Group
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#know-host-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Know Host module
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modulo-autorized-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modulo Autorized Key
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurando-sudo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurando Sudo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-de-procesos-de-boot-y-programacion-de-tareas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestión de procesos de Boot y programación de tareas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestión de procesos de Boot y programación de tareas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#programacion-de-trabajos-para-caracteristicas-de-ejecucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programación de trabajos para características de ejecución
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-servicios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestion de servicios
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurando-objetivo-default-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurando objetivo default boot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reinicio-de-hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reinicio de hosts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-de-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestión de storage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestión de storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#montaje-de-file-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Montaje de File Systems
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurando-storage-con-el-role-storage-de-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurando Storage con el role Storage de System
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configurando Storage con el role Storage de System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gestionando-storage-sin-el-role-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestionando storage sin el role system
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilizando-ansible_facts-para-configuraciones-de-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilizando ansible_facts para configuraciones de storage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestión de red
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestión de red">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-con-role-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración con Role System
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-con-modulos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración con módulos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuración con módulos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ansible-facts-con-configuraciones-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ansible Facts con configuraciones de red
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3023,6 +3318,274 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-de-sw-y-suscripciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestión de SW y suscripciones
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestión de SW y suscripciones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-paquetes-con-ansible" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestión de paquetes con Ansible
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registrando-y-gestionando-systemas-con-rh-subscription-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      Registrando ,y gestionando systemas con RH Subscription Manager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurando-repositorio-de-paquetes-rpm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurando Repositorio de paquetes RPM
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-y-autenticacion-de-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestion y autenticación de usuarios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestion y autenticación de usuarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modulo-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modulo User
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group" class="md-nav__link">
+    <span class="md-ellipsis">
+      Group
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#know-host-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Know Host module
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modulo-autorized-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modulo Autorized Key
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurando-sudo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurando Sudo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-de-procesos-de-boot-y-programacion-de-tareas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestión de procesos de Boot y programación de tareas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestión de procesos de Boot y programación de tareas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#programacion-de-trabajos-para-caracteristicas-de-ejecucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programación de trabajos para características de ejecución
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-servicios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestion de servicios
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurando-objetivo-default-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurando objetivo default boot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reinicio-de-hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reinicio de hosts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-de-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestión de storage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestión de storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#montaje-de-file-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Montaje de File Systems
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurando-storage-con-el-role-storage-de-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurando Storage con el role Storage de System
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configurando Storage con el role Storage de System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gestionando-storage-sin-el-role-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestionando storage sin el role system
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilizando-ansible_facts-para-configuraciones-de-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilizando ansible_facts para configuraciones de storage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestión de red
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestión de red">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-con-role-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración con Role System
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-con-modulos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración con módulos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuración con módulos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ansible-facts-con-configuraciones-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ansible Facts con configuraciones de red
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -3037,9 +3600,343 @@
                   
 
 
-  <h1>Capítulo 9, Automatización de tareas de Administración Linux</h1>
+<h1 id="automatizando-tareas-de-admin-linux">Automatizando Tareas de Admin Linux</h1>
+<h2 id="gestion-de-sw-y-suscripciones">Gestión de SW y suscripciones</h2>
+<h3 id="gestion-de-paquetes-con-ansible">Gestión de paquetes con Ansible</h3>
+<ul>
+<li><code>ansible.builtin.dnf</code>modulo que equivale al comando <code>dnf</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><em>Task</em> Ansible</th>
+<th style="text-align: left;">Comando DNF</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">name: httpd <br/> state: latest <br/></td>
+<td style="text-align: left;"><code>dnf install httpd</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">name: httpd <br/> state: latest <br/></td>
+<td style="text-align: left;"><code>dnf upgrade httpd</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">name: '*' <br/> state: latest <br/></td>
+<td style="text-align: left;"><code>dnf upgrade</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">name: httpd <br/> state: absent <br/></td>
+<td style="text-align: left;"><code>dnf remove httpd</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">name: '@Development Tools' <br/> state: present <br/></td>
+<td style="text-align: left;"><code>dnf group install "Development Tools"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">name: '@Development Tools' <br/> state: absent <br/></td>
+<td style="text-align: left;"><code>dnf group remove "Development Tools"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">name: '@perl:5.26/minimal' <br/> state: present <br/></td>
+<td style="text-align: left;"><code>dnf module install perl:5.26/minimal</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Optimización instalando mútiples paquetes</li>
+<li>Use listas en el argumento <code>name</code></li>
+<li>Use listas en el argumento <code>loop</code>y luego hacer el llamdo en el argumento: <code>name: "{{ item }}"</code></li>
+<li>El modulo <code>ansible.builtin.package_facts</code>reune los paquetes instalados en el hosts</li>
+<li>Se realiza llamado <code>ansible_facts['packages']</code></li>
+<li>
+<p>Invoque <code>ansible.builtin.debug</code>para mostrar los valores de los paquetes instalados</p>
+</li>
+<li>
+<p>El modulo <code>ansible.builtin.apt</code> es utilizado para Debian y Ubuntu</p>
+</li>
+<li>El modulo <code>ansible.windows.win_package</code> es para sistemas Windows</li>
+</ul>
+<h3 id="registrando-y-gestionando-systemas-con-rh-subscription-manager">Registrando ,y gestionando systemas con RH Subscription Manager</h3>
+<ul>
+<li>
+<p><code>community.general.rehat_subscription</code>y <code>communit.general.rhsm_repository</code> son los modulos para gestionar suscripciones RH</p>
+</li>
+<li>
+<p>Suscribiendo el host:</p>
+</li>
+</ul>
+<pre><code class="language-yaml">- name: Registrando y suscribendo 
+  community.general.redhat_subscription:
+    state: present
+    username: eocampo
+    password: &quot;{{ mi_password }}&quot;
+    pool_ids: &quot;{{ pool_id}}&quot;
 
+</code></pre>
+<ul>
+<li>Agregando repositorios:</li>
+</ul>
+<pre><code class="language-yaml">- name: Registrando y suscribendo 
+  community.general.rhsm_repository:
+    name:
+      - rhel-9-for-x86_64-baseos-rpms
+      - rhel-9-for-x86_64-appstream-rpms
 
+</code></pre>
+<h3 id="configurando-repositorio-de-paquetes-rpm">Configurando Repositorio de paquetes RPM</h3>
+<ul>
+<li>Con <code>ansible.builtin.yum</code> se puede configurar un repositorio en los hosts destino</li>
+<li>Con <code>ansiblebuiltin.rpm_key</code> despliega la llave pública GCP para apuntar a host web server remoto y configurarlo en el host</li>
+</ul>
+<h2 id="gestion-y-autenticacion-de-usuarios">Gestion y autenticación de usuarios</h2>
+<h3 id="modulo-user">Modulo User</h3>
+<ul>
+<li><code>ansible.builtin.user</code> se puede crear, configurar o remover cuentas en el hosts</li>
+<li>Parámetros básicos:</li>
+<li><code>comment</code> <em>opcional</em>, descripcion de la cuenta</li>
+<li><code>group</code> <em>opcional</em> asignar el usuario a un grupo primario</li>
+<li><code>groups</code> <em>opcional</em> asignar a lista de grupos</li>
+<li><code>home</code> <em>opcional</em> configurar directorio home del usuario</li>
+<li><code>create</code> <em>opcional</em> <code>true</code>/<code>false</code> si crea o no el home del usuario</li>
+<li><code>system</code> <em>opcional</em> <code>true</code>/<code>false</code> si crea el usuario como cuenta de sistema</li>
+<li><code>uid</code> <em>opcional</em> Asignar UID al usuario</li>
+<li><code>state</code><ul>
+<li><code>present</code> crearlo si no existe</li>
+<li><code>absent</code> eliminarlo si existe</li>
+</ul>
+</li>
+<li>Parámetros SSH:<ul>
+<li><code>generate_ssh_key</code>: <code>true</code>/<code>false</code> </li>
+<li><code>ssh_key_bits</code>: <code>2048</code>/<code>4096</code></li>
+<li><code>ssh_key_file</code>: <code>.ssh/id_rsa</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="group">Group</h3>
+<ul>
+<li><code>ansible.builtin.group</code> elimina, adiciona y modifica grupos en el host</li>
+<li>Parámetros básicos:</li>
+<li><code>gid</code> Numero GID para el grupo. Si se omite se asign uno automaticamente</li>
+<li><code>local</code> forza el uso local de comandos alternativos</li>
+<li><code>name</code>  nombre del grupo</li>
+<li><code>state</code>  determina el estado del grupo</li>
+<li><code>system</code> <em>opcional</em> <code>true</code>/<code>false</code> asigana un GID al grupo</li>
+</ul>
+<h3 id="know-host-module">Know Host module</h3>
+<ul>
+<li><code>ansible.builtin.know_hosts</code> gestiona la llaves SSH en el host, agregando o removiendolas de los hosts gestionados</li>
+<li>Parámetros básicos:</li>
+<li><code>path</code> Ruta de ubicación del archivo know_hosts</li>
+<li><code>name</code> nombre del host a agregar o remover</li>
+<li><code>key</code>  String con el valor de la llave<ul>
+<li><code>&lt;hostname[,IP]&gt; ssh-rsa &lt;pubkey&gt;</code> para llaves RSA publicas del host</li>
+<li><code>&lt;hostname[,IP]&gt; ssh-ed25519 &lt;pubkey&gt;</code> para llaves RSA publicas ed 25510 del host </li>
+</ul>
+</li>
+</ul>
+<p>Ejemplo de task</p>
+<pre><code class="language-yaml">- name: Copiar llaves host en los servers remotos
+  ansible.builtin.know_hosts:
+    path: /etc/ssh/ssh_know_hosts
+    name: servidoraap
+    key: &quot;{{ loopup('ansible.builtin.file', 'pubkeys/servidoraap') }}&quot;
+
+</code></pre>
+<ul>
+<li><code>ansible.builtin.slurp</code> con este modulo se obtiene la llave RSA de los hosts. Incluir parámetro de <code>register</code>. El modulo ayuda luego con el modulo anterior a construir las llaves codificadas</li>
+</ul>
+<h3 id="modulo-autorized-key">Modulo Autorized Key</h3>
+<ul>
+<li><code>ansible.posix.authorized_key</code> gestiona las llaves de un usuario en el host manegado</li>
+</ul>
+<pre><code class="language-yaml">- name: Configuración de llaves
+  ansible.posix.authorized_key:
+    user: eocampo
+    state: present
+    key: &quot;{{ loopup('ansible.builtin.file', 'files/eocampo/id_rsa.pub') }}&quot;
+
+</code></pre>
+<h3 id="configurando-sudo">Configurando Sudo</h3>
+<ul>
+<li>utilizando `ansible.builtin.lineinfile</li>
+</ul>
+<pre><code class="language-yaml">- name: Modificar Sudo
+  ansible.builtin.lineinfile:
+    path: &quot;/etc/sudoers.d/{{ nombre_grupo }}&quot;
+    state: present
+    create: yes
+    mode: 0440
+    line: &quot;%{{ nombre_grupo}} ALL=(ALL) NOPASSWD:ALL&quot;
+    validate: /usr/sbin/visudo -cf %s
+
+</code></pre>
+<h2 id="gestion-de-procesos-de-boot-y-programacion-de-tareas">Gestión de procesos de Boot y programación de tareas</h2>
+<h3 id="programacion-de-trabajos-para-caracteristicas-de-ejecucion">Programación de trabajos para características de ejecución</h3>
+<p>Reemplazo de comano <code>at</code> y el susbsistema <code>cron</code></p>
+<ul>
+<li><code>ansible,posix.at</code> configurar tarea de una sola ejecución</li>
+<li>Parámetros básicos:<ul>
+<li><code>command</code> Comando a programar como ejecución en el futuro</li>
+<li><code>count</code> Entero (Integer), numero de unidades desde ahora hast ala ejecución </li>
+<li><code>units</code>  Especificar si <code>count</code> es en minutos, horas, dias o semanas</li>
+<li><code>script_file</code> Si existe un script a ejecutar</li>
+<li><code>state</code> por defecto <code>present</code>, puede estar en <code>absent</code></li>
+<li><code>unique</code> <code>yes</code>/<code>no</code> valida si existe y no crea uno nuevo</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-yaml">- name: Remover tempuser
+  ansible.posix.at:
+    command: userdel -r tempuser
+    count: 20
+    units: minutes
+    unique: yes
+</code></pre>
+<ul>
+<li><code>ansible.builtin.cron</code> confifurar tareas repetibles con Cron</li>
+<li>
+<p>Parámetros básicos:</p>
+<ul>
+<li><code>name</code> Comentario identifica el Cron Job</li>
+<li><code>job</code> Comando a ejecutar</li>
+<li><code>minutes, hour, day, month, weekdy</code>  Especificar valor de ejecución. Tener en cuent "*"</li>
+<li><code>state</code> si es <code>present</code>crearlo y <code>absent</code>removerlo</li>
+<li><code>user</code> Especificar usuario de ejecución</li>
+<li><code>cron_file</code> <em>si se configura</em> debe especificar usuario y tiempo, relativo path</li>
+</ul>
+</li>
+<li>
+<p>Control de unidades de tiempo Systemd</p>
+</li>
+<li><code>ansible.builtin.systemd</code>modulo usado para habilitar o deshabilitar unidades de tiempo en <code>systemd</code></li>
+</ul>
+<pre><code class="language-yaml">- name: Deshabilitar dnf makecahce
+  ansible.builtin.systemd:
+    name: dnf-makecache.timer
+    state: stopped
+    enabled: no
+
+</code></pre>
+<h3 id="gestion-de-servicios">Gestion de servicios</h3>
+<pre><code class="language-yaml">- name: Iniciar y habilitar servicio nginx
+  ansible.builtin.service:
+    name: nginx
+    state: started
+    enable: yes
+
+- name: Reload servidor web
+  ansible.builtin.systemd:
+    name: httpd
+    state: reload
+    daemon_reload: yes
+
+</code></pre>
+<h3 id="configurando-objetivo-default-boot">Configurando objetivo default boot</h3>
+<p>Utilizar el modulo <code>ansible.builtin.command</code>para realizar operaciones de boot. Agregar el argumento <code>changed_when: false</code></p>
+<h3 id="reinicio-de-hosts">Reinicio de hosts</h3>
+<p><code>ansible.builtin.reboot</code> para reiniciar el hosts intervenido. Puede tener el parametro <code>reboot_timeout: 180</code> para asigar tiempo en segundo para reiniciar o <code>msg</code> para mostrar mensaje antes de reboot</p>
+<h2 id="gestion-de-storage">Gestión de storage</h2>
+<h3 id="montaje-de-file-systems">Montaje de File Systems</h3>
+<p><code>ansible.posix.mount</code></p>
+<h3 id="configurando-storage-con-el-role-storage-de-system">Configurando Storage con el role Storage de System</h3>
+<p>Usar role <code>redhat.rhel_system_roles.storage</code> </p>
+<ul>
+<li>para dispositivos sin particionar</li>
+<li>LVM de particiones físicas</li>
+</ul>
+<pre><code class="language-yaml">---
+- name: Ejemplo de simple dispositivo de storage
+  hosts: all
+
+  roles:
+    - name: redhat.rhel_system_roles.storage
+      storage_volumes:
+        - name: extra
+          type: disk
+          disks:
+            - /dev/vdg
+          fs_type: xfs
+          mount_point: /opt/extra
+
+</code></pre>
+<ul>
+<li>Gestión de LVM (aplica también para Swap)</li>
+</ul>
+<pre><code class="language-yaml">---
+- name: Ejemplo configurar LVM Storage
+  hosts: webservers
+
+  roles:
+    - name: redhat.rhel_system_roles.storage
+      storage_pools:
+        - name: vgbackup
+          type: lvm
+          disks:
+            - /dev/vdb
+          volumes:
+            - name: lv_backup
+              size: 128m
+              fs_type: xfs
+              mount_point: /backup
+              state: present
+
+</code></pre>
+<h4 id="gestionando-storage-sin-el-role-system">Gestionando storage sin el role system</h4>
+<ul>
+<li>
+<p>Si se quiere realizar la operación sin el role de system, la opciones son mas complejas, por ejemplo utilizando <code>ansible.builtin.command</code></p>
+</li>
+<li>
+<p><code>community.general.parted</code> no está soportado </p>
+</li>
+<li><code>community.general.filesystem</code> no está soportado</li>
+</ul>
+<h3 id="utilizando-ansible_facts-para-configuraciones-de-storage">Utilizando <code>ansible_facts</code> para configuraciones de storage</h3>
+<ul>
+<li>Se encuentra en <code>ansible_facts['devices']</code></li>
+<li><code>ansible_facts['devices_links']</code> Links disponibles para cada dispositivo de storage</li>
+<li>Para ver los punto de montaje <code>ansible_facts['mounts']</code> </li>
+</ul>
+<h2 id="gestion-de-red">Gestión de red</h2>
+<h3 id="configuracion-con-role-system">Configuración con Role System</h3>
+<ul>
+<li>Se utiliza el modulo <code>redhat.rhel_system_roles.network</code></li>
+</ul>
+<p>Ejemplo:</p>
+<pre><code class="language-yaml">---
+- name: Configuración NIC
+  hosts: webservers
+
+  vars:
+  network_provider: nm
+  network_connections:
+    - name: ens4
+      type: ethernet
+      ip:
+        address:
+          - 172.25.250.30/24
+
+  roles:
+    - redhat.rhel_system_roles.network 
+
+</code></pre>
+<h3 id="configuracion-con-modulos">Configuración con módulos</h3>
+<ul>
+<li>Cambio de hotname: <code>ansible.builtin.hostname</code></li>
+<li>Configuración de Firewall <code>ansible.posix.firewalld</code></li>
+</ul>
+<h4 id="ansible-facts-con-configuraciones-de-red">Ansible Facts con configuraciones de red</h4>
+<ul>
+<li><code>ansible_facts['interfaces']</code> todas las interfaces</li>
+<li>Una interface en particuar <code>ansible_facts['eth0']</code></li>
+<li>DNS <code>ansible_facts['dns']</code></li>
+<li><code>ansible_facts['domain']</code> el dominio </li>
+<li><code>ansible_facts['all_ipv4_addresses']</code> todas las direccione IPV4 del host</li>
+<li>FQDN <code>ansible_facts['fqdn']</code></li>
+<li>El hostname del host <code>ansible_facts['hostname']</code></li>
+</ul>
 
 
 
