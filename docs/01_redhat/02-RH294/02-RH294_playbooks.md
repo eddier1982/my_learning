@@ -448,3 +448,137 @@ CPU total del sistema {{ ansible_facts['processor_count'] }}
   vars:
     url: 'http://servera.lab.example.com'
 ```
+# Ejercicio de usuarios
+
+```yaml
+---
+- name: Lab gestion de usuarios
+  hosts: webservers
+  vars_files:
+    - vars/users_vars.yml
+
+  tasks:
+    - name: Crear grupo {{ grupo_nuevo }}
+      ansible.builtin.group:
+        name: "{{ grupo_nuevo }}"
+        state: present
+
+    - name: Crear usuarios
+      ansible.builtin.user:
+        name: "{{ item['username'] }}"
+        group: "{{ item['groups'] }}"
+      loop: "{{ users }}"
+
+    - name: Agregar las llaves ssh
+      ansible.posix.authorized_key:
+        user: "{{ item['username'] }}"
+        key: "{{ lookup('file','files/'+ item['username'] + '.key.pub') }}"
+      loop: "{{ users }}"
+
+    - name: Agregar sudo a los usuarios
+      ansible.builtin.lineinfile:
+        path: /etc/sudoers.d/webadmin
+        line: "%webadmin ALL=(ALL) NOPASSWD: ALL"
+        state: present
+        create: yes
+        mode: 0440
+        validate: /usr/sbin/visudo -cf %s
+
+    - name: Deshabilitar el acceso por root en SSH
+      ansible.builtin.lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: "^PermitRootLogin"
+        line: "PermitRootLogin no"
+      notify: reiniciar servicio SSH 
+
+  handlers:
+    - name: reiniciar servicio SSH
+      ansible.builtin.service:
+        name: sshd
+        state: restarted
+
+```
+
+# Ejercicio con programación de procesos
+
+## Ejercicio de Cron Services
+
+```yaml
+---
+- name: Ejercicio de Cron Services
+  hosts: webservers
+  become: true
+
+  tasks:
+    - name: Configurar Tarea en Cron
+      ansible.builtin.cron:
+        name: Agregar fecha y tiempo al archivo
+        job: date >> /home/devops/my_date_time_cron_job
+        minute: "*/2"
+        hour: 9-16
+        weekday: 1-5
+        user: devops
+        cron_file: add-date-time
+        state: present
+```
+## Ejercicio elliminar progamación Cron
+
+```yaml
+---
+- name: Ejercicio elliminar progamación Cron
+  hosts: webservers
+  become: true
+
+  tasks:
+    - name: Cron job eliminado
+      ansible.builtin.cron:
+        name: Agregar fecha y tiempo al archivo
+        user: devops
+        cron_file: add-date-time
+        state: absent
+```
+
+## Ejercicio programando tarea con at
+
+```yaml
+---
+- name: Ejercicio programando tarea con at
+  hosts: webservers
+  become: true
+  become_user: devops
+
+  tasks:
+    - name: Agregar fecha y tiempo al archivo 
+      ansible.posix.at:
+        command: date > ~/my_at_date_time
+        count: 1
+        units: minutes
+        unique: true
+        state: present
+
+```
+
+## Ejercicio mdificando boot
+
+```yaml
+---
+- name: Ejercicio mdificando boot
+  hosts: webservers
+  become: true
+  gather_facts: false
+  vars:
+    default_target: "graphical.target"
+
+  tasks:
+    - name: Obteniendo el actual boot
+      ansible.builtin.command:
+        cmd: systemctl get-default
+      changed_when: false
+      register: target
+
+    - name: Asignando {{ default_target }} al boot
+      ansible.builtin.command:
+        cmd: systemctl set-default {{ default_target }}
+      when: default_target not in target['stdout']
+
+```
