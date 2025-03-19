@@ -1293,6 +1293,66 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ejercicio-de-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio de usuarios
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-con-programacion-de-procesos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio con programación de procesos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio con programación de procesos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-de-cron-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio de Cron Services
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-elliminar-progamacion-cron" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio elliminar progamación Cron
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-programando-tarea-con-at" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio programando tarea con at
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-mdificando-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio mdificando boot
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3261,6 +3321,66 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ejercicio-de-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio de usuarios
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-con-programacion-de-procesos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio con programación de procesos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio con programación de procesos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-de-cron-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio de Cron Services
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-elliminar-progamacion-cron" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio elliminar progamación Cron
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-programando-tarea-con-at" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio programando tarea con at
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-mdificando-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio mdificando boot
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3692,6 +3812,126 @@ CPU total del sistema {{ ansible_facts['processor_count'] }}
   ansible.builtin.import_playbook: plays/test.yml
   vars:
     url: 'http://servera.lab.example.com'
+</code></pre>
+<h1 id="ejercicio-de-usuarios">Ejercicio de usuarios</h1>
+<pre><code class="language-yaml">---
+- name: Lab gestion de usuarios
+  hosts: webservers
+  vars_files:
+    - vars/users_vars.yml
+
+  tasks:
+    - name: Crear grupo {{ grupo_nuevo }}
+      ansible.builtin.group:
+        name: &quot;{{ grupo_nuevo }}&quot;
+        state: present
+
+    - name: Crear usuarios
+      ansible.builtin.user:
+        name: &quot;{{ item['username'] }}&quot;
+        group: &quot;{{ item['groups'] }}&quot;
+      loop: &quot;{{ users }}&quot;
+
+    - name: Agregar las llaves ssh
+      ansible.posix.authorized_key:
+        user: &quot;{{ item['username'] }}&quot;
+        key: &quot;{{ lookup('file','files/'+ item['username'] + '.key.pub') }}&quot;
+      loop: &quot;{{ users }}&quot;
+
+    - name: Agregar sudo a los usuarios
+      ansible.builtin.lineinfile:
+        path: /etc/sudoers.d/webadmin
+        line: &quot;%webadmin ALL=(ALL) NOPASSWD: ALL&quot;
+        state: present
+        create: yes
+        mode: 0440
+        validate: /usr/sbin/visudo -cf %s
+
+    - name: Deshabilitar el acceso por root en SSH
+      ansible.builtin.lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: &quot;^PermitRootLogin&quot;
+        line: &quot;PermitRootLogin no&quot;
+      notify: reiniciar servicio SSH 
+
+  handlers:
+    - name: reiniciar servicio SSH
+      ansible.builtin.service:
+        name: sshd
+        state: restarted
+
+</code></pre>
+<h1 id="ejercicio-con-programacion-de-procesos">Ejercicio con programación de procesos</h1>
+<h2 id="ejercicio-de-cron-services">Ejercicio de Cron Services</h2>
+<pre><code class="language-yaml">---
+- name: Ejercicio de Cron Services
+  hosts: webservers
+  become: true
+
+  tasks:
+    - name: Configurar Tarea en Cron
+      ansible.builtin.cron:
+        name: Agregar fecha y tiempo al archivo
+        job: date &gt;&gt; /home/devops/my_date_time_cron_job
+        minute: &quot;*/2&quot;
+        hour: 9-16
+        weekday: 1-5
+        user: devops
+        cron_file: add-date-time
+        state: present
+</code></pre>
+<h2 id="ejercicio-elliminar-progamacion-cron">Ejercicio elliminar progamación Cron</h2>
+<pre><code class="language-yaml">---
+- name: Ejercicio elliminar progamación Cron
+  hosts: webservers
+  become: true
+
+  tasks:
+    - name: Cron job eliminado
+      ansible.builtin.cron:
+        name: Agregar fecha y tiempo al archivo
+        user: devops
+        cron_file: add-date-time
+        state: absent
+</code></pre>
+<h2 id="ejercicio-programando-tarea-con-at">Ejercicio programando tarea con at</h2>
+<pre><code class="language-yaml">---
+- name: Ejercicio programando tarea con at
+  hosts: webservers
+  become: true
+  become_user: devops
+
+  tasks:
+    - name: Agregar fecha y tiempo al archivo 
+      ansible.posix.at:
+        command: date &gt; ~/my_at_date_time
+        count: 1
+        units: minutes
+        unique: true
+        state: present
+
+</code></pre>
+<h2 id="ejercicio-mdificando-boot">Ejercicio mdificando boot</h2>
+<pre><code class="language-yaml">---
+- name: Ejercicio mdificando boot
+  hosts: webservers
+  become: true
+  gather_facts: false
+  vars:
+    default_target: &quot;graphical.target&quot;
+
+  tasks:
+    - name: Obteniendo el actual boot
+      ansible.builtin.command:
+        cmd: systemctl get-default
+      changed_when: false
+      register: target
+
+    - name: Asignando {{ default_target }} al boot
+      ansible.builtin.command:
+        cmd: systemctl set-default {{ default_target }}
+      when: default_target not in target['stdout']
+
 </code></pre>
 
 
