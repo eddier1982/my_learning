@@ -582,3 +582,74 @@ CPU total del sistema {{ ansible_facts['processor_count'] }}
       when: default_target not in target['stdout']
 
 ```
+# Ejercicios de Storage
+
+## Ejercicio de LVM
+
+```yaml
+---
+- name: Ejercicio de LVM
+  hosts: webservers
+
+  roles:
+    - name: redhat.rhel_system_roles.storage
+      storage_pools:
+        - name: apache-vg
+          type: lvm
+          disks:
+            - /dev/vdb
+          volumes:
+            - name: content-lv
+              size: 64m
+              mount_point: "/var/www"
+              fs_type: xfs
+              state: present
+            - name: logs-lv
+              size: 128m
+              mount_point: "/var/log/httpd"
+              fs_type: xfs
+              state: present
+
+```
+
+# Ejercicios de Network
+
+## Configurando Red
+
+### Variables en group_vars/webservers/network.yml
+
+```yaml
+---
+network_connections:
+  - name: eth1
+    type: ethernet
+    ip:
+      address:
+        - 172.25.250.30/24
+
+```
+### Configuración de NIC
+
+```yaml
+---
+- name: Configuracion NIC 
+  hosts: webservers
+
+  roles:
+    - redhat.rhel_system_roles.network
+
+```
+### Obteniendo info de eth1
+
+```yaml
+---
+- name: Obtain network info for webservers
+  hosts: webservers
+
+  tasks:
+
+    - name: Display eth1 info
+      ansible.builtin.debug:
+        var: ansible_facts['eth1']['ipv4']
+
+```
