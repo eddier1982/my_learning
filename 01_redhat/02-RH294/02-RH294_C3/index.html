@@ -3170,11 +3170,13 @@
 
 <h1 id="gestion-de-variables">Gestion de variables</h1>
 <p>Ansible soporta variables que pueden ser usadas y están almacenadas y pueden ser reusadas como archivos en el proyecto de Ansible.</p>
-<p>Los nombres no pueden:
-- tener espacios
-- tener puntos
-- iniciar con numeros
-- tener caracteres especiales</p>
+<p>Los nombres no pueden:</p>
+<ul>
+<li>tener espacios</li>
+<li>tener puntos</li>
+<li>iniciar con numeros</li>
+<li>tener caracteres especiales</li>
+</ul>
 <p>Se pueden definir las variables a un grupos de hosts o a hosts individuales. Algunas variables llamadas <em>facts</em> pueden ser asignadas por Ansible basado en la configuración del sistema. Otras pueden ser declaradas en el playbook y tener efecto en el playbook o una tarea específica. Támbién se pueden enviar como <em>extra variables</em> con la opción <code>-e</code>para especigficarlas a la hora de ejecutar <code>ansible-navigator</code></p>
 <h2 id="definicion-de-variables-en-el-playbook">Definición de variables en el playbook</h2>
 <pre><code class="language-yaml">- hosts: all

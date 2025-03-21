@@ -3222,17 +3222,21 @@
 <h2 id="ansible-y-red-hat-ansible-automation-platform-aap">Ansible y Red Hat Ansible Automation Platform AAP</h2>
 <p>Se puede obtener de diferentes caminos y cada uno con diferente nivel de soporte</p>
 <ol>
-<li>Desde la comunidad. Se puede obtener de 2 maneras</li>
+<li>Desde la comunidad. Se puede obtener de 2 maneras<ol>
 <li>Con la opción mínima que es <code>ansible core</code> que incluye la colección <code>ansible.builtin</code></li>
 <li><em>Ansible Community</em>, que es la distribuición plus de la comunidad</li>
+</ol>
+</li>
 <li>Como parte de RHEL (soporte limitado). Contiene <code>ansible_core</code> incluido en el repositorio AppStream</li>
-<li>Full soporte con el producto AAP. El cual contiene:</li>
+<li>Full soporte con el producto AAP. El cual contiene:<ol>
 <li><code>ansible-core</code></li>
 <li><em>Contenido de colecciones de Ansible</em></li>
 <li><code>`ansible-navigator</code> herramienta de test y desarrollo</li>
 <li>Entornos de ejecución [Automation Execution Environments - EE]</li>
 <li><em>Automation Controller</em></li>
 <li>Automation Hub</li>
+</ol>
+</li>
 </ol>
 <h3 id="preparando-el-nodo-de-control">Preparando el nodo de control</h3>
 <p>Para ejecutar os Playbook, instalar <code>ansible-navigator</code>en el nodo de control y descragar el EE</p>
@@ -3249,9 +3253,11 @@ ansible-navigator images
 <li>En Linux y Unix deben tener Python 3.8 o superior instalado</li>
 <li>Si el SELinux está habilitado (enabled) asegurarse de tener el paquete <code>python3-libselinux</code>, con esto se podrá utilizar <code>ansible.builtin.dnf</code>y <code>ansible.builtin.package</code></li>
 <li>Requiere tener un usuario con sudo habilitado sin password</li>
-<li>Para Windows requiere</li>
+<li>Para Windows requiere<ul>
 <li>PowerShell 3.0 o superior</li>
 <li>.NET Framework 4.0 o superior instalado</li>
+</ul>
+</li>
 </ul>
 
 

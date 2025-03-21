@@ -1122,13 +1122,13 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#scribiendo-varios-plays" class="md-nav__link">
+  <a href="#escribiendo-varios-plays" class="md-nav__link">
     <span class="md-ellipsis">
-      Scribiendo varios Plays
+      Escribiendo varios Plays
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Scribiendo varios Plays">
+    <nav class="md-nav" aria-label="Escribiendo varios Plays">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3341,13 +3341,13 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#scribiendo-varios-plays" class="md-nav__link">
+  <a href="#escribiendo-varios-plays" class="md-nav__link">
     <span class="md-ellipsis">
-      Scribiendo varios Plays
+      Escribiendo varios Plays
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Scribiendo varios Plays">
+    <nav class="md-nav" aria-label="Escribiendo varios Plays">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3405,11 +3405,13 @@
 <h1 id="implementando-ansible-playbook">Implementando Ansible Playbook</h1>
 <p>Meta: 
 - Crear inventario para gestionar los host, crear un simple playbook y automatizar algunas tareas en los hosts</p>
-<p>Objetivos:
-- Describir los conceptos de un inventario de Ansible y gestionar inventarios estáticos
-- Describir la configuración de archivos Ansible, su ubicación, edición y apliacción de cambios
-- Escribir un playbook usando <code>ansible-navigator</code> 
-- Escribir un playbook usando múltiples tareas dcon escalación de privilegios, uso de <em>collections</em> y <em>roles</em></p>
+<p>Objetivos:</p>
+<ul>
+<li>Describir los conceptos de un inventario de Ansible y gestionar inventarios estáticos</li>
+<li>Describir la configuración de archivos Ansible, su ubicación, edición y apliacción de cambios</li>
+<li>Escribir un playbook usando <code>ansible-navigator</code> </li>
+<li>Escribir un playbook usando múltiples tareas dcon escalación de privilegios, uso de <em>collections</em> y <em>roles</em></li>
+</ul>
 <h2 id="construyendo-un-inventario">Construyendo un inventario</h2>
 <p>Definición: Se define como la colección dme hosts administrados por Ansible y que pueden ser asignados a grupos. Se especifican en un archivo de texto por lo general llamado <em>inventory</em> donde escriben los hosts y/o grupos. Ansible soporta múltipes formatos de inventarios, el más común es formato <em>INI-style</em> que trabaja en formato de hostname o dirección IP. Normalmente se crean grupos para gestionar los hosts dentro de ellos. </p>
 <p>Un host administrado equivale a una linea en un grupo o línea simple. Los grupos se definen con los llaves '[]'. Los inventarios se pueden organizar por ambientes, ubicación física, roles o otra categoría. Existen 2 tipos de grupos siempre van a existir: <code>all</code> y <code>ungrouped</code>.</p>
@@ -3424,9 +3426,11 @@
 <h3 id="documentacion">Documentación</h3>
 <p><a href="http://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html">How to build your inventory: Ansible Documentation</a></p>
 <h2 id="configuracion-de-ansible">Configuración de Ansible</h2>
-<p>Se pueden editar 2 archivos en su ruta de directorio del proyyecto de Anisble para trabajar con <code>ansible-navigator</code>:
- - <code>ansible.cfg</code>
- - <code>ansible-navigator.yml</code></p>
+<p>Se pueden editar 2 archivos en su ruta de directorio del proyyecto de Anisble para trabajar con <code>ansible-navigator</code>:</p>
+<ul>
+<li><code>ansible.cfg</code></li>
+<li><code>ansible-navigator.yml</code></li>
+</ul>
 <p>En el primer archivo se configuran las entradas <code>[defaults]</code> que son de la operación de Ansible y <code>[privalege_escalation]</code> que configura los privilegios de escalación en los hosts manejados</p>
 <pre><code class="language-yaml">[defaults]
 inventory = ./inventory
@@ -3468,7 +3472,7 @@ someuser ALL=(ALL) NOPASSWD:ALL
 ansible-navigator run -m stdout playbook.yml --check
 ansible-navigator run -m stdout playbook.yml --syntax-check
 </code></pre>
-<h3 id="scribiendo-varios-plays">Scribiendo varios Plays</h3>
+<h3 id="escribiendo-varios-plays">Escribiendo varios Plays</h3>
 <p>Un playbook puede tener en el mismo archivo 1 play o mas. Esto permite ejecutar unas tareas a unos hosts determinados en un play y otras tareas en otro play a otro grupo aparte</p>
 <p>Si se requiere que un play sea ejecutado con un usuario diferente, este se puede especificar en la metadata del play <code>remote_user: usuarioremoto</code>. También en esta metadata se puede agregar si requiere escalar a root <code>become: true</code></p>
 <h4 id="algunos-mudulos">Algunos múdulos</h4>
@@ -3512,30 +3516,27 @@ ansible-navigator doc ansible.builtin.user
 <h4 id="sintaxis">Sintaxis</h4>
 <ul>
 <li>Los comentarios están soportados y es con el signo de número (#) al inicio o al final de la linea</li>
-<li>
-<p>Las cadenas o <em>strings</em> no requieren comillas si las utiliza pueden un en comillas simples o dobles</p>
-</li>
-<li>
-<p>Se pueden incluir múltiples cadenas con la opción barra vertival (|)</p>
-</li>
+<li>Las cadenas o <em>strings</em> no requieren comillas si las utiliza pueden un en comillas simples o dobles<ul>
+<li>Se pueden incluir múltiples cadenas con la opción barra vertival (|)</li>
 <li>También se puede utilizar mayor que (&gt;) y sirve para una mejor legilibilidad y omitir espacios</li>
-<li>Los diccionarios son llaves-valor en un lo,que identado
-  <code>yaml
-  name: svcrole
-  svcservice: httpd
-  svcport: 80</code>
-  Tambíen se puede escribir <code>{name: svcrole, svcservice: httpd, svcport: 80}</code></li>
-<li>Las listas se representan con un simple guión (-)
-    ```yaml
-    hosts:<ul>
-<li>servera</li>
-<li>serverb</li>
-<li>serverc
-<code>``
-También se puede escribir así:</code>hosts: [servera, serverb, serverc]`</li>
 </ul>
 </li>
+<li>Los diccionarios son llaves-valor en un lo,que identado</li>
 </ul>
+<pre><code class="language-yaml">name: svcrole
+svcservice: httpd
+svcport: 80
+</code></pre>
+<p>Tambíen se puede escribir <code>{name: svcrole, svcservice: httpd, svcport: 80}</code></p>
+<ul>
+<li>Las listas se representan con un simple guión (-)</li>
+</ul>
+<pre><code class="language-yaml">hosts:
+  - servera
+  - serverb
+  - serverc
+</code></pre>
+<p>También se puede escribir así: <code>hosts: [servera, serverb, serverc]</code></p>
 
 
 

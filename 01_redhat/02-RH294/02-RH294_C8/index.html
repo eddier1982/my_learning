@@ -3284,19 +3284,19 @@
 </ul>
 <h3 id="revisando-errores-de-playbooks">Revisando errores de Playbooks</h3>
 <ul>
-<li>Checheo de sintanxis</li>
+<li>Checheo de sintanxis<ul>
 <li><code>ansible-navigator run -m stdout playbook.yml --syntax-check</code></li>
-<li>
-<p><code>ansible-lint playbook.yml</code></p>
+<li><code>ansible-lint playbook.yml</code></li>
+</ul>
 </li>
-<li>
-<p>Buenas ptrácticas de revisar Playbook por <em>Issues</em></p>
-</li>
+<li>Buenas ptrácticas de revisar Playbook por <em>Issues</em><ul>
 <li>Utilizar una bueba descripción en el <code>name</code> del <em>tasks</em></li>
 <li>Utilizar comentarios cuando se adiciona líneas en la documentaciónd e las tareas</li>
 <li>Organice las <em>tasks</em> de manera vertical</li>
 <li>Identación horizontal es crítica, usar <em>espacios</em> y no <strong>tabs</strong></li>
 <li>Hacer el playbook lo mas simple posible.</li>
+</ul>
+</li>
 </ul>
 <h3 id="revisando-artefectos-del-playbook-y-archivos-de-log">Revisando Artefectos del Playbook y archivos de Log</h3>
 <ul>
@@ -3308,12 +3308,16 @@
 <h2 id="troubleshooting-de-hosts-gestionados">Troubleshooting de Hosts gestionados</h2>
 <ul>
 <li>Revisar si el el usuarios remoto <code>remote_user</code> es correcto o si tiene los permisos adecuados</li>
-<li>Validar la correcta resolución de nombres por DNS, si no resuelve deberá agregar la variable <code>ansible_host</code> en el host</li>
+<li>Validar la correcta resolución de nombres por DNS, si no resuelve deberá agregar la variable <code>ansible_host</code> en el host<ul>
 <li><code>mimaquina.eocampo.lab ansible_host= 192.168.1.25</code></li>
-<li>Validar que el <code>remote_user</code>tenga permisos de <em>sudo</em> en el host</li>
+</ul>
+</li>
+<li>Validar que el <code>remote_user</code>tenga permisos de <em>sudo</em> en el host<ul>
 <li>Si no tiene configurado "no pedir password" debe tener configurado <code>become_password</code></li>
 <li>Si la accción es con el usuario <em>root</em> y tiene permisos debe ir la variable <code>become</code></li>
 <li>Si la acción debe ser ejecutada con otro usuario, utilizar la variable <code>become_user</code></li>
+</ul>
+</li>
 </ul>
 <h3 id="problemas-con-python-en-los-hosts">Problemas con Python en los Hosts</h3>
 <ul>
@@ -3343,10 +3347,12 @@
 <h3 id="ejecucion-de-comandos-ad-hoc">Ejecución de comandos Ad Hoc</h3>
 <ul>
 <li>Estructura `ansible -m nombre_modulo [-a 'argumentos del modulo'] -i inventory</li>
-<li>Ejemplos:</li>
+<li>Ejemplos:<ul>
 <li><code>ansible -m ansible.builtin.ping -i inventory all</code></li>
 <li><code>ansible -m ansible.builtin.ping -i inventory all --become</code></li>
 <li><code>ansible -m ansible.builtin.command -i inventory -a 'df -hT' all</code> </li>
+</ul>
+</li>
 </ul>
 
 

@@ -3645,17 +3645,17 @@
 </tbody>
 </table>
 <ul>
-<li>Optimización instalando mútiples paquetes</li>
+<li>Optimización instalando mútiples paquetes<ul>
 <li>Use listas en el argumento <code>name</code></li>
 <li>Use listas en el argumento <code>loop</code>y luego hacer el llamdo en el argumento: <code>name: "{{ item }}"</code></li>
-<li>El modulo <code>ansible.builtin.package_facts</code>reune los paquetes instalados en el hosts</li>
+</ul>
+</li>
+<li>El modulo <code>ansible.builtin.package_facts</code>reune los paquetes instalados en el hosts<ul>
 <li>Se realiza llamado <code>ansible_facts['packages']</code></li>
-<li>
-<p>Invoque <code>ansible.builtin.debug</code>para mostrar los valores de los paquetes instalados</p>
+<li>Invoque <code>ansible.builtin.debug</code>para mostrar los valores de los paquetes instalados</li>
+</ul>
 </li>
-<li>
-<p>El modulo <code>ansible.builtin.apt</code> es utilizado para Debian y Ubuntu</p>
-</li>
+<li>El modulo <code>ansible.builtin.apt</code> es utilizado para Debian y Ubuntu</li>
 <li>El modulo <code>ansible.windows.win_package</code> es para sistemas Windows</li>
 </ul>
 <h3 id="registrando-y-gestionando-systemas-con-rh-subscription-manager">Registrando ,y gestionando systemas con RH Subscription Manager</h3>
@@ -3694,7 +3694,7 @@
 <h3 id="modulo-user">Modulo User</h3>
 <ul>
 <li><code>ansible.builtin.user</code> se puede crear, configurar o remover cuentas en el hosts</li>
-<li>Parámetros básicos:</li>
+<li>Parámetros básicos:<ul>
 <li><code>comment</code> <em>opcional</em>, descripcion de la cuenta</li>
 <li><code>group</code> <em>opcional</em> asignar el usuario a un grupo primario</li>
 <li><code>groups</code> <em>opcional</em> asignar a lista de grupos</li>
@@ -3714,25 +3714,31 @@
 </ul>
 </li>
 </ul>
+</li>
+</ul>
 <h3 id="group">Group</h3>
 <ul>
 <li><code>ansible.builtin.group</code> elimina, adiciona y modifica grupos en el host</li>
-<li>Parámetros básicos:</li>
+<li>Parámetros básicos:<ul>
 <li><code>gid</code> Numero GID para el grupo. Si se omite se asign uno automaticamente</li>
 <li><code>local</code> forza el uso local de comandos alternativos</li>
 <li><code>name</code>  nombre del grupo</li>
 <li><code>state</code>  determina el estado del grupo</li>
 <li><code>system</code> <em>opcional</em> <code>true</code>/<code>false</code> asigana un GID al grupo</li>
 </ul>
+</li>
+</ul>
 <h3 id="know-host-module">Know Host module</h3>
 <ul>
 <li><code>ansible.builtin.know_hosts</code> gestiona la llaves SSH en el host, agregando o removiendolas de los hosts gestionados</li>
-<li>Parámetros básicos:</li>
+<li>Parámetros básicos:<ul>
 <li><code>path</code> Ruta de ubicación del archivo know_hosts</li>
 <li><code>name</code> nombre del host a agregar o remover</li>
 <li><code>key</code>  String con el valor de la llave<ul>
 <li><code>&lt;hostname[,IP]&gt; ssh-rsa &lt;pubkey&gt;</code> para llaves RSA publicas del host</li>
 <li><code>&lt;hostname[,IP]&gt; ssh-ed25519 &lt;pubkey&gt;</code> para llaves RSA publicas ed 25510 del host </li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -3776,7 +3782,7 @@
 <h3 id="programacion-de-trabajos-para-caracteristicas-de-ejecucion">Programación de trabajos para características de ejecución</h3>
 <p>Reemplazo de comano <code>at</code> y el susbsistema <code>cron</code></p>
 <ul>
-<li><code>ansible,posix.at</code> configurar tarea de una sola ejecución</li>
+<li><code>ansible,posix.at</code> configurar tarea de una sola ejecución<ul>
 <li>Parámetros básicos:<ul>
 <li><code>command</code> Comando a programar como ejecución en el futuro</li>
 <li><code>count</code> Entero (Integer), numero de unidades desde ahora hast ala ejecución </li>
@@ -3784,6 +3790,8 @@
 <li><code>script_file</code> Si existe un script a ejecutar</li>
 <li><code>state</code> por defecto <code>present</code>, puede estar en <code>absent</code></li>
 <li><code>unique</code> <code>yes</code>/<code>no</code> valida si existe y no crea uno nuevo</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -3795,10 +3803,10 @@
     unique: yes
 </code></pre>
 <ul>
-<li><code>ansible.builtin.cron</code> confifurar tareas repetibles con Cron</li>
 <li>
-<p>Parámetros básicos:</p>
+<p><code>ansible.builtin.cron</code> confifurar tareas repetibles con Cron</p>
 <ul>
+<li>Parámetros básicos:<ul>
 <li><code>name</code> Comentario identifica el Cron Job</li>
 <li><code>job</code> Comando a ejecutar</li>
 <li><code>minutes, hour, day, month, weekdy</code>  Especificar valor de ejecución. Tener en cuent "*"</li>
@@ -3807,10 +3815,14 @@
 <li><code>cron_file</code> <em>si se configura</em> debe especificar usuario y tiempo, relativo path</li>
 </ul>
 </li>
+</ul>
+</li>
 <li>
 <p>Control de unidades de tiempo Systemd</p>
-</li>
+<ul>
 <li><code>ansible.builtin.systemd</code>modulo usado para habilitar o deshabilitar unidades de tiempo en <code>systemd</code></li>
+</ul>
+</li>
 </ul>
 <pre><code class="language-yaml">- name: Deshabilitar dnf makecahce
   ansible.builtin.systemd:

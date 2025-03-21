@@ -1353,6 +1353,87 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ejercicios-de-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicios de Storage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios de Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-de-lvm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio de LVM
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-de-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicios de Network
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios de Network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configurando-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurando Red
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configurando Red">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables-en-group_varswebserversnetworkyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables en group_vars/webservers/network.yml
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-de-nic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración de NIC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obteniendo-info-de-eth1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obteniendo info de eth1
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3381,6 +3462,87 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ejercicios-de-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicios de Storage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios de Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-de-lvm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicio de LVM
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-de-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejercicios de Network
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicios de Network">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configurando-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurando Red
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configurando Red">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables-en-group_varswebserversnetworkyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables en group_vars/webservers/network.yml
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-de-nic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración de NIC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obteniendo-info-de-eth1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obteniendo info de eth1
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3931,6 +4093,65 @@ CPU total del sistema {{ ansible_facts['processor_count'] }}
       ansible.builtin.command:
         cmd: systemctl set-default {{ default_target }}
       when: default_target not in target['stdout']
+
+</code></pre>
+<h1 id="ejercicios-de-storage">Ejercicios de Storage</h1>
+<h2 id="ejercicio-de-lvm">Ejercicio de LVM</h2>
+<pre><code class="language-yaml">---
+- name: Ejercicio de LVM
+  hosts: webservers
+
+  roles:
+    - name: redhat.rhel_system_roles.storage
+      storage_pools:
+        - name: apache-vg
+          type: lvm
+          disks:
+            - /dev/vdb
+          volumes:
+            - name: content-lv
+              size: 64m
+              mount_point: &quot;/var/www&quot;
+              fs_type: xfs
+              state: present
+            - name: logs-lv
+              size: 128m
+              mount_point: &quot;/var/log/httpd&quot;
+              fs_type: xfs
+              state: present
+
+</code></pre>
+<h1 id="ejercicios-de-network">Ejercicios de Network</h1>
+<h2 id="configurando-red">Configurando Red</h2>
+<h3 id="variables-en-group_varswebserversnetworkyml">Variables en group_vars/webservers/network.yml</h3>
+<pre><code class="language-yaml">---
+network_connections:
+  - name: eth1
+    type: ethernet
+    ip:
+      address:
+        - 172.25.250.30/24
+
+</code></pre>
+<h3 id="configuracion-de-nic">Configuración de NIC</h3>
+<pre><code class="language-yaml">---
+- name: Configuracion NIC 
+  hosts: webservers
+
+  roles:
+    - redhat.rhel_system_roles.network
+
+</code></pre>
+<h3 id="obteniendo-info-de-eth1">Obteniendo info de eth1</h3>
+<pre><code class="language-yaml">---
+- name: Obtain network info for webservers
+  hosts: webservers
+
+  tasks:
+
+    - name: Display eth1 info
+      ansible.builtin.debug:
+        var: ansible_facts['eth1']['ipv4']
 
 </code></pre>
 

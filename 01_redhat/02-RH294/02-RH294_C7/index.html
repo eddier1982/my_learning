@@ -3908,17 +3908,20 @@
 <h3 id="incluirimportar-roles-como-tasks">Incluir/importar roles como Tasks</h3>
 <p>Los roles se pueden agregar a un <em>play</em> como una <em>tasks</em> en su lista de <em>tasks</em></p>
 <p>Se usa <code>ansible.builtin.import_role</code> (importar estáticamente un rol) y <code>ansible.builtin.include_role</code> (incluir dinámicamente un rol)</p>
-<p>Si se importa un role, entonces:
-- Se agrega cada uno de las tasks al play, de cada uno de los siguientes (si lo tiene)
-  - <code>tasks/main.yml</code>
-  - <code>handlers/main.yml</code>
-  - <code>defaults/main.yml</code>
-  - <code>vars/main.yml</code>
-  <em>import_roles</em> es procesado cuando es analizado, entonces los <code>handlers defaults</code> y <code>vars</code> son expuestas a todas las tareas y roles en el play y pueden ser accedidas
-- Se pueden configurar variables que se pueden llamar en el <em>tasks</em>
-- Las <em>tasks</em> condicionas y <em>loops</em> se aplican a cada <em>tasks</em> importada</p>
-<p><code>ansible.builtin.include_role</code> funciona similar pero es dinámico
-- Las <em>tasks</em> condicionas y <em>loops</em> se aplican a la definición del <em>tasks</em> mas no a lo incluido en el</p>
+<p>Si se importa un role, entonces:</p>
+<ul>
+<li>Se agrega cada uno de las tasks al play, de cada uno de los siguientes (si lo tiene)<ul>
+<li><code>tasks/main.yml</code></li>
+<li><code>handlers/main.yml</code></li>
+<li><code>defaults/main.yml</code></li>
+<li><code>vars/main.yml</code></li>
+</ul>
+</li>
+<li><em>import_roles</em> es procesado cuando es analizado, entonces los <code>handlers defaults</code> y <code>vars</code> son expuestas a todas las tareas y roles en el play y pueden ser accedidas</li>
+<li>Se pueden configurar variables que se pueden llamar en el <em>tasks</em></li>
+<li>Las <em>tasks</em> condicionas y <em>loops</em> se aplican a cada <em>tasks</em> importada. <code>ansible.builtin.include_role</code> funciona similar pero es dinámico</li>
+<li>Las <em>tasks</em> condicionas y <em>loops</em> se aplican a la definición del <em>tasks</em> mas no a lo incluido en el</li>
+</ul>
 <h3 id="usando-seccion-de-roles-en-un-play">Usando sección de roles en un Play</h3>
 <p>Otra farma de llamr los roles en un <em>play</em> es como una lista de <em>sección</em> llamada <code>roles</code> asi como se llama a <code>tasks</code> pero en ves de llamar <em>tasks</em> se llama <em>roles</em>.</p>
 <pre><code class="language-yaml">---
@@ -3967,23 +3970,27 @@
 <li>Cree un role para una solo propósito. Si requiere mas alcances, cree mas roles</li>
 <li>Siempre reuse los Roles</li>
 </ul>
-<p><a href="https://redhat-cop.github.io/automation-good-practices/#_roles_good_practices_for_ansible">Lista no oficial de buenas ´rácticas</a></p>
+<p><a href="https://redhat-cop.github.io/automation-good-practices/#_roles_good_practices_for_ansible">Lista no oficial de buenas prácticas</a></p>
 <h3 id="cambiando-el-comprtamiento-de-un-role-con-variables">Cambiando el comprtamiento de un Role con Variables</h3>
 <ul>
-<li>Los valores de variables definidos en <code>defaults</code> es sobre escrita por </li>
+<li>
+<p>Los valores de variables definidos en <code>defaults</code> es sobre escrita por </p>
+<ul>
 <li>variables en el inventario, </li>
 <li>YANL en <code>group_var</code> o <code>host_var</code> </li>
 <li>Variables en la sección <code>vars</code> del <em>play</em></li>
-<li>
-<p>Variables de role en la sección <code>roles</code> del <em>play</em></p>
+<li>Variables de role en la sección <code>roles</code> del <em>play</em></li>
+</ul>
 </li>
 <li>
 <p>Variables que pueden modificar las variables en <code>vars</code>:</p>
-</li>
+<ul>
 <li>Facts</li>
 <li><code>include_vars</code></li>
 <li>variables registradas y </li>
 <li>parámetros de Role</li>
+</ul>
+</li>
 </ul>
 <h3 id="definiendo-dependencias">Definiendo dependencias</h3>
 <p>Las dependencias de un roles siempre inclye otros roles como dependencias que está en: <code>meta/main.yml</code></p>
@@ -4029,19 +4036,23 @@ dependencies:
 <ul>
 <li>Instalando el role <code>ansible-galaxy role install</code></li>
 <li><code>-r roles/requirements.yml</code> para especificar la ruta del archivo de requerimeintos</li>
-<li><code>-p roles</code> instala el role en el subdirectorio <code>roles</code></li>
+<li><code>-p roles</code> instala el role en el subdirectorio <code>roles</code><ul>
 <li>Validar primero si está creado el repositorio en la raiz del proyecto</li>
 <li>Se puede evitar esta opción agregando en la opción <code>[defaults]</code> del archivo <code>ansible.cfg</code>la opción <code>roles_path = roles</code></li>
+</ul>
+</li>
 <li>Si se tiene un archivo .tar con todo el contenido del role, también se puede referenciar en este archivo (no se recomienda mucho)</li>
 </ul>
 <h4 id="buscando-roles-de-la-comunidad-en-ansible-galaxy">Buscando Roles de la comunidad en Ansible Galaxy</h4>
 <p>Este sitio es valido mas no soportado por Red Hat. Es mantenido por la comunidad</p>
 <ul>
-<li>Se puede usar el comando para buscar <code>ansible-galaxy search</code></li>
-<li>argumentos adicionales<ul>
+<li>Se puede usar el comando para buscar <code>ansible-galaxy search</code><ul>
+<li>argumentos adicionales:<ul>
 <li><code>--autor</code></li>
 <li><code>--plataforms</code></li>
 <li><code>--galaxy-tags</code></li>
+</ul>
+</li>
 </ul>
 </li>
 <li>Con el comando <code>ansible-galaxy info</code> se obtiene información de un role</li>
@@ -4060,13 +4071,17 @@ dependencies:
 <h3 id="instalando-contenido-de-collections">Instalando contenido de Collections</h3>
 <ul>
 <li>En <code>ansible.cfg</code> en <code>[defaults]</code> se puede agregar <code>collections_paths = ~/.ansible/collections:/usr/share/ansible/collections</code> </li>
-<li>Para instalar una collection este es el comando: <code>ansible-galaxy collection install community.vmware -p collections</code></li>
+<li>Para instalar una collection este es el comando: <code>ansible-galaxy collection install community.vmware -p collections</code><ul>
 <li><code>-p</code>para especificar el path donde se debe instalar<ul>
 <li>Validar que el directorio esté creado</li>
 </ul>
 </li>
-<li>Se puede instalar urilizando archivo de requerimientos:</li>
+</ul>
+</li>
+<li>Se puede instalar urilizando archivo de requerimientos:<ul>
 <li><code>collections/requirements.yml</code> en el directorio del proyecto</li>
+</ul>
+</li>
 </ul>
 <pre><code class="language-yaml">---
 collections:
@@ -4081,9 +4096,11 @@ collections:
 
 </code></pre>
 <ul>
-<li>Comando para la instalación manual <code>ansible-galaxy collection install -r collections/requirements.yml -p collections</code></li>
+<li>Comando para la instalación manual <code>ansible-galaxy collection install -r collections/requirements.yml -p collections</code><ul>
 <li><code>-r collections/requirements.yml</code> para especificar la ruta del archivo de requerimeintos</li>
 <li><code>-p collections</code> instala la colleción en el subdirectorio <code>collections</code></li>
+</ul>
+</li>
 </ul>
 <h4 id="configurando-origenes-de-contenido-de-colecciones">Configurando Origenes de contenido de Colecciones</h4>
 <p>Por defecto, <code>ansible-galaxy</code> utiliza (https://galaxy.ansible.com/)[https://galaxy.ansible.com/] como fuente de contenido pero se puede modificar para que sea otro, como el Private Hub o alguna fuente mas</p>
@@ -4099,9 +4116,11 @@ token=eyJh...Jf0o
 [galaxy_server.galaxy]
 url=https://galaxy.ansible.com
 </code></pre>
-<p>Aunque está soportado el manejo de contraseñas, no se recomienda por su riesgo potencial al cargarse en un repositorio Git. En ese caso, se recomienda utilizar variables de entorno y hacer el llamado con
-- expor ANSIBLE_GALAXY_SERVER_&lt;<code>server_id</code>&gt;_&lt;<code>key</code>&gt; ejemplo
-- <code>export ANSIBLE_GALAXY_SERVER_AUTOMATION_HUB_TOKEN='eyJh...Jf0o'</code></p>
+<p>Aunque está soportado el manejo de contraseñas, no se recomienda por su riesgo potencial al cargarse en un repositorio Git. En ese caso, se recomienda utilizar variables de entorno y hacer el llamado con</p>
+<ul>
+<li><code>expor ANSIBLE_GALAXY_SERVER_</code>&lt;<code>server_id</code>&gt;_&lt;<code>key</code>&gt; ejemplo</li>
+<li><code>export ANSIBLE_GALAXY_SERVER_AUTOMATION_HUB_TOKEN='eyJh...Jf0o'</code></li>
+</ul>
 <h3 id="usando-los-recursos-desde-las-colecciones">Usando los recursos desde las Colecciones</h3>
 <p>Aunque puede funcionar el llamado con simplemente el nombre del modulo, se recomienda que siempre se uilice el FQCN para hacer el llamdo en el <em>tasks</em>. SI por ejemplo trabajaremos con el modulo <code>mysql_user</code> del la colección <code>community.mysql</code> se invoca completo:</p>
 <pre><code class="language-yaml">---
@@ -4206,8 +4225,10 @@ url=https://galaxy.ansible.com
 <h5 id="configurando-el-role-de-selinux">Configurando el Role de SELinux</h5>
 <ul>
 <li>La documentación de las variables que utiliza el Role están en la documentación del Role</li>
-<li>La variable a configurar es <code>selinux_state</code> con los valores <code>enforcing</code>, <code>permissive</code> o <code>disabled</code></li>
+<li>La variable a configurar es <code>selinux_state</code> con los valores <code>enforcing</code>, <code>permissive</code> o <code>disabled</code><ul>
 <li><code>selinux_state: enforcing</code></li>
+</ul>
+</li>
 <li>Variable de la lista de valores Booleanos que se pueden ajustar es <code>selinux_booleans</code> con los valores <code>name</code> que es el nombre del Booleano, <code>state</code> (en <code>on</code>/<code>off</code>) y <code>persistent</code> si se quiere persisntencia leugo de reinicios</li>
 </ul>
 <pre><code class="language-yaml">selinux_booleans:

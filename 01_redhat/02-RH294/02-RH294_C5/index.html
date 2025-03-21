@@ -3340,16 +3340,23 @@
 <h3 id="asegurando-que-un-archivo-exista-en-el-host-manejado">Asegurando que un archivo exista en el host manejado</h3>
 <ul>
 <li>Usando <code>ansible.builtin.file</code> crea archivos con el argumento <code>state: touch</code></li>
-<li>Con <code>setype: samba_share_t</code>se aplica contexto a un archivo, como usando <code>chcon</code></li>
+<li>Con <code>setype: samba_share_t</code>se aplica contexto a un archivo, como usando <code>chcon</code><ul>
 <li>Se recomienda utilizar el role <code>redhat.rhel_system_roles.selinux</code> para estas modificaciones</li>
-<li><code>ansible.builtin.copy</code> copiar archivos. Para el argumento <code>src</code>de origen:</li>
+</ul>
+</li>
+<li><code>ansible.builtin.copy</code> copiar archivos. Para el argumento <code>src</code>de origen:<ul>
 <li>ruta del archivo desde el nodo de ejecución</li>
 <li>path si es en el mismo host</li>
 <li>para traer los archivos utilizar el módulo <code>fetch</code></li>
+</ul>
+</li>
 <li>Adicionar bloques de líneas con <code>blockinfile</code></li>
-<li><code>block: |</code>
-    <code>linea 1</code>
-    <code>linea 2</code></li>
+</ul>
+<pre><code class="language-yaml">  block: |
+    linea 1
+    linea 2
+</code></pre>
+<ul>
 <li>Para eliminar se utiliza el argumento <code>state: absent</code></li>
 <li>Y para el estado del archivo es necesario utilizar el modulo <code>ansible.builtin.debug</code>para mostrar, mas nada mas.</li>
 <li>Para sincronizar archivos entre el nodo de control y el host manejado se puede utilizar el modulo <code>ansible.posix.synchronize</code> pero la herramienta <code>rsync</code> debe estar instalado en el host.</li>
