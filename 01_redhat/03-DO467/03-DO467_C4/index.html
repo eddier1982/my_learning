@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.bcfcd587.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -46,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -69,6 +69,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#gestion-de-proyectos-y-ejecucion-de-jobs-de-ansible" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -88,7 +93,7 @@
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -112,32 +117,34 @@
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
@@ -148,6 +155,7 @@
     </div>
   </div>
 </div>
+      
     
     
   </nav>
@@ -162,9 +170,11 @@
   
   
   
+  
     <li class="md-tabs__item">
       <a href="../../../home/" class="md-tabs__link">
         
+  
   
     
   
@@ -179,9 +189,11 @@
   
   
   
+  
     <li class="md-tabs__item">
       <a href="../../../planning/" class="md-tabs__link">
         
+  
   
     
   
@@ -195,6 +207,7 @@
         
   
   
+  
     
   
   
@@ -203,6 +216,7 @@
       <li class="md-tabs__item md-tabs__item--active">
         <a href="../../notes_redhat/" class="md-tabs__link">
           
+  
   
   Red Hat
 
@@ -216,11 +230,13 @@
   
   
   
+  
     
     
       <li class="md-tabs__item">
         <a href="../../../02_finops/01_finops_practitioner/" class="md-tabs__link">
           
+  
   
   FinOps Foundation
 
@@ -234,11 +250,13 @@
   
   
   
+  
     
     
       <li class="md-tabs__item">
         <a href="../../../03_cisco/fundamentos_python_1/" class="md-tabs__link">
           
+  
   
   Cisco Networking Academy
 
@@ -252,11 +270,13 @@
   
   
   
+  
     
     
       <li class="md-tabs__item">
         <a href="../../../04_english/A1/" class="md-tabs__link">
           
+  
   
   English (Smart Online)
 
@@ -270,9 +290,11 @@
   
   
   
+  
     <li class="md-tabs__item">
       <a href="../../../about/" class="md-tabs__link">
         
+  
   
     
   
@@ -331,8 +353,10 @@
       <a href="../../../home/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Home
+    
   </span>
   
 
@@ -351,8 +375,10 @@
       <a href="../../../planning/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Planning
+    
   </span>
   
 
@@ -369,6 +395,7 @@
   
   
   
+    
     
     
     
@@ -389,8 +416,10 @@
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
+  
   <span class="md-ellipsis">
     Red Hat
+    
   </span>
   
 
@@ -414,8 +443,10 @@
       <a href="../../notes_redhat/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Notas Red Hat
+    
   </span>
   
 
@@ -434,6 +465,7 @@
     
     
     
+    
       
       
     
@@ -448,8 +480,10 @@
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
     01 RHCSA Rapid Track (RH199)
+    
   </span>
   
 
@@ -473,8 +507,10 @@
       <a href="../../01-RH199/01-EX200_RHCSA/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Objetivos RH199
+    
   </span>
   
 
@@ -494,8 +530,10 @@
       <a href="../../01-RH199/01-RH199_C1/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 1, Sistema de accesos y soporte
+    
   </span>
   
 
@@ -515,8 +553,10 @@
       <a href="../../01-RH199/01-RH199_C2/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 2, Gestión de Archivos desde CmdLine
+    
   </span>
   
 
@@ -536,8 +576,10 @@
       <a href="../../01-RH199/01-RH199_C3/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 3, Gestión de usuarios y grupos locales
+    
   </span>
   
 
@@ -557,8 +599,10 @@
       <a href="../../01-RH199/01-RH199_C4/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 4, Control de acceso a archivos
+    
   </span>
   
 
@@ -578,8 +622,10 @@
       <a href="../../01-RH199/01-RH199_C5/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 5, Gestión de seguridad SELinux
+    
   </span>
   
 
@@ -599,8 +645,10 @@
       <a href="../../01-RH199/01-RH199_C6/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 6, Ajustes de rendimiento del sistema
+    
   </span>
   
 
@@ -620,8 +668,10 @@
       <a href="../../01-RH199/01-RH199_C7/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 7, Programación de tareas
+    
   </span>
   
 
@@ -641,8 +691,10 @@
       <a href="../../01-RH199/01-RH199_C8/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 8, Instalación y actualización de paquetes de software
+    
   </span>
   
 
@@ -662,8 +714,10 @@
       <a href="../../01-RH199/01-RH199_C9/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 9, Gestión básica de almacenamiento (Storage)
+    
   </span>
   
 
@@ -683,8 +737,10 @@
       <a href="../../01-RH199/01-RH199_C10/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 10, Gestión de almacenamiento lógico (Stack)
+    
   </span>
   
 
@@ -704,8 +760,10 @@
       <a href="../../01-RH199/01-RH199_C11/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 11, Servicios de control y procesos de boot
+    
   </span>
   
 
@@ -725,8 +783,10 @@
       <a href="../../01-RH199/01-RH199_C12/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 12, Análisis y almacenamiento de Logs
+    
   </span>
   
 
@@ -746,8 +806,10 @@
       <a href="../../01-RH199/01-RH199_C13/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 13, Gestión de redes (Networking)
+    
   </span>
   
 
@@ -767,8 +829,10 @@
       <a href="../../01-RH199/01-RH199_C14/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 14, Acceso de almacenamiento por red (Network-Attached)
+    
   </span>
   
 
@@ -788,8 +852,10 @@
       <a href="../../01-RH199/01-RH199_C15/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 15, Gestión de seguridad de redes
+    
   </span>
   
 
@@ -809,8 +875,10 @@
       <a href="../../01-RH199/01-RH199_C16/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 16, Ejecución de contenedores
+    
   </span>
   
 
@@ -830,8 +898,10 @@
       <a href="../../01-RH199/02-RH199/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Red Hat Enterprise Linux 9.0
+    
   </span>
   
 
@@ -851,8 +921,10 @@
       <a href="../../01-RH199/03-RH199_notes/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Notas de práctica
+    
   </span>
   
 
@@ -879,6 +951,7 @@
     
     
     
+    
       
       
     
@@ -893,8 +966,10 @@
           <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
     02 RHEL Automation with Ansible (RH294)
+    
   </span>
   
 
@@ -918,8 +993,10 @@
       <a href="../../02-RH294/01-RH294/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Red Hat Enterprise Linux Automation with Ansible
+    
   </span>
   
 
@@ -939,8 +1016,10 @@
       <a href="../../02-RH294/02-RH294_C1/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 1, Introducción Ansible
+    
   </span>
   
 
@@ -960,8 +1039,10 @@
       <a href="../../02-RH294/02-RH294_C2/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 2, Implementación de Ansible Playbook
+    
   </span>
   
 
@@ -981,8 +1062,10 @@
       <a href="../../02-RH294/02-RH294_C3/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 3, Gestión de variables y facts
+    
   </span>
   
 
@@ -1002,8 +1085,10 @@
       <a href="../../02-RH294/02-RH294_C4/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 4, Implementación de tareas de control
+    
   </span>
   
 
@@ -1023,8 +1108,10 @@
       <a href="../../02-RH294/02-RH294_C5/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 5, Despliegue de archivos en Hosts gestionados
+    
   </span>
   
 
@@ -1044,8 +1131,10 @@
       <a href="../../02-RH294/02-RH294_C6/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 6, Gestión de Play y Playbook complejos
+    
   </span>
   
 
@@ -1065,8 +1154,10 @@
       <a href="../../02-RH294/02-RH294_C7/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 7, Simplificando Playbook's con roles y contenido de Colecciones (Collections)
+    
   </span>
   
 
@@ -1086,8 +1177,10 @@
       <a href="../../02-RH294/02-RH294_C8/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 8, Troubleshooting
+    
   </span>
   
 
@@ -1107,8 +1200,10 @@
       <a href="../../02-RH294/02-RH294_C9/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 9, Automatización de tareas de Administración Linux
+    
   </span>
   
 
@@ -1128,8 +1223,10 @@
       <a href="../../02-RH294/02-RHELAA_notes/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Notas de práctica
+    
   </span>
   
 
@@ -1149,8 +1246,10 @@
       <a href="../../02-RH294/02-RH294_playbooks/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Ejecicio de práctica, playbooks
+    
   </span>
   
 
@@ -1179,6 +1278,7 @@
     
     
     
+    
       
       
     
@@ -1193,8 +1293,10 @@
           <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
     03 Managing Enterprise Automation with RH AAP (DO467)
+    
   </span>
   
 
@@ -1218,8 +1320,10 @@
       <a href="../01-DO467/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Managing Enterprise Automation with Red Hat Ansible Automation Platform
+    
   </span>
   
 
@@ -1239,8 +1343,10 @@
       <a href="../03-DO467_C1/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 1, Instalación de Red Hat Ansible Automation Platform
+    
   </span>
   
 
@@ -1260,8 +1366,10 @@
       <a href="../03-DO467_C2/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 2, Gestión de acceso de usuarios
+    
   </span>
   
 
@@ -1281,8 +1389,10 @@
       <a href="../03-DO467_C3/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 3, Gestión de inventarios y credenciales de máquinas
+    
   </span>
   
 
@@ -1305,16 +1415,70 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Capítulo 4, Gestión de Proyectos y ejecución Jobs
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 4, Gestión de Proyectos y ejecución Jobs
+    
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-projects-para-playbooks-de-ansible" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de Projects para Playbooks de Ansible
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-job-templates-y-ejecucion-de-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de Job Templates y ejecución de Jobs
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1331,8 +1495,10 @@
       <a href="../03-DO467_C5/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 5, Configuración avanzada de Jobs
+    
   </span>
   
 
@@ -1352,8 +1518,10 @@
       <a href="../03-DO467_C6/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 6, Construyendo Job worflows
+    
   </span>
   
 
@@ -1373,8 +1541,10 @@
       <a href="../03-DO467_C7/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 7, Gestión Vanzada de inventarios
+    
   </span>
   
 
@@ -1394,8 +1564,10 @@
       <a href="../03-DO467_C8/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 8, Automatizando configuración de AAP
+    
   </span>
   
 
@@ -1415,8 +1587,10 @@
       <a href="../03-DO467_C9/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 9, Mantenimiento de AAP
+    
   </span>
   
 
@@ -1436,8 +1610,10 @@
       <a href="../03-DO467_C10/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 10, Obteniendo información desde Red Hat Insights
+    
   </span>
   
 
@@ -1457,8 +1633,10 @@
       <a href="../03-DO467_C11/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 11, Construyendo implementación a gran escala de AAP
+    
   </span>
   
 
@@ -1478,8 +1656,10 @@
       <a href="../RHAAP_notes/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Notas de práctica
+    
   </span>
   
 
@@ -1506,6 +1686,7 @@
     
     
     
+    
       
       
     
@@ -1520,8 +1701,10 @@
           <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
     04 Developing Advanced Automation with RH AAP (DO374)
+    
   </span>
   
 
@@ -1545,8 +1728,10 @@
       <a href="../../04-DO374/04-DO374_C1/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 1, Desarrollando Playbook con AAP 2
+    
   </span>
   
 
@@ -1566,8 +1751,10 @@
       <a href="../../04-DO374/04-DO374_C2/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 2, Gestión de contenido de Colecciones y Entornos de Ejecución (Collection & EE)
+    
   </span>
   
 
@@ -1587,8 +1774,10 @@
       <a href="../../04-DO374/04-DO374_C3/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 3, Ejecutando Playbooks con el Automation Controller
+    
   </span>
   
 
@@ -1608,8 +1797,10 @@
       <a href="../../04-DO374/04-DO374_C4/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 4, Trabajando con ajustes de configuraciones de Ansible
+    
   </span>
   
 
@@ -1629,8 +1820,10 @@
       <a href="../../04-DO374/04-DO374_C5/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 5, Gestión de Inventarios
+    
   </span>
   
 
@@ -1650,8 +1843,10 @@
       <a href="../../04-DO374/04-DO374_C6/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 6, Gestión de Tareas de Ejecución
+    
   </span>
   
 
@@ -1671,8 +1866,10 @@
       <a href="../../04-DO374/04-DO374_C7/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 7, Transformando data con Filtros y Plug-ins
+    
   </span>
   
 
@@ -1692,8 +1889,10 @@
       <a href="../../04-DO374/04-DO374_C8/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 8, Coordinando las actualizaciones
+    
   </span>
   
 
@@ -1713,8 +1912,10 @@
       <a href="../../04-DO374/04-DO374_C9/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 9, Creando Colecciones y Ambientes de Ejecución (Collections & EE)
+    
   </span>
   
 
@@ -1734,8 +1935,10 @@
       <a href="../../04-DO374/RHAAP_notes/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Notas de práctica
+    
   </span>
   
 
@@ -1754,6 +1957,7 @@
     
     
     
+    
       
       
     
@@ -1768,8 +1972,10 @@
           <label class="md-nav__link" for="__nav_3_5_11" id="__nav_3_5_11_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
     Prácticas
+    
   </span>
   
 
@@ -1793,8 +1999,10 @@
       <a href="../../04-DO374/practice_collections/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Práctica Colecciones
+    
   </span>
   
 
@@ -1829,6 +2037,7 @@
     
     
     
+    
       
       
     
@@ -1843,8 +2052,10 @@
           <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
     05 Red Hat Satellite 6 Administration (RH403)
+    
   </span>
   
 
@@ -1868,8 +2079,10 @@
       <a href="../../05-RHSA6/01-RHSA6/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Install & Manage Red Hat Satellite
+    
   </span>
   
 
@@ -1889,8 +2102,10 @@
       <a href="../../05-RHSA6/05-RH403_C1/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 1, Planeación y despliegue de Red Hat Satellite
+    
   </span>
   
 
@@ -1910,8 +2125,10 @@
       <a href="../../05-RHSA6/05-RH403_C2/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 2, Gestión de ciclos de vida de Software (Lifecycles)
+    
   </span>
   
 
@@ -1931,8 +2148,10 @@
       <a href="../../05-RHSA6/05-RH403_C3/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 3, Registro de hosts
+    
   </span>
   
 
@@ -1952,8 +2171,10 @@
       <a href="../../05-RHSA6/05-RH403_C4/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 4, Despliegue de Software en Hosts
+    
   </span>
   
 
@@ -1973,8 +2194,10 @@
       <a href="../../05-RHSA6/05-RH403_C5/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 5, Despliegue de Software Personalizado
+    
   </span>
   
 
@@ -1994,8 +2217,10 @@
       <a href="../../05-RHSA6/05-RH403_C6/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 6, Despliegue de Servidores Capsula Satellite
+    
   </span>
   
 
@@ -2015,8 +2240,10 @@
       <a href="../../05-RHSA6/05-RH403_C7/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 7, Ejecución Remota
+    
   </span>
   
 
@@ -2036,8 +2263,10 @@
       <a href="../../05-RHSA6/05-RH403_C8/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 8, Preparar recursos de Red para aprovisionamiento de Hosts
+    
   </span>
   
 
@@ -2057,8 +2286,10 @@
       <a href="../../05-RHSA6/05-RH403_C9/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 9, Aprovisionamiento de contenido de Hosts
+    
   </span>
   
 
@@ -2078,8 +2309,10 @@
       <a href="../../05-RHSA6/05-RH403_C10/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 10, Automatizar Gestión de Red Hat Satellite
+    
   </span>
   
 
@@ -2099,8 +2332,10 @@
       <a href="../../05-RHSA6/05-RH403_C11/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 11, Mantenimiento de Red Hat Satellite
+    
   </span>
   
 
@@ -2120,8 +2355,10 @@
       <a href="../../05-RHSA6/05-RH403_C12/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 12, Integrar Red Hat Satellite con plataformas híbridas Cloud
+    
   </span>
   
 
@@ -2141,8 +2378,10 @@
       <a href="../../05-RHSA6/RH403_notes/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Notas de práctica
+    
   </span>
   
 
@@ -2162,8 +2401,10 @@
       <a href="../../05-RHSA6/RH403_prereq/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Pre-requisitos
+    
   </span>
   
 
@@ -2190,6 +2431,7 @@
     
     
     
+    
       
       
     
@@ -2204,8 +2446,10 @@
           <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
     06 Red Hat OpenShift Administration I (DO180)
+    
   </span>
   
 
@@ -2229,8 +2473,10 @@
       <a href="../../06-DO180/01-DO180/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Operating a Production Cluster
+    
   </span>
   
 
@@ -2250,8 +2496,10 @@
       <a href="../../06-DO180/06-DO180_C1/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 1, Introducción a Kubernetes y Openshift
+    
   </span>
   
 
@@ -2271,8 +2519,10 @@
       <a href="../../06-DO180/06-DO180_C2/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 2, Linea de comandos Kubernetes y Openshift, Interfaces y APIs
+    
   </span>
   
 
@@ -2292,8 +2542,10 @@
       <a href="../../06-DO180/06-DO180_C3/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 3, Ejecución de aplicaciones como Contenedores y Pods
+    
   </span>
   
 
@@ -2313,8 +2565,10 @@
       <a href="../../06-DO180/06-DO180_C4/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 4, Gestión de despliegue y aplicaciones en red sobre Kubernetes
+    
   </span>
   
 
@@ -2334,8 +2588,10 @@
       <a href="../../06-DO180/06-DO180_C5/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 5, Gestión de almacenamiento (Storage) para configuración de aplicación y Data
+    
   </span>
   
 
@@ -2355,8 +2611,10 @@
       <a href="../../06-DO180/06-DO180_C6/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 6, Configuración de Aplicaciones con disponibilidad
+    
   </span>
   
 
@@ -2376,8 +2634,10 @@
       <a href="../../06-DO180/06-DO180_C7/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 7, Gestión de actualizaciones de Aplicaciones
+    
   </span>
   
 
@@ -2397,8 +2657,10 @@
       <a href="../../06-DO180/DO180_notes/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Notas de práctica
+    
   </span>
   
 
@@ -2425,6 +2687,7 @@
     
     
     
+    
       
       
     
@@ -2439,8 +2702,10 @@
           <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
     07 Red Hat OpenShift Administration II (DO280)
+    
   </span>
   
 
@@ -2464,8 +2729,10 @@
       <a href="../../07-DO280/07-DO280_C1/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 1, Gestión Declarativa de recursos
+    
   </span>
   
 
@@ -2485,8 +2752,10 @@
       <a href="../../07-DO280/07-DO280_C2/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 2, Despliegue de aplicaciones empaquetadas
+    
   </span>
   
 
@@ -2506,8 +2775,10 @@
       <a href="../../07-DO280/07-DO280_C3/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 3, Auntenticación y Autorización
+    
   </span>
   
 
@@ -2527,8 +2798,10 @@
       <a href="../../07-DO280/07-DO280_C4/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 4, Seguridad de Redes
+    
   </span>
   
 
@@ -2548,8 +2821,10 @@
       <a href="../../07-DO280/07-DO280_C5/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 5, Exponer apps no HTTP/SNI
+    
   </span>
   
 
@@ -2569,8 +2844,10 @@
       <a href="../../07-DO280/07-DO280_C6/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 6, Habilitar Auto-servicio de Desarrollo
+    
   </span>
   
 
@@ -2590,8 +2867,10 @@
       <a href="../../07-DO280/07-DO280_C7/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 7, Gestión de operadores de Kubernetes
+    
   </span>
   
 
@@ -2611,8 +2890,10 @@
       <a href="../../07-DO280/07-DO280_C8/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 8, Seguridad de apllicaciones
+    
   </span>
   
 
@@ -2632,8 +2913,10 @@
       <a href="../../07-DO280/07-DO280_C9/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capítulo 9, Actualizaciones de Openshift
+    
   </span>
   
 
@@ -2653,8 +2936,10 @@
       <a href="../../07-DO280/DO280_notes/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Notas de práctica
+    
   </span>
   
 
@@ -2681,6 +2966,7 @@
     
     
     
+    
       
       
     
@@ -2695,8 +2981,10 @@
           <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
     08 Red Hat Openshift Installation (DO322)
+    
   </span>
   
 
@@ -2720,8 +3008,10 @@
       <a href="../../08-DO322/08-DO322_C1/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capitulo 1, Descripción del proceso de Instalación de OCP
+    
   </span>
   
 
@@ -2741,8 +3031,10 @@
       <a href="../../08-DO322/08-DO322_C2/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Capitulo 2, Ejecutando la instalación de OCP
+    
   </span>
   
 
@@ -2776,6 +3068,7 @@
     
     
     
+    
       
       
     
@@ -2790,8 +3083,10 @@
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
     FinOps Foundation
+    
   </span>
   
 
@@ -2815,8 +3110,10 @@
       <a href="../../../02_finops/01_finops_practitioner/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     FinOps Certified Practitioner
+    
   </span>
   
 
@@ -2836,8 +3133,10 @@
       <a href="../../../02_finops/focp_questions/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     FOCP
+    
   </span>
   
 
@@ -2863,6 +3162,7 @@
     
     
     
+    
       
       
     
@@ -2877,8 +3177,10 @@
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
     Cisco Networking Academy
+    
   </span>
   
 
@@ -2902,8 +3204,10 @@
       <a href="../../../03_cisco/fundamentos_python_1/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Fundamentos de Python 1
+    
   </span>
   
 
@@ -2929,6 +3233,7 @@
     
     
     
+    
       
       
     
@@ -2943,8 +3248,10 @@
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
     English (Smart Online)
+    
   </span>
   
 
@@ -2968,8 +3275,10 @@
       <a href="../../../04_english/A1/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     A1
+    
   </span>
   
 
@@ -2996,8 +3305,10 @@
       <a href="../../../about/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     About
+    
   </span>
   
 
@@ -3023,6 +3334,34 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-projects-para-playbooks-de-ansible" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de Projects para Playbooks de Ansible
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-job-templates-y-ejecucion-de-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de Job Templates y ejecución de Jobs
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -3037,9 +3376,10 @@
                   
 
 
-  <h1>Capítulo 4, Gestión de Proyectos y ejecución Jobs</h1>
 
-
+<h1 id="gestion-de-proyectos-y-ejecucion-de-jobs-de-ansible">Gestión de Proyectos y ejecución de Jobs de Ansible</h1>
+<h2 id="creacion-de-projects-para-playbooks-de-ansible">Creación de Projects para Playbooks de Ansible</h2>
+<h2 id="creacion-de-job-templates-y-ejecucion-de-jobs">Creación de Job Templates y ejecución de Jobs</h2>
 
 
 
@@ -3086,10 +3426,12 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>
