@@ -124,8 +124,9 @@ hostname
 visudo /etc/sudoers.d/eocampo
 %eocampo	ALL=(ALL)	NOPASSWD:ALL
 
+Firewall
 
-
+```bash
 sudo firewall-cmd --list-services
 sudo firewall-cmd --get-services
 sudo firewall-cmd  --add-service=postgresql
@@ -134,6 +135,7 @@ sudo firewall-cmd --permanent --add-port=5432/tcp
 systemctl status firewalld
 sudo firewall-cmd --reload
 sudo firewall-cmd --check-config
+```
 
 sudo loginctl enable-linger eocampo
 loginctl enable-linger eocampo
